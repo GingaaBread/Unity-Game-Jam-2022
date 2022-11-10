@@ -8,11 +8,18 @@ using UnityEngine.Assertions;
 /// <author>Gino</author>
 public abstract class InspectorReferenceChecker : MonoBehaviour
 {
-    private void Awake()
+    protected void Awake()
     {
         foreach (var reference in CheckForMissingReferences())
         {
             Assert.IsNotNull(reference);
+
+            // Edge cases for missing inspector references
+            if (reference.Equals(null))
+            {
+                throw new System.MissingFieldException($"Checked reference '{reference.GetType()}' is missing. " +
+                    $"Make sure its's been set in the inspector or remove it from the checked references.");
+            }
         }
     }
 

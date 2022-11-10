@@ -66,6 +66,7 @@ namespace TimeManagement
         public SeasonType GetNextSeason() => GetNextSeason(SeasonInYear);
         public int GetRoundsRemainingInSeason() => LAST_ROUND_IN_SEASON - RoundInSeason;
         public bool IsStartingPointInTime() => Year == FIRST_YEAR && RoundInSeason == FIRST_ROUND_IN_SEASON && SeasonInYear == SEASON_IN_YEAR_SEQUENCE[0];
+        public bool IsFirstRoundOfSeason() => RoundInSeason == FIRST_ROUND_IN_SEASON;
 
         private static int GetSeasonIndex(SeasonType s) => Array.IndexOf(SEASON_IN_YEAR_SEQUENCE, s);
 
