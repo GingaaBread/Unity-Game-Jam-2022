@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.EventSystems;
 public class Tile : MonoBehaviour
 {
 
@@ -41,6 +41,10 @@ public class Tile : MonoBehaviour
     {
         if (currType != null)
         {
+            if(EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
             cardPlayManager.AddPlayToTile(this);
         }
 
@@ -86,8 +90,7 @@ public class Tile : MonoBehaviour
     public void ApplyCropTile(SeedCard crop)
     {
         if(isBuild && !isSeed){
-            if(currBuilding.buildingType == BuildingManagement.BuildingType.ACRE || 
-            currBuilding.buildingType == BuildingManagement.BuildingType.FRUITGARDEN){
+            if(currBuilding.buildingType == BuildingManagement.BuildingType.ACRE){
                 currSprite.sprite = crop.buildingSprite;
                 currSeed = crop;
                 isSeed = true;

@@ -9,6 +9,5 @@ namespace BuildingManagement
     {
         ACRE,
         ANIMALPEN,
-        FRUITGARDEN
     }
 }
