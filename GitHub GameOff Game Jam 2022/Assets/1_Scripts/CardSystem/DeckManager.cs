@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class DeckManager : MonoBehaviour
 {
@@ -10,11 +11,12 @@ public class DeckManager : MonoBehaviour
     //E.g: Playing cards or selecting cards.
 
 
+
+    public static DeckManager Instance;
+
     // Card events
     public delegate void CardEvents();
-    public event CardEvents OnCardLeave;
-
-    public DeckTableManager deckTable;
+    public event CardEvents OnDeckUpdate;
 
     // So, the player in order to play a card has to click somewhere on the screen, except inside this transform.
     public RectTransform deckUIBounds;
@@ -22,7 +24,9 @@ public class DeckManager : MonoBehaviour
     // Where do cards start appearing from? I'll position cards according to this position.
     public Transform deckStartPoint;
 
-    // Amount of cards in my hand
+    /// <summary>
+    /// Amount of cards on hand
+    /// </summary>
     public int CardsOnDeck { get { return currentCards.Count; } }
 
     // Selected card
@@ -39,12 +43,21 @@ public class DeckManager : MonoBehaviour
 
     private void Start()
     {
+        CheckNull();
+
+        if (Instance == null) Instance = this;
+        else
+        {
+            Destroy(this);
+            Debug.LogError("Tried to set a second Instance of DeckManager");
+        }
+
         EventSubscription();
     }
 
     void Update()
     {
-
+        
         PlayCard();
     }
 
@@ -65,7 +78,7 @@ public class DeckManager : MonoBehaviour
             if (!RectTransformUtility.RectangleContainsScreenPoint(deckUIBounds, pos))
             {
                 selected.Card.Action();
-                OnCardLeave.Invoke();
+                OnDeckUpdate.Invoke();
             }
             else DeselectCard();
 
@@ -97,12 +110,13 @@ public class DeckManager : MonoBehaviour
     {
         card.gameObject.SetActive(false);
         currentCards.Remove(card);
-        deckTable.pooledCards.Add(card.gameObject);
+        DrawManager.Instance.pooledCards.Add(card.gameObject);
 
-        OnCardLeave.Invoke();
+        OnDeckUpdate.Invoke();
     }
 
-
+    // Gets called everytime the deck is updated or altered in some way. Like when a card is drawn or played.
+    // dictated by the event OnCardUpdate
     private void CardPositioning() 
     { 
         for (int i = 0; i < currentCards.Count; i++) 
@@ -116,11 +130,10 @@ public class DeckManager : MonoBehaviour
             pos.x = Xpos;
 
             currentCards[i].transform.localPosition = pos;
-
-
         }
-        
     }
+
+
 
 
     public void AddCardToList(CardScript card) 
@@ -129,12 +142,18 @@ public class DeckManager : MonoBehaviour
         CardPositioning();
     }
 
-
     private void EventSubscription() 
     {
-        OnCardLeave += CardPositioning;
+        OnDeckUpdate += CardPositioning;
     }
 
+    private void CheckNull()
+    {
+        Assert.IsNotNull(deckUIBounds, $"{ GetType().Name} missing required editor input 'deckUIBounds'");
+        Assert.IsNotNull(deckStartPoint, $"{ GetType().Name} missing required editor input 'deckStartPoint'");
+
+
+    }
 
 
 }

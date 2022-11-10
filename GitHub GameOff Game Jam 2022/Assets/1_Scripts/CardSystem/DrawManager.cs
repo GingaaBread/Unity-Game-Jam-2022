@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.EventSystems;
 
-public class DeckTableManager : MonoBehaviour, IPointerDownHandler
+public class DrawManager : MonoBehaviour, IPointerDownHandler
 {
+
 
     // CROSTZARD
 
     //Summary: Handles all things related to the deck you draw cards from (as Im writing this its just a button).
     // E.g : Giving cards at the start of the match, or when the player draws from the deck.
+
+    public static DrawManager Instance; // Singleton
 
     public ActionCardSO[] availableCards;
 
@@ -24,8 +28,15 @@ public class DeckTableManager : MonoBehaviour, IPointerDownHandler
 
     public void Start()
     {
+        CheckNull();
 
-        GiveCard(5); // When the game starts, give the player 5 cards.
+        if (Instance == null) Instance = this;
+        else 
+        {
+            Destroy(this);
+            Debug.LogError("Tried to set a second Instance of DrawManager");
+        }
+
     }
 
     public void Update()
@@ -50,10 +61,8 @@ public class DeckTableManager : MonoBehaviour, IPointerDownHandler
 
     public void GiveCard(int amount = 1) 
     {
-        
         for (int i = 0; i < amount; i++)
         { 
-
             GameObject card = pooledCards.Count > 0 ? GetPooledCard() : Instantiate(cardPrefab, manager.transform);
 
             AssignCardData(card.transform);
@@ -84,6 +93,13 @@ public class DeckTableManager : MonoBehaviour, IPointerDownHandler
 
         return card;
     
+    }
+
+    private void CheckNull() 
+    {
+        Assert.IsNotNull(cardPrefab, $"{ GetType().Name} missing required editor input 'cardPrefab'");
+        Assert.IsNotNull(manager, $"{ GetType().Name} missing required editor input 'manager'");
+        Assert.IsNotNull(availableCards, $"{ GetType().Name} missing required editor input 'availableCards'");
     }
 
 }
