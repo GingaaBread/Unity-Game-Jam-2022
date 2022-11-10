@@ -22,6 +22,7 @@
 [Aa]ssets/Plugins/Editor/JetBrains*
 
 [Aa]ssets/Plugins/FMOD/platforms/
+[Aa]ssets/Plugins/FMOD/Resources/
 
 # Visual Studio cache directory
 .vs/
