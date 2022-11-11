@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Workspace" id="{bfb41b3c-c19b-4846-8ba8-7122ecd7252d}">
+		<property name="builtBanksOutputDirectory">
+			<value>../../GitHub GameOff Game Jam 2022/FmodAssets</value>
+		</property>
 		<relationship name="masterEventFolder">
 			<destination>{fc4566cd-cf12-467d-86a3-c6f7d1039d25}</destination>
 		</relationship>

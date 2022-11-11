@@ -11,7 +11,7 @@ public class CardScript : MonoBehaviour, IPointerDownHandler
     //Summary: Handles all things related to individual cards, each time you see a card on the screen, it will have a CardScript component.
     // E.g : Playing card animations or updating their own data.
 
-    ActionCardSO card;
+    public ActionCardSO card;
     DeckManager deckManager;
 
     Animator animator;
@@ -29,7 +29,7 @@ public class CardScript : MonoBehaviour, IPointerDownHandler
             deckManager.DeselectCard();
             return;
         }
-
+        card.Action();
         deckManager.SelectCard(this);
 
     }
