@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+
 public class Tile : MonoBehaviour
 {
 
@@ -13,8 +14,9 @@ public class Tile : MonoBehaviour
     private bool isBuild = false;
     private BuildingCard currBuilding;
     private SeedCard currSeed;
+    private LivestockCard currAnimal;
     private bool isSeed = false;
-    
+    private bool isAnimal = false;
     private CardPlayManager cardPlayManager;
 
 
@@ -94,6 +96,20 @@ public class Tile : MonoBehaviour
                 currSprite.sprite = crop.buildingSprite;
                 currSeed = crop;
                 isSeed = true;
+            } else {
+                return;
+            }
+        } else {
+            return;
+        }
+    }
+
+    public void ApplyLivestockTile(LivestockCard animal){
+        if(isBuild && !isAnimal){
+            if(currBuilding.buildingType == BuildingManagement.BuildingType.ANIMALPEN){
+                currSprite.sprite = animal.cardSprite;
+                currAnimal = animal;
+                isAnimal = true;
             } else {
                 return;
             }

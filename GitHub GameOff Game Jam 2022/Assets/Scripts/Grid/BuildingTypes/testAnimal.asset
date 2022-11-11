@@ -15,4 +15,4 @@ MonoBehaviour:
   cardSprite: {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
   buildingSprite: {fileID: 21300000, guid: 903bca7f528d26a40bdf0dfe5464d33a, type: 3}
   price: 10
-  buildingType: 2
+  buildingType: 1

@@ -1,21 +1,57 @@
 namespace TimeManagement
 {
+    using System.Text;
     using TMPro;
-    using UnityEngine.Assertions;
+    using UnityEngine;
 
+    /// <summary>
+    /// Responsible for changing the time panel depending on the updated point in time
+    /// </summary>
+    /// <author>Ben + Gino</author>
     public class TimePanel : ComputerPhaseStep
     {
-        public TextMeshProUGUI footerText;
-
-        private void Awake()
+        [SerializeField] private TMP_Text currentSeasonText;
+        [SerializeField] private TMP_Text footerText;
+        [SerializeField] private Animator sliderAnimator;
+        [SerializeField] private Animator newSeasonAnimator;
+                
+        protected override object[] CheckForMissingReferences() => new object[] 
         {
-            Assert.IsNotNull(footerText);
-        }
+            currentSeasonText, footerText, sliderAnimator, newSeasonAnimator
+        };
 
         private void UpdateUIElementsForNewTime(PointInTime time)
         {
-            footerText.text = $"Month {time.RoundInSeason} of {time.SeasonInYear}, year {time.Year}.\n" +
-                $"{time.GetRoundsRemainingInSeason()} months until {time.GetNextSeason()}";
+            print("Running UpdateUIElements");
+            if (!time.IsStartingPointInTime())
+            {
+                sliderAnimator.SetTrigger("Next");
+            }
+        }
+
+        public void OnEndTurnButtonClicked() => TimeManager.Instance.FinishCurrentPhase();
+
+        public void UpdateTextComponents()
+        {
+            var time = TimeManager.Instance.CurrentTime;
+            StringBuilder seasonFormatted = new StringBuilder();
+            seasonFormatted.Append("<b>");
+            seasonFormatted.Append(time.SeasonInYear.ToString());
+            seasonFormatted.Append("</b> | Year ");
+            seasonFormatted.Append(time.Year);
+            currentSeasonText.text = seasonFormatted.ToString();
+
+            string nextSeason = time.GetNextSeason().ToString().ToLower();
+            string nextSeasonFormatted = nextSeason[0].ToString().ToUpper() + nextSeason.Substring(1);
+            int remainingRounds = time.GetRoundsRemainingInSeason() + 1;
+            footerText.text =
+                $"{remainingRounds} turn{(remainingRounds > 1 ? "s" : "")} until {nextSeasonFormatted}";
+        }
+
+        public void TriggerNewSeasonAnimation()
+        {
+            newSeasonAnimator.Play("UISeasonChangePanelSpring");
+            // TODO: Differentiate seasons
         }
 
         public override void DoProcessingForComputerPhaseDuringGameInit()
@@ -25,6 +61,7 @@ namespace TimeManagement
 
         public override void DoProcessingForComputerPhase()
         {
+            print("Running DoProcessingFor");
             UpdateUIElementsForNewTime(TimeManager.Instance.CurrentTime);
         }
     }
