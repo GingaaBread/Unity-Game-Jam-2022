@@ -15,7 +15,7 @@ public class DiscardButton : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-
+        if (deckManager == null) Debug.LogError("DiscardButton script needs a deckManager variable");
 
         if (deckManager.Selected == null) return;
 

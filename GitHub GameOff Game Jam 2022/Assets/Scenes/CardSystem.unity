@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 1280357473}
   - component: {fileID: 1280357472}
   m_Layer: 5
-  m_Name: DeckTable
+  m_Name: DrawManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -892,7 +892,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a332086857b9724f94960a858f929d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deckTable: {fileID: 1280357472}
   deckUIBounds: {fileID: 1421918978}
   deckStartPoint: {fileID: 946592270}
 --- !u!1001 &2097556564
@@ -988,7 +987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5032541178000111027, guid: ed3ac109d0eeece48b381bdbdabdbc55, type: 3}
       propertyPath: m_Name
-      value: card1
+      value: card1 (deletable)
       objectReference: {fileID: 0}
     - target: {fileID: 5032541178000111027, guid: ed3ac109d0eeece48b381bdbdabdbc55, type: 3}
       propertyPath: m_IsActive
