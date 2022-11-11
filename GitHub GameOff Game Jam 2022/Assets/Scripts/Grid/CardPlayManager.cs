@@ -11,6 +11,7 @@ public class CardPlayManager : MonoBehaviour
    
     public BuildingCard currBuildingBeingPlayed;
     public SeedCard currSeedBeingPlayed;
+    public LivestockCard currAnimalBeingPlayed;
     
     //TODO: Add seperate methods for building and planting/livestock
     public void AddCurCard(BuildingCard card){
@@ -22,6 +23,10 @@ public class CardPlayManager : MonoBehaviour
         if(card==null) return;
         currSeedBeingPlayed = card;
     }
+    public void AddCurCard(LivestockCard card){
+        if(card==null) return;
+        currAnimalBeingPlayed = card;
+    }
     public void AddPlayToTile(Tile curr){
         if(currBuildingBeingPlayed != null){
             curr.ApplyBuildTile(currBuildingBeingPlayed);
@@ -29,6 +34,9 @@ public class CardPlayManager : MonoBehaviour
         } else if(currSeedBeingPlayed != null) {
            curr.ApplyCropTile(currSeedBeingPlayed);
            currSeedBeingPlayed = null;
+        } else if(currAnimalBeingPlayed != null) {
+            curr.ApplyLivestockTile(currAnimalBeingPlayed);
+            currAnimalBeingPlayed = null;
         } else {
              return; // TODO:: can have some sort of UI message here since it means a card wasn't selected
         }
