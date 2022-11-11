@@ -3,7 +3,6 @@ namespace TimeManagement
     using System.Text;
     using TMPro;
     using UnityEngine;
-    using UnityEngine.Assertions;
 
     /// <summary>
     /// Responsible for changing the time panel depending on the updated point in time
@@ -23,11 +22,14 @@ namespace TimeManagement
 
         private void UpdateUIElementsForNewTime(PointInTime time)
         {
+            print("Running UpdateUIElements");
             if (!time.IsStartingPointInTime())
             {
                 sliderAnimator.SetTrigger("Next");
             }
         }
+
+        public void OnEndTurnButtonClicked() => TimeManager.Instance.FinishCurrentPhase();
 
         public void UpdateTextComponents()
         {
@@ -59,6 +61,7 @@ namespace TimeManagement
 
         public override void DoProcessingForComputerPhase()
         {
+            print("Running DoProcessingFor");
             UpdateUIElementsForNewTime(TimeManager.Instance.CurrentTime);
         }
     }

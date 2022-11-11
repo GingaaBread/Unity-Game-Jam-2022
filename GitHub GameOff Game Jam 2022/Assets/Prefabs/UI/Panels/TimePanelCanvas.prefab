@@ -2333,9 +2333,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TimeManagement.TimeManager, Assembly-CSharp
-        m_MethodName: FinishCurrentPhase
+      - m_Target: {fileID: 2605655698986282452}
+        m_TargetAssemblyTypeName: TimeManagement.TimePanel, Assembly-CSharp
+        m_MethodName: OnEndTurnButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
