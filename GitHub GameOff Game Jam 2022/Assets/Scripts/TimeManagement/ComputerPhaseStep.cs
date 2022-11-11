@@ -1,8 +1,6 @@
 namespace TimeManagement
 {
-    using UnityEngine;
-
-    public abstract class ComputerPhaseStep : MonoBehaviour
+    public abstract class ComputerPhaseStep : InspectorReferenceChecker
     {
 
         public abstract void DoProcessingForComputerPhaseDuringGameInit();

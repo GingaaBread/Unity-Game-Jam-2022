@@ -2,6 +2,10 @@ namespace TimeManagement
 {
     using System;
 
+    /// <summary>
+    /// Defines explicit points in time, defined by a year, month, and season
+    /// </summary>
+    /// <author>Ben</author>
     public class PointInTime
     {
         // hardcoded definitions of how time should progress
@@ -61,7 +65,8 @@ namespace TimeManagement
         public override string ToString() => "Year " + Year + ", " + SeasonInYear.ToString() + ", Month " + RoundInSeason;
         public SeasonType GetNextSeason() => GetNextSeason(SeasonInYear);
         public int GetRoundsRemainingInSeason() => LAST_ROUND_IN_SEASON - RoundInSeason;
-
+        public bool IsStartingPointInTime() => Year == FIRST_YEAR && RoundInSeason == FIRST_ROUND_IN_SEASON && SeasonInYear == SEASON_IN_YEAR_SEQUENCE[0];
+        public bool IsFirstRoundOfSeason() => RoundInSeason == FIRST_ROUND_IN_SEASON;
 
         private static int GetSeasonIndex(SeasonType s) => Array.IndexOf(SEASON_IN_YEAR_SEQUENCE, s);
 

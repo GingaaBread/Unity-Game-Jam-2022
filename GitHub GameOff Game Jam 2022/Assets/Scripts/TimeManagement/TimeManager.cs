@@ -6,16 +6,17 @@ namespace TimeManagement
     using UnityEngine.Assertions;
     using UnityEngine.Events;
 
-    /*
-    This class owns...
-    - The source of truth for current time, made available to other classes via TimeManager.time
-    - Updating the time at the start of the computer phase
-    - Firing events (OnStartPreTurn, OnStartPlayerTurn, OnEndPlayerTurn)
-    - During computer phase, Syncronously calls various other systems during 
-        computer phase to do their work (like a tile manager, time displayer, and probably a dozen others). 
-        To make this easy to update, TimeManager will have a public array of classes which extend ComputerPhaseStep
-        and therefore must implement ComputerPhaseStep.ProcessComputerPhase()
-    */
+    /// <summary>
+    /// This class owns...
+    /// - The source of truth for current time, made available to other classes via TimeManager.time
+    /// - Updating the time at the start of the computer phase
+    /// - Firing events (OnStartPreTurn, OnStartPlayerTurn, OnEndPlayerTurn)
+    /// - During computer phase, Syncronously calls various other systems during
+    ///    computer phase to do their work (like a tile manager, time displayer, and probably a dozen others). 
+    ///    To make this easy to update, TimeManager will have a public array of classes which extend ComputerPhaseStep
+    ///    and therefore must implement ComputerPhaseStep.ProcessComputerPhase()
+    /// </summary>
+    /// <author>Ben</author>
     public class TimeManager : MonoBehaviour
     {
 
