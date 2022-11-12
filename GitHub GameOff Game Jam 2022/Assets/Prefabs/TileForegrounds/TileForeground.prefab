@@ -51,5 +51,5 @@ MonoBehaviour:
   _defaultSeedCard: {fileID: 0}
   _defaultSeason: 0
   _defaultAgePercentage: 0
-  lakePrefab: {fileID: 135514813546859715, guid: fcd00f9cc3996d844a7f009158366f57, type: 3}
+  lakePrefab: {fileID: 135514813546859715, guid: 18aa59777f2892844bf99b4719da0767, type: 3}
   forestPrefab: {fileID: 135514813546859715, guid: fcd00f9cc3996d844a7f009158366f57, type: 3}
