@@ -44,17 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c1b4d5b8e2e874895f6f59e0dbfd7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _debugMode_AutoInit: 0
-  _foregroundType: 1
-  _tileType: 0
-  _animalType: 0
-  _seedType: 0
-  forestPrefab: {fileID: 0}
-  cowPrefab: {fileID: 290865623841320278, guid: bdc7f36fd35741341a1284becc75f4cf, type: 3}
-  pigPrefab: {fileID: 135514813546859715, guid: 93c16e3c76431c543aae693dae215b9e, type: 3}
-  beesPrefab: {fileID: 135514813546859715, guid: a8ec8f21d0eaefa4abdb3b90829f5280, type: 3}
-  lakePrefab: {fileID: 0}
-  forrestPrefab: {fileID: 135514813546859715, guid: fcd00f9cc3996d844a7f009158366f57, type: 3}
-  wheatPrefab: {fileID: 0}
-  oatsPrefab: {fileID: 0}
-  flowersPrefab: {fileID: 0}
+  _debugMode_AutoInitUsingDefaults: 0
+  _defaultTileType: 0
+  _defaultBuidlingCard: {fileID: 0}
+  _defaultLivestockCard: {fileID: 0}
+  _defaultSeedCard: {fileID: 0}
+  _defaultSeason: 0
+  _defaultAgePercentage: 0
+  lakePrefab: {fileID: 135514813546859715, guid: fcd00f9cc3996d844a7f009158366f57, type: 3}
+  forestPrefab: {fileID: 135514813546859715, guid: fcd00f9cc3996d844a7f009158366f57, type: 3}
