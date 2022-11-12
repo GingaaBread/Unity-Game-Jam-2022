@@ -8,6 +8,8 @@ public class BuildingCard : ActionCardSO
 {
     private CardPlayManager cardPlayManager;
     public BuildingType buildingType;
+    public GameObject tileForegroundChildPrefab;
+
     public override void Action()
     {
         cardPlayManager = FindObjectOfType<CardPlayManager>();
