@@ -469,13 +469,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69d030d9f270ced4484e1559571c09b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  availableCards:
+  cardList:
   - {fileID: 11400000, guid: 8fa6551724ebe074d9dac096052e2301, type: 2}
   - {fileID: 11400000, guid: 6d30e979a697aba4db3911b413b14293, type: 2}
-  - {fileID: 11400000, guid: 6d61378bc8fee464a954c460ecac68a5, type: 2}
   - {fileID: 11400000, guid: e475efa77ad539648ab5e6f711d54805, type: 2}
+  - {fileID: 11400000, guid: 6d61378bc8fee464a954c460ecac68a5, type: 2}
+  - {fileID: 11400000, guid: b9b2b97a0eea9d64da9e87fdb99baf3a, type: 2}
+  - {fileID: 11400000, guid: 904a6beca9ff82b49bec189c89e5a3c1, type: 2}
   manager: {fileID: 1844536370}
   cardPrefab: {fileID: 5032541178000111027, guid: ed3ac109d0eeece48b381bdbdabdbc55, type: 3}
+  deckSize: 30
   pooledCards: []
 --- !u!114 &1280357473
 MonoBehaviour:
