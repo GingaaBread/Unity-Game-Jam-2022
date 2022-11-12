@@ -28,7 +28,7 @@ public class TileForegroundChild : MonoBehaviour {
     [Header("animation offset per SpriteRenderer")]
     [Tooltip("list all animation offset times from 0 to 1, in same order as spritesInOrder")] [SerializeField] private float[] _animationOffsetsInSortOrder;
 
-    public enum ForegroundType { VariableBySeason, VariableByAge }
+    public enum ForegroundType { NotVariable, VariableBySeason, VariableByAge }
     private const string ANIMATION_PARAM_FOR_CYCLE_OFFSET = "CycleOffset";
 
     private void Awake() {
@@ -44,13 +44,15 @@ public class TileForegroundChild : MonoBehaviour {
             AssertSpriteArayHasNoNulls(_winterSpritesInOrder, "TileForegroundSortOrderPositioner didn't expect any nulls in the winterSpritesInOrder array");
             AssertSpriteArayHasNoNulls(_springSpritesInOrder, "TileForegroundSortOrderPositioner didn't expect any nulls in the springSpritesInOrder array");
             AssertSpriteArayHasNoNulls(_autumnSpritesInOrder, "TileForegroundSortOrderPositioner didn't expect any nulls in the autumnSpritesInOrder array");
-        } else {
+        } else if(foregroundType == ForegroundType.VariableByAge) {
             Assert.IsTrue(_sproutSpritesInOrder.Length   == _spritesInOrder.Length, "TileForegroundSortOrderPositioner didn't expect different sized sprout sprites array");
             Assert.IsTrue(_growingSpritesInOrder.Length  == _spritesInOrder.Length, "TileForegroundSortOrderPositioner didn't expect different sized growing sprites arrays");
             Assert.IsTrue(_finishedSpritesInOrder.Length == _spritesInOrder.Length, "TileForegroundSortOrderPositioner didn't expect different sized finished sprites arrays");
             AssertSpriteArayHasNoNulls(_sproutSpritesInOrder,   "TileForegroundSortOrderPositioner didn't expect any nulls in the _sproutSpritesInOrder array");
             AssertSpriteArayHasNoNulls(_growingSpritesInOrder,  "TileForegroundSortOrderPositioner didn't expect any nulls in the _growingSpritesInOrder array");
             AssertSpriteArayHasNoNulls(_finishedSpritesInOrder, "TileForegroundSortOrderPositioner didn't expect any nulls in the _finishedSpritesInOrder array");
+        } else if (foregroundType == ForegroundType.NotVariable) {
+            // no asserting needed
         }
 
         Assert.IsTrue(_animationOffsetsInSortOrder.Length == _spritesInOrder.Length, "TileForegroundSortOrderPositioner didn't expect different sized _animationOffsetsInSortOrder array");
@@ -76,7 +78,10 @@ public class TileForegroundChild : MonoBehaviour {
                 case SeasonType.SPRING: spriteArrayToUse = _springSpritesInOrder; break;
                 default: throw new System.Exception($"TileForegroundChild didn't expect season {season}");
             }
-        } else {
+            for (int i = 0; i < _spritesInOrder.Length; i++) {
+                _spritesInOrder[i].sprite = spriteArrayToUse[i];
+            }
+        } else if (foregroundType == ForegroundType.VariableByAge) {
             Assert.IsTrue(agePercentage >= 0 && agePercentage <= 1);
             if(agePercentage <= _agePercentMaxForSprout) {
                 spriteArrayToUse = _sproutSpritesInOrder;
@@ -85,10 +90,11 @@ public class TileForegroundChild : MonoBehaviour {
             } else {
                 spriteArrayToUse = _finishedSpritesInOrder;
             }
-        }
-
-        for (int i = 0; i < _spritesInOrder.Length; i++) {
-            _spritesInOrder[i].sprite = spriteArrayToUse[i];
+            for (int i = 0; i < _spritesInOrder.Length; i++) {
+                _spritesInOrder[i].sprite = spriteArrayToUse[i];
+            }
+        } else if (foregroundType == ForegroundType.NotVariable) {
+            // no update needed
         }
     }
 

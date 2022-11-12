@@ -33,7 +33,7 @@ public class TileForeground : MonoBehaviour {
             else if (_defaultSeedCard      != null) { Initialize(_defaultSeedCard,      tileSortOrder, true, _defaultSeason); } 
             else if (_defaultBuidlingCard  != null) { Initialize(_defaultBuidlingCard,  tileSortOrder, true, _defaultSeason); } 
             else {                                    Initialize(_defaultTileType,      tileSortOrder, true, _defaultSeason); }
-            //UpdateForSeasonAndAgePercentage(_defaultSeason, _defaultAgePercentage);
+            UpdateForSeasonAndAgePercentage(_defaultSeason, _defaultAgePercentage);
         }
 
     }
