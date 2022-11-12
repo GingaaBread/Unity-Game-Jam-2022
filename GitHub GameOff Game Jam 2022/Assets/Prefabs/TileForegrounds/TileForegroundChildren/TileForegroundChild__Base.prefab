@@ -77,8 +77,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72c1038fd0664c74687aefb19120a980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spritesInOrder:
+  _spritesInOrder:
   - {fileID: 9055472209917217483}
+  foregroundType: 0
+  _sproutSpritesInOrder: []
+  _growingSpritesInOrder: []
+  _finishedSpritesInOrder: []
+  _agePercentMaxForSprout: 0.333
+  _agePercentMaxForGrowing: 0.666
+  _summerSpritesInOrder: []
+  _winterSpritesInOrder: []
+  _springSpritesInOrder: []
+  _autumnSpritesInOrder: []
+  _animationOffsetsInSortOrder:
+  - 0
 --- !u!1 &7878319523037021201
 GameObject:
   m_ObjectHideFlags: 0

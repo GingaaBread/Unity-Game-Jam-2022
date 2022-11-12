@@ -282,6 +282,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4056802189797110475, guid: fae5a40def24add47934a47353884fc9, type: 3}
+      propertyPath: foregroundType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4056802189797110475, guid: fae5a40def24add47934a47353884fc9, type: 3}
       propertyPath: spritesInOrder.Array.size
       value: 3
       objectReference: {fileID: 0}
