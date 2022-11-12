@@ -8,6 +8,8 @@ public class SeedCard : ActionCardSO
 {
     private CardPlayManager cardPlayManager;
     public SeedType buildingType;
+    public GameObject tileForegroundChildPrefab;
+
     public override void Action()
     {
         cardPlayManager = FindObjectOfType<CardPlayManager>();

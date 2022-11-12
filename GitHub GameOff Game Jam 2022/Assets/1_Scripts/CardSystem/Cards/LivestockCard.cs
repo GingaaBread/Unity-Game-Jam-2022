@@ -8,6 +8,8 @@ public class LivestockCard : ActionCardSO
 {
     private CardPlayManager cardPlayManager;
     public AnimalType animalType;
+    public GameObject tileForegroundChildPrefab;
+
     public override void Action()
     {
         cardPlayManager = FindObjectOfType<CardPlayManager>();
