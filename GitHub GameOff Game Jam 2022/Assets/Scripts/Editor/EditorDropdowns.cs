@@ -85,6 +85,16 @@ public class EditorDropdowns : EditorWindow
         FeedbackPanelManager.Instance.EnqueueCardReception(new FeedbackPanelManager.Card(), false); // TODO: Replace by actual card class
     }
 
+    [MenuItem("Gamejam/Quest/TellQuestManagerWeGot5Wheat")]
+    static void TellQuestManagerWeGot5Wheat() {
+        IgnoreIdleEditorActions();
+
+        ResourceSO wheatResource = (ResourceSO)AssetDatabase.LoadAssetAtPath(
+            "Assets/Scripts/PlayerData/ResourceSOs/Wheat.asset",
+            typeof(ResourceSO));
+        QuestManager.Instance.NotifyOfResourceCollected(wheatResource, 5);
+    }
+
     // Management
 
     private static void IgnoreIdleEditorActions()
