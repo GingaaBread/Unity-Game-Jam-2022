@@ -478,7 +478,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 904a6beca9ff82b49bec189c89e5a3c1, type: 2}
   manager: {fileID: 1844536370}
   cardPrefab: {fileID: 5032541178000111027, guid: ed3ac109d0eeece48b381bdbdabdbc55, type: 3}
-  deckSize: 30
+  deckSize: 7
+  pileAmount: 8
   pooledCards: []
 --- !u!114 &1280357473
 MonoBehaviour:

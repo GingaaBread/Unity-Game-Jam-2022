@@ -20,11 +20,18 @@ public class DrawManager : MonoBehaviour, IPointerDownHandler
     public DeckManager manager;
     public GameObject cardPrefab;
 
-    public int deckSize = 240;
-    private int amountPerTurn = 20;
+    [Header("Drawing deck")]
 
-    public int pileAmount = 8;
-    private int currentAmount;
+    /// <summary>
+    /// Max amount of cards on a drawing deck.
+    /// </summary>
+    public int deckSize = 240;
+    /// <summary>
+    /// Amount of cards added to the drawing deck each turn.
+    /// </summary>
+    public int pileSize = 30;
+
+    private int cardsDrawn;
 
     float cooldown = 0.2f;
     float timer;
@@ -33,7 +40,7 @@ public class DrawManager : MonoBehaviour, IPointerDownHandler
 
     private List<ActionCardSO> cropCards = new List<ActionCardSO>();
     private List<ActionCardSO> buildCards = new List<ActionCardSO>();
-    private List<ActionCardSO> passiveCards = new List<ActionCardSO>();
+    private List<ActionCardSO> liveStockCards = new List<ActionCardSO>();
 
     private List<ActionCardSO> shuffledCards = new List<ActionCardSO>();
     private List<ActionCardSO> piledCards = new List<ActionCardSO>();
@@ -41,8 +48,8 @@ public class DrawManager : MonoBehaviour, IPointerDownHandler
     public void Start()
     {
         CheckNull();
-
-        ShuffleCards();
+        GetCardTypes();
+        AddBalancedCards();
 
         if (Instance == null) Instance = this;
         else 
@@ -55,6 +62,12 @@ public class DrawManager : MonoBehaviour, IPointerDownHandler
 
     public void Update()
     {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Debug.Log("balanced cards!");
+            AddBalancedCards();
+        }
+
         timer += Time.deltaTime;
     }
 
@@ -76,7 +89,7 @@ public class DrawManager : MonoBehaviour, IPointerDownHandler
     public void GiveCard(int amount = 1) 
     {
 
-        if(currentAmount <= 0) 
+        if(cardsDrawn >= deckSize) 
         {
             Debug.LogError("Drawing deck is out of cards!");
             return;
@@ -89,8 +102,8 @@ public class DrawManager : MonoBehaviour, IPointerDownHandler
             AssignCardData(card.transform);
 
             manager.AddCardToList(card.transform.GetComponent<CardScript>());
-
-            currentAmount -= 1;
+            
+            cardsDrawn += 1;
 
         }
     }
@@ -100,9 +113,8 @@ public class DrawManager : MonoBehaviour, IPointerDownHandler
         CardScript cardScript = card.GetComponent<CardScript>();
         if (cardScript == null) return;
 
-        int randInt = Random.Range(0, shuffledCards.Count);
-
-        cardScript.Card = shuffledCards[randInt];
+        cardScript.Card = shuffledCards[cardsDrawn];
+        Debug.Log($"given card: {shuffledCards[cardsDrawn].name} index: {cardsDrawn}");
     }
 
     private GameObject GetPooledCard() 
@@ -123,43 +135,63 @@ public class DrawManager : MonoBehaviour, IPointerDownHandler
 
     // ADD THIS FUNCTION (ShuffleCards) EVERY TIME A TURN ENDS 
     /// <summary>
-    /// Adds and shuffles cards appropiately to the deck
+    /// Adds and shuffles cards appropriately to the deck
     /// </summary>
-    public void ShuffleCards() 
+    /// 
+    public void AddBalancedCards() 
     {
 
-        currentAmount += amountPerTurn;
+        if (shuffledCards.Count >= deckSize) return;
 
-        GetCardTypes();
-
+        int addAmount = (cardsDrawn + pileSize > deckSize) ? deckSize - cardsDrawn : pileSize;
 
         int x = 24;                 // crop card amount
         int y = Random.Range(3, 5); // build card amount
         int z = 6 - y;              // livestock card amount
 
-        for (int i = 0; i < 30; i++)
+        for (int i = 0; i < addAmount; i++)
         {
             if (i < x)
             {
                 // Crop cards
                 int rand = Random.Range(0, cropCards.Count);
-                shuffledCards.Add(cropCards[rand]);
+                piledCards.Add(cropCards[rand]);
             }
             else if (i >= x && i < x + z )
             {
                 // Livestock cards
-                int rand = Random.Range(0, passiveCards.Count);
-                shuffledCards.Add(passiveCards[rand]);
+                int rand = Random.Range(0, liveStockCards.Count);
+                piledCards.Add(liveStockCards[rand]);
             }
             else
             {
                 // BuildCards
                 int rand = Random.Range(0, buildCards.Count);
-                shuffledCards.Add(buildCards[rand]);
+                piledCards.Add(buildCards[rand]);
             }
-            
-
         }
+
+
+        RandomizeList(piledCards);
+    }
+
+    private void RandomizeList(List<ActionCardSO> list) 
+    {
+
+        int startSize = list.Count;
+
+        for (int i = 0; i < startSize; i++)
+        {
+            int rand = Random.Range(0, list.Count);
+
+            ActionCardSO item = list[rand];
+            list.Remove(item);
+            shuffledCards.Add(item);
+        }
+
+        list.Clear();
+
+
     }
 
     private void GetCardTypes() 
@@ -171,9 +203,9 @@ public class DrawManager : MonoBehaviour, IPointerDownHandler
                 buildCards.Add(c);
                 continue;
             }
-            if (c is PassiveCard)
+            if (c is LivestockCard)
             {
-                passiveCards.Add(c);
+                liveStockCards.Add(c);
                 continue;
             }
             if (c is SeedCard)
