@@ -20,14 +20,17 @@ public class GridSet : MonoBehaviour
     {
         float spriteWidth = tile.GetComponent<SpriteRenderer>().size.x;
         float spriteHeight = tile.GetComponent<SpriteRenderer>().size.y;
-        for (int i = 0; i < width; i++){
-            for(int f = 0; f< height; f++){
+        for (int rows = 0; rows < width; rows++){
+            for(int columns = 0; columns< height; columns++){
                 if(tile!= null){
-                    if(i % 2 == 0 ){
-                        GameObject spawned = Instantiate(tile, new Vector3(transform.position.x+(i*1.5f*spriteWidth), transform.position.y-(f*2*spriteHeight),0f), Quaternion.identity, transform);
-                      
+                    if(rows % 2 == 0 ){
+                        GameObject spawned = Instantiate(tile, new Vector3(transform.position.x+(rows*1.5f*spriteWidth), transform.position.y-(columns*1.85f*spriteHeight),0f), Quaternion.identity, transform);
+                        int currentRow = (columns * 2) + 1 ;
+                       spawned.GetComponent<Tile>().SetSpriteOrderLayer(currentRow);
                     } else {
-                        GameObject spawned = Instantiate(tile, new Vector3(transform.position.x+(i*1.5f*spriteWidth), transform.position.y+1f-(f*2*spriteHeight),0f), Quaternion.identity, transform);
+                        GameObject spawned = Instantiate(tile, new Vector3(transform.position.x+(rows*1.5f*spriteWidth), transform.position.y+.9f-(columns*1.85f*spriteHeight),0f), Quaternion.identity, transform);
+                        int currentRow = columns * 2;
+                        spawned.GetComponent<Tile>().SetSpriteOrderLayer(currentRow);
                     }
                     
                 }

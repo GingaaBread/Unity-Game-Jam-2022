@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5525233018206192971}
   - component: {fileID: 5882574006738571510}
   m_Layer: 0
-  m_Name: perfectTile
+  m_Name: TIle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 71cb17aad6f5b1d4492bd7b42b52308c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8018c600f0b43d246a90fbed609db0fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5976be3c8fa31c140bd3fb10ae7b5efa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layers: []
+  currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
 --- !u!60 &5882574006738571510
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -112,11 +112,11 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.6}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 2, y: 3.125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -124,11 +124,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.50835085, y: 1.0096307}
-      - {x: -0.525053, y: 1.0048151}
-      - {x: -1.002408, y: 0.058762074}
-      - {x: -0.9954014, y: -0.07106328}
-      - {x: -0.54180527, y: -0.9931021}
-      - {x: 0.5234103, y: -1.0022995}
-      - {x: 0.9908023, y: -0.06108761}
-      - {x: 1.0022993, y: 0.03166628}
+    - - {x: 0.4897375, y: 0.92819786}
+      - {x: -0.48549938, y: 0.9326887}
+      - {x: -1.0008831, y: 0.05723715}
+      - {x: -1.0013752, y: -0.10033393}
+      - {x: -0.49952888, y: -0.9669688}
+      - {x: 0.50479746, y: -0.9627464}
+      - {x: 1.0047622, y: -0.107620716}
+      - {x: 1.0046263, y: 0.05725956}
