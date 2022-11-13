@@ -17,3 +17,5 @@ MonoBehaviour:
   price: 10
   buildingType: 0
   tileForegroundChildPrefab: {fileID: 290865623841320278, guid: 9be5cf1dc80a45e49b6f1def06068f7c, type: 3}
+  payoffResource: {fileID: 11400000, guid: 7a84d3e4d06d24246be27cda976d6fc7, type: 2}
+  payoffAmount: 0

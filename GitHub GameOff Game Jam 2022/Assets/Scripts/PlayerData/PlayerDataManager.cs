@@ -1,4 +1,4 @@
-namespace PlayerManagement
+namespace PlayerData
 {
     using System;
     using System.Collections.Generic;
@@ -32,13 +32,13 @@ namespace PlayerManagement
         public int AmountOfMoney { get; private set; }
 
         // A hashmap is used to have a dynamic range of items that can be added
-        private Dictionary<string, int> inventoryDictionary;
+        private Dictionary<ResourceSO, int> inventoryDictionary;
 
         private void Awake()
         {
-            inventoryDictionary = new Dictionary<string, int>();
+            inventoryDictionary = new Dictionary<ResourceSO, int>();
 
-            Assert.IsNull(_instance, "TimeManager singleton is already set. (check there is only one TimeManager in the scene)");
+            Assert.IsNull(_instance, "PlayerDataManager singleton is already set. (check there is only one PlayerDataManager in the scene)");
             Instance = this;            
         }
 
@@ -50,6 +50,7 @@ namespace PlayerManagement
         /// <param name="amount">How much money should be added?</param>
         public void IncreaseMoneyAmount(int amount)
         {
+            Assert.IsTrue(amount > 0);
             AmountOfMoney += amount;
             // TODO: UI Notification
         }
@@ -64,6 +65,7 @@ namespace PlayerManagement
         /// </exception>
         public void DecreaseMoneyAmount(int amount)
         {
+            Assert.IsTrue(amount > 0);
             AmountOfMoney -= amount;
             // TODO: notification?
 
@@ -84,77 +86,82 @@ namespace PlayerManagement
         /// Used to add an item to the hashmap for the first time
         /// The item name is the key, and the initial value is zero
         /// </summary>
-        /// <param name="itemName">How should the item be called? (case sensitive)</param>
-        public void InitialiseInventoryItem(string itemName)
+        /// <param name="resourceToInitialise">Which scriptable object should be added to the hashmap?</param>
+        public void InitialiseInventoryItem(ResourceSO resourceToInitialise)
         {
-            inventoryDictionary.Add(itemName, 0);
+            inventoryDictionary.Add(resourceToInitialise, 0);
         }
 
         /// <summary>
         /// Used to increase the item amount of the specified item
         /// Example usecases would be harvesting a crop or an animal product
         /// </summary>
-        /// <param name="itemName">The item amount of which item should be increased? (case sensitive)</param>
+        /// <param name="resourceToIncrease">The item amount of which item should be increased? (case sensitive)</param>
         /// <param name="amountToIncrease"></param>
         /// <exception cref="ApplicationException">
         /// Thrown when the item is not in the hashmap.
         /// Use InitialiseInventoryItem() first or check case sensitivity
         /// </exception>
-        public void IncreaseInventoryItemAmount(string itemName, int amountToIncrease)
+        public void IncreaseInventoryItemAmount(ResourceSO resourceToIncrease, int amountToIncrease)
         {
-            if (HasItemInInventory(itemName))
+            Assert.IsTrue(amountToIncrease > 0);
+
+            if (!HasItemInInventory(resourceToIncrease))
             {
-                inventoryDictionary[itemName] += amountToIncrease;
-                // Todo: Notification?
+                InitialiseInventoryItem(resourceToIncrease);
             }
-            else throw new ApplicationException("Trying to increase an item amount of " +
-                $"an item from the player's inventory that doesn't exist: {itemName}.");
+
+            inventoryDictionary[resourceToIncrease] += amountToIncrease;
+            // Todo: Notification?
         }
 
         /// <summary>
         /// Used to decreasse the item amount of the specified item
         /// Example usecases would be selling a crop or an animal product
         /// </summary>
-        /// <param name="itemName">The item amount of which item should be decreased? (case sensitive)</param>
-        /// <param name="amountToIncrease"></param>
+        /// <param name="resourceToDecrease">The item amount of which item should be decreased? (case sensitive)</param>
+        /// <param name="amountToDecrease"></param>
         /// <exception cref="ApplicationException">
         /// Thrown when the item is not in the hashmap.
         /// Use InitialiseInventoryItem() first or check case sensitivity
         /// </exception>
-        public void DecreaseInventoryItemAmount(string itemName, int amountToDecrease)
+        public void DecreaseInventoryItemAmount(ResourceSO resourceToDecrease, int amountToDecrease)
         {
-            if (HasItemInInventory(itemName))
+            Assert.IsTrue(amountToDecrease > 0);
+
+            if (!HasItemInInventory(resourceToDecrease))
             {
-                inventoryDictionary[itemName] -= amountToDecrease;
-                // Todo: Notification?
+                InitialiseInventoryItem(resourceToDecrease);
             }
-            else throw new ApplicationException("Trying to decrease an item amount of " +
-               $"an item from the player's inventory that doesn't exist: {itemName}.");
+
+            Assert.IsTrue(inventoryDictionary[resourceToDecrease] >= amountToDecrease);
+
+            inventoryDictionary[resourceToDecrease] -= amountToDecrease;
+            // Todo: Notification?
         }
 
         /// <summary>
         /// Returns if the specified item has already been initialised and added to the inventory
         /// </summary>
-        /// <param name="itemName">The item name to check</param>
+        /// <param name="resourceToCheck">The resource scriptable object to check</param>
         /// <returns>true if it exists in the hashmap, else false</returns>
-        public bool HasItemInInventory(string itemName) => inventoryDictionary.ContainsKey(itemName);
+        public bool HasItemInInventory(ResourceSO resourceToCheck) => inventoryDictionary.ContainsKey(resourceToCheck);
 
         /// <summary>
         /// Returns the item amount of the specified item as an int
         /// </summary>
-        /// <param name="ofItemName">The amount of which item name?</param>
+        /// <param name="ofResource">The amount of which resource?</param>
         /// <returns>The amount of the specified item</returns>
         /// /// <exception cref="ApplicationException">
         /// Thrown when the item is not in the hashmap.
         /// Use InitialiseInventoryItem() first or check case sensitivity
         /// </exception>
-        public int GetInventoryItemAmount(string ofItemName)
+        public int GetInventoryItemAmount(ResourceSO ofResource)
         {
-            if (HasItemInInventory(ofItemName))
-                return inventoryDictionary[ofItemName];
+            if (HasItemInInventory(ofResource))
+                return inventoryDictionary[ofResource];
 
-            throw new ApplicationException("Trying to get an item amount of " +
-               $"an item from the player's inventory that doesn't exist: {ofItemName}.");
+            return 0;
         }
     }
 }

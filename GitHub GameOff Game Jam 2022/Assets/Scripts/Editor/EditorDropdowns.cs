@@ -1,3 +1,4 @@
+using PlayerData;
 using TimeManagement;
 using UIManagement;
 using UnityEditor;
@@ -21,6 +22,21 @@ public class EditorDropdowns : EditorWindow
     {
         IgnoreIdleEditorActions();
         TimeManager.Instance.FinishCurrentPhase();
+    }
+
+    // Resource Test
+    
+    [MenuItem("Gamejam/Resource/TestAdd", false, 0)]
+    static void AddTestResource()
+    {
+        ResourceSO testResource = 
+            (ResourceSO)AssetDatabase.LoadAssetAtPath("Assets/Scripts/PlayerData/ResourceSOs/Wheat.asset", 
+            typeof(ResourceSO));
+
+        Debug.Log($"New item amount: {PlayerDataManager.Instance.GetInventoryItemAmount(testResource)}. Exp. 0");
+        
+        PlayerDataManager.Instance.IncreaseInventoryItemAmount(testResource, 5);
+        Debug.Log($"New item amount: {PlayerDataManager.Instance.GetInventoryItemAmount(testResource)}. Exp. 5");
     }
 
     // UI
