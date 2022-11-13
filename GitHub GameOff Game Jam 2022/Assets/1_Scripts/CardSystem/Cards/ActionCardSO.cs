@@ -9,8 +9,11 @@ public abstract class ActionCardSO : ScriptableObject
 
     public Sprite cardSprite;
     public Sprite buildingSprite;
-
-    public float price = 10;
+    public string cardTitle;
+    public string cardSummary;
+    public string[] cardEffectKeys;
+    public string[] cardEffectValues;
+    public int cardCost = 10;
 
     public abstract void Action();
 }
