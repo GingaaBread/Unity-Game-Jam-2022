@@ -39,7 +39,9 @@ namespace PlayerData
             inventoryDictionary = new Dictionary<ResourceSO, int>();
 
             Assert.IsNull(_instance, "PlayerDataManager singleton is already set. (check there is only one PlayerDataManager in the scene)");
-            Instance = this;            
+            Instance = this;
+
+            Assert.IsNotNull(QuestManager.Instance, "PlayerDataManager expects QuestManager to exist in scene");
         }
 
         // Money Management
@@ -112,7 +114,7 @@ namespace PlayerData
             }
 
             inventoryDictionary[resourceToIncrease] += amountToIncrease;
-            // Todo: Notification?
+            QuestManager.Instance.NotifyOfResourceCollected(resourceToIncrease, amountToIncrease);
         }
 
         /// <summary>
