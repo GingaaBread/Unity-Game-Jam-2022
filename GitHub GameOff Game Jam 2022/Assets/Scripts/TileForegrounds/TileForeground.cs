@@ -10,7 +10,7 @@ public class TileForeground : MonoBehaviour {
     [Header("Debug options for testing only")]
     [Tooltip("When set, the object will auto initialize on Awake and use the state settings marked here as defaults.")]
     [SerializeField] private bool          _debugMode_AutoInitUsingDefaults;
-    [SerializeField] private TileType      _defaultTileType;
+    [SerializeField] private TileTypeSO      _defaultTileType;
     [SerializeField] private BuildingCard  _defaultBuidlingCard;
     [SerializeField] private LivestockCard _defaultLivestockCard;
     [SerializeField] private SeedCard      _defaultSeedCard;
@@ -39,15 +39,10 @@ public class TileForeground : MonoBehaviour {
     }
 
 
-    public void Initialize(TileType tileType, int tileSortOrder, bool alwaysAnimate, SeasonType season) {
-        switch (tileType) {
-            case TileType.LAKE: _child = Instantiate(lakePrefab, transform, false); break;
-            case TileType.FOREST: _child = Instantiate(forestPrefab, transform, false); break;
-            case TileType.MOUNTAIN: break;
-            case TileType.PLAINS: break;
-            case TileType.HILLS: break;
-            default: Debug.LogError($"TileForeground {this.name} never expected _tileType of {tileType}?"); break;
-        }
+    public void Initialize(TileTypeSO baseTile, int tileSortOrder, bool alwaysAnimate, SeasonType season) {
+        if(baseTile.tileForegroundChildPrefab == null)
+            return;
+        _child = Instantiate(baseTile.tileForegroundChildPrefab, transform, false);
         ForegroundIndependentInit(tileSortOrder, alwaysAnimate, season);
     }
     public void Initialize(BuildingCard buildingCard, int tileSortOrder, bool alwaysAnimate, SeasonType season) {

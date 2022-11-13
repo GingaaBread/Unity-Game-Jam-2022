@@ -6,5 +6,6 @@ public class TileTypeSO : ScriptableObject
 {
     public TileType type;
     public Sprite picture;
+    public GameObject tileForegroundChildPrefab;
 
 }

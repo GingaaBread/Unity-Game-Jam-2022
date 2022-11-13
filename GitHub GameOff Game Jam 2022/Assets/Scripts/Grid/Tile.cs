@@ -19,6 +19,8 @@ public class Tile : MonoBehaviour
     private bool isAnimal = false;
     private CardPlayManager cardPlayManager;
 
+    private int _tileRowNum;
+
 
 
     void Awake()
@@ -116,6 +118,11 @@ public class Tile : MonoBehaviour
         } else {
             return;
         }
+    }
+
+    public void SetSpriteOrderLayer(int currentRow){
+        _tileRowNum = currentRow;
+        GetComponent<SpriteRenderer>().sortingOrder = _tileRowNum * 10 ;
     }
 
 }
