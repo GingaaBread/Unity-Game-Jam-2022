@@ -7,7 +7,8 @@ namespace BuildingManagement
     {
        COW,
        PIG,
-       BEES
-
+       BEES,
+       FISH,
+       SHEEP
     }
 }
