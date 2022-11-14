@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c341cea1d7edb0546a3a3d50232322e8, type: 3}
   m_Name: WheatCard
   m_EditorClassIdentifier: 
-  cardSprite: {fileID: 21300000, guid: 98fdf9273d506c74096ce8c42c5b1303, type: 3}
+  cardSprite: {fileID: 21300000, guid: 38d9fbea1ec51f34082db39ee0b16192, type: 3}
   buildingSprite: {fileID: 0}
-  price: 10
+  cardTitle: 
+  cardSummary: 
+  cardEffectKeys: []
+  cardEffectValues: []
+  cardCost: 10
   buildingType: 0
   tileForegroundChildPrefab: {fileID: 290865623841320278, guid: 9be5cf1dc80a45e49b6f1def06068f7c, type: 3}
   payoffResource: {fileID: 11400000, guid: 7a84d3e4d06d24246be27cda976d6fc7, type: 2}
