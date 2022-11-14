@@ -1,24 +1,32 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
-using UnityEngine.EventSystems;
+using Random = UnityEngine.Random;
 
-public class DrawManager : MonoBehaviour, IPointerDownHandler
+/// <summary>
+/// Handles all things related to the deck you draw cards from (as Im writing this its just a button).
+/// E.g : Giving cards at the start of the match, or when the player draws from the deck.
+/// </summary>
+/// <author>CROSTZARD + Gino</author>
+public class CardManager : MonoBehaviour
 {
+    // The singleton
+    private static CardManager _instance = null;
+    public static CardManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+                throw new Exception("CardManager singleton was called without CardManager being set up (check that CardManager is in the scene)");
+            return _instance;
+        }
+        private set { _instance = value; }
+    }
 
-
-    // CROSTZARD
-
-    //Summary: Handles all things related to the deck you draw cards from (as Im writing this its just a button).
-    // E.g : Giving cards at the start of the match, or when the player draws from the deck.
-
-    public static DrawManager Instance; // Singleton
+    public const int MAX_HANDCARD_AMOUNT = 5;
 
     public ActionCardSO[] cardList;
-
-    public DeckManager manager;
-    public GameObject cardPrefab;
 
     [Header("Drawing deck")]
 
@@ -33,10 +41,8 @@ public class DrawManager : MonoBehaviour, IPointerDownHandler
 
     private int cardsDrawn;
 
-    float cooldown = 0.2f;
-    float timer;
-
     [HideInInspector] public List<GameObject> pooledCards = new List<GameObject>();
+    private List<ActionCardSO> playerHandcards = new List<ActionCardSO>();
 
     private List<ActionCardSO> cropCards = new List<ActionCardSO>();
     private List<ActionCardSO> buildCards = new List<ActionCardSO>();
@@ -45,40 +51,14 @@ public class DrawManager : MonoBehaviour, IPointerDownHandler
     private List<ActionCardSO> shuffledCards = new List<ActionCardSO>();
     private List<ActionCardSO> piledCards = new List<ActionCardSO>();
 
-    public void Start()
+    private void Awake()
     {
+        Assert.IsNull(_instance, "CardManager singleton is already set. (check there is only one CardManager in the scene)");
+        Instance = this;
+
         CheckNull();
         GetCardTypes();
         AddBalancedCards();
-
-        if (Instance == null) Instance = this;
-        else 
-        {
-            Destroy(this);
-            Debug.LogError("Tried to set a second Instance of DrawManager");
-        }
-
-    }
-
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            Debug.Log("balanced cards!");
-            AddBalancedCards();
-        }
-
-        timer += Time.deltaTime;
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        if (timer < cooldown) return;
-        if (manager.CardsOnDeck >= 5) return;
-
-        GiveCard();
-
-        timer = 0;
     }
 
     /// <summary>
@@ -88,8 +68,7 @@ public class DrawManager : MonoBehaviour, IPointerDownHandler
 
     public void GiveCard(int amount = 1) 
     {
-
-        if(cardsDrawn >= deckSize) 
+        if (cardsDrawn >= deckSize) 
         {
             Debug.LogError("Drawing deck is out of cards!");
             return;
@@ -97,37 +76,22 @@ public class DrawManager : MonoBehaviour, IPointerDownHandler
 
         for (int i = 0; i < amount; i++)
         { 
-            GameObject card = pooledCards.Count > 0 ? GetPooledCard() : Instantiate(cardPrefab, manager.transform);
+            //GameObject card = pooledCards.Count > 0 ? GetPooledCard() : Instantiate(cardPrefab, cardContainer.transform);
 
-            AssignCardData(card.transform);
-
-            manager.AddCardToList(card.transform.GetComponent<CardScript>());
-            
-            cardsDrawn += 1;
-
+            UIMainPanel.Instance.DisplayCard(shuffledCards[cardsDrawn]);
+                        
+            cardsDrawn++;
         }
-    }
-
-    private void AssignCardData(Transform card) 
-    {
-        CardScript cardScript = card.GetComponent<CardScript>();
-        if (cardScript == null) return;
-
-        cardScript.Card = shuffledCards[cardsDrawn];
-        Debug.Log($"given card: {shuffledCards[cardsDrawn].name} index: {cardsDrawn}");
     }
 
     private GameObject GetPooledCard() 
     {
-
         GameObject card = pooledCards[0];
         pooledCards.RemoveAt(0);
 
         card.SetActive(true);
 
-
-        return card;
-    
+        return card;    
     }
 
 
@@ -140,7 +104,6 @@ public class DrawManager : MonoBehaviour, IPointerDownHandler
     /// 
     public void AddBalancedCards() 
     {
-
         if (shuffledCards.Count >= deckSize) return;
 
         int addAmount = (cardsDrawn + pileSize > deckSize) ? deckSize - cardsDrawn : pileSize;
@@ -157,13 +120,13 @@ public class DrawManager : MonoBehaviour, IPointerDownHandler
                 int rand = Random.Range(0, cropCards.Count);
                 piledCards.Add(cropCards[rand]);
             }
-            else if (i >= x && i < x + z )
+            else if (i >= x && i < x + z && liveStockCards.Count > 0)
             {
                 // Livestock cards
                 int rand = Random.Range(0, liveStockCards.Count);
                 piledCards.Add(liveStockCards[rand]);
             }
-            else
+            else if (buildCards.Count > 0)
             {
                 // BuildCards
                 int rand = Random.Range(0, buildCards.Count);
@@ -177,7 +140,6 @@ public class DrawManager : MonoBehaviour, IPointerDownHandler
 
     private void RandomizeList(List<ActionCardSO> list) 
     {
-
         int startSize = list.Count;
 
         for (int i = 0; i < startSize; i++)
@@ -190,8 +152,6 @@ public class DrawManager : MonoBehaviour, IPointerDownHandler
         }
 
         list.Clear();
-
-
     }
 
     private void GetCardTypes() 
@@ -218,8 +178,6 @@ public class DrawManager : MonoBehaviour, IPointerDownHandler
 
     private void CheckNull() 
     {
-        Assert.IsNotNull(cardPrefab, $"{ GetType().Name} missing required editor input 'cardPrefab'");
-        Assert.IsNotNull(manager, $"{ GetType().Name} missing required editor input 'manager'");
         Assert.IsNotNull(cardList, $"{ GetType().Name} missing required editor input 'availableCards'");
     }
 

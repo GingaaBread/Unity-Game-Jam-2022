@@ -27,16 +27,25 @@ public class UICardPanel : InspectorReferenceChecker
     /// <summary>
     /// Card Colour Schemes
     /// </summary>
-    private readonly Color PRIMARY = new (255, 143, 143);
-    private readonly Color DARKER = new(255, 105, 105);
+    private readonly Color BUILDING_PRIMARY = new (255, 143, 143);
+    private readonly Color BUILDING_DARKER = new(255, 105, 105);
+    
+    private readonly Color SEED_PRIMARY = new (173, 236, 168);
+    private readonly Color SEED_DARKER = new(173, 220, 150);
 
     public void Render()
     {
-        // TODO: Change colour schemes depending on card type
-        if (CardToDisplay is SeedCard seedCard)
+        switch (CardToDisplay)
         {
-            ApplyColourScheme(PRIMARY, DARKER);
-            actionButtonText.text = "plant";
+            case BuildingCard:
+                ApplyColourScheme(BUILDING_PRIMARY, BUILDING_DARKER);
+                actionButtonText.text = "build";
+                break;
+            case SeedCard:
+                ApplyColourScheme(SEED_PRIMARY, SEED_DARKER);
+                actionButtonText.text = "plant";
+                break;
+            default: throw new System.NotImplementedException("Card type is not yet implemented: " + CardToDisplay.GetType());
         }
 
         // Set the texts
@@ -44,7 +53,7 @@ public class UICardPanel : InspectorReferenceChecker
         summaryText.text = CardToDisplay.cardSummary;
         costText.text = CardToDisplay.cardCost.ToString();
         AssertLegalEffectSetup();
-        for (int i = 0; i < effectKeyTexts.Length; i++)
+        for (int i = 0; i < CardToDisplay.cardEffectKeys.Length; i++)
         {
             effectKeyTexts[i].text = CardToDisplay.cardEffectKeys[i];
             effectValueTexts[i].text = CardToDisplay.cardEffectValues[i];
@@ -72,8 +81,7 @@ public class UICardPanel : InspectorReferenceChecker
         (
             CardToDisplay.cardEffectKeys == null && CardToDisplay.cardEffectValues == null 
             ||
-            effectKeyTexts.Length == CardToDisplay.cardEffectKeys.Length &&
-            effectValueTexts.Length == CardToDisplay.cardEffectValues.Length
+            CardToDisplay.cardEffectKeys.Length == CardToDisplay.cardEffectValues.Length
         );
     }
 

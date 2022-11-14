@@ -24,8 +24,22 @@ public class EditorDropdowns : EditorWindow
         TimeManager.Instance.FinishCurrentPhase();
     }
 
-    // Resource Test
+    // Card Test
+
+    [MenuItem("Gamejam/Cards/Draw", false, 0)]
+    static void DrawCard()
+    {
+        CardManager.Instance.GiveCard(1);
+    }
     
+    [MenuItem("Gamejam/Cards/AddBalancedCards", false, 0)]
+    static void AddBalancedCards()
+    {
+        CardManager.Instance.AddBalancedCards();
+    }
+
+    // Resource Test
+
     [MenuItem("Gamejam/Resource/TestAdd", false, 0)]
     static void AddTestResource()
     {

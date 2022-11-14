@@ -14,5 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardSprite: {fileID: 0}
   buildingSprite: {fileID: 0}
-  price: 10
+  cardTitle: Res
+  cardSummary: 
+  cardEffectKeys: []
+  cardEffectValues: []
+  cardCost: 10
   animalType: 0
+  tileForegroundChildPrefab: {fileID: 0}
+  payoffResource: {fileID: 0}
+  payoffAmount: 0

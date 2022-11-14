@@ -95,7 +95,7 @@ public class Tile : MonoBehaviour
     {
         if(isBuild && !isSeed){
             if(currBuilding.buildingType == BuildingManagement.BuildingType.ACRE){
-                currSprite.sprite = crop.buildingSprite;
+                currSprite.sprite = crop.finalSprite;
                 currSeed = crop;
                 isSeed = true;
             } else {

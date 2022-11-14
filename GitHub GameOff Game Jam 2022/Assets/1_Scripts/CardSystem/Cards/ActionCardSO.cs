@@ -1,14 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 
 public abstract class ActionCardSO : ScriptableObject
 {
-
     public Sprite cardSprite;
-    public Sprite buildingSprite;
     public string cardTitle;
     public string cardSummary;
     public string[] cardEffectKeys;
@@ -16,4 +11,9 @@ public abstract class ActionCardSO : ScriptableObject
     public int cardCost = 10;
 
     public abstract void Action();
+
+    public override string ToString()
+    {
+        return $"{cardTitle} ({cardCost}), [{cardSummary}]";
+    }
 }

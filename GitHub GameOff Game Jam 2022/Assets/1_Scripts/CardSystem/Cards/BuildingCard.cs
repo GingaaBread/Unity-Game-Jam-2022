@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using BuildingManagement;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewBuildingCard", menuName = "Cards/BuildingCard")]
 public class BuildingCard : ActionCardSO
 {
     private CardPlayManager cardPlayManager;
     public BuildingType buildingType;
+    public Sprite buildingSprite;
     public GameObject tileForegroundChildPrefab;
 
     public override void Action()
