@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 250, y: -39.959}
+  m_AnchoredPosition: {x: 250, y: -86.998}
   m_SizeDelta: {x: 330.288, y: 79.918}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &289414181850737008
@@ -174,7 +174,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 250, y: -63.002}
+  m_AnchoredPosition: {x: 250, y: -189.959}
   m_SizeDelta: {x: 147.8862, y: 126.004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6567417286322397270
@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 2720414708015238765}
   - component: {fileID: 8455621277423050200}
   - component: {fileID: 7662884654015109653}
+  - component: {fileID: 5293192885383259116}
   m_Layer: 5
   m_Name: SeasonChangeAnimationPanel
   m_TagString: Untagged
@@ -388,6 +389,39 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &5293192885383259116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2212639559174210684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a5cc6192e1674eb7a71e8001c0ec1ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endTurnPanelSlideEventName:
+    Guid:
+      Data1: 268474106
+      Data2: 1311761141
+      Data3: 322667141
+      Data4: -119369438
+    Path: event:/SFX/EndTurn/Play_EndTurn_PanelSlide
+  endSeasonNotificationEventName:
+    Guid:
+      Data1: 466922130
+      Data2: 1316274657
+      Data3: -213050952
+      Data4: 1187994808
+    Path: event:/SFX/EndTurn/Play_EndSeasonNotification
+  endTurnSeasonEventName:
+    Guid:
+      Data1: 814497812
+      Data2: 1167745308
+      Data3: -1599237973
+      Data4: -1090361520
+    Path: event:/SFX/EndTurn/Play_EndTurn_Seasons
 --- !u!1 &2605655698898372131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1315,6 +1349,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timePanel: {fileID: 2605655698986282452}
+  turnProgressMeterEventName:
+    Guid:
+      Data1: -1334140932
+      Data2: 1194910484
+      Data3: 1141924260
+      Data4: 1926908385
+    Path: event:/SFX/EndTurn/Play_TurnProgressMeter
+  endTurnNotificationChimeEventName:
+    Guid:
+      Data1: -424597526
+      Data2: 1175797234
+      Data3: 1740020867
+      Data4: -557426862
+    Path: event:/SFX/EndTurn/Play_EndTurnNotification_Chime
 --- !u!1 &2605655700071827458
 GameObject:
   m_ObjectHideFlags: 0
@@ -2223,6 +2271,7 @@ GameObject:
   - component: {fileID: 2605655700752351136}
   - component: {fileID: 2605655700752351143}
   - component: {fileID: 2605655700752351142}
+  - component: {fileID: 2272373737458347651}
   m_Layer: 5
   m_Name: EndTurnButton
   m_TagString: Untagged
@@ -2345,6 +2394,48 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2272373737458347651}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2272373737458347651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605655700752351140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1848115962
+      Data2: 1234363983
+      Data3: -1974029381
+      Data4: 997299171
+    Path: event:/SFX/Play_ButtonClick
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &2605655700761283459
 GameObject:
   m_ObjectHideFlags: 0
@@ -2617,7 +2708,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 73.9431, y: -124.004}
+  m_AnchoredPosition: {x: 73.9431, y: -148.92764}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5950860981325480876
