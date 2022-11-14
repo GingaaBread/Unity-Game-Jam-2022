@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 905862497363255331}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.07, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -127,7 +127,7 @@ Animator:
   m_GameObject: {fileID: 8311164771450619636}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 76f542686a59ca0459bd1eeab7e9d00a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1d7f86be15cfb214ca265328df6a51b6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -246,7 +246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4056802189797110475, guid: fae5a40def24add47934a47353884fc9, type: 3}
       propertyPath: _animationOffsetsInSortOrder.Array.data[1]
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4056802189797110475, guid: fae5a40def24add47934a47353884fc9, type: 3}
       propertyPath: _animationOffsetsInSortOrder.Array.data[2]
@@ -319,7 +319,7 @@ PrefabInstance:
     - target: {fileID: 9143581766249567732, guid: fae5a40def24add47934a47353884fc9, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 76f542686a59ca0459bd1eeab7e9d00a, type: 2}
+      objectReference: {fileID: 9100000, guid: 1d7f86be15cfb214ca265328df6a51b6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fae5a40def24add47934a47353884fc9, type: 3}
 --- !u!4 &135514813546859725 stripped

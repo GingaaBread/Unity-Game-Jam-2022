@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   picture: {fileID: 21300000, guid: ae4a40436c022e54e878aec5a90922d9, type: 3}
-  tileForegroundChildPrefab: {fileID: 0}
+  tileForegroundChildPrefab: {fileID: 135514813546859715, guid: fcd00f9cc3996d844a7f009158366f57, type: 3}
