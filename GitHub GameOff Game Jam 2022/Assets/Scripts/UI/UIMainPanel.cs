@@ -30,8 +30,6 @@ public class UIMainPanel : MonoBehaviour
 
     public void DisplayCard(ActionCardSO cardToDisplay)
     {
-        print($"Displaying Card: {cardToDisplay.cardTitle}");
-
         if (poolIndex >= CardManager.MAX_HANDCARD_AMOUNT)
             throw new ArgumentException("Trying to display a card despite having reached the maximum handcard limit");
 

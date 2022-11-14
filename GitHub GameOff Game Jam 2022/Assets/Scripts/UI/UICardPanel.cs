@@ -23,26 +23,28 @@ public class UICardPanel : InspectorReferenceChecker
     [SerializeField] private Image effectPanelImage;
     [SerializeField] private Image effectSeparatorPanelImage;
     [SerializeField] private Image actionButtonPanelImage;
-
-    /// <summary>
-    /// Card Colour Schemes
-    /// </summary>
-    private readonly Color BUILDING_PRIMARY = new (255, 143, 143);
-    private readonly Color BUILDING_DARKER = new(255, 105, 105);
-    
-    private readonly Color SEED_PRIMARY = new (173, 236, 168);
-    private readonly Color SEED_DARKER = new(173, 220, 150);
+        
+    private readonly Color SEED_PRIMARY = new Color(173, 236, 168);
+    private readonly Color SEED_DARKER = new Color(173, 220, 150);
 
     public void Render()
     {
         switch (CardToDisplay)
         {
-            case BuildingCard:
-                ApplyColourScheme(BUILDING_PRIMARY, BUILDING_DARKER);
+            case BuildingCard b:
+                ApplyColourScheme
+                (
+                    CardManager.Instance.buildingPrimary, 
+                    CardManager.Instance.buildingSecondary
+                );
                 actionButtonText.text = "build";
                 break;
-            case SeedCard:
-                ApplyColourScheme(SEED_PRIMARY, SEED_DARKER);
+            case SeedCard s:
+                ApplyColourScheme
+                (
+                    CardManager.Instance.seedPrimary,
+                    CardManager.Instance.seedSecondary
+                );
                 actionButtonText.text = "plant";
                 break;
             default: throw new System.NotImplementedException("Card type is not yet implemented: " + CardToDisplay.GetType());
@@ -67,12 +69,12 @@ public class UICardPanel : InspectorReferenceChecker
         effectSeparatorPanelImage.color = prm;
         costText.color = prm;
         actionButtonText.color = prm;
+        actionButtonPanelImage.color = prm;
 
         // Apply the darker colours
         iconPanelImage.color = drk;
         summaryPanelImage.color = drk;
         effectPanelImage.color = drk;
-        actionButtonPanelImage.color = drk;
     }
 
     private void AssertLegalEffectSetup()
@@ -90,7 +92,7 @@ public class UICardPanel : InspectorReferenceChecker
 
     }
 
-    public void DiscardCard()
+    public void DiscardCard(int cardIndex)
     {
 
     }

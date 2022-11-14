@@ -28,6 +28,13 @@ public class CardManager : MonoBehaviour
 
     public ActionCardSO[] cardList;
 
+    [Header("Card Colour Schemes")]
+    public Color buildingPrimary;
+    public Color buildingSecondary;
+    [Space(15)]
+    public Color seedPrimary;
+    public Color seedSecondary;
+
     [Header("Drawing deck")]
 
     /// <summary>

@@ -46,6 +46,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardList:
   - {fileID: 11400000, guid: e475efa77ad539648ab5e6f711d54805, type: 2}
+  buildingPrimary: {r: 1, g: 0.56078434, b: 0.56078434, a: 1}
+  buildingSecondary: {r: 1, g: 0.4117647, b: 0.4117647, a: 1}
+  seedPrimary: {r: 0.56078434, g: 1, b: 0.63159114, a: 1}
+  seedSecondary: {r: 0.40610537, g: 0.735849, b: 0.46204403, a: 1}
   deckSize: 240
   pileSize: 30
   pooledCards: []
