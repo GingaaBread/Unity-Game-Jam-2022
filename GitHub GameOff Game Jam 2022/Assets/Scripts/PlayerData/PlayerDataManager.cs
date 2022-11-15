@@ -36,6 +36,7 @@ namespace PlayerData
 
         private void Awake()
         {
+            
             inventoryDictionary = new Dictionary<ResourceSO, int>();
 
             Assert.IsNull(_instance, "PlayerDataManager singleton is already set. (check there is only one PlayerDataManager in the scene)");
