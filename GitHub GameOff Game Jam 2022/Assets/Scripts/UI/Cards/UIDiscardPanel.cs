@@ -40,6 +40,6 @@ public class UIDiscardPanel : InspectorReferenceChecker
 
     protected override object[] CheckForMissingReferences() => new object[]
     {
-        handcardPrefabs, cardToDiscard, cardToDiscardTitle
+        handcardPrefabs, cardToDiscard, cardToDiscardTitle, discardAnimator
     };
 }

@@ -1437,6 +1437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d058a52d7893342a572e62b939f95b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardScaleAnimator: {fileID: 2405592468595832657}
 --- !u!1 &4248503851301510187
 GameObject:
   m_ObjectHideFlags: 0
@@ -2099,6 +2100,8 @@ GameObject:
   - component: {fileID: 8268686893281418907}
   - component: {fileID: 5417733241238818923}
   - component: {fileID: 4889343376814318147}
+  - component: {fileID: 2405592468595832657}
+  - component: {fileID: 2997556204068246614}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -2167,6 +2170,39 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 2
+--- !u!95 &2405592468595832657
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6648415978481683607}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b5f665b224fad1d4094b1e9c4b23625d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2997556204068246614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6648415978481683607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38d058a52d7893342a572e62b939f95b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardScaleAnimator: {fileID: 0}
 --- !u!1 &6930810605407981539
 GameObject:
   m_ObjectHideFlags: 0

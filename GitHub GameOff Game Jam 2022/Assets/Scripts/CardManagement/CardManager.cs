@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UIManagement;
 using UnityEngine;
 using UnityEngine.Assertions;
 using Random = UnityEngine.Random;
@@ -116,8 +117,8 @@ public class CardManager : MonoBehaviour
         consideredDiscardIndex = cardIndex;
         var consideredCard = playerHandcards[cardIndex];
 
-        discardPanel.gameObject.SetActive(true);
-        discardPanel.DisplaySelf(consideredCard);
+        FeedbackPanelManager.Instance.EnqueueDiscardCardInstantly(discardPanel, consideredCard);
+        FeedbackPanelManager.Instance.InitiateInstantDisplayQueue();
     }
 
     /// <summary>
