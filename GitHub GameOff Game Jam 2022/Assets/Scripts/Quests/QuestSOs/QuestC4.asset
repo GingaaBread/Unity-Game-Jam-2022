@@ -9,14 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c21a9c22b17e13f4ab0e97807bf39534, type: 3}
-  m_Name: QuestA2_Flowers
+  m_Script: {fileID: 11500000, guid: 5d31a4184ed2441489b07a36c34fc160, type: 3}
+  m_Name: QuestC4
   m_EditorClassIdentifier: 
-  questName: Bright colors
+  questName: Ordinary plants
   prefabForDisplayingMissionUI: {fileID: 170029945827187893, guid: 4498957a7ab392947820fc47e0385726, type: 3}
   OnUpdate:
     m_PersistentCalls:
       m_Calls: []
-  targetResources:
+  targetSaleItems:
+  - {fileID: 11400000, guid: 7a84d3e4d06d24246be27cda976d6fc7, type: 2}
+  - {fileID: 11400000, guid: 8899f5d05677f694eac54b2f49e33f8f, type: 2}
   - {fileID: 11400000, guid: e8cb8992e4acb744ab9d493ac9ba2a1b, type: 2}
-  targetQuantity: 24000000
+  - {fileID: 11400000, guid: 24dc3e76c1dc56d408a1866d556248f8, type: 2}
+  - {fileID: 11400000, guid: fdcd416a38e9107408c6bcfd8fe588ac, type: 2}
+  targetTotalMoney: 2000

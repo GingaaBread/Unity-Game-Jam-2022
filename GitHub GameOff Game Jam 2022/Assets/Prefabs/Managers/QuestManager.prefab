@@ -44,9 +44,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 856a7a9c43782b94fadafd8f5e787825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DebugMode_AutoInitOnStart: 0
+  DebugMode_AutoInitOnStart: 1
+  DebugMode_QuestsToUse:
+  - {fileID: 11400000, guid: fa0e4a3251bfab5429948b94fa93aea2, type: 2}
+  - {fileID: 11400000, guid: 68a55e75bbaf56f4ebc620cb06291bb9, type: 2}
+  - {fileID: 11400000, guid: bdcff8a875a126046a8b24da5f1d1f1a, type: 2}
   ResourceCollectionQuests:
   - {fileID: 11400000, guid: fa0e4a3251bfab5429948b94fa93aea2, type: 2}
   - {fileID: 11400000, guid: faea986cdd6be6e409b5274cddcb5d2f, type: 2}
   - {fileID: 11400000, guid: b424f84b57d33de4ab1ee871a4dc0a64, type: 2}
   - {fileID: 11400000, guid: 8ebe68d48ee1c26459d7da0280cdeb85, type: 2}
+  - {fileID: 11400000, guid: 18517cca9ac22854e876e927886e450a, type: 2}
+  - {fileID: 11400000, guid: f26220cd10913e64dbfc73f54d0818fa, type: 2}
+  - {fileID: 11400000, guid: fac589b6de438364f9b9f403bc25c0ed, type: 2}
+  TilePlacementQuests:
+  - {fileID: 11400000, guid: f18402c6b0aa0db4894be59a9edba277, type: 2}
+  - {fileID: 11400000, guid: 68a55e75bbaf56f4ebc620cb06291bb9, type: 2}
+  - {fileID: 11400000, guid: 65c608efcfd34fa4f8692b07b4517b93, type: 2}
+  MoneyForActionQuests:
+  - {fileID: 11400000, guid: 72a06065260bc24428aee89e3007db41, type: 2}
+  - {fileID: 11400000, guid: 4be4e21930a1bda469aec96dcb8b4cdd, type: 2}
+  - {fileID: 11400000, guid: 11855ee5c56efa540ac7f26ee78043b0, type: 2}
+  - {fileID: 11400000, guid: bdcff8a875a126046a8b24da5f1d1f1a, type: 2}
+  ResourceCollectionQuestsToSelect: 3
+  TilePlacementQuestsToSelect: 1
+  MoneyFromActionQuestsToSelect: 1

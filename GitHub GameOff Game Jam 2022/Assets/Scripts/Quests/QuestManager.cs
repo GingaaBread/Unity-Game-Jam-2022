@@ -8,23 +8,36 @@ using UnityEngine.Assertions;
 /// 
 /// </summary>
 /// <author>Ben</author>
-public class QuestManager : MonoBehaviour {
+public class QuestManager : MonoBehaviour
+{
 
     public static QuestManager Instance { get; private set; }
 
-    [Tooltip("Debugging")]
+    [Header("Debugging")]
     [SerializeField] private bool DebugMode_AutoInitOnStart;
+    [SerializeField] private AbstractQuestSO[] DebugMode_QuestsToUse;
 
-    [Tooltip("Pool Of ResourceCollection Quests To Choose From")] 
+    [Header("Pool Of ResourceCollection Quests To Choose From")]
     [SerializeField] private ResourceCollectionQuestSO[] ResourceCollectionQuests;
-    private ResourceCollectionQuestSO[] _activeResourceCollectionQuests;
+    [SerializeField] private TilePlacementQuestSO[]      TilePlacementQuests;
+    [SerializeField] private MoneyFromSalesQuestSO[]     MoneyForActionQuests;
+    private List<AbstractQuestSO> _activeQuests;
+
+    [Header("Quest Selection Logic")]
+    [SerializeField] [Range(0, 3)] private int ResourceCollectionQuestsToSelect;
+    [SerializeField] [Range(0, 3)] private int TilePlacementQuestsToSelect;
+    [SerializeField] [Range(0, 3)] private int MoneyFromActionQuestsToSelect;
 
     private void Awake() {
         Assert.IsNull(Instance);
         Instance = this;
 
         Assert.IsNotNull(ResourceCollectionQuests);
-        Assert.IsTrue(ResourceCollectionQuests.Length >= 3, "need pool of at least 3 RC quests so we can choose 3");
+        Assert.IsNotNull(TilePlacementQuests);
+        Assert.IsNotNull(TilePlacementQuests);
+        Assert.IsTrue(ResourceCollectionQuests.Length >= ResourceCollectionQuestsToSelect, $"need pool of at least {ResourceCollectionQuestsToSelect} RC quests so we can choose {ResourceCollectionQuestsToSelect}");
+        Assert.IsTrue(TilePlacementQuests.Length      >= TilePlacementQuestsToSelect, $"need pool of at least {TilePlacementQuestsToSelect} RC quests so we can choose {TilePlacementQuestsToSelect}");
+        Assert.IsTrue(MoneyForActionQuests.Length     >= MoneyFromActionQuestsToSelect, $"need pool of at least {MoneyFromActionQuestsToSelect} RC quests so we can choose {MoneyFromActionQuestsToSelect}");
     }
 
     private void Start() {
@@ -36,32 +49,51 @@ public class QuestManager : MonoBehaviour {
     }
 
     private void OnInitializeGame() {
-        _activeResourceCollectionQuests = RandomlyChooseRCQuests(3);
-        foreach(ResourceCollectionQuestSO quest in _activeResourceCollectionQuests)
+        _activeQuests = new List<AbstractQuestSO>();
+
+        if (!DebugMode_AutoInitOnStart) {
+            _activeQuests.AddRange(RandomlyChooseQuests(ResourceCollectionQuests, ResourceCollectionQuestsToSelect));
+            _activeQuests.AddRange(RandomlyChooseQuests(TilePlacementQuests, TilePlacementQuestsToSelect));
+            _activeQuests.AddRange(RandomlyChooseQuests(MoneyForActionQuests, MoneyFromActionQuestsToSelect));
+        } else {
+            _activeQuests.AddRange(DebugMode_QuestsToUse);
+        }
+
+        foreach (AbstractQuestSO quest in _activeQuests)
             quest.ResetActualsCounters();
-        QuestPanel.Instance.UpdateQuests(_activeResourceCollectionQuests);
+        QuestPanel.Instance.UpdateQuests(_activeQuests);
     }
 
-    private ResourceCollectionQuestSO[] RandomlyChooseRCQuests(int count) {
-        Assert.IsTrue(ResourceCollectionQuests.Length >= count);
+    private static List<AbstractQuestSO> RandomlyChooseQuests(AbstractQuestSO[] questsPool, int count) {
+        Assert.IsTrue(questsPool.Length >= count);
 
-        List<ResourceCollectionQuestSO> tempList = new List<ResourceCollectionQuestSO>(ResourceCollectionQuests);
-        ResourceCollectionQuestSO[] chosenQuests = new ResourceCollectionQuestSO[count];
+        List<AbstractQuestSO> tempList = new List<AbstractQuestSO>(questsPool);
+        List<AbstractQuestSO> chosenQuests = new List<AbstractQuestSO>();
 
-        for(int i=0; i < count; i++) {
-            chosenQuests[i] = tempList[UnityEngine.Random.Range(0, tempList.Count)];
-            tempList.Remove(chosenQuests[i]);
+        for (int i = 0; i < count; i++) {
+            AbstractQuestSO quest = tempList[UnityEngine.Random.Range(0, tempList.Count)];
+            chosenQuests.Add(quest);
+            tempList.Remove(quest);
         }
 
         return chosenQuests;
     }
 
     public void NotifyOfResourceCollected(ResourceSO resource, int countCollected) {
-        foreach(ResourceCollectionQuestSO quest in _activeResourceCollectionQuests) {
+        foreach (AbstractQuestSO quest in _activeQuests) {
             quest.NotifyOfResourceCollected(resource, countCollected);
         }
     }
 
+    public void NotifyOfTilePlaced(ActionCardSO card) {
+        foreach (AbstractQuestSO quest in _activeQuests) {
+            quest.NotifyOfTilePlaced(card);
+        }
+    }
 
+    public void NotifyOfResourceSale(ResourceSO resource, int MoneyEarnedFromSale) {
+        foreach (AbstractQuestSO quest in _activeQuests) {
+            quest.NotifyOfResourceSale(resource, MoneyEarnedFromSale);
+        }
+    }
 }
-

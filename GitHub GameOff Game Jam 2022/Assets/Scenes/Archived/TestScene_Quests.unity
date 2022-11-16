@@ -388,6 +388,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1780467332482681974, guid: 0850e3e6be8347145a55569099891903, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780467332482681974, guid: 0850e3e6be8347145a55569099891903, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -405,7 +409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780467333721636962, guid: 0850e3e6be8347145a55569099891903, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 40
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1780467333721636962, guid: 0850e3e6be8347145a55569099891903, type: 3}
       propertyPath: m_SizeDelta.y
@@ -413,7 +417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780467333721636962, guid: 0850e3e6be8347145a55569099891903, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 40
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1780467333721636962, guid: 0850e3e6be8347145a55569099891903, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -485,9 +489,21 @@ PrefabInstance:
       value: QuestManager
       objectReference: {fileID: 0}
     - target: {fileID: 3649176582983092715, guid: 92333cd516ca12e4a9a86f3c0b399ee4, type: 3}
-      propertyPath: DebugMode_AutoInitOnStart
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: TilePlacementQuests.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: f18402c6b0aa0db4894be59a9edba277, type: 2}
+    - target: {fileID: 3649176582983092715, guid: 92333cd516ca12e4a9a86f3c0b399ee4, type: 3}
+      propertyPath: TilePlacementQuests.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: f18402c6b0aa0db4894be59a9edba277, type: 2}
+    - target: {fileID: 3649176582983092715, guid: 92333cd516ca12e4a9a86f3c0b399ee4, type: 3}
+      propertyPath: TilePlacementQuests.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: f18402c6b0aa0db4894be59a9edba277, type: 2}
+    - target: {fileID: 3649176582983092715, guid: 92333cd516ca12e4a9a86f3c0b399ee4, type: 3}
+      propertyPath: TilePlacementQuests.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: f18402c6b0aa0db4894be59a9edba277, type: 2}
     - target: {fileID: 8285799159225200794, guid: 92333cd516ca12e4a9a86f3c0b399ee4, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -12,7 +12,6 @@ public class ResourceCollectionQuestSO : AbstractQuestSO {
 
     public void OnEnable() {
         Assert.IsTrue(targetResources.Length == targetQuantity.Length, $"{this.name} must have same number of targetQuantity as targetResources");
-        Assert.IsTrue(targetResources.Length == actualQuantity.Length, $"{this.name} must have same number of actualQuantity as targetResources");
     }
 
     public override string GetQuestAsSentence() {
@@ -34,7 +33,7 @@ public class ResourceCollectionQuestSO : AbstractQuestSO {
         OnUpdate.Invoke();
     }
 
-    public float GetPercentageCompleted() {
+    public override float GetPercentageCompleted() {
         int numerator = 0;
         int denominator = 0;
         for (int i = 0; i < targetResources.Length; i++) {
@@ -48,6 +47,7 @@ public class ResourceCollectionQuestSO : AbstractQuestSO {
 
     public override void NotifyOfResourceCollected(ResourceSO resource, int countCollected) {
         Assert.IsNotNull(actualQuantity);
+        Assert.IsTrue(targetResources.Length == actualQuantity.Length, $"{this.name} must have same number of actualQuantity as targetResources");
         for (int i = 0; i < targetResources.Length; i++) {
             if(targetResources[i] == resource) {
                 actualQuantity[i] += countCollected;
@@ -57,22 +57,11 @@ public class ResourceCollectionQuestSO : AbstractQuestSO {
         }
     }
 
-    public bool IsComplete(Dictionary<ResourceSO, int> countOfResourcesCollected) {
-
-        // if any target resource has no count, return false
-        foreach(ResourceSO targetResource in targetResources) {
-            if (!countOfResourcesCollected.ContainsKey(targetResource))
-                return false;
-        }
-
-        // if any target resource has less count than target, return false
-        for(int i=0; i<targetResources.Length; i++) {
-            if (countOfResourcesCollected[targetResources[i]] < targetQuantity[i])
-                return false;
-        }
-
-        return true;
+    public override void NotifyOfTilePlaced(ActionCardSO card) {
+        // this class isn't interested in these notifications
     }
 
-
+    public override void NotifyOfResourceSale(ResourceSO resource, int MoneyEarnedFromSale) {
+        // this class isn't interested in these notifications
+    }
 }
