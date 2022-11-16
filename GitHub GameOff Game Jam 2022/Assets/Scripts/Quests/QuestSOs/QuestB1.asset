@@ -9,10 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c21a9c22b17e13f4ab0e97807bf39534, type: 3}
-  m_Name: QuestA3_Flowers
+  m_Script: {fileID: 11500000, guid: 6380c71497835a5499a33e90f64f89ae, type: 3}
+  m_Name: QuestB1
   m_EditorClassIdentifier: 
+  questName: Fields
   prefabForDisplayingMissionUI: {fileID: 170029945827187893, guid: 4498957a7ab392947820fc47e0385726, type: 3}
-  targetResources:
-  - {fileID: 11400000, guid: e8cb8992e4acb744ab9d493ac9ba2a1b, type: 2}
-  targetQuantity: 24000000
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  targetCards:
+  - {fileID: 11400000, guid: 258d2be981e477142891e60a3e5b9c75, type: 2}
+  - {fileID: 11400000, guid: 3141937bd53cc23409b6c7530443d6c3, type: 2}
+  targetQuantity: 130000000b000000

@@ -29,9 +29,9 @@ public class QuestPanel : MonoBehaviour {
         }
     }
 
-    internal void UpdateQuests(ResourceCollectionQuestSO[] allQuestsToShow) {
+    internal void UpdateQuests(List<AbstractQuestSO> allQuestsToShow) {
         ClearQuests();
-        foreach(ResourceCollectionQuestSO quest in allQuestsToShow) {
+        foreach(AbstractQuestSO quest in allQuestsToShow) {
             if (quest.prefabForDisplayingMissionUI != null) {
                 GameObject questUIObj = GameObject.Instantiate(quest.prefabForDisplayingMissionUI, containerForQuests, false);
                 questUIObj.GetComponent<QuestPanelItem>().Initialize(quest);

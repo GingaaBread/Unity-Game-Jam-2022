@@ -10,10 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c21a9c22b17e13f4ab0e97807bf39534, type: 3}
-  m_Name: QuestA1_ApplesAndOranges
+  m_Name: QuestA7
   m_EditorClassIdentifier: 
+  questName: From different worlds
   prefabForDisplayingMissionUI: {fileID: 170029945827187893, guid: 4498957a7ab392947820fc47e0385726, type: 3}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
   targetResources:
-  - {fileID: 11400000, guid: ff0683a9db512bb41ab7a5ce87afbf57, type: 2}
-  - {fileID: 11400000, guid: 17d02b6fab71dd94980e01d6f71af17d, type: 2}
-  targetQuantity: 0a0000001e000000
+  - {fileID: 11400000, guid: af3bf3ec6b5dc25439f3eba4e29af987, type: 2}
+  - {fileID: 11400000, guid: fdcd416a38e9107408c6bcfd8fe588ac, type: 2}
+  - {fileID: 11400000, guid: e8cb8992e4acb744ab9d493ac9ba2a1b, type: 2}
+  targetQuantity: 060000001400000014000000
