@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 856a7a9c43782b94fadafd8f5e787825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DebugMode_AutoInitOnStart: 0
   ResourceCollectionQuests:
-  - {fileID: 11400000, guid: 7f67f18ce21336949a6f37a8313f753d, type: 2}
   - {fileID: 11400000, guid: fa0e4a3251bfab5429948b94fa93aea2, type: 2}
   - {fileID: 11400000, guid: faea986cdd6be6e409b5274cddcb5d2f, type: 2}
   - {fileID: 11400000, guid: b424f84b57d33de4ab1ee871a4dc0a64, type: 2}
+  - {fileID: 11400000, guid: 8ebe68d48ee1c26459d7da0280cdeb85, type: 2}

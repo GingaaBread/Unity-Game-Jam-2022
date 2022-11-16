@@ -4,6 +4,7 @@ using UnityEngine.Events;
 
 public abstract class AbstractQuestSO : ScriptableObject {
 
+    public string questName;
     public GameObject prefabForDisplayingMissionUI;
 
     public UnityEvent OnUpdate = new UnityEvent(); // for UI components to listen for updates

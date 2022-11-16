@@ -10,6 +10,11 @@ public class ResourceCollectionQuestSO : AbstractQuestSO {
     [SerializeField] public int[] targetQuantity;
     private int[] actualQuantity; // not serialized because we don't want to save these outside runtime
 
+    public void OnEnable() {
+        Assert.IsTrue(targetResources.Length == targetQuantity.Length, $"{this.name} must have same number of targetQuantity as targetResources");
+        Assert.IsTrue(targetResources.Length == actualQuantity.Length, $"{this.name} must have same number of actualQuantity as targetResources");
+    }
+
     public override string GetQuestAsSentence() {
         string s = "Collect";
         for(int i = 0; i < targetResources.Length; i++) {
@@ -68,5 +73,6 @@ public class ResourceCollectionQuestSO : AbstractQuestSO {
 
         return true;
     }
+
 
 }
