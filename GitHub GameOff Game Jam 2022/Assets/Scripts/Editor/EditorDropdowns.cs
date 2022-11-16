@@ -105,5 +105,12 @@ public class EditorDropdowns : EditorWindow
         QuestManager.Instance.NotifyOfTilePlaced(card);
     }
 
+    // Game Won Panel
+
+    [MenuItem("Gamejam/GameWonPanel/Show")]
+    static void ShowGameWonPanel() {
+        if (!EditorApplication.isPlaying) { return; }
+        GameWonPanel.Instance.Show();
+    }
 
 }

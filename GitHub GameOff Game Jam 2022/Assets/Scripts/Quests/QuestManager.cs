@@ -42,6 +42,7 @@ public class QuestManager : MonoBehaviour
 
     private void Start() {
         Assert.IsNotNull(QuestPanel.Instance, "QuestManager expects QuestPanel to also exist in the scene");
+        Assert.IsNotNull(GameWonPanel.Instance, "QuestManager expects GameWonPanel to also exist in the scene");
 
         if (DebugMode_AutoInitOnStart) {
             OnInitializeGame();
@@ -83,17 +84,31 @@ public class QuestManager : MonoBehaviour
         foreach (AbstractQuestSO quest in _activeQuests) {
             quest.NotifyOfResourceCollected(resource, countCollected);
         }
+        CheckIfGameIsWonAndReactAccordingly();
     }
 
     public void NotifyOfTilePlaced(ActionCardSO card) {
         foreach (AbstractQuestSO quest in _activeQuests) {
             quest.NotifyOfTilePlaced(card);
         }
+        CheckIfGameIsWonAndReactAccordingly();
     }
 
     public void NotifyOfResourceSale(ResourceSO resource, int MoneyEarnedFromSale) {
         foreach (AbstractQuestSO quest in _activeQuests) {
             quest.NotifyOfResourceSale(resource, MoneyEarnedFromSale);
         }
+        CheckIfGameIsWonAndReactAccordingly();
     }
+
+    public void CheckIfGameIsWonAndReactAccordingly() {
+
+        foreach (AbstractQuestSO quest in _activeQuests) {
+            if (quest.GetPercentageCompleted() < 100)
+                return;
+        }
+
+        GameWonPanel.Instance.Show();
+    }
+
 }

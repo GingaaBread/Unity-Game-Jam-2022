@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 856a7a9c43782b94fadafd8f5e787825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DebugMode_AutoInitOnStart: 1
+  DebugMode_AutoInitOnStart: 0
   DebugMode_QuestsToUse:
   - {fileID: 11400000, guid: fa0e4a3251bfab5429948b94fa93aea2, type: 2}
   - {fileID: 11400000, guid: 68a55e75bbaf56f4ebc620cb06291bb9, type: 2}
@@ -66,6 +66,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4be4e21930a1bda469aec96dcb8b4cdd, type: 2}
   - {fileID: 11400000, guid: 11855ee5c56efa540ac7f26ee78043b0, type: 2}
   - {fileID: 11400000, guid: bdcff8a875a126046a8b24da5f1d1f1a, type: 2}
-  ResourceCollectionQuestsToSelect: 3
+  ResourceCollectionQuestsToSelect: 1
   TilePlacementQuestsToSelect: 1
   MoneyFromActionQuestsToSelect: 1
