@@ -47,6 +47,14 @@ public class UICardPanel : InspectorReferenceChecker
                 );
                 actionButtonText.text = "plant";
                 break;
+            case LivestockCard l:
+                ApplyColourScheme
+                (
+                    CardManager.Instance.seedPrimary,
+                    CardManager.Instance.seedSecondary
+                );
+                actionButtonText.text = "place";
+                break;
             default: throw new System.NotImplementedException("Card type is not yet implemented: " + CardToDisplay.GetType());
         }
 
