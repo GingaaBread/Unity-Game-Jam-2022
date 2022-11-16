@@ -185,10 +185,10 @@ PrefabInstance:
     - target: {fileID: 7598783998200983225, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
       propertyPath: _defaultSeedCard
       value: 
-      objectReference: {fileID: 11400000, guid: e475efa77ad539648ab5e6f711d54805, type: 2}
+      objectReference: {fileID: 11400000, guid: e9d00cd6f4785b047b6bab98f73c7d27, type: 2}
     - target: {fileID: 7598783998200983225, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
       propertyPath: _defaultTileType
-      value: 4
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7598783998200983225, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
       propertyPath: _debugMode_AutoInit
@@ -2943,10 +2943,10 @@ PrefabInstance:
     - target: {fileID: 7598783998200983225, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
       propertyPath: _defaultSeedCard
       value: 
-      objectReference: {fileID: 11400000, guid: e475efa77ad539648ab5e6f711d54805, type: 2}
+      objectReference: {fileID: 11400000, guid: e9d00cd6f4785b047b6bab98f73c7d27, type: 2}
     - target: {fileID: 7598783998200983225, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
       propertyPath: _defaultTileType
-      value: 4
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7598783998200983225, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
       propertyPath: _debugMode_AutoInit
@@ -5873,10 +5873,10 @@ PrefabInstance:
     - target: {fileID: 7598783998200983225, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
       propertyPath: _defaultSeedCard
       value: 
-      objectReference: {fileID: 11400000, guid: e475efa77ad539648ab5e6f711d54805, type: 2}
+      objectReference: {fileID: 11400000, guid: e9d00cd6f4785b047b6bab98f73c7d27, type: 2}
     - target: {fileID: 7598783998200983225, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
       propertyPath: _defaultTileType
-      value: 4
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7598783998200983225, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
       propertyPath: _debugMode_AutoInit
