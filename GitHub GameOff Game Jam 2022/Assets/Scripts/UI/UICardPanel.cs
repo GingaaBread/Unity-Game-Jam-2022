@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UICardPanel : InspectorReferenceChecker
 {
     public ActionCardSO CardToDisplay { private get; set; }
+    public int handCardIndex;
 
     [Header("Main UI Components")]
     [SerializeField] private TMP_Text titleText;
@@ -100,10 +101,7 @@ public class UICardPanel : InspectorReferenceChecker
 
     }
 
-    public void DiscardCard(int cardIndex)
-    {
-
-    }
+    public void DiscardCard() => CardManager.Instance.ConsiderCardDiscard(handCardIndex);
 
     protected override object[] CheckForMissingReferences() => new object[]
     {

@@ -35,6 +35,9 @@ public class CardManager : MonoBehaviour
     public Color seedPrimary;
     public Color seedSecondary;
 
+    [Header("Discarding")]
+    [SerializeField] private UIDiscardPanel discardPanel;
+
     [Header("Drawing deck")]
 
     /// <summary>
@@ -46,9 +49,9 @@ public class CardManager : MonoBehaviour
     /// </summary>
     public int pileSize = 30;
 
-    private int cardsDrawn;
+    private int cardsDrawn, consideredDiscardIndex = -1;
 
-    [HideInInspector] public List<GameObject> pooledCards = new List<GameObject>();
+    private List<GameObject> pooledCards = new List<GameObject>();
     private List<ActionCardSO> playerHandcards = new List<ActionCardSO>();
 
     private List<ActionCardSO> cropCards = new List<ActionCardSO>();
@@ -61,6 +64,8 @@ public class CardManager : MonoBehaviour
     private void Awake()
     {
         Assert.IsNull(_instance, "CardManager singleton is already set. (check there is only one CardManager in the scene)");
+        Assert.IsNotNull(discardPanel, "Discard panel is not set. (check there is a DiscardPanel set in the inspector)");
+
         Instance = this;
 
         CheckNull();
@@ -76,16 +81,14 @@ public class CardManager : MonoBehaviour
     public void GiveCard(int amount = 1) 
     {
         if (cardsDrawn >= deckSize) 
-        {
-            Debug.LogError("Drawing deck is out of cards!");
-            return;
-        }
+            throw new ApplicationException("Drawing deck is out of cards!");
 
         for (int i = 0; i < amount; i++)
-        { 
-            //GameObject card = pooledCards.Count > 0 ? GetPooledCard() : Instantiate(cardPrefab, cardContainer.transform);
+        {
+            var drawnCard = shuffledCards[cardsDrawn];
 
-            UIMainPanel.Instance.DisplayCard(shuffledCards[cardsDrawn]);
+            playerHandcards.Add(drawnCard);
+            UIMainPanel.Instance.DisplayCard(drawnCard);
                         
             cardsDrawn++;
         }
@@ -101,7 +104,34 @@ public class CardManager : MonoBehaviour
         return card;    
     }
 
+    /// <summary>
+    /// Assigns the card index and opens the discard UI panel
+    /// </summary>
+    /// <param name="cardIndex">The index of the card that may be discarded soon</param>
+    public void ConsiderCardDiscard(int cardIndex)
+    {
+        if (cardIndex >= MAX_HANDCARD_AMOUNT)
+            throw new ApplicationException("The selected card has an index bigger than the maximum allowed index.");
 
+        consideredDiscardIndex = cardIndex;
+        var consideredCard = playerHandcards[cardIndex];
+
+        discardPanel.gameObject.SetActive(true);
+        discardPanel.DisplaySelf(consideredCard);
+    }
+
+    /// <summary>
+    /// If a card has been considered to be discarded, it will now discard it
+    /// </summary>
+    public void ConfirmDiscard()
+    {
+        if (consideredDiscardIndex == -1)
+            throw new ApplicationException("Trying to confirm the discard action before the system is ready.");
+
+        discardPanel.HandleUIDiscard(consideredDiscardIndex);
+        consideredDiscardIndex = -1;
+    }
+    
     // IMPORTANT: 
 
     // ADD THIS FUNCTION (ShuffleCards) EVERY TIME A TURN ENDS 
@@ -141,7 +171,6 @@ public class CardManager : MonoBehaviour
             }
         }
 
-
         RandomizeList(piledCards);
     }
 
@@ -163,21 +192,21 @@ public class CardManager : MonoBehaviour
 
     private void GetCardTypes() 
     {
-        foreach (ActionCardSO c in cardList)
+        foreach (ActionCardSO card in cardList)
         {
-            if (c is BuildingCard)
+            if (card is BuildingCard)
             {
-                buildCards.Add(c);
+                buildCards.Add(card);
                 continue;
             }
-            if (c is LivestockCard)
+            if (card is LivestockCard)
             {
-                liveStockCards.Add(c);
+                liveStockCards.Add(card);
                 continue;
             }
-            if (c is SeedCard)
+            if (card is SeedCard)
             {
-                cropCards.Add(c);
+                cropCards.Add(card);
                 continue;
             }
         }
