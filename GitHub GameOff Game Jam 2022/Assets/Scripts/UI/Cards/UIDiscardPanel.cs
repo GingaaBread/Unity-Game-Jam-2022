@@ -6,6 +6,7 @@ public class UIDiscardPanel : InspectorReferenceChecker
     [SerializeField] private UICardPanel[] handcardPrefabs;
     [SerializeField] private UICardPanel cardToDiscard;
     [SerializeField] private TMP_Text cardToDiscardTitle;
+    [SerializeField] private Animator discardAnimator;
 
     /// <summary>
     /// After this GameObject has been activated, sets up the UI components
@@ -18,12 +19,12 @@ public class UIDiscardPanel : InspectorReferenceChecker
         cardToDiscard.CardToDisplay = consideredCard;
         cardToDiscard.Render();
     }
-
+    
     /// <summary>
     /// When the player clicks on the confirm discard button,
-    /// it well tell the card manager to perform the logic behind that action
+    /// it plays the animation (which will inform the CardManager after that)
     /// </summary>
-    public void Discard() => CardManager.Instance.ConfirmDiscard();
+    public void Discard() => discardAnimator.Play("DiscardSuccess");
 
     /// <summary>
     /// Reorders the sibling index and deactivates the card
@@ -33,6 +34,8 @@ public class UIDiscardPanel : InspectorReferenceChecker
     {
         handcardPrefabs[cardIndex].transform.SetAsLastSibling();
         handcardPrefabs[cardIndex].gameObject.SetActive(false);
+
+        gameObject.SetActive(false);
     }
 
     protected override object[] CheckForMissingReferences() => new object[]

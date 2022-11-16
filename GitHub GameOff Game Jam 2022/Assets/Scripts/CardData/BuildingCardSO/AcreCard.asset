@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: AcreCard
   m_EditorClassIdentifier: 
   cardSprite: {fileID: 0}
-  buildingSprite: {fileID: 0}
   cardTitle: 
   cardSummary: 
   cardEffectKeys: []
   cardEffectValues: []
   cardCost: 10
   buildingType: 0
+  buildingSprite: {fileID: 0}
   tileForegroundChildPrefab: {fileID: 0}
