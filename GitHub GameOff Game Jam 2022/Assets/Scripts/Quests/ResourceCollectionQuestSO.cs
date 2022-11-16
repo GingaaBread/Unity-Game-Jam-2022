@@ -1,8 +1,6 @@
 using PlayerData;
 using UnityEngine;
 using System.Collections.Generic;
-using TMPro;
-using System;
 using UnityEngine.Assertions;
 
 [CreateAssetMenu(fileName = "New Resource Collection SO", menuName = "Quests/ResourceCollectionSO")]
@@ -10,7 +8,7 @@ public class ResourceCollectionQuestSO : AbstractQuestSO {
 
     [SerializeField] public ResourceSO[] targetResources;
     [SerializeField] public int[] targetQuantity;
-    private int[] actualQuantity;
+    private int[] actualQuantity; // not serialized because we don't want to save these outside runtime
 
     public override string GetQuestAsSentence() {
         string s = "Collect";
@@ -29,6 +27,18 @@ public class ResourceCollectionQuestSO : AbstractQuestSO {
     public override void ResetActualsCounters() {
         actualQuantity = new int[targetResources.Length];
         OnUpdate.Invoke();
+    }
+
+    public float GetPercentageCompleted() {
+        int numerator = 0;
+        int denominator = 0;
+        for (int i = 0; i < targetResources.Length; i++) {
+            numerator += actualQuantity[i];
+            denominator += targetQuantity[i];
+        }
+        float result = 100f * ((float)numerator/denominator);
+
+        return result;
     }
 
     public override void NotifyOfResourceCollected(ResourceSO resource, int countCollected) {

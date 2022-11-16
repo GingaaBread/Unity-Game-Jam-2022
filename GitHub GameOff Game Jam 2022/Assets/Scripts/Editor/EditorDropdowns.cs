@@ -103,9 +103,9 @@ public class EditorDropdowns : EditorWindow
     static void TellQuestManagerWeGot5Wheat() {
         IgnoreIdleEditorActions();
 
-        ResourceSO wheatResource = (ResourceSO)AssetDatabase.LoadAssetAtPath(
-            "Assets/Scripts/PlayerData/ResourceSOs/Wheat.asset",
-            typeof(ResourceSO));
+        string assetPath = "Assets/Scripts/PlayerData/ResourceSOs/Wheat.asset";
+        ResourceSO wheatResource = (ResourceSO)AssetDatabase.LoadAssetAtPath(assetPath, typeof(ResourceSO));
+        if (wheatResource == null) Debug.LogError("TellQuestManagerWeGot5Wheat failed to fine asset "+assetPath);
         QuestManager.Instance.NotifyOfResourceCollected(wheatResource, 5);
     }
 
