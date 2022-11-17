@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Hills
   m_EditorClassIdentifier: 
   type: 4
-  picture: {fileID: 21300000, guid: 0bde8b6887925aa4085198a7700f3441, type: 3}
+  picture: {fileID: 21300000, guid: 118920ff1d22b2945bd7c15a11c11966, type: 3}
   tileForegroundChildPrefab: {fileID: 0}
