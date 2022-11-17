@@ -36,13 +36,17 @@ public class CardManager : ComputerPhaseStep
     [Space(15)]
     public Color seedPrimary;
     public Color seedSecondary;
+    [Space(15)]
+    public Color livestockPrimary;
+    public Color livestockSecondary;
 
     [Header("Discarding")]
     [SerializeField] private UIDiscardPanel discardPanel;
 
     [Header("Drawing deck")]
 
-    public bool cardDiscardedThisTurn;
+    [HideInInspector] public bool cardDiscardedThisTurn;
+
     /// <summary>
     /// Max amount of cards on a drawing deck.
     /// </summary>
@@ -171,7 +175,7 @@ public class CardManager : ComputerPhaseStep
         RandomizeList(piledCards);
     }
 
-    public bool MaximumHandcardLimitReached() => playerHandcards.Count >= MAX_HANDCARD_AMOUNT;
+    public bool MaximumHandcardLimitReached() => playerHandcards.Count > MAX_HANDCARD_AMOUNT;
 
     private void RandomizeList(List<ActionCardSO> list) 
     {

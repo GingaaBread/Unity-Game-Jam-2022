@@ -27,9 +27,6 @@ public class UICardPanel : ComputerPhaseStep
     [SerializeField] private Image effectSeparatorPanelImage;
     [SerializeField] private Image actionButtonPanelImage;
 
-    private readonly Color SEED_PRIMARY = new Color(173, 236, 168);
-    private readonly Color SEED_DARKER = new Color(173, 220, 150);
-
     /// <summary>
     /// Sets up all UI components, rendering the selected CardToDisplay
     /// </summary>
@@ -61,8 +58,8 @@ public class UICardPanel : ComputerPhaseStep
             case LivestockCard l:
                 ApplyColourScheme
                 (
-                    CardManager.Instance.seedPrimary,
-                    CardManager.Instance.seedSecondary
+                    CardManager.Instance.livestockPrimary,
+                    CardManager.Instance.livestockSecondary
                 );
                 actionButtonText.text = "place";
                 break;

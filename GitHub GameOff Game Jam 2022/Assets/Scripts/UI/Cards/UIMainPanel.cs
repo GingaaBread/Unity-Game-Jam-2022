@@ -4,6 +4,9 @@ using UnityEngine.Assertions;
 
 public class UIMainPanel : MonoBehaviour
 {
+    [Header("Debug Flags")]
+    public bool shouldLockDiscardButtonsForCards = true;
+
     // The singleton
     private static UIMainPanel _instance = null;
     public static UIMainPanel Instance
@@ -39,10 +42,13 @@ public class UIMainPanel : MonoBehaviour
 
     public void LockAllHandcards()
     {
-        for (int i = 0; i < cardContainer.transform.childCount; i++)
+        if (shouldLockDiscardButtonsForCards)
         {
-            var card = cardContainer.transform.GetChild(i).GetComponent<UICardPanel>();
-            card.LockDiscardButton();
+            for (int i = 0; i < cardContainer.transform.childCount; i++)
+            {
+                var card = cardContainer.transform.GetChild(i).GetComponent<UICardPanel>();
+                card.LockDiscardButton();
+            }
         }
     }
 

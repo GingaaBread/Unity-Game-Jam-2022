@@ -117,12 +117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35e7bba26d59b134fb3a0caab4851ecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handcardPrefabs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   cardToDiscard: {fileID: 8671804663597566198}
   cardToDiscardTitle: {fileID: 5573446965998820444}
   discardAnimator: {fileID: 8642375601887043905}
@@ -593,7 +587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
+  m_IgnoreReversedGraphics: 0
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
@@ -610,6 +604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12478da7e2fad7c438f70a43ade22fd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldLockDiscardButtonsForCards: 1
   cardContainer: {fileID: 1706982919560339551}
   cardPrefab: {fileID: 1294095101887699084, guid: adebc03ff6fed504da0389eba83dca2b, type: 3}
 --- !u!1 &1369694216648814678
