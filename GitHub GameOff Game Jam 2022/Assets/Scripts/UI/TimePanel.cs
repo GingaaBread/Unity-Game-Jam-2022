@@ -22,14 +22,13 @@ namespace TimeManagement
 
         private void UpdateUIElementsForNewTime(PointInTime time)
         {
-            print("Running UpdateUIElements");
             if (!time.IsStartingPointInTime())
             {
                 sliderAnimator.SetTrigger("Next");
             }
         }
 
-        public void OnEndTurnButtonClicked() => TimeManager.Instance.FinishCurrentPhase();
+        public void OnEndTurnButtonClicked() => TimeManager.Instance.FinishPlayerTurnPhase();
 
         public void UpdateTextComponents()
         {
@@ -54,15 +53,10 @@ namespace TimeManagement
             // TODO: Differentiate seasons
         }
 
-        public override void DoProcessingForComputerPhaseDuringGameInit()
+        public override void StartProcessingForComputerPhase(bool isComputerPhaseDuringGameInit) 
         {
             UpdateUIElementsForNewTime(TimeManager.Instance.CurrentTime);
-        }
-
-        public override void DoProcessingForComputerPhase()
-        {
-            print("Running DoProcessingFor");
-            UpdateUIElementsForNewTime(TimeManager.Instance.CurrentTime);
+            OnFinishProcessing.Invoke();
         }
     }
 }

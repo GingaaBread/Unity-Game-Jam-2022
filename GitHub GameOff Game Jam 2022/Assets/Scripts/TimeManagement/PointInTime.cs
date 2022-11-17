@@ -62,7 +62,7 @@ namespace TimeManagement
             return new PointInTime(newYear, newSeason, newRound);
         }
 
-        public override string ToString() => "Year " + Year + ", " + SeasonInYear.ToString() + ", Month " + RoundInSeason;
+        public override string ToString() => "Year " + Year + ", " + SeasonInYear.ToString() + ", Round " + RoundInSeason;
         public SeasonType GetNextSeason() => GetNextSeason(SeasonInYear);
         public int GetRoundsRemainingInSeason() => LAST_ROUND_IN_SEASON - RoundInSeason;
         public bool IsStartingPointInTime() => Year == FIRST_YEAR && RoundInSeason == FIRST_ROUND_IN_SEASON && SeasonInYear == SEASON_IN_YEAR_SEQUENCE[0];

@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5378769194483781889
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5378769194483781888}
+  - component: {fileID: 5378769194483781919}
+  m_Layer: 0
+  m_Name: CardManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5378769194483781888
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5378769194483781889}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5378769194483781919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5378769194483781889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda7ea44256f7444892ff71029f2f7f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardList:
+  - {fileID: 11400000, guid: 258d2be981e477142891e60a3e5b9c75, type: 2}
+  - {fileID: 11400000, guid: 3141937bd53cc23409b6c7530443d6c3, type: 2}
+  - {fileID: 11400000, guid: 66e5a6ce46399ac4bbe8cd1f87a7fb1e, type: 2}
+  - {fileID: 11400000, guid: 1e51bc9c81a1f2745a633126b1e6feb4, type: 2}
+  - {fileID: 11400000, guid: 60e02cc3c0ae8ab498995e99af41079c, type: 2}
+  - {fileID: 11400000, guid: 3d1522361bfe910439ee7923317f58a3, type: 2}
+  - {fileID: 11400000, guid: 0e5a337f7ebfd4e4b813ea2248843ffd, type: 2}
+  - {fileID: 11400000, guid: 71f63b015f2f7bb468ed5641d7248dc8, type: 2}
+  - {fileID: 11400000, guid: 3fc2734d23c476148a7948a15aed78a7, type: 2}
+  - {fileID: 11400000, guid: 0be34c6f67f9c64489a6c9922079cc71, type: 2}
+  - {fileID: 11400000, guid: 33cacab443ecf7448a04f886b7f6f2ca, type: 2}
+  - {fileID: 11400000, guid: 51365875223f48a4a8b16f21c3ad34ee, type: 2}
+  - {fileID: 11400000, guid: 3f683f74a2d9d1b41991460db4451261, type: 2}
+  - {fileID: 11400000, guid: b93f951340cf52849812d7816d6de1f4, type: 2}
+  - {fileID: 11400000, guid: a839740240b220c44869cc4f9394ad16, type: 2}
+  - {fileID: 11400000, guid: f515004d94d8fe24885284651d2fe65d, type: 2}
+  - {fileID: 11400000, guid: e9d00cd6f4785b047b6bab98f73c7d27, type: 2}
+  buildingPrimary: {r: 1, g: 0.56078434, b: 0.56078434, a: 1}
+  buildingSecondary: {r: 1, g: 0.4117647, b: 0.4117647, a: 1}
+  seedPrimary: {r: 0.56078434, g: 1, b: 0.63159114, a: 1}
+  seedSecondary: {r: 0.40610537, g: 0.735849, b: 0.46204403, a: 1}
+  deckSize: 240
+  pileSize: 30
+  pooledCards: []

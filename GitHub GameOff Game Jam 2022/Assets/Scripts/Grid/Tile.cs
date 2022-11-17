@@ -117,6 +117,7 @@ public class Tile : MonoBehaviour
             if (currBuilding.buildingType == BuildingManagement.BuildingType.ACRE)
             {
                 currSprite.sprite = crop.buildingSprite;
+
                 currSeed = crop;
                 if (transform.childCount > 0)
                 {
