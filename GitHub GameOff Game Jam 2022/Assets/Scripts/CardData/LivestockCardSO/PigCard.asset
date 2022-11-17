@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: PigCard
   m_EditorClassIdentifier: 
   cardSprite: {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
-  buildingSprite: {fileID: 0}
-  cardTitle: 
-  cardSummary: 
+  cardTitle: Pig
+  cardSummary: produce pork every three turns.
   cardEffectKeys: []
   cardEffectValues: []
   cardCost: 10
