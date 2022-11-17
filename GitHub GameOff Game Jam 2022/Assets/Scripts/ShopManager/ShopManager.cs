@@ -18,4 +18,10 @@ public class ShopManager : MonoBehaviour
     {
         
     }
+
+
+    public void SellResource(Shop shop) 
+    {
+        Debug.Log($"Sold 1 {shop.Resource} to {shop.City.cityName}!");
+    }
 }

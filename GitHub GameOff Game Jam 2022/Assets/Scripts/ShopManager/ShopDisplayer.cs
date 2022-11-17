@@ -9,7 +9,7 @@ public class ShopDisplayer : MonoBehaviour
 
     public Image resourceIcon;
 
-    public CityDemandSO city;
+    public Shop shop;
 
     TextMeshProUGUI textMesh;
 
@@ -29,9 +29,9 @@ public class ShopDisplayer : MonoBehaviour
 
     public void UpdateShopDisplay() 
     {
-        textMesh.text = city.cityName;
+        textMesh.text = shop.City.cityName;
 
-        resource = city.RandomResource();
+        resource = shop.Resource;
 
         resourceIcon.sprite = resource.iconSprite;
         resourceIcon.color = Color.white;
