@@ -57,7 +57,6 @@ namespace PlayerData
         {
             Assert.IsTrue(amount > 0);
             AmountOfMoney += amount;
-            // TODO: UI Notification
         }
 
         /// <summary>
@@ -72,7 +71,6 @@ namespace PlayerData
         {
             Assert.IsTrue(amount > 0);
             AmountOfMoney -= amount;
-            // TODO: notification?
 
             if (AmountOfMoney < 0) throw new ArithmeticException("The last transaction " +
                 "left the player with a negative money balance. This should never be the case.");
@@ -142,7 +140,6 @@ namespace PlayerData
             Assert.IsTrue(inventoryDictionary[resourceToDecrease] >= amountToDecrease);
 
             inventoryDictionary[resourceToDecrease] -= amountToDecrease;
-            // Todo: Notification?
         }
 
         /// <summary>

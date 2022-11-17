@@ -13,13 +13,6 @@ public class EditorDropdowns : EditorWindow
         Debug.Log($"Time: {TimeManager.Instance.CurrentTime} and Phase: {TimeManager.Instance.CurrentPhase}");
     }
 
-    // Time
-
-    [MenuItem("Gamejam/Time/ForceNextPhase", false, 0)] static void ForceNextPhase() {
-        if (!EditorApplication.isPlaying) { return; }
-        TimeManager.Instance.FinishCurrentPhase();
-    }
-
     // Card Test
 
     [MenuItem("Gamejam/Cards/Draw", false, 0)] static void DrawCard() {
