@@ -31,12 +31,18 @@ public class UIMainPanel : MonoBehaviour
     public void DisplayCard(ActionCardSO cardToDisplay)
     {
         if (poolIndex >= CardManager.MAX_HANDCARD_AMOUNT)
-            throw new ArgumentException("Trying to display a card despite having reached the maximum handcard limit");
+            throw new ArgumentException("Trying to display a card despite having reached the maximum handcard limit. Cards: " + poolIndex);
 
         handcardBank[poolIndex].SetActive(true);
         handcards[poolIndex].CardToDisplay = cardToDisplay;
         handcards[poolIndex].Render();
 
         poolIndex++;
+    }
+
+    public void DecreasePoolIndex()
+    {
+        poolIndex--;
+        print("Pool index decreased. Now " + poolIndex);
     }
 }

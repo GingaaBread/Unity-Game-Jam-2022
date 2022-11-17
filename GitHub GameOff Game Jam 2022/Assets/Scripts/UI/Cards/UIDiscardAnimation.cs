@@ -9,6 +9,7 @@ using UnityEngine;
 public class UIDiscardAnimation : MonoBehaviour
 {
     [SerializeField] private Animator cardScaleAnimator;
+    [SerializeField] private GameObject panelContainer;
 
     /// <summary>
     /// Played when the discard animation has finished.
@@ -26,5 +27,14 @@ public class UIDiscardAnimation : MonoBehaviour
     {
         CardManager.Instance.ConfirmDiscard();
         FeedbackPanelManager.Instance.InitiateNextPanel();
+    }
+
+    /// <summary>
+    /// Used for displaying the next element in the queue after pressing the keep button
+    /// </summary>
+    public void InitiateNextQueueElement()
+    {
+        FeedbackPanelManager.Instance.InitiateNextPanel();
+        panelContainer.SetActive(false);
     }
 }

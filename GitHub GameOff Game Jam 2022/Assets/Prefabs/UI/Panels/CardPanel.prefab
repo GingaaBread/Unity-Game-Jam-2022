@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9d4d9a2c1470541a342ca30612a3fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handCardIndex: 0
   titleText: {fileID: 1294095102601398984}
   iconImage: {fileID: 1294095103378886071}
   summaryText: {fileID: 1294095102467361390}
@@ -210,6 +211,7 @@ MonoBehaviour:
   - {fileID: 1294095102707401362}
   costText: {fileID: 1294095102403907465}
   actionButtonText: {fileID: 1294095101950721899}
+  discardButton: {fileID: 1294095103738837459}
   headerPanelImage: {fileID: 1294095101872315649}
   iconPanelImage: {fileID: 1294095102264947100}
   summaryPanelImage: {fileID: 1294095103807692382}

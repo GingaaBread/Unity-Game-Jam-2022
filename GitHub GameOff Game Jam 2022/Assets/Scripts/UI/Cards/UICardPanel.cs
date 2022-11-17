@@ -1,9 +1,10 @@
+using TimeManagement;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
 
-public class UICardPanel : InspectorReferenceChecker
+public class UICardPanel : ComputerPhaseStep
 {
     public ActionCardSO CardToDisplay { private get; set; }
     public int handCardIndex;
@@ -16,6 +17,7 @@ public class UICardPanel : InspectorReferenceChecker
     [SerializeField] private TMP_Text[] effectValueTexts;
     [SerializeField] private TMP_Text costText;
     [SerializeField] private TMP_Text actionButtonText;
+    [SerializeField] private Button discardButton;
 
     [Header("Recolourable Panels")]
     [SerializeField] private Image headerPanelImage;
@@ -24,7 +26,7 @@ public class UICardPanel : InspectorReferenceChecker
     [SerializeField] private Image effectPanelImage;
     [SerializeField] private Image effectSeparatorPanelImage;
     [SerializeField] private Image actionButtonPanelImage;
-        
+
     private readonly Color SEED_PRIMARY = new Color(173, 236, 168);
     private readonly Color SEED_DARKER = new Color(173, 220, 150);
 
@@ -35,7 +37,7 @@ public class UICardPanel : InspectorReferenceChecker
             case BuildingCard b:
                 ApplyColourScheme
                 (
-                    CardManager.Instance.buildingPrimary, 
+                    CardManager.Instance.buildingPrimary,
                     CardManager.Instance.buildingSecondary
                 );
                 actionButtonText.text = "build";
@@ -69,8 +71,17 @@ public class UICardPanel : InspectorReferenceChecker
             effectKeyTexts[i].text = CardToDisplay.cardEffectKeys[i];
             effectValueTexts[i].text = CardToDisplay.cardEffectValues[i];
         }
+
+        if (CardManager.Instance.cardDiscardedThisTurn)
+        {
+            LockDiscardButton();
+        }
+        else
+        {
+            UnlockDiscardButton();
+        }
     }
-    
+
     private void ApplyColourScheme(Color prm, Color drk)
     {
         // Apply the primary colours
@@ -90,7 +101,7 @@ public class UICardPanel : InspectorReferenceChecker
     {
         Assert.IsTrue
         (
-            CardToDisplay.cardEffectKeys == null && CardToDisplay.cardEffectValues == null 
+            CardToDisplay.cardEffectKeys == null && CardToDisplay.cardEffectValues == null
             ||
             CardToDisplay.cardEffectKeys.Length == CardToDisplay.cardEffectValues.Length
         );
@@ -103,10 +114,21 @@ public class UICardPanel : InspectorReferenceChecker
 
     public void DiscardCard() => CardManager.Instance.ConsiderCardDiscard(handCardIndex);
 
+    public void LockDiscardButton() => discardButton.gameObject.SetActive(false);
+    public void UnlockDiscardButton() => discardButton.gameObject.SetActive(true);
+
     protected override object[] CheckForMissingReferences() => new object[]
     {
         titleText, iconImage, summaryText, effectKeyTexts, effectValueTexts, costText, actionButtonText,
         headerPanelImage, iconPanelImage, summaryPanelImage, effectPanelImage, effectSeparatorPanelImage,
         actionButtonPanelImage
     };
+
+    public override void DoProcessingForComputerPhaseDuringGameInit() { }
+
+    public override void DoProcessingForComputerPhase()
+    {
+        print("Unlocking");
+        UnlockDiscardButton();
+    }
 }

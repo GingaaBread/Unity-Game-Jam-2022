@@ -126,6 +126,7 @@ MonoBehaviour:
   cardToDiscard: {fileID: 8671804663597566198}
   cardToDiscardTitle: {fileID: 5573446965998820444}
   discardAnimator: {fileID: 8642375601887043905}
+  scaleAnimator: {fileID: 2405592468595832657}
 --- !u!1 &385010008878561093
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,7 +1418,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d52b73b909bff5a4ab07b242e259de23, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -1438,6 +1439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardScaleAnimator: {fileID: 2405592468595832657}
+  panelContainer: {fileID: 0}
 --- !u!1 &4248503851301510187
 GameObject:
   m_ObjectHideFlags: 0
@@ -2077,10 +2079,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 46862523463803782}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 879213199927484998}
+        m_TargetAssemblyTypeName: UIDiscardPanel, Assembly-CSharp
+        m_MethodName: Cancel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2203,6 +2205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardScaleAnimator: {fileID: 0}
+  panelContainer: {fileID: 46862523463803782}
 --- !u!1 &6930810605407981539
 GameObject:
   m_ObjectHideFlags: 0
@@ -4351,7 +4354,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1294095101887699084, guid: adebc03ff6fed504da0389eba83dca2b, type: 3}
       propertyPath: m_Name
-      value: CardPanel
+      value: CardPanelInDiscardPanel
       objectReference: {fileID: 0}
     - target: {fileID: 1294095101887699085, guid: adebc03ff6fed504da0389eba83dca2b, type: 3}
       propertyPath: m_Pivot.x

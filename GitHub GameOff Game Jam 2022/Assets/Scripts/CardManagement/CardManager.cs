@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TimeManagement;
 using UIManagement;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -10,7 +11,7 @@ using Random = UnityEngine.Random;
 /// E.g : Giving cards at the start of the match, or when the player draws from the deck.
 /// </summary>
 /// <author>CROSTZARD + Gino</author>
-public class CardManager : MonoBehaviour
+public class CardManager : ComputerPhaseStep
 {
     // The singleton
     private static CardManager _instance = null;
@@ -41,6 +42,7 @@ public class CardManager : MonoBehaviour
 
     [Header("Drawing deck")]
 
+    public bool cardDiscardedThisTurn;
     /// <summary>
     /// Max amount of cards on a drawing deck.
     /// </summary>
@@ -51,8 +53,7 @@ public class CardManager : MonoBehaviour
     public int pileSize = 30;
 
     private int cardsDrawn, consideredDiscardIndex = -1;
-
-    private List<GameObject> pooledCards = new List<GameObject>();
+   
     private List<ActionCardSO> playerHandcards = new List<ActionCardSO>();
 
     private List<ActionCardSO> cropCards = new List<ActionCardSO>();
@@ -62,7 +63,7 @@ public class CardManager : MonoBehaviour
     private List<ActionCardSO> shuffledCards = new List<ActionCardSO>();
     private List<ActionCardSO> piledCards = new List<ActionCardSO>();
 
-    private void Awake()
+    private new void Awake()
     {
         Assert.IsNull(_instance, "CardManager singleton is already set. (check there is only one CardManager in the scene)");
         Assert.IsNotNull(discardPanel, "Discard panel is not set. (check there is a DiscardPanel set in the inspector)");
@@ -78,7 +79,6 @@ public class CardManager : MonoBehaviour
     /// Gives the player an amount of cards.
     /// </summary>
     /// <param name="amount"> amount given </param>
-
     public void GiveCard(int amount = 1) 
     {
         if (cardsDrawn >= deckSize) 
@@ -89,22 +89,11 @@ public class CardManager : MonoBehaviour
             var drawnCard = shuffledCards[cardsDrawn];
 
             playerHandcards.Add(drawnCard);
-            UIMainPanel.Instance.DisplayCard(drawnCard);
-                        
             cardsDrawn++;
+            UIMainPanel.Instance.DisplayCard(drawnCard);
         }
     }
-
-    private GameObject GetPooledCard() 
-    {
-        GameObject card = pooledCards[0];
-        pooledCards.RemoveAt(0);
-
-        card.SetActive(true);
-
-        return card;    
-    }
-
+    
     /// <summary>
     /// Assigns the card index and opens the discard UI panel
     /// </summary>
@@ -113,14 +102,17 @@ public class CardManager : MonoBehaviour
     {
         if (cardIndex >= MAX_HANDCARD_AMOUNT)
             throw new ApplicationException("The selected card has an index bigger than the maximum allowed index.");
+        else if (cardDiscardedThisTurn)
+            throw new ApplicationException("A card has already been discarded this turn.");
 
         consideredDiscardIndex = cardIndex;
+
         var consideredCard = playerHandcards[cardIndex];
 
         FeedbackPanelManager.Instance.EnqueueDiscardCardInstantly(discardPanel, consideredCard);
         FeedbackPanelManager.Instance.InitiateInstantDisplayQueue();
     }
-
+    
     /// <summary>
     /// If a card has been considered to be discarded, it will now discard it
     /// </summary>
@@ -129,10 +121,17 @@ public class CardManager : MonoBehaviour
         if (consideredDiscardIndex == -1)
             throw new ApplicationException("Trying to confirm the discard action before the system is ready.");
 
+        cardsDrawn--;
+        UIMainPanel.Instance.DecreasePoolIndex();
+
+        playerHandcards.RemoveAt(consideredDiscardIndex);
+
         discardPanel.HandleUIDiscard(consideredDiscardIndex);
         consideredDiscardIndex = -1;
+
+        cardDiscardedThisTurn = true;
     }
-    
+        
     // IMPORTANT: 
 
     // ADD THIS FUNCTION (ShuffleCards) EVERY TIME A TURN ENDS 
@@ -218,4 +217,11 @@ public class CardManager : MonoBehaviour
         Assert.IsNotNull(cardList, $"{ GetType().Name} missing required editor input 'availableCards'");
     }
 
+    public override void DoProcessingForComputerPhaseDuringGameInit() { }     
+    public override void DoProcessingForComputerPhase() => cardDiscardedThisTurn = false;
+
+    protected override object[] CheckForMissingReferences()
+    {
+        return new object[] { };
+    }
 }
