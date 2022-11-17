@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
+/// CROSTZARD (author)
+/// <summary>
+/// Each city needs to have their own logic on how they handle certain things (in this case how they randomly choose a resource to buy). 
+/// </summary>
+
+
 [CreateAssetMenu(fileName = "NewCityB", menuName = "City/ CityB")]
 public class CityB : CityDemandSO
 {
@@ -27,9 +34,9 @@ public class CityB : CityDemandSO
 
     private void AddToQueue() 
     { 
-        for (int i = 0; i < alwaysAvailable.Count; i++) 
+        for (int i = 0; i < availableResources.Count; i++) 
         {
-            queue.Enqueue(alwaysAvailable[i]);
+            queue.Enqueue(availableResources[i]);
         }
     }
 

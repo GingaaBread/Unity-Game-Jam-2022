@@ -4,9 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+
+/// CROSTZARD (author)
+/// <summary>
+/// ShopDisplayer makes sure to display UI propertly basing itself on the scriptable object information AND some other stuff like what resource its buying
+/// </summary>
+
 public class ShopDisplayer : MonoBehaviour
 {
-
     public Image resourceIcon;
 
     public Shop shop;
@@ -18,7 +23,7 @@ public class ShopDisplayer : MonoBehaviour
     void Start()
     {
         textMesh = GetComponentInChildren<TextMeshProUGUI>();
-
+        
         UpdateShopDisplay();
     }
 

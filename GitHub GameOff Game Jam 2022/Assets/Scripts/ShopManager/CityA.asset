@@ -13,10 +13,6 @@ MonoBehaviour:
   m_Name: CityA
   m_EditorClassIdentifier: 
   cityName: CityA
-  alwaysAvailable:
+  availableResources:
   - {fileID: 11400000, guid: 7a84d3e4d06d24246be27cda976d6fc7, type: 2}
   - {fileID: 11400000, guid: 69d1550e7c09c3845a363c2ad4540d45, type: 2}
-  spring: []
-  summer: []
-  autumn: []
-  winter: []
