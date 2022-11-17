@@ -25,10 +25,8 @@ namespace TimeManagement
         public PointInTime CurrentTime { get; private set; }
         public Phase CurrentPhase { get; private set; }
 
-        [HideInInspector] public static UnityEvent OnInitGame = new UnityEvent();
         [HideInInspector] public static UnityEvent OnStartPreTurn = new UnityEvent();
         [HideInInspector] public static UnityEvent OnStartPlayerTurn = new UnityEvent();
-        [HideInInspector] public static UnityEvent OnEndPlayerTurn = new UnityEvent();
 
         public ComputerPhaseStep[] ComputerPhaseSteps;
 
@@ -46,7 +44,8 @@ namespace TimeManagement
             private set { _instance = value; }
         }
 
-        private bool IsInitialized;
+        private int IndexOfCurrentlyRunningStep;
+        private bool IsFirstComputerPhase;
 
         private void Awake()
         {
@@ -55,69 +54,77 @@ namespace TimeManagement
 
             if (ComputerPhaseSteps.Length == 0) Debug.Log($"TimeManager does not provided with any computer phase workers. maybe you meant to?");
 
-            IsInitialized = false;
+            foreach (ComputerPhaseStep step in ComputerPhaseSteps)
+                Assert.IsNotNull(step, "TimeManager must not be given steps which are null");
 
-            TimeManager.OnInitGame.AddListener(HandleOnInitGame);
-            TimeManager.OnEndPlayerTurn.AddListener(HandleComputerPhase);
+            IndexOfCurrentlyRunningStep = -1;
         }
         
-        // TODO: May be invoked somewhere else?
         private void Start()
         {
-            OnInitGame.Invoke();
+            HandleOnInitGame();
         }
 
         public void HandleOnInitGame()
         {
-            IsInitialized = true;
             CurrentTime = PointInTime.GenerateFirstPointInTime();
             CurrentPhase = Phase.Computer;
-            if (DebugMode) Debug.Log($"TimeManager received OnInitGame event, so set time to {CurrentTime} and phase to {CurrentPhase}.");
-            // call all computer phase workers 
-            if (DebugMode) Debug.Log($"TimeManager calling DoProcessingForComputerPhaseDuringGameInit() on {ComputerPhaseSteps.Length} steps...");
-            for (int i = 0; i < ComputerPhaseSteps.Length; i++)
-            {
-                if (ComputerPhaseSteps[i] != null)
-                {
-                    if (DebugMode) Debug.Log($"TimeManager calling DoProcessingForComputerPhaseDuringGameInit() on {ComputerPhaseSteps[i].name}.");
-                    ComputerPhaseSteps[i].DoProcessingForComputerPhaseDuringGameInit();
-                }
-            }
-            FinishCurrentPhase();
+            IsFirstComputerPhase = true;
+            if (DebugMode) Debug.Log($"TimeManager HandleOnInitGame set time to {CurrentTime} and phase to {CurrentPhase}.");
+
+            // call all computer phase workers, by calling the first and then waiting it to finish to call next, etc. 
+            StartComputerPhaseSteps();
         }
 
-        public void HandleComputerPhase()
+        private void StartComputerPhaseSteps()
         {
-            // increment time
+            // call all computer phase workers 
+            IndexOfCurrentlyRunningStep = 0;
+            ComputerPhaseStep nextStep = ComputerPhaseSteps[IndexOfCurrentlyRunningStep];
+            if (DebugMode) Debug.Log($"TimeManager calling {nextStep.name}.");
+            nextStep.OnFinishProcessing.AddListener(HandleComputerPhaseStepCompleted);
+            nextStep.StartProcessingForComputerPhase(IsFirstComputerPhase);
+        }
+
+        // called when each computer phase step finishes
+        public void HandleComputerPhaseStepCompleted() {
+            // stop listening for finished step to finish
+            ComputerPhaseSteps[IndexOfCurrentlyRunningStep].OnFinishProcessing.RemoveListener(HandleComputerPhaseStepCompleted);
+            IndexOfCurrentlyRunningStep += 1;
+            if (IndexOfCurrentlyRunningStep < ComputerPhaseSteps.Length) { // if there's another step, start it and wait
+                ComputerPhaseStep nextStep = ComputerPhaseSteps[IndexOfCurrentlyRunningStep];
+                nextStep.OnFinishProcessing.AddListener(HandleComputerPhaseStepCompleted);
+                if (DebugMode) Debug.Log($"TimeManager calling {nextStep.name}");
+                nextStep.StartProcessingForComputerPhase(IsFirstComputerPhase);
+            } else { // if there's no more steps, finish the computer phase
+                IsFirstComputerPhase = false;
+                FinishComputerPhase();
+            }
+        }
+
+        private void FinishComputerPhase() {
+            if(CurrentPhase != Phase.Computer) throw new Exception($"TimeManager.FinishComputerPhase called when already in that phase");
+            CurrentPhase = Phase.PreTurn; 
+            if (DebugMode) Debug.Log($"TimeManager phase now {CurrentPhase}");
+            OnStartPreTurn.Invoke();
+        }
+
+        public void FinishPreTurnPhase() {
+            if (CurrentPhase != Phase.PreTurn) throw new Exception($"TimeManager.FinishPreTurnPhase called when already in that phase");
+            CurrentPhase = Phase.PlayerTurn; 
+            if (DebugMode) Debug.Log($"TimeManager phase now {CurrentPhase}");
+            OnStartPlayerTurn.Invoke();
+        }
+
+        public void FinishPlayerTurnPhase() {
+            if (CurrentPhase != Phase.PlayerTurn) throw new Exception($"TimeManager.FinishPlayerTurnPhase called when already in that phase");
+            CurrentPhase = Phase.Computer;
+            if (DebugMode) Debug.Log($"TimeManager phase now {CurrentPhase}");
+
+            // start computer phase work
             CurrentTime = CurrentTime.GenerateNext();
-            if (DebugMode) Debug.Log($"TimeManager incremented time to {CurrentTime}.");
-            // call all computer phase workers 
-            if (DebugMode) Debug.Log($"TimeManager calling DoProcessingForComputerPhaseDuringGameInit() on {ComputerPhaseSteps.Length} steps...");
-            for (int i = 0; i < ComputerPhaseSteps.Length; i++)
-            {
-                if (ComputerPhaseSteps[i] != null)
-                {
-                    if (DebugMode) Debug.Log($"TimeManager calling DoProcessingForComputerPhase() on {ComputerPhaseSteps[i].name}.");
-                    ComputerPhaseSteps[i].DoProcessingForComputerPhase();
-                }
-            }
-            FinishCurrentPhase();
-        }
-
-        public void FinishCurrentPhase()
-        {
-            if (!IsInitialized)
-                throw new Exception("TimeManager's FinishCurrentPhase() was called but TimeManager was never initialized first (something should invoke TimeManager.OnInitGame event first)");
-
-            switch (CurrentPhase)
-            {
-                case Phase.Computer: CurrentPhase = Phase.PreTurn; OnStartPreTurn.Invoke(); break;
-                case Phase.PreTurn: CurrentPhase = Phase.PlayerTurn; OnStartPlayerTurn.Invoke(); break;
-                case Phase.PlayerTurn: CurrentPhase = Phase.Computer; OnEndPlayerTurn.Invoke(); break;
-                default: throw new Exception($"TimeManager never expected a phase {CurrentPhase} and doesn't know how to handle it");
-            }
-
-            if (DebugMode) Debug.Log($"TimeManager FinishCurentPhase called, so phase is now {CurrentPhase} and corresponding event was fired.");
+            if (DebugMode) Debug.Log($"TimeManager time now {CurrentTime}");
+            StartComputerPhaseSteps();
         }
 
     }
