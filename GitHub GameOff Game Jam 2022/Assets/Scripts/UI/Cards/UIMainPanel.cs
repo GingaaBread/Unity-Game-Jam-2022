@@ -17,10 +17,8 @@ public class UIMainPanel : MonoBehaviour
         private set { _instance = value; }
     }
 
-    [SerializeField] private GameObject[] handcardBank;
-    [SerializeField] private UICardPanel[] handcards;
-
-    private int poolIndex;
+    [SerializeField] private GameObject cardContainer;
+    [SerializeField] private GameObject cardPrefab;
 
     private void Awake()
     {
@@ -30,19 +28,26 @@ public class UIMainPanel : MonoBehaviour
 
     public void DisplayCard(ActionCardSO cardToDisplay)
     {
-        if (poolIndex >= CardManager.MAX_HANDCARD_AMOUNT)
-            throw new ArgumentException("Trying to display a card despite having reached the maximum handcard limit. Cards: " + poolIndex);
+        if (CardManager.Instance.MaximumHandcardLimitReached())
+            throw new ArgumentException("Trying to display a card despite having reached the maximum handcard limit.");
 
-        handcardBank[poolIndex].SetActive(true);
-        handcards[poolIndex].CardToDisplay = cardToDisplay;
-        handcards[poolIndex].Render();
+        var newCard = Instantiate(cardPrefab, cardContainer.transform).GetComponent<UICardPanel>();
 
-        poolIndex++;
+        newCard.CardToDisplay = cardToDisplay;
+        newCard.Render();
     }
 
-    public void DecreasePoolIndex()
+    public void LockAllHandcards()
     {
-        poolIndex--;
-        print("Pool index decreased. Now " + poolIndex);
+        for (int i = 0; i < cardContainer.transform.childCount; i++)
+        {
+            var card = cardContainer.transform.GetChild(i).GetComponent<UICardPanel>();
+            card.LockDiscardButton();
+        }
+    }
+
+    public void DestroyCard(int cardIndex)
+    {
+        Destroy(cardContainer.transform.GetChild(cardIndex).gameObject);
     }
 }

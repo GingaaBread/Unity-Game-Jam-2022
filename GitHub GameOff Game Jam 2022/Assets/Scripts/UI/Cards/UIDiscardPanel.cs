@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class UIDiscardPanel : InspectorReferenceChecker
 {
-    [SerializeField] private UICardPanel[] handcardPrefabs;
     [SerializeField] private UICardPanel cardToDiscard;
     [SerializeField] private TMP_Text cardToDiscardTitle;
     [SerializeField] private Animator discardAnimator;
@@ -29,10 +28,7 @@ public class UIDiscardPanel : InspectorReferenceChecker
     public void Discard()
     {
         discardAnimator.Play("UIDiscardSuccess");
-        foreach (var card in handcardPrefabs)
-        {
-            card.LockDiscardButton();
-        }
+        UIMainPanel.Instance.LockAllHandcards();
     }
 
     /// <summary>
@@ -41,20 +37,17 @@ public class UIDiscardPanel : InspectorReferenceChecker
     public void Cancel() => scaleAnimator.Play("PopOutNeutral");
 
     /// <summary>
-    /// Reorders the sibling index and deactivates the card
+    /// Currently only informs the MainPanel and disables self
     /// </summary>
     /// <param name="cardIndex">The index of the discarded card</param>
     public void HandleUIDiscard(int cardIndex)
     {
-        handcardPrefabs[cardIndex].transform.SetAsLastSibling();
-
-        handcardPrefabs[cardIndex].gameObject.SetActive(false);
-
+        UIMainPanel.Instance.DestroyCard(cardIndex);
         gameObject.SetActive(false);
     }
 
     protected override object[] CheckForMissingReferences() => new object[]
     {
-        handcardPrefabs, cardToDiscard, cardToDiscardTitle, discardAnimator
+        cardToDiscard, cardToDiscardTitle, discardAnimator
     };
 }

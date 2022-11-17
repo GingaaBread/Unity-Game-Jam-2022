@@ -103,7 +103,8 @@ public class CardManager : ComputerPhaseStep
         if (cardIndex >= MAX_HANDCARD_AMOUNT)
             throw new ApplicationException("The selected card has an index bigger than the maximum allowed index.");
         else if (cardDiscardedThisTurn)
-            throw new ApplicationException("A card has already been discarded this turn.");
+            throw new ApplicationException("A card has already been discarded this turn. This should be checked before" +
+                "calling the function!");
 
         consideredDiscardIndex = cardIndex;
 
@@ -121,15 +122,11 @@ public class CardManager : ComputerPhaseStep
         if (consideredDiscardIndex == -1)
             throw new ApplicationException("Trying to confirm the discard action before the system is ready.");
 
-        cardsDrawn--;
-        UIMainPanel.Instance.DecreasePoolIndex();
-
         playerHandcards.RemoveAt(consideredDiscardIndex);
-
-        discardPanel.HandleUIDiscard(consideredDiscardIndex);
-        consideredDiscardIndex = -1;
+        discardPanel.HandleUIDiscard(consideredDiscardIndex);        
 
         cardDiscardedThisTurn = true;
+        consideredDiscardIndex = -1;
     }
         
     // IMPORTANT: 
@@ -173,6 +170,8 @@ public class CardManager : ComputerPhaseStep
 
         RandomizeList(piledCards);
     }
+
+    public bool MaximumHandcardLimitReached() => playerHandcards.Count >= MAX_HANDCARD_AMOUNT;
 
     private void RandomizeList(List<ActionCardSO> list) 
     {

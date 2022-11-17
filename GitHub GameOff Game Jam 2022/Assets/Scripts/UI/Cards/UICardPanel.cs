@@ -1,3 +1,4 @@
+using System;
 using TimeManagement;
 using TMPro;
 using UnityEngine;
@@ -7,7 +8,6 @@ using UnityEngine.UI;
 public class UICardPanel : ComputerPhaseStep
 {
     public ActionCardSO CardToDisplay { private get; set; }
-    public int handCardIndex;
 
     [Header("Main UI Components")]
     [SerializeField] private TMP_Text titleText;
@@ -30,8 +30,16 @@ public class UICardPanel : ComputerPhaseStep
     private readonly Color SEED_PRIMARY = new Color(173, 236, 168);
     private readonly Color SEED_DARKER = new Color(173, 220, 150);
 
+    /// <summary>
+    /// Sets up all UI components, rendering the selected CardToDisplay
+    /// </summary>
+    /// <exception cref="NotImplementedException"></exception>
+    /// <exception cref="MissingReferenceException"></exception>
     public void Render()
     {
+        if (CardToDisplay == null)
+            throw new MissingReferenceException("You need to define the CardToDisplay before rendering a card");
+
         switch (CardToDisplay)
         {
             case BuildingCard b:
@@ -58,7 +66,7 @@ public class UICardPanel : ComputerPhaseStep
                 );
                 actionButtonText.text = "place";
                 break;
-            default: throw new System.NotImplementedException("Card type is not yet implemented: " + CardToDisplay.GetType());
+            default: throw new NotImplementedException("Card type is not yet implemented: " + CardToDisplay.GetType());
         }
 
         // Set the texts
@@ -112,17 +120,14 @@ public class UICardPanel : ComputerPhaseStep
 
     }
 
-    public void DiscardCard() => CardManager.Instance.ConsiderCardDiscard(handCardIndex);
+    public int GetCardIndex() => transform.GetSiblingIndex();
+
+    public void DiscardCard() => CardManager.Instance.ConsiderCardDiscard(GetCardIndex());
 
     public void LockDiscardButton() => discardButton.gameObject.SetActive(false);
     public void UnlockDiscardButton() => discardButton.gameObject.SetActive(true);
 
-    protected override object[] CheckForMissingReferences() => new object[]
-    {
-        titleText, iconImage, summaryText, effectKeyTexts, effectValueTexts, costText, actionButtonText,
-        headerPanelImage, iconPanelImage, summaryPanelImage, effectPanelImage, effectSeparatorPanelImage,
-        actionButtonPanelImage
-    };
+    // Time Event Management
 
     public override void DoProcessingForComputerPhaseDuringGameInit() { }
 
@@ -131,4 +136,11 @@ public class UICardPanel : ComputerPhaseStep
         print("Unlocking");
         UnlockDiscardButton();
     }
+
+    protected override object[] CheckForMissingReferences() => new object[]
+    {
+        titleText, iconImage, summaryText, effectKeyTexts, effectValueTexts, costText, actionButtonText,
+        headerPanelImage, iconPanelImage, summaryPanelImage, effectPanelImage, effectSeparatorPanelImage,
+        actionButtonPanelImage
+    };
 }
