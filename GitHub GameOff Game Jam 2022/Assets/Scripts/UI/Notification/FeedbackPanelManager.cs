@@ -262,7 +262,6 @@ namespace UIManagement
             CheckIfQueueIsAlreadyBeingDisplayed();
 
             // LockActions(); TODO: Implement
-            print("[LOCK PLAYER ACTIONS]");
 
             displayState = DISPLAY_STATE_NEW_TURN;
 
@@ -284,9 +283,7 @@ namespace UIManagement
             if (displayState == DISPLAY_STATE_NONE)
             {
                 // LockActions(); TODO: Implement
-                print("[LOCK PLAYER ACTIONS]");
-
-                displayState = DISPLAY_STATE_INSTANT_DISPLAY;
+                    displayState = DISPLAY_STATE_INSTANT_DISPLAY;
 
                 if (doDebugPrints)
                 {
@@ -304,7 +301,6 @@ namespace UIManagement
         private void InitiateQueueDisplayEnd(bool ofTheNewTurnQueue)
         {
             // UnlockActions(); TODO: Implement
-            print("[UNLOCK PLAYER ACTIONS]");
 
             displayState = DISPLAY_STATE_NONE;
 
@@ -315,7 +311,7 @@ namespace UIManagement
 
             if (ofTheNewTurnQueue)
             {
-                TimeManager.Instance.FinishCurrentPhase();
+                TimeManager.Instance.FinishPreTurnPhase();
             }
         }
 

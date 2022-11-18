@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using TimeManagement;
 
+// Author: Rohaid 
+// Purpose: Stores the state of the tile in play and updates the physical appearance based on its state.
 public class Tile : MonoBehaviour
 {
 
@@ -21,6 +24,8 @@ public class Tile : MonoBehaviour
 
     private int _tileRowNum;
 
+    [SerializeField]
+    private GameObject TileForeground;
 
 
     void Awake()
@@ -35,17 +40,24 @@ public class Tile : MonoBehaviour
         }
 
         cardPlayManager = FindObjectOfType<CardPlayManager>();
-        if(cardPlayManager == null) {
+        if (cardPlayManager == null)
+        {
             Debug.LogError("There is no cardplay manager script, please place one in the scene");
         }
         currSprite = GetComponent<SpriteRenderer>();
+        if (TileForeground != null && currType != null)
+        {
+            _tileRowNum = currSprite.sortingOrder;
+            GameObject tileForegroundObj = Instantiate(TileForeground, transform);
+            tileForegroundObj.GetComponent<TileForeground>().Initialize(currType, _tileRowNum, false, SeasonType.SPRING);
+        }
     }
 
     void OnMouseDown()
     {
         if (currType != null)
         {
-            if(EventSystem.current.IsPointerOverGameObject())
+            if (EventSystem.current.IsPointerOverGameObject())
             {
                 return;
             }
@@ -71,8 +83,9 @@ public class Tile : MonoBehaviour
 
     public void ApplyBuildTile(BuildingCard building)
     {
-        if(currType.type == BuildingManagement.TileType.LAKE || currType.type == BuildingManagement.TileType.FOREST 
-        || currType.type == BuildingManagement.TileType.MOUNTAIN){
+        if (currType.type == BuildingManagement.TileType.LAKE || currType.type == BuildingManagement.TileType.FOREST
+        || currType.type == BuildingManagement.TileType.MOUNTAIN)
+        {
             return;
         }
 
@@ -86,6 +99,12 @@ public class Tile : MonoBehaviour
         {
             currBuilding = building;
             currSprite.sprite = building.buildingSprite;
+            if (transform.childCount > 0)
+            {
+                Destroy(transform.GetChild(0).gameObject);
+            }
+            GameObject tileForegroundObj = Instantiate(TileForeground, transform);
+            tileForegroundObj.GetComponent<TileForeground>().Initialize(currBuilding, _tileRowNum, false, SeasonType.SPRING);
             isBuild = true;
         }
 
@@ -93,37 +112,67 @@ public class Tile : MonoBehaviour
 
     public void ApplyCropTile(SeedCard crop)
     {
-        if(isBuild && !isSeed){
-            if(currBuilding.buildingType == BuildingManagement.BuildingType.ACRE){
-                currSprite.sprite = crop.finalSprite;
+        if (isBuild && !isSeed)
+        {
+            if (currBuilding.buildingType == BuildingManagement.BuildingType.ACRE)
+            {
+                currSprite.sprite = crop.buildingSprite;
+
                 currSeed = crop;
+                if (transform.childCount > 0)
+                {
+                    Destroy(transform.GetChild(0).gameObject);
+                }
+                GameObject tileForegroundObj = Instantiate(TileForeground, transform);
+                tileForegroundObj.GetComponent<TileForeground>().Initialize(currSeed, _tileRowNum, false, SeasonType.SPRING);
+                isBuild = true;
                 isSeed = true;
-            } else {
+            }
+            else
+            {
                 return;
             }
-        } else {
+        }
+        else
+        {
             return;
         }
     }
 
-    public void ApplyLivestockTile(LivestockCard animal){
-        if(isBuild && !isAnimal){
-            if(currBuilding.buildingType == BuildingManagement.BuildingType.ANIMALPEN){
-                currSprite.sprite = animal.cardSprite;
+    public void ApplyLivestockTile(LivestockCard animal)
+    {
+        if (isBuild && !isAnimal)
+        {
+            if (currBuilding.buildingType == BuildingManagement.BuildingType.ANIMALPEN)
+            {
+                currSprite.sprite = animal.buildingSprite;
                 currAnimal = animal;
                 isAnimal = true;
-            } else {
+                if (transform.childCount > 0)
+                {
+                    Destroy(transform.GetChild(0).gameObject);
+                }
+                GameObject tileForegroundObj = Instantiate(TileForeground, transform);
+                tileForegroundObj.GetComponent<TileForeground>().Initialize(animal, _tileRowNum, false, SeasonType.SPRING);
+                isBuild = true;
+            }
+            else
+            {
                 return;
             }
-        } else {
+        }
+        else
+        {
             return;
         }
     }
 
-    public void SetSpriteOrderLayer(int currentRow){
-        _tileRowNum = currentRow;
-        GetComponent<SpriteRenderer>().sortingOrder = _tileRowNum * 10 ;
+    public void SetSpriteOrderLayer(int currentRow)
+    {
+        _tileRowNum = currentRow * 10;
+        GetComponent<SpriteRenderer>().sortingOrder = _tileRowNum;
     }
+
 
 }
 

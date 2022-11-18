@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
+  TileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
 --- !u!60 &5882574006738571510
 PolygonCollider2D:
   m_ObjectHideFlags: 0
