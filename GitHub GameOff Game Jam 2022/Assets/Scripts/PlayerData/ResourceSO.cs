@@ -8,7 +8,7 @@ namespace PlayerData
     {
 
         public int basePrice;
-
+        public TimeManagement.SeasonType season;
         public Sprite iconSprite;
     
     }    

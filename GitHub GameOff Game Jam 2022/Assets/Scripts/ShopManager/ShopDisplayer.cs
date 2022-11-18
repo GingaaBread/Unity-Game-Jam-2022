@@ -16,15 +16,15 @@ public class ShopDisplayer : MonoBehaviour
 
     public Shop shop;
 
-    TextMeshProUGUI textMesh;
+    TextMeshProUGUI cityNameText;
+    TextMeshProUGUI resourcePriceText;
 
     PlayerData.ResourceSO resource;
 
     void Start()
     {
-        textMesh = GetComponentInChildren<TextMeshProUGUI>();
-        
-        UpdateShopDisplay();
+        cityNameText = GetComponentInChildren<TextMeshProUGUI>();
+        resourcePriceText = resourceIcon.GetComponentInChildren<TextMeshProUGUI>();
     }
 
     void Update()
@@ -34,9 +34,12 @@ public class ShopDisplayer : MonoBehaviour
 
     public void UpdateShopDisplay() 
     {
-        textMesh.text = shop.City.cityName;
+        cityNameText.text = shop.City.cityName;
 
         resource = shop.Resource;
+        resourcePriceText.text = resource.basePrice.ToString();
+
+        if (resource == null) return;
 
         resourceIcon.sprite = resource.iconSprite;
         resourceIcon.color = Color.white;

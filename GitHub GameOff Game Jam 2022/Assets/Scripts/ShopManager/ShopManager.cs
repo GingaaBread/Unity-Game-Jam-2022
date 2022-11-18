@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PlayerData;
+using TimeManagement;
 
 
 /// CROSTZARD (author)
@@ -17,12 +19,10 @@ public class ShopManager : MonoBehaviour
 
     public static ShopManager Instance;
 
-
-    private PlayerData.PlayerDataManager playerData;
     private int costBonus = 2;
 
     private int lastCost = 100;
-    // Random number. Checking if the crop has a bonus in a certain season is a long process. So I set this value every time player buys something
+    // Predetermined number. Checking if the crop has a bonus in a certain season is a long process. So I set this value every time player buys something
     // So next time the script doesn't have to process anything (This value resets every time the shop is updated)
 
     private void Awake()
@@ -46,56 +46,41 @@ public class ShopManager : MonoBehaviour
 
     public void SellResource(Shop shop)
     {
-        Debug.Log($"Sold 1 {shop.Resource.name} to {shop.City.cityName}!");
-        Debug.Log($"money increased by: {GetPrice(shop.Resource.basePrice, shop.Resource)} !");
+        if (shop.Resource == null) return; 
 
+        Debug.Log($"Sold 1 {shop.Resource.name} to {shop.City.cityName}!");
+        Debug.Log($"money increased by: {GetPrice(shop)} !");
+
+        shop.SoldItem();
     }
 
-    private int GetPrice(int basePrice, PlayerData.ResourceSO resource)
+    private int GetPrice(Shop shop)
     {
+
+        int basePrice = shop.Resource.basePrice;
+        ResourceSO resource = shop.Resource;
+        float multiplier = shop.CostMultiplier;
+
+        int price = 0;
         // season checks for bonuses, etc.
 
         if (lastCost != 100) return lastCost; // read lastCost above for more info.
 
-        if(TimeManagement.TimeManager.Instance.CurrentTime.SeasonInYear == TimeManagement.SeasonType.WINTER) 
+        if(resource.season == TimeManager.Instance.CurrentTime.SeasonInYear) 
         { 
-            if (resource.name == "Wheat") 
+            if(resource.name == "Wheat" || resource.name == "Rice" || resource.name == "Flowers" || resource.name == "Oats") 
             {
-                return basePrice + costBonus;
+                price = (int)(basePrice * multiplier + costBonus);
             }
         }
-        else if (TimeManagement.TimeManager.Instance.CurrentTime.SeasonInYear == TimeManagement.SeasonType.SPRING)
-        {
-            if (resource.name == "Oats")
-            {
-                return basePrice + costBonus;
-            }
 
-        }
-        else if (TimeManagement.TimeManager.Instance.CurrentTime.SeasonInYear == TimeManagement.SeasonType.SUMMER)
-        {
-            if (resource.name == "Flowers")
-            {
-                return basePrice + costBonus;
-            }
-
-        }
-        else if (TimeManagement.TimeManager.Instance.CurrentTime.SeasonInYear == TimeManagement.SeasonType.FALL)
-        {
-            if (resource.name == "Rice")
-            {
-                return basePrice + costBonus;
-            }
-
-        }
-
-
-        return basePrice;
+        return price;
     }
 
 
     public void UpdateShop() 
     {
         OnShopUpdate.Invoke();
+        lastCost = 100;
     }
 }

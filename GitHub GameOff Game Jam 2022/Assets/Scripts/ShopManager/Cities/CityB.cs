@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
+using PlayerData;
 
 /// CROSTZARD (author)
 /// <summary>
@@ -14,10 +13,12 @@ using UnityEngine;
 public class CityB : CityDemandSO
 {
 
-    Queue<PlayerData.ResourceSO> queue = new Queue<PlayerData.ResourceSO>();
+    // CITY B buys rare crops. They are put in a queue so you always get to sell them in a year.
+
+    Queue<ResourceSO> queue = new Queue<ResourceSO>();
 
 
-    public override PlayerData.ResourceSO RandomResource()
+    public override ResourceSO RandomResource()
     {
 
         if(queue.Count == 0) 
