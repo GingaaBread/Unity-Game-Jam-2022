@@ -17,7 +17,7 @@ public class EndTurnPanel : MonoBehaviour
     }
 
     public void HandleEndTurnButtonClicked() {
-        TimeManager.Instance.FinishCurrentPhase();
+        //TimeManager.Instance.FinishCurrentPhase();
         UpdateButtonStateBasedOnPhase();
     }
 

@@ -220,11 +220,16 @@ public class CardManager : ComputerPhaseStep
         Assert.IsNotNull(cardList, $"{ GetType().Name} missing required editor input 'availableCards'");
     }
 
-    public override void DoProcessingForComputerPhaseDuringGameInit() { }     
-    public override void DoProcessingForComputerPhase() => cardDiscardedThisTurn = false;
-
     protected override object[] CheckForMissingReferences()
     {
         return new object[] { };
+    }
+
+    public override void StartProcessingForComputerPhase(bool isComputerPhaseDuringGameInit)
+    {
+        if (!isComputerPhaseDuringGameInit)
+        {
+            cardDiscardedThisTurn = false;
+        }
     }
 }

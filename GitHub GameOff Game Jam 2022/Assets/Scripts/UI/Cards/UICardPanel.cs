@@ -126,18 +126,19 @@ public class UICardPanel : ComputerPhaseStep
 
     // Time Event Management
 
-    public override void DoProcessingForComputerPhaseDuringGameInit() { }
-
-    public override void DoProcessingForComputerPhase()
-    {
-        print("Unlocking");
-        UnlockDiscardButton();
-    }
-
     protected override object[] CheckForMissingReferences() => new object[]
     {
         titleText, iconImage, summaryText, effectKeyTexts, effectValueTexts, costText, actionButtonText,
         headerPanelImage, iconPanelImage, summaryPanelImage, effectPanelImage, effectSeparatorPanelImage,
         actionButtonPanelImage
     };
+
+    public override void StartProcessingForComputerPhase(bool isComputerPhaseDuringGameInit)
+    {
+        if (!isComputerPhaseDuringGameInit)
+        {
+            print("Unlocking");
+            UnlockDiscardButton();
+        }
+    }
 }
