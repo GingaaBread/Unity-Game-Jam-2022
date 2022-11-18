@@ -66,6 +66,9 @@ MonoBehaviour:
   buildingSecondary: {r: 1, g: 0.4117647, b: 0.4117647, a: 1}
   seedPrimary: {r: 0.56078434, g: 1, b: 0.63159114, a: 1}
   seedSecondary: {r: 0.40610537, g: 0.735849, b: 0.46204403, a: 1}
+  livestockPrimary: {r: 0.56078434, g: 0.6596765, b: 1, a: 1}
+  livestockSecondary: {r: 0.41451588, g: 0.49255946, b: 0.764151, a: 0}
+  discardPanel: {fileID: 0}
+  cardDiscardedThisTurn: 0
   deckSize: 240
   pileSize: 30
-  pooledCards: []

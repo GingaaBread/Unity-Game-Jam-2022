@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: PotatoCard
   m_EditorClassIdentifier: 
   cardSprite: {fileID: 21300000, guid: 38d9fbea1ec51f34082db39ee0b16192, type: 3}
-  buildingSprite: {fileID: 0}
-  cardTitle: 
+  cardTitle: Potato
   cardSummary: 
   cardEffectKeys: []
   cardEffectValues: []
   cardCost: 10
   buildingType: 5
+  finalSprite: {fileID: 0}
   tileForegroundChildPrefab: {fileID: 290865623841320278, guid: 9be5cf1dc80a45e49b6f1def06068f7c, type: 3}
   payoffResource: {fileID: 11400000, guid: fdcd416a38e9107408c6bcfd8fe588ac, type: 2}
   payoffAmount: 0

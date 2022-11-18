@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: OatsCard
   m_EditorClassIdentifier: 
   cardSprite: {fileID: 21300000, guid: 757ce0240e8d45e44a5f4aad8a9d8c2d, type: 3}
-  buildingSprite: {fileID: 0}
-  cardTitle: 
+  cardTitle: Oats
   cardSummary: 
   cardEffectKeys: []
   cardEffectValues: []
   cardCost: 10
   buildingType: 1
+  finalSprite: {fileID: 0}
   tileForegroundChildPrefab: {fileID: 290865623841320278, guid: b34fd5d050f4c4c40b38d63e7679f80d, type: 3}
   payoffResource: {fileID: 11400000, guid: 8899f5d05677f694eac54b2f49e33f8f, type: 2}
   payoffAmount: 0
