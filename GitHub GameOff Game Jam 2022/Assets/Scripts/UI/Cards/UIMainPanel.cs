@@ -6,6 +6,7 @@ public class UIMainPanel : MonoBehaviour
 {
     [Header("Debug Flags")]
     public bool shouldLockDiscardButtonsForCards = true;
+    public float detailedCardYPosition;
 
     // The singleton
     private static UIMainPanel _instance = null;
@@ -22,6 +23,9 @@ public class UIMainPanel : MonoBehaviour
 
     [SerializeField] private GameObject cardContainer;
     [SerializeField] private GameObject cardPrefab;
+    [SerializeField] private UICardPanel detailedCardPanel;
+    [SerializeField] private RectTransform[] paddingContainers;
+    [SerializeField] private RectTransform detailedCardPanelRectTransform;
 
     private void Awake()
     {
@@ -55,5 +59,20 @@ public class UIMainPanel : MonoBehaviour
     public void DestroyCard(int cardIndex)
     {
         Destroy(cardContainer.transform.GetChild(cardIndex).gameObject);
+    }
+
+    public void DisplayDetailedCard(UICardPanel cardPanel, int siblingIndex)
+    {
+        detailedCardPanel.gameObject.SetActive(true);
+        detailedCardPanel.transform.SetSiblingIndex(siblingIndex);
+
+        detailedCardPanel.CardToDisplay = cardPanel.CardToDisplay;
+        detailedCardPanel.Render();
+    }
+
+    public void HideDetailedCard()
+    {
+        detailedCardPanel.CardToDisplay = null;
+        detailedCardPanel.gameObject.SetActive(false);
     }
 }

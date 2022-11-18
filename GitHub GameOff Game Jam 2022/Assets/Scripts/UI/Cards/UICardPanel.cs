@@ -3,11 +3,12 @@ using TimeManagement;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UICardPanel : ComputerPhaseStep
+public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler
 {
-    public ActionCardSO CardToDisplay { private get; set; }
+    public ActionCardSO CardToDisplay { get; set; }
 
     [Header("Main UI Components")]
     [SerializeField] private TMP_Text titleText;
@@ -140,5 +141,10 @@ public class UICardPanel : ComputerPhaseStep
             print("Unlocking");
             UnlockDiscardButton();
         }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        UIMainPanel.Instance.DisplayDetailedCard(this, GetCardIndex());
     }
 }
