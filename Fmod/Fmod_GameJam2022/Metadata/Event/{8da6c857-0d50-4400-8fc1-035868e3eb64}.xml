@@ -8,7 +8,7 @@
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{bbae93bd-cb0c-46a1-b39f-22a356e5da31}</destination>
+			<destination>{ec894a1d-6349-4ed9-88e9-c87897cac1da}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{6726c055-d240-4a57-9e18-93f81b577cc5}</destination>
@@ -52,9 +52,6 @@
 		</relationship>
 	</object>
 	<object class="MixerInput" id="{89140747-6aac-4225-aebf-a22b9469b99f}">
-		<relationship name="masters">
-			<destination>{957fbc23-9ec9-4bc9-83eb-e6a5752e9236}</destination>
-		</relationship>
 		<relationship name="effectChain">
 			<destination>{9fd7cc8e-c9e8-4a56-a72c-c5b573ae9e27}</destination>
 		</relationship>
@@ -62,7 +59,7 @@
 			<destination>{e1fef432-9f1c-4493-99e3-3fbd16665489}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{2f08594d-a827-42db-a960-ebaff37902b4}</destination>
+			<destination>{549716e3-0d2f-44d3-a186-428368655916}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{b38b6c51-4bfa-404f-b4a1-0e6b834c512c}" />
@@ -198,7 +195,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{d5a631c1-9d91-409c-b0fe-26874c752eb0}">
 		<property name="volume">
-			<value>-5</value>
+			<value>-11</value>
 		</property>
 		<property name="name">
 			<value>Anvil</value>
@@ -263,7 +260,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{e1040792-aef7-4ea2-a436-199064af92a3}">
 		<property name="volume">
-			<value>-9</value>
+			<value>-14.5</value>
 		</property>
 		<property name="name">
 			<value>Saw</value>
@@ -295,6 +292,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{8a372e3e-7fda-483e-8635-5a8640db01a4}">
+		<property name="volume">
+			<value>-11.5</value>
+		</property>
 		<property name="name">
 			<value>Jackhammer</value>
 		</property>
@@ -361,7 +361,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{53cac647-a36a-470f-bf8d-e2126848757a}">
 		<property name="volume">
-			<value>-2</value>
+			<value>-16.5</value>
 		</property>
 		<property name="name">
 			<value>Drill</value>
