@@ -13,11 +13,15 @@ MonoBehaviour:
   m_Name: AcreCard
   m_EditorClassIdentifier: 
   cardSprite: {fileID: 0}
-  buildingSprite: {fileID: 0}
-  cardTitle: 
-  cardSummary: 
-  cardEffectKeys: []
-  cardEffectValues: []
-  cardCost: 10
+  cardTitle: Acre
+  cardSummary: Tills land to ready it for planing crops
+  cardEffectKeys:
+  - 'Enables:'
+  - 'Buildable on:'
+  cardEffectValues:
+  - Growing crops
+  - Plains & Hills
+  cardCost: 30
   buildingType: 0
+  buildingSprite: {fileID: 0}
   tileForegroundChildPrefab: {fileID: 0}

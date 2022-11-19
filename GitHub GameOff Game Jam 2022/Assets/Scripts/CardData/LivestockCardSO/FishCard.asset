@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: FishCard
   m_EditorClassIdentifier: 
   cardSprite: {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
-  buildingSprite: {fileID: 0}
-  cardTitle: 
+  cardTitle: Fish
   cardSummary: 
   cardEffectKeys: []
   cardEffectValues: []

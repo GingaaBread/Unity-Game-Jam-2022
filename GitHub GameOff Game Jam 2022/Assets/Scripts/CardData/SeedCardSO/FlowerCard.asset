@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: FlowerCard
   m_EditorClassIdentifier: 
   cardSprite: {fileID: 21300000, guid: 32875a1be46edf64f81fd622881c0291, type: 3}
-  buildingSprite: {fileID: 0}
-  cardTitle: 
+  cardTitle: Flower
   cardSummary: 
   cardEffectKeys: []
   cardEffectValues: []
   cardCost: 10
   buildingType: 2
+  finalSprite: {fileID: 0}
   tileForegroundChildPrefab: {fileID: 290865623841320278, guid: e0cbf8588aaa0004a8af8e8e4839ef27, type: 3}
   payoffResource: {fileID: 11400000, guid: e8cb8992e4acb744ab9d493ac9ba2a1b, type: 2}
   payoffAmount: 0

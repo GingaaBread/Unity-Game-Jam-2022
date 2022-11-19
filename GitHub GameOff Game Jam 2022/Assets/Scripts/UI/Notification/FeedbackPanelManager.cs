@@ -121,6 +121,16 @@ namespace UIManagement
         }
 
         /// <summary>
+        /// An entire panel displaying the card discard panel
+        /// with both a cancel and confirmation button
+        /// </summary>
+        private class CardDiscardUIPanel : UIPanel
+        {
+            public UIDiscardPanel Panel { get; set; }
+            public ActionCardSO ConsideredCard { get; set; }
+        }
+
+        /// <summary>
         /// On game start, setup the singleton, the queues, and add the listener
         /// </summary>
         private void Awake() 
@@ -228,6 +238,21 @@ namespace UIManagement
         }
 
         /// <summary>
+        /// Enqueues the discard panel prompt to the direct queue.
+        /// Note that it cannot and should not be enqueued to the new-turn queue.
+        /// </summary>
+        /// <param name="discardPanel">The panel to open</param>
+        /// <param name="consideredCard">The card to display in the panel</param>
+        public void EnqueueDiscardCardInstantly(UIDiscardPanel discardPanel, ActionCardSO consideredCard)
+        {
+            uiPanelInstantDisplayQueue.Enqueue(new CardDiscardUIPanel()
+            {
+                ConsideredCard = consideredCard,
+                Panel = discardPanel
+            });
+        }
+
+        /// <summary>
         /// In the beginning of each round, all messages of the queue are displayed
         /// one after the other. After the final message was displayed, unlocks the 
         /// player's actions.
@@ -255,17 +280,18 @@ namespace UIManagement
         /// </summary>
         public void InitiateInstantDisplayQueue()
         {
-            CheckIfQueueIsAlreadyBeingDisplayed();
-
-            // LockActions(); TODO: Implement
-            displayState = DISPLAY_STATE_INSTANT_DISPLAY;
-
-            if (doDebugPrints)
+            if (displayState == DISPLAY_STATE_NONE)
             {
-                print($"[DEBUG]: Locked player actions and set the display state to {displayState}.");
-            }
+                // LockActions(); TODO: Implement
+                    displayState = DISPLAY_STATE_INSTANT_DISPLAY;
 
-            InitiateNextPanel();
+                if (doDebugPrints)
+                {
+                    print($"[DEBUG]: Locked player actions and set the display state to {displayState}.");
+                }
+
+                InitiateNextPanel();
+            }
         }
 
         /// <summary>
@@ -423,6 +449,11 @@ namespace UIManagement
             {
                 notificationPanelText.text = $"Received Card: {cardPanel.ReceivedCard}!";
                 DisplayCardConfirmation("New Card Received:", cardPanel.ReceivedCard);
+            }
+            else if (currentPanel is CardDiscardUIPanel discardPanel)
+            {
+                discardPanel.Panel.gameObject.SetActive(true);
+                discardPanel.Panel.DisplaySelf(discardPanel.ConsideredCard);
             }
             else throw new NotImplementedException($"The UI panel '{currentPanel}' is not yet implemented!");
         }

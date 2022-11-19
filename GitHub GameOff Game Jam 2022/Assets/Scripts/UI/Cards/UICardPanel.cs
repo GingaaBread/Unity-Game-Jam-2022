@@ -1,9 +1,11 @@
+using System;
+using TimeManagement;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
 
-public class UICardPanel : InspectorReferenceChecker
+public class UICardPanel : ComputerPhaseStep
 {
     public ActionCardSO CardToDisplay { private get; set; }
 
@@ -15,6 +17,7 @@ public class UICardPanel : InspectorReferenceChecker
     [SerializeField] private TMP_Text[] effectValueTexts;
     [SerializeField] private TMP_Text costText;
     [SerializeField] private TMP_Text actionButtonText;
+    [SerializeField] private Button discardButton;
 
     [Header("Recolourable Panels")]
     [SerializeField] private Image headerPanelImage;
@@ -23,18 +26,23 @@ public class UICardPanel : InspectorReferenceChecker
     [SerializeField] private Image effectPanelImage;
     [SerializeField] private Image effectSeparatorPanelImage;
     [SerializeField] private Image actionButtonPanelImage;
-        
-    private readonly Color SEED_PRIMARY = new Color(173, 236, 168);
-    private readonly Color SEED_DARKER = new Color(173, 220, 150);
 
+    /// <summary>
+    /// Sets up all UI components, rendering the selected CardToDisplay
+    /// </summary>
+    /// <exception cref="NotImplementedException"></exception>
+    /// <exception cref="MissingReferenceException"></exception>
     public void Render()
     {
+        if (CardToDisplay == null)
+            throw new MissingReferenceException("You need to define the CardToDisplay before rendering a card");
+
         switch (CardToDisplay)
         {
             case BuildingCard b:
                 ApplyColourScheme
                 (
-                    CardManager.Instance.buildingPrimary, 
+                    CardManager.Instance.buildingPrimary,
                     CardManager.Instance.buildingSecondary
                 );
                 actionButtonText.text = "build";
@@ -50,12 +58,12 @@ public class UICardPanel : InspectorReferenceChecker
             case LivestockCard l:
                 ApplyColourScheme
                 (
-                    CardManager.Instance.seedPrimary,
-                    CardManager.Instance.seedSecondary
+                    CardManager.Instance.livestockPrimary,
+                    CardManager.Instance.livestockSecondary
                 );
                 actionButtonText.text = "place";
                 break;
-            default: throw new System.NotImplementedException("Card type is not yet implemented: " + CardToDisplay.GetType());
+            default: throw new NotImplementedException("Card type is not yet implemented: " + CardToDisplay.GetType());
         }
 
         // Set the texts
@@ -68,8 +76,17 @@ public class UICardPanel : InspectorReferenceChecker
             effectKeyTexts[i].text = CardToDisplay.cardEffectKeys[i];
             effectValueTexts[i].text = CardToDisplay.cardEffectValues[i];
         }
+
+        if (CardManager.Instance.cardDiscardedThisTurn)
+        {
+            LockDiscardButton();
+        }
+        else
+        {
+            UnlockDiscardButton();
+        }
     }
-    
+
     private void ApplyColourScheme(Color prm, Color drk)
     {
         // Apply the primary colours
@@ -89,7 +106,7 @@ public class UICardPanel : InspectorReferenceChecker
     {
         Assert.IsTrue
         (
-            CardToDisplay.cardEffectKeys == null && CardToDisplay.cardEffectValues == null 
+            CardToDisplay.cardEffectKeys == null && CardToDisplay.cardEffectValues == null
             ||
             CardToDisplay.cardEffectKeys.Length == CardToDisplay.cardEffectValues.Length
         );
@@ -100,10 +117,14 @@ public class UICardPanel : InspectorReferenceChecker
 
     }
 
-    public void DiscardCard(int cardIndex)
-    {
+    public int GetCardIndex() => transform.GetSiblingIndex();
 
-    }
+    public void DiscardCard() => CardManager.Instance.ConsiderCardDiscard(GetCardIndex());
+
+    public void LockDiscardButton() => discardButton.gameObject.SetActive(false);
+    public void UnlockDiscardButton() => discardButton.gameObject.SetActive(true);
+
+    // Time Event Management
 
     protected override object[] CheckForMissingReferences() => new object[]
     {
@@ -111,4 +132,13 @@ public class UICardPanel : InspectorReferenceChecker
         headerPanelImage, iconPanelImage, summaryPanelImage, effectPanelImage, effectSeparatorPanelImage,
         actionButtonPanelImage
     };
+
+    public override void StartProcessingForComputerPhase(bool isComputerPhaseDuringGameInit)
+    {
+        if (!isComputerPhaseDuringGameInit)
+        {
+            print("Unlocking");
+            UnlockDiscardButton();
+        }
+    }
 }

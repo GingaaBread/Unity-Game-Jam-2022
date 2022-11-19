@@ -13,11 +13,15 @@ MonoBehaviour:
   m_Name: PenCard
   m_EditorClassIdentifier: 
   cardSprite: {fileID: 0}
-  buildingSprite: {fileID: 0}
-  cardTitle: 
-  cardSummary: 
-  cardEffectKeys: []
-  cardEffectValues: []
-  cardCost: 10
+  cardTitle: Animal Pen
+  cardSummary: Builds a small animal pen
+  cardEffectKeys:
+  - 'Enables:'
+  - 'Buildable on:'
+  cardEffectValues:
+  - raising livestock
+  - Plains & Hills
+  cardCost: 40
   buildingType: 1
+  buildingSprite: {fileID: 0}
   tileForegroundChildPrefab: {fileID: 0}

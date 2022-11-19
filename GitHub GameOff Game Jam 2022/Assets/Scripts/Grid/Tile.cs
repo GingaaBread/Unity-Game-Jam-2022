@@ -116,7 +116,7 @@ public class Tile : MonoBehaviour
         {
             if (currBuilding.buildingType == BuildingManagement.BuildingType.ACRE)
             {
-                currSprite.sprite = crop.buildingSprite;
+                //currSprite.sprite = crop.buildingSprite;
 
                 currSeed = crop;
                 if (transform.childCount > 0)
@@ -145,7 +145,7 @@ public class Tile : MonoBehaviour
         {
             if (currBuilding.buildingType == BuildingManagement.BuildingType.ANIMALPEN)
             {
-                currSprite.sprite = animal.buildingSprite;
+                //currSprite.sprite = animal.buildingSprite;
                 currAnimal = animal;
                 isAnimal = true;
                 if (transform.childCount > 0)
