@@ -266,7 +266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3822214443973785832}
   m_Layer: 0
-  m_Name: SpringSeason (1)
+  m_Name: SummerSeason
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

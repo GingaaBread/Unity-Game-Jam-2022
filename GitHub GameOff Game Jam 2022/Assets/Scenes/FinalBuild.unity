@@ -1164,6 +1164,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: ae937483234726c44a4cd398986badb7, type: 2}
+    - target: {fileID: 2965614748592768172, guid: 0ac3005b6dc321e45811d0d991cc0192, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ae937483234726c44a4cd398986badb7, type: 2}
     - target: {fileID: 2965614748592768173, guid: 0ac3005b6dc321e45811d0d991cc0192, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1184,14 +1188,6 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: ae937483234726c44a4cd398986badb7, type: 2}
-    - target: {fileID: 4084746277865100144, guid: 0ac3005b6dc321e45811d0d991cc0192, type: 3}
-      propertyPath: m_Name
-      value: SummerSeason
-      objectReference: {fileID: 0}
-    - target: {fileID: 4084746277865100144, guid: 0ac3005b6dc321e45811d0d991cc0192, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4245754411939368400, guid: 0ac3005b6dc321e45811d0d991cc0192, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1351,10 +1347,6 @@ PrefabInstance:
     - target: {fileID: 8521953634896034983, guid: 0ac3005b6dc321e45811d0d991cc0192, type: 3}
       propertyPath: m_LocalPosition.y
       value: 10.78
-      objectReference: {fileID: 0}
-    - target: {fileID: 8521953634940957338, guid: 0ac3005b6dc321e45811d0d991cc0192, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8521953635104269406, guid: 0ac3005b6dc321e45811d0d991cc0192, type: 3}
       propertyPath: m_LocalPosition.x
