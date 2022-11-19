@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler
 {
     public ActionCardSO CardToDisplay { get; set; }
+    public bool isDetailedCard = false;
 
     [Header("Main UI Components")]
     [SerializeField] private TMP_Text titleText;
@@ -145,6 +146,7 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        UIMainPanel.Instance.DisplayDetailedCard(this, GetCardIndex());
+        if (!isDetailedCard)
+            UIMainPanel.Instance.DisplayDetailedCard(this, GetCardIndex());
     }
 }

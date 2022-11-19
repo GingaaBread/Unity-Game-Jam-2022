@@ -24,8 +24,9 @@ public class UIMainPanel : MonoBehaviour
     [SerializeField] private GameObject cardContainer;
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private UICardPanel detailedCardPanel;
-    [SerializeField] private RectTransform[] paddingContainers;
     [SerializeField] private RectTransform detailedCardPanelRectTransform;
+    [SerializeField] private RectTransform detailedCardPaddingLeftRectTransform;
+    [SerializeField] private RectTransform detailedCardPaddingRightRectTransform;
 
     private void Awake()
     {
@@ -64,7 +65,8 @@ public class UIMainPanel : MonoBehaviour
     public void DisplayDetailedCard(UICardPanel cardPanel, int siblingIndex)
     {
         detailedCardPanel.gameObject.SetActive(true);
-        detailedCardPanel.transform.SetSiblingIndex(siblingIndex);
+
+        ApplyPaddingDimensions(cardContainer.transform.childCount, siblingIndex);
 
         detailedCardPanel.CardToDisplay = cardPanel.CardToDisplay;
         detailedCardPanel.Render();
@@ -74,5 +76,36 @@ public class UIMainPanel : MonoBehaviour
     {
         detailedCardPanel.CardToDisplay = null;
         detailedCardPanel.gameObject.SetActive(false);
+    }
+
+    private void ApplyPaddingDimensions(int handcardAmount, int selectedIndex)
+    {
+        float cardWidth = 150f, gapWidth = 15f;
+
+        int cardsLeft = selectedIndex, cardsRight = handcardAmount - (selectedIndex + 1);
+
+        float paddingLeft = cardsLeft * cardWidth;
+        if (cardsLeft - 1 >= 0)
+        {
+            paddingLeft += (cardsLeft - 1) * gapWidth; 
+        }
+        SetPaddingLeft(paddingLeft);
+
+        float paddingRight = cardsRight * cardWidth;
+        if (cardsRight - 1 >= 0)
+        {
+            paddingRight += (cardsRight - 1) * gapWidth;
+        }
+        SetPaddingRight(paddingRight);
+    }
+
+    private void SetPaddingLeft(float paddingLeft)
+    {
+        detailedCardPaddingLeftRectTransform.sizeDelta = new Vector2(paddingLeft, 5f);
+    }
+
+    private void SetPaddingRight(float paddingRight)
+    {
+        detailedCardPaddingRightRectTransform.sizeDelta = new Vector2(paddingRight, 5f);
     }
 }
