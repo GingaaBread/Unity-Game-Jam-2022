@@ -998,7 +998,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   springObjects: {fileID: 8521953634940957338}
-  summerObjects: {fileID: 8521953634940957338}
+  summerObjects: {fileID: 4084746277865100144}
   winterObjects: {fileID: 8521953634940957338}
   autumnObjects: {fileID: 8521953634940957338}
 --- !u!1 &8521953635179261861
