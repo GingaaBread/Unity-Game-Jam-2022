@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32285b74a611a6b4190ed7ac5010122b, type: 3}
   m_Name: CityD
   m_EditorClassIdentifier: 
-  cityName: 
-  availableResources: []
+  cityName: CityD
+  availableResources:
+  - {fileID: 11400000, guid: ff0683a9db512bb41ab7a5ce87afbf57, type: 2}
+  - {fileID: 11400000, guid: 3fccbb878d14ba74d9711befe868698f, type: 2}
+  - {fileID: 11400000, guid: 1b08147cfe99cbf4497b214e574414d4, type: 2}

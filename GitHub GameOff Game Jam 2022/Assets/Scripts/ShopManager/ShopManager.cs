@@ -11,13 +11,17 @@ using TimeManagement;
 /// The sell button UI calls this class to sell to their current shop.
 /// </summary>
 /// 
+
 public class ShopManager : MonoBehaviour
 {
 
-    public delegate void ShopManagerEvents();
-    public event ShopManagerEvents OnShopUpdate;
-
     public static ShopManager Instance;
+
+
+    /// <summary>
+    /// GameObject that holds all the cities
+    /// </summary>
+    public Transform cityHolder;
 
     private int costBonus = 2;
 
@@ -37,6 +41,11 @@ public class ShopManager : MonoBehaviour
             Debug.LogError("There is more than 1 instance of Shop Manager");
         }
     }
+    private void Start()
+    {
+        UpdateShop();
+
+    }
 
     void Update()
     {
@@ -50,11 +59,19 @@ public class ShopManager : MonoBehaviour
 
         Debug.Log($"Sold 1 {shop.Resource.name} to {shop.City.cityName}!");
         Debug.Log($"money increased by: {GetPrice(shop)} !");
+        Debug.Log("-----------------");
+
+        PlayerDataManager dataManager = PlayerDataManager.Instance;
+        if (dataManager.HasItemInInventory(shop.Resource)) 
+        {
+            dataManager.DecreaseInventoryItemAmount(shop.Resource, 1);
+            dataManager.IncreaseMoneyAmount(GetPrice(shop));
+        }
 
         shop.SoldItem();
     }
 
-    private int GetPrice(Shop shop)
+    public int GetPrice(Shop shop)
     {
 
         int basePrice = shop.Resource.basePrice;
@@ -65,6 +82,8 @@ public class ShopManager : MonoBehaviour
         // season checks for bonuses, etc.
 
         if (lastCost != 100) return lastCost; // read lastCost above for more info.
+
+        price = (int)(basePrice * multiplier);
 
         if(resource.season == TimeManager.Instance.CurrentTime.SeasonInYear) 
         { 
@@ -77,10 +96,18 @@ public class ShopManager : MonoBehaviour
         return price;
     }
 
-
+    /// <summary>
+    /// Updates the whole shop (resources, price)
+    /// Call this every season change or when you want the shop to display new items.
+    /// </summary>
     public void UpdateShop() 
     {
-        OnShopUpdate.Invoke();
+        foreach (Transform t in cityHolder) 
+        {
+            Shop shop = t.GetComponent<Shop>();
+            shop.UpdateResource();
+        } 
+        Debug.Log("shop updated!");
         lastCost = 100;
     }
 }

@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b30e40ce3b0b445881e72b8193aab1, type: 3}
   m_Name: Nuts
   m_EditorClassIdentifier: 
+  basePrice: 16
+  season: 0
+  iconSprite: {fileID: 0}

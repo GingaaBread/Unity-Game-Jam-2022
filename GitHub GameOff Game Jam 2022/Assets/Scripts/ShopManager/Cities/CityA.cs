@@ -17,8 +17,6 @@ public class CityA : CityDemandSO
 
     public override ResourceSO RandomResource() 
     {
-        
-
         SeasonType season = TimeManager.Instance.CurrentTime.SeasonInYear;
 
         foreach (ResourceSO res in availableResources) 

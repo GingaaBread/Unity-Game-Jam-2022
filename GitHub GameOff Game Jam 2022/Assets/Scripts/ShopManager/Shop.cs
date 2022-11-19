@@ -27,12 +27,6 @@ public class Shop : MonoBehaviour
     private void Start()
     {
 
-        resource = city.RandomResource(); // choose a random resource.
-        displayer.UpdateShopDisplay(); // calls displayer to display the shop UI. Needs to be called here because it needs the resource to be set.
-
-        // Add UpdateShop() to the ShopManager event that gets called everytime the shop updates (every season or so)
-        ShopManager.Instance.OnShopUpdate += UpdateShop;
-        // Event subscription after the ShopManager singleton is set.
     }
 
     // Gets called everytime an item is sold in this shop
@@ -44,7 +38,7 @@ public class Shop : MonoBehaviour
     }
 
     // Gets called by ShopManager everytime the shop is updated.
-    private void UpdateShop() 
+    public void UpdateResource() 
     {
         resource = city.RandomResource();
 
