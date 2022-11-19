@@ -116,6 +116,7 @@ namespace PlayerData
 
             inventoryDictionary[resourceToIncrease] += amountToIncrease;
             QuestManager.Instance.NotifyOfResourceCollected(resourceToIncrease, amountToIncrease);
+            if (InventoryManager.Instance != null) InventoryManager.Instance.AddInventoryIcon(resourceToIncrease);
         }
 
         /// <summary>

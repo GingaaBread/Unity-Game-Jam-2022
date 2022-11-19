@@ -38,7 +38,7 @@ public class ShopManager : MonoBehaviour
         else
         {
 
-            Debug.LogError("There is more than 1 instance of Shop Manager");
+            Debug.LogError("There is more than 1 Shop Manager in the scene!!!");
         }
     }
     private void Start()
@@ -52,7 +52,10 @@ public class ShopManager : MonoBehaviour
 
     }
 
-
+    /// <summary>
+    /// Sell the resource the shop is buying
+    /// </summary>
+    /// <param name="shop"> Shop you are selling to</param>
     public void SellResource(Shop shop)
     {
         if (shop.Resource == null) return; 
@@ -71,6 +74,12 @@ public class ShopManager : MonoBehaviour
         shop.SoldItem();
     }
 
+
+    /// <summary>
+    /// Get the price of the item the shop is buying
+    /// </summary>
+    /// <param name="shop">Shop whose resource you are asking the price</param>
+    /// <returns></returns>
     public int GetPrice(Shop shop)
     {
 
