@@ -6,6 +6,8 @@ using TimeManagement;
 
 // Author: Rohaid 
 // Purpose: Stores the state of the tile in play and updates the physical appearance based on its state.
+
+// when a sucessful tile placement 
 public class Tile : MonoBehaviour
 {
 
@@ -30,9 +32,9 @@ public class Tile : MonoBehaviour
 
     void Awake()
     {
-        if (currType != null && currType.picture != null)
+        if (currType != null && currType.seasonSprites != null)
         {
-            GetComponent<SpriteRenderer>().sprite = currType.picture;
+            GetComponent<SpriteRenderer>().sprite = currType.seasonSprites[0];
         }
         else
         {
@@ -73,7 +75,7 @@ public class Tile : MonoBehaviour
 
         prevType = currType;
         currType = tile;
-        GetComponent<SpriteRenderer>().sprite = currType.picture;
+        GetComponent<SpriteRenderer>().sprite = currType.seasonSprites[0];
     }
 
     public void undoTile()
@@ -173,7 +175,24 @@ public class Tile : MonoBehaviour
         GetComponent<SpriteRenderer>().sortingOrder = _tileRowNum;
     }
 
-
+    public void UpdateTileAppearance(PointInTime currTime){
+        switch(currTime.SeasonInYear){
+            case SeasonType.SPRING: 
+                currSprite.sprite = currType.seasonSprites[0];
+                break;
+            case SeasonType.SUMMER:
+                currSprite.sprite = currType.seasonSprites[1];
+                break;
+            case SeasonType.FALL:
+                currSprite.sprite = currType.seasonSprites[2];
+                break;
+            case SeasonType.WINTER:
+                currSprite.sprite = currType.seasonSprites[3];
+                break;
+            default:
+            break;
+        }
+    }
 }
 
 

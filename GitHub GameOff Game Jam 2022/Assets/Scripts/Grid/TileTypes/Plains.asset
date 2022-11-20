@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: Plains
   m_EditorClassIdentifier: 
   type: 3
-  picture: {fileID: 21300000, guid: dac5b2b4450dfd043b36c3f5f57d02eb, type: 3}
+  seasonSprites:
+  - {fileID: 21300000, guid: dac5b2b4450dfd043b36c3f5f57d02eb, type: 3}
+  - {fileID: 21300000, guid: 5fd598b04656bd9408ab4aab6fe88902, type: 3}
+  - {fileID: 21300000, guid: 40f3d9826ac6d4341928992e776b1f6e, type: 3}
+  - {fileID: 21300000, guid: bea66d2578f009c48afcbb922f32df37, type: 3}
   tileForegroundChildPrefab: {fileID: 0}

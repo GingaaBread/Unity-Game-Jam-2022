@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: Hills
   m_EditorClassIdentifier: 
   type: 4
-  picture: {fileID: 21300000, guid: 118920ff1d22b2945bd7c15a11c11966, type: 3}
+  seasonSprites:
+  - {fileID: 21300000, guid: 118920ff1d22b2945bd7c15a11c11966, type: 3}
+  - {fileID: 21300000, guid: b20c3760d878bc6439efb33eade48f3b, type: 3}
+  - {fileID: 21300000, guid: 183a50bd1120b434caa95b0937e6686b, type: 3}
+  - {fileID: 21300000, guid: 2cbbee6ac085af94896de37c96febc39, type: 3}
   tileForegroundChildPrefab: {fileID: 0}
