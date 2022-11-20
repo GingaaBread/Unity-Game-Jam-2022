@@ -14,12 +14,13 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler
     [Header("Main UI Components")]
     [SerializeField] private TMP_Text titleText;
     [SerializeField] private Image iconImage;
+    [SerializeField] private Image discardIconImage;
+    [SerializeField] private TMP_Text discardText;
     [SerializeField] private TMP_Text summaryText;
+    [SerializeField] private Button discardButton;
     [SerializeField] private TMP_Text[] effectKeyTexts;
     [SerializeField] private TMP_Text[] effectValueTexts;
     [SerializeField] private TMP_Text costText;
-    [SerializeField] private TMP_Text actionButtonText;
-    [SerializeField] private Button discardButton;
 
     [Header("Recolourable Panels")]
     [SerializeField] private Image headerPanelImage;
@@ -47,7 +48,6 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler
                     CardManager.Instance.buildingPrimary,
                     CardManager.Instance.buildingSecondary
                 );
-                actionButtonText.text = "build";
                 break;
             case SeedCard s:
                 ApplyColourScheme
@@ -55,7 +55,6 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler
                     CardManager.Instance.seedPrimary,
                     CardManager.Instance.seedSecondary
                 );
-                actionButtonText.text = "plant";
                 break;
             case LivestockCard l:
                 ApplyColourScheme
@@ -63,7 +62,6 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler
                     CardManager.Instance.livestockPrimary,
                     CardManager.Instance.livestockSecondary
                 );
-                actionButtonText.text = "place";
                 break;
             default: throw new NotImplementedException("Card type is not yet implemented: " + CardToDisplay.GetType());
         }
@@ -95,7 +93,8 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler
         headerPanelImage.color = prm;
         effectSeparatorPanelImage.color = prm;
         costText.color = prm;
-        actionButtonText.color = prm;
+        discardIconImage.color = prm;
+        discardText.color = prm;
         actionButtonPanelImage.color = prm;
 
         // Apply the darker colours
@@ -114,11 +113,6 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler
         );
     }
 
-    public void PerformCardAction()
-    {
-
-    }
-
     public int GetCardIndex() => transform.GetSiblingIndex();
 
     public void DiscardCard() => CardManager.Instance.ConsiderCardDiscard(GetCardIndex());
@@ -130,9 +124,9 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler
 
     protected override object[] CheckForMissingReferences() => new object[]
     {
-        titleText, iconImage, summaryText, effectKeyTexts, effectValueTexts, costText, actionButtonText,
+        titleText, iconImage, summaryText, effectKeyTexts, effectValueTexts, costText, discardIconImage,
         headerPanelImage, iconPanelImage, summaryPanelImage, effectPanelImage, effectSeparatorPanelImage,
-        actionButtonPanelImage
+        actionButtonPanelImage, discardText
     };
 
     public override void StartProcessingForComputerPhase(bool isComputerPhaseDuringGameInit)

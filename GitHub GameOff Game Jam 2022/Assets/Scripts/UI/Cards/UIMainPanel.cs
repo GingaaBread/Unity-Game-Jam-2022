@@ -23,7 +23,9 @@ public class UIMainPanel : MonoBehaviour
 
     [SerializeField] private GameObject cardContainer;
     [SerializeField] private GameObject cardPrefab;
+    [SerializeField] private GameObject detailCardContainer;
     [SerializeField] private UICardPanel detailedCardPanel;
+    [SerializeField] private UIDetailedCard detailedCardScript;
     [SerializeField] private RectTransform detailedCardPanelRectTransform;
     [SerializeField] private RectTransform detailedCardPaddingLeftRectTransform;
     [SerializeField] private RectTransform detailedCardPaddingRightRectTransform;
@@ -62,8 +64,16 @@ public class UIMainPanel : MonoBehaviour
         Destroy(cardContainer.transform.GetChild(cardIndex).gameObject);
     }
 
+    public void DisplayDetailCardPanel()
+    {
+        detailCardContainer.SetActive(true);
+    }
+
+    public bool InDetailCardPanel() => detailCardContainer.activeInHierarchy;
+
     public void DisplayDetailedCard(UICardPanel cardPanel, int siblingIndex)
     {
+        detailedCardScript.handcardIndex = siblingIndex;
         detailedCardPanel.gameObject.SetActive(true);
 
         ApplyPaddingDimensions(cardContainer.transform.childCount, siblingIndex);
