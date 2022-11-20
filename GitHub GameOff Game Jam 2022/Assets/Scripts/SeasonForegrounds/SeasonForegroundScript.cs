@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SeasonForegroundScript : MonoBehaviour
 {
+
+    public int RandomSeed;
+
     [Header("animation Offset")]
     public float CycleOffset;
     public bool RandomizeOffset;
@@ -17,17 +20,22 @@ public class SeasonForegroundScript : MonoBehaviour
 
     void OnEnable() {
 
-        Random.InitState(gameObject.GetInstanceID());
+        Random.InitState(RandomSeed);
 
-        if (RandomizeOffset) {
-            this.GetComponent<Animator>().SetFloat("CycleOffset", Random.Range(0f,1f));
-        } else {
-            this.GetComponent<Animator>().SetFloat("CycleOffset", CycleOffset);
+        foreach (Transform positionOffsetObj in transform) {
+            // set local position of posittion offset object
+            positionOffsetObj.localPosition = new Vector3(
+                Random.Range(xPosOffsetMinBound, xPosOffsetMaxBound),
+                Random.Range(yPosOffsetMinBound, yPosOffsetMaxBound),
+                positionOffsetObj.localPosition.z);
+
+            // set animation offsets
+            if (RandomizeOffset) {
+                positionOffsetObj.GetComponentInChildren<Animator>().SetFloat("CycleOffset", Random.Range(0f, 1f));
+            } else {
+                positionOffsetObj.GetComponentInChildren<Animator>().SetFloat("CycleOffset", CycleOffset);
+            }
         }
-
-        float parentXPos = Random.Range(xPosOffsetMinBound, xPosOffsetMaxBound);
-        float parentYPos = Random.Range(yPosOffsetMinBound, yPosOffsetMaxBound);
-        transform.parent.localPosition = new Vector3(parentXPos, parentYPos, transform.parent.localPosition.z);
 
     }
 
