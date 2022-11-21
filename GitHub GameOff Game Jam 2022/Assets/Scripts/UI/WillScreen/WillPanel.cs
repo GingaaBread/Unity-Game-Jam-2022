@@ -5,19 +5,16 @@ using UnityEngine.Assertions;
 
 public class WillPanel : ComputerPhaseStep {
 
-    [Header("Inputs from Game Designers")]
-    [SerializeField] [TextArea(10, 20)] private string page1Text;
-    [SerializeField] [TextArea(10, 20)] private string page2Text;
-    [SerializeField] [TextArea(10, 20)] private string page3Text;
+    [SerializeField] [TextArea(5, 20)] private string page3TextBeforeMissions;
+    [SerializeField] [TextArea(5, 20)] private string page3TextAfterMissions;
 
     [Header("references to child objects")]
     [SerializeField] private GameObject ObjToShow;
     [SerializeField] private GameObject page1Obj;
     [SerializeField] private GameObject page2Obj;
     [SerializeField] private GameObject page3Obj;
-    [SerializeField] private TextMeshProUGUI page1TextObj;
-    [SerializeField] private TextMeshProUGUI page2TextObj;
     [SerializeField] private TextMeshProUGUI page3TextObj;
+
     public static WillPanel Instance { get; private set; }
 
     private new void Awake() {
@@ -28,13 +25,8 @@ public class WillPanel : ComputerPhaseStep {
         Assert.IsNotNull(page1Obj);
         Assert.IsNotNull(page2Obj);
         Assert.IsNotNull(page3Obj);
-        Assert.IsNotNull(page1TextObj);
-        Assert.IsNotNull(page2TextObj);
         Assert.IsNotNull(page3TextObj);
 
-        page1TextObj.text = page1Text;
-        page2TextObj.text = page2Text;
-        page3TextObj.text = page3Text;
         page1Obj.SetActive(true);
         page2Obj.SetActive(false);
         page3Obj.SetActive(false);
@@ -43,6 +35,17 @@ public class WillPanel : ComputerPhaseStep {
 
     public override void StartProcessingForComputerPhase(bool isComputerPhaseDuringGameInit) {
         if (isComputerPhaseDuringGameInit) {
+
+            page3TextObj.text = "";
+            page3TextObj.text += page3TextBeforeMissions;
+
+            string[] questStrings = QuestManager.Instance.GetQuestTextForWill();
+            foreach(string questString in questStrings) {
+                page3TextObj.text += " - " + questString + "\n";
+            }
+
+            page3TextObj.text += page3TextAfterMissions;
+
             ObjToShow.SetActive(true);
         } else {
             OnFinishProcessing.Invoke();

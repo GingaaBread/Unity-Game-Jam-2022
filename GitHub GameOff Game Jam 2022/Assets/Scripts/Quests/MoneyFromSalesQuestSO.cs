@@ -11,7 +11,7 @@ public class MoneyFromSalesQuestSO : AbstractQuestSO {
     private int actualTotalMoney; // not serialized because we don't want to save these outside runtime
 
     public override string GetQuestAsSentence() {
-        string s = $"Earn {targetTotalMoney} by selling ";
+        string s = $"Earn {targetTotalMoney} by selling";
         for(int i = 0; i < targetSaleItems.Length; i++) {
             if (i > 0)
                 s += ",";

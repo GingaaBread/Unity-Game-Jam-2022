@@ -133,6 +133,16 @@ public class QuestManager : ComputerPhaseStep
             return false;
     }
 
+    public string[] GetQuestTextForWill() {
+        string[] questStrings = new string[_activeQuests.Count];
+
+        for(int i=0; i<_activeQuests.Count; i++) {
+            questStrings[i] = _activeQuests[i].GetQuestAsSentence();
+        }
+
+        return questStrings;
+    }
+
     private void ShowWinScreen() {
         GameWonPanel.Instance.Show();
     }
