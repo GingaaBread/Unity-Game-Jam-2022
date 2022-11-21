@@ -316,7 +316,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5177388603050735206, guid: 1027fa609d223754aa26bb1ebc783025, type: 3}
+  m_Sprite: {fileID: -5177388603050735206, guid: 5ae7942dc87677d49bdef526a5ef8348, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -720,6 +720,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f44a3eec097f24993a34a4cd31476f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnFinishProcessing:
+    m_PersistentCalls:
+      m_Calls: []
   currentSeasonText: {fileID: 2605655699006796761}
   footerText: {fileID: 2605655700399078546}
   sliderAnimator: {fileID: 2605655699811242400}
