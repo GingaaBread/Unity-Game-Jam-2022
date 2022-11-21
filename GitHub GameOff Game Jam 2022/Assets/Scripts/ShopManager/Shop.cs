@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PlayerData;
 
 
 /// CROSTZARD (author)
@@ -14,19 +15,28 @@ public class Shop : MonoBehaviour
     public CityDemandSO city;
     public ShopDisplayer displayer;
 
-    private PlayerData.ResourceSO resource;
+    /// <summary>
+    /// How many items does this shop buy?
+    /// </summary>
+    
+    public int itemAmount = 1;
 
-    public PlayerData.ResourceSO Resource { get { return resource; } }
+    private List<ResourceSO> resources = new List<ResourceSO>(); 
+    /// <summary>
+    /// Returns this shop's resources. Shops mostly have 1 so 
+    /// </summary>
+    public List<ResourceSO> Resources { get { return resources;} }
     public CityDemandSO City { get { return city; } }
 
     private float costMultiplier = 1;
+    // How many items has this shop sold? Some shops (just city D) decrease their buying price based on how many times something was sold.
     private int amountSold;
 
     public float CostMultiplier { get { return costMultiplier; } }
 
     private void Start()
     {
-
+        if (itemAmount > displayer.MaxDisplayAmount) itemAmount = 1;
     }
 
     // Gets called everytime an item is sold in this shop
@@ -34,15 +44,19 @@ public class Shop : MonoBehaviour
     {
         amountSold += 1;
         // City D's buying price decreases by 50% after the second buy
-        if (city.name == "CityD" && amountSold >= 1) costMultiplier = 0.5f;
+        if (city.name == "CityD" && amountSold >= itemAmount) costMultiplier = 0.5f;
     }
 
     // Gets called by ShopManager everytime the shop is updated.
     public void UpdateResource() 
     {
-        resource = city.RandomResource();
+        for (int i = 0; i < itemAmount; i++) 
+        { 
+            resources.Add(city.RandomResource());
+            displayer.UpdateShopDisplay(i);
+        }
 
-        displayer.UpdateShopDisplay();
+        
         costMultiplier = 1;
         amountSold = 0;
 

@@ -33,12 +33,10 @@ public class CityD : CityDemandSO
         for (int i = 0; i < availableResources.Count; i++)
         {
             ResourceSO resource = availableResources[i];
-            //if(resource.season != TimeManager.Instance.CurrentTime.SeasonInYear) 
-            //{
-            //    queue.Enqueue(availableResources[i]);
-            //}
-            queue.Enqueue(availableResources[i]); // Above code was commented out for testing. Thats how the city should work
-                                                  // this line will be deleted once testing ends.
+            if(resource.season != TimeManager.Instance.CurrentTime.SeasonInYear) 
+            {
+                queue.Enqueue(availableResources[i]);
+            }
         }
     }
 

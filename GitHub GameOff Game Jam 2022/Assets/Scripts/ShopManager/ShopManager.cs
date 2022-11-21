@@ -25,10 +25,6 @@ public class ShopManager : MonoBehaviour
 
     private int costBonus = 2;
 
-    private int lastCost = 100;
-    // Predetermined number. Checking if the crop has a bonus in a certain season is a long process. So I set this value every time player buys something
-    // So next time the script doesn't have to process anything (This value resets every time the shop is updated)
-
     private void Awake()
     {
         if (Instance == null)
@@ -47,52 +43,49 @@ public class ShopManager : MonoBehaviour
 
     }
 
-    void Update()
-    {
-
-    }
-
     /// <summary>
     /// Sell the resource the shop is buying
     /// </summary>
     /// <param name="shop"> Shop you are selling to</param>
     public void SellResource(Shop shop)
     {
-        if (shop.Resource == null) return; 
 
-        Debug.Log($"Sold 1 {shop.Resource.name} to {shop.City.cityName}!");
-        Debug.Log($"money increased by: {GetPrice(shop)} !");
-        Debug.Log("-----------------");
-
-        PlayerDataManager dataManager = PlayerDataManager.Instance;
-        if (dataManager.HasItemInInventory(shop.Resource)) 
+        for (int i = 0; i < shop.itemAmount; i++) 
         {
-            dataManager.DecreaseInventoryItemAmount(shop.Resource, 1);
-            dataManager.IncreaseMoneyAmount(GetPrice(shop));
-        }
+            if (shop.Resources == null) return;
+            ResourceSO resource = shop.Resources[i];
+            int price = GetPrice(resource, shop);
 
-        shop.SoldItem();
+            Debug.Log($"Sold 1 {resource.name} to {shop.City.cityName}!");
+            Debug.Log($"money increased by: {price} !");
+            Debug.Log("-----------------");
+
+            PlayerDataManager dataManager = PlayerDataManager.Instance;
+            if (dataManager.HasItemInInventory(resource))
+            {
+                dataManager.DecreaseInventoryItemAmount(resource, 1);
+                dataManager.IncreaseMoneyAmount(price);
+                shop.SoldItem();
+            }
+        }
     }
 
 
     /// <summary>
-    /// Get the price of the item the shop is buying
+    /// Get the price of a specified resource. Price varies with shops so you can also specify one.
     /// </summary>
-    /// <param name="shop">Shop whose resource you are asking the price</param>
+    /// <param name="resource">resource to check.</param>
+    /// <param name="shop">in what shop (leave blank if none in specific)</param>
     /// <returns></returns>
-    public int GetPrice(Shop shop)
+    public int GetPrice(ResourceSO resource, Shop shop = null)
     {
 
-        int basePrice = shop.Resource.basePrice;
-        ResourceSO resource = shop.Resource;
-        float multiplier = shop.CostMultiplier;
+        int basePrice = resource.basePrice;
+        float multiplier = (shop == null) ? 1 : shop.CostMultiplier;
 
-        int price = 0;
         // season checks for bonuses, etc.
 
-        if (lastCost != 100) return lastCost; // read lastCost above for more info.
-
-        price = (int)(basePrice * multiplier);
+        int price = (int)(basePrice * multiplier);
 
         if(resource.season == TimeManager.Instance.CurrentTime.SeasonInYear) 
         { 
@@ -116,7 +109,5 @@ public class ShopManager : MonoBehaviour
             Shop shop = t.GetComponent<Shop>();
             shop.UpdateResource();
         } 
-        Debug.Log("shop updated!");
-        lastCost = 100;
     }
 }
