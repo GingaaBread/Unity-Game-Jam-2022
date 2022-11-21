@@ -14,5 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardSprite: {fileID: -5177388603050735206, guid: 1027fa609d223754aa26bb1ebc783025, type: 3}
   buildingSprite: {fileID: 21300000, guid: 6091406fa63b19f42abc3533fc92749b, type: 3}
-  price: 10
+  cardTitle: 
+  cardSummary: 
+  cardEffectKeys: []
+  cardEffectValues: []
+  cardCost: 10
   buildingType: 2
+  tileForegroundChildPrefab: {fileID: 290865623841320278, guid: e0cbf8588aaa0004a8af8e8e4839ef27, type: 3}
+  payoffResource: {fileID: 0}
+  payoffAmount: 0

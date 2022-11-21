@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 620639c1198b9784c8534ef188a2aa78, type: 3}
   m_Name: Forest
-  m_EditorClassIdentifier: Assembly-CSharp::TileTypeSO
+  m_EditorClassIdentifier: 
   type: 2
-  picture: {fileID: 21300000, guid: 2572b0a2d690cc9439624b864acca4bd, type: 3}
+  picture: {fileID: 21300000, guid: ae4a40436c022e54e878aec5a90922d9, type: 3}
+  tileForegroundChildPrefab: {fileID: 135514813546859715, guid: fcd00f9cc3996d844a7f009158366f57, type: 3}

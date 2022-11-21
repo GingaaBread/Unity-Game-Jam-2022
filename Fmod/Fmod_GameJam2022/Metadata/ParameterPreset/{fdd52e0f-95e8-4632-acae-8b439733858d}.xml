@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{fdd52e0f-95e8-4632-acae-8b439733858d}">
+		<property name="name">
+			<value>Season</value>
+		</property>
+		<relationship name="folder">
+			<destination>{7fe8974b-4fb8-4d0c-b27c-560f66f4627b}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{30cddbf8-5a64-40c4-b8c1-ea10c4d420a9}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{30cddbf8-5a64-40c4-b8c1-ea10c4d420a9}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

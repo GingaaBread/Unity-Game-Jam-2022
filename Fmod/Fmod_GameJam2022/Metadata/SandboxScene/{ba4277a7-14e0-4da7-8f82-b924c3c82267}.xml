@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="SandboxScene" id="{ba4277a7-14e0-4da7-8f82-b924c3c82267}">
+		<property name="name">
+			<value>SFX Test</value>
+		</property>
+		<relationship name="folder">
+			<destination>{bb91adb2-7ebe-4cdf-bdd2-661eb08f4604}</destination>
+		</relationship>
+		<relationship name="markerTracks">
+			<destination>{9d9c51e1-35d2-46e8-b355-037b01eb7843}</destination>
+		</relationship>
+		<relationship name="timeline">
+			<destination>{3324d373-e90c-42cb-ae70-ab452e4b542f}</destination>
+		</relationship>
+	</object>
+	<object class="MarkerTrack" id="{9d9c51e1-35d2-46e8-b355-037b01eb7843}" />
+	<object class="Timeline" id="{3324d373-e90c-42cb-ae70-ab452e4b542f}" />
+</objects>

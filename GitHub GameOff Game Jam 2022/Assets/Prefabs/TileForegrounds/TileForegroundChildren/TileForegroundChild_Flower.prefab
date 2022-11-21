@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5842450796308274441
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4056802189797110475, guid: fae5a40def24add47934a47353884fc9, type: 3}
+      propertyPath: foregroundType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4056802189797110475, guid: fae5a40def24add47934a47353884fc9, type: 3}
+      propertyPath: _spritesInOrder.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4056802189797110475, guid: fae5a40def24add47934a47353884fc9, type: 3}
+      propertyPath: _spritesInOrder.Array.data[0]
+      value: 
+      objectReference: {fileID: 3224561889873663938}
+    - target: {fileID: 4056802189797110475, guid: fae5a40def24add47934a47353884fc9, type: 3}
+      propertyPath: _sproutSpritesInOrder.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4056802189797110475, guid: fae5a40def24add47934a47353884fc9, type: 3}
+      propertyPath: _growingSpritesInOrder.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4056802189797110475, guid: fae5a40def24add47934a47353884fc9, type: 3}
+      propertyPath: _finishedSpritesInOrder.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4056802189797110475, guid: fae5a40def24add47934a47353884fc9, type: 3}
+      propertyPath: _sproutSpritesInOrder.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6344503255fad7d42bb9718b6b54fb12, type: 3}
+    - target: {fileID: 4056802189797110475, guid: fae5a40def24add47934a47353884fc9, type: 3}
+      propertyPath: _growingSpritesInOrder.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: f526c0e61abcc1244b160e2723f72c36, type: 3}
+    - target: {fileID: 4056802189797110475, guid: fae5a40def24add47934a47353884fc9, type: 3}
+      propertyPath: _finishedSpritesInOrder.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 32875a1be46edf64f81fd622881c0291, type: 3}
+    - target: {fileID: 6133289942409293905, guid: fae5a40def24add47934a47353884fc9, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133289942409293905, guid: fae5a40def24add47934a47353884fc9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133289942409293905, guid: fae5a40def24add47934a47353884fc9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133289942409293905, guid: fae5a40def24add47934a47353884fc9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133289942409293905, guid: fae5a40def24add47934a47353884fc9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133289942409293905, guid: fae5a40def24add47934a47353884fc9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133289942409293905, guid: fae5a40def24add47934a47353884fc9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133289942409293905, guid: fae5a40def24add47934a47353884fc9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133289942409293905, guid: fae5a40def24add47934a47353884fc9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133289942409293905, guid: fae5a40def24add47934a47353884fc9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133289942409293905, guid: fae5a40def24add47934a47353884fc9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133289942409293919, guid: fae5a40def24add47934a47353884fc9, type: 3}
+      propertyPath: m_Name
+      value: TileForegroundChild_Flower
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419197427475711488, guid: fae5a40def24add47934a47353884fc9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9055472209917217483, guid: fae5a40def24add47934a47353884fc9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6344503255fad7d42bb9718b6b54fb12, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fae5a40def24add47934a47353884fc9, type: 3}
+--- !u!212 &3224561889873663938 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9055472209917217483, guid: fae5a40def24add47934a47353884fc9, type: 3}
+  m_PrefabInstance: {fileID: 5842450796308274441}
+  m_PrefabAsset: {fileID: 0}

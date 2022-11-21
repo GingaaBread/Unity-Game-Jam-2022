@@ -1,10 +1,13 @@
+using UnityEngine.Events;
+
 namespace TimeManagement
 {
     public abstract class ComputerPhaseStep : InspectorReferenceChecker
     {
 
-        public abstract void DoProcessingForComputerPhaseDuringGameInit();
-        public abstract void DoProcessingForComputerPhase();
+        public UnityEvent OnFinishProcessing = new UnityEvent();
+
+        public abstract void StartProcessingForComputerPhase(bool isComputerPhaseDuringGameInit);
 
     }
 }
