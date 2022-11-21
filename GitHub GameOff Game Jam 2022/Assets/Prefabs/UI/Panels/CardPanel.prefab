@@ -118,6 +118,8 @@ GameObject:
   - component: {fileID: 1294095101887699082}
   - component: {fileID: 1294095101887699080}
   - component: {fileID: 3236327535109180446}
+  - component: {fileID: 2334901073008712398}
+  - component: {fileID: -6105911224465383299}
   m_Layer: 5
   m_Name: CardPanel
   m_TagString: Untagged
@@ -242,6 +244,51 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2334901073008712398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294095101887699084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addcd64db80792743ad12f3ae4f344f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverAnimator: {fileID: 3236327535109180446}
+  hoverTriggerName: Expand
+  dehoverTriggerName: Shrink
+--- !u!114 &-6105911224465383299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294095101887699084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1848115962
+      Data2: 1234363983
+      Data3: -1974029381
+      Data4: 997299171
+    Path: event:/SFX/Play_ButtonClick
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1294095101950721901
 GameObject:
   m_ObjectHideFlags: 0

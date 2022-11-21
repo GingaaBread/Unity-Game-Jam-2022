@@ -24,6 +24,12 @@ public class GameSetupStep : ComputerPhaseStep
         // TODO: get quests
         // TODO: get cards
 
+        // foreach(Tile A in CropHarvest) {
+            // ALT call method in Tile to do stuff 
+          // PlaySound (EFX); <- there's probably code. 
+          // Animation (here)  
+        //}
+
         OnFinishProcessing.Invoke();
     }
 

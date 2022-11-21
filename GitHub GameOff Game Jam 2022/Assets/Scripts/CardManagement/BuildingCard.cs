@@ -6,7 +6,8 @@ public class BuildingCard : ActionCardSO
 {
     private CardPlayManager cardPlayManager;
     public BuildingType buildingType;
-    public Sprite buildingSprite;
+    public Sprite[] hill_BuildingSprite = new Sprite[4]; // 0 = Spring, 1 = Summer, 2 = Autumn, 3 = Winter.
+    public Sprite[] plain_BuildingSprite = new Sprite[4]; // 0 = Spring, 1 = Summer, 2 = Autumn, 3 = Winter.
     public GameObject tileForegroundChildPrefab;
 
     public override void Action()

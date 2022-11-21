@@ -23,5 +23,14 @@ MonoBehaviour:
   - Plains & Hills
   cardCost: 30
   buildingType: 0
-  buildingSprite: {fileID: 0}
+  hill_BuildingSprite:
+  - {fileID: 21300000, guid: 0bde8b6887925aa4085198a7700f3441, type: 3}
+  - {fileID: 21300000, guid: eb3b51bf98f0f574eb6f3521318d7004, type: 3}
+  - {fileID: 21300000, guid: b4fca22bd06ada843b988982d796e3a6, type: 3}
+  - {fileID: 21300000, guid: a2a65ddd9ca8e914a84a5af0f149e661, type: 3}
+  plain_BuildingSprite:
+  - {fileID: 21300000, guid: 9122333ed1d05444b929101139bfec41, type: 3}
+  - {fileID: 21300000, guid: 52ed9cec594ca0f4daa85cd5f52a8665, type: 3}
+  - {fileID: 21300000, guid: b8d38f34c0252f546b4669f3e685cbb9, type: 3}
+  - {fileID: 21300000, guid: b0050a6de98463b4089b37f5ad379271, type: 3}
   tileForegroundChildPrefab: {fileID: 0}

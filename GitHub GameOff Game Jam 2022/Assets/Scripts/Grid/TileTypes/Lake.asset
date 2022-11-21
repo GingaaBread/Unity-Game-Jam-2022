@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: Lake
   m_EditorClassIdentifier: 
   type: 0
-  picture: {fileID: 21300000, guid: 7a03df38b6b0c234dac98ab37eb5d2dc, type: 3}
+  seasonSprites:
+  - {fileID: 21300000, guid: 7a03df38b6b0c234dac98ab37eb5d2dc, type: 3}
+  - {fileID: 21300000, guid: cf63dc0976e36fc48afba0e2e44c28de, type: 3}
+  - {fileID: 21300000, guid: dcf2af4eabdf78f40a3be067ef59c7ce, type: 3}
+  - {fileID: 21300000, guid: 8eacffbc64466ac4e91d8895f91e017e, type: 3}
   tileForegroundChildPrefab: {fileID: 135514813546859715, guid: 18aa59777f2892844bf99b4719da0767, type: 3}

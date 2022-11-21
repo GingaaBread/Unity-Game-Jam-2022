@@ -5,8 +5,9 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-
-public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler
+using UnityEngine.EventSystems;
+using FMODUnity;
+public class UICardPanel : ComputerPhaseStep, IPointerDownHandler
 {
     public ActionCardSO CardToDisplay { get; set; }
     public bool isDetailedCard = false;
@@ -87,6 +88,10 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler
         }
     }
 
+    public void OnPointerDown(PointerEventData E){
+        GetComponent<StudioEventEmitter>().Play();
+        CardToDisplay.Action();
+    }
     private void ApplyColourScheme(Color prm, Color drk)
     {
         // Apply the primary colours

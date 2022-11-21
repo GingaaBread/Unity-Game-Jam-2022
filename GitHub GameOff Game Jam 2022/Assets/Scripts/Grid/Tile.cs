@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using TimeManagement;
+using PlayerData;
 
-// Author: Rohaid 
+/// <Author> Author: Rohaid </Author> 
 // Purpose: Stores the state of the tile in play and updates the physical appearance based on its state.
+
+// when a sucessful tile placement 
 public class Tile : MonoBehaviour
 {
 
@@ -25,30 +28,36 @@ public class Tile : MonoBehaviour
     private int _tileRowNum;
 
     [SerializeField]
-    private GameObject TileForeground;
+    private GameObject tileForeground;
+
+    private float cropAge = 0;
+
+    private PlayerDataManager playerDataManager;
 
 
     void Awake()
     {
-        if (currType != null && currType.picture != null)
+        if (currType != null && currType.seasonSprites != null)
         {
-            GetComponent<SpriteRenderer>().sprite = currType.picture;
+            GetComponent<SpriteRenderer>().sprite = currType.seasonSprites[0];
         }
         else
         {
-            Debug.LogError("Please put in a Tile Type Scriptable Object Please");
+            Debug.LogError("Please put in a Tile Type SO");
         }
 
         cardPlayManager = FindObjectOfType<CardPlayManager>();
+        playerDataManager = FindObjectOfType<PlayerDataManager>();
+        currSprite = GetComponent<SpriteRenderer>();
+
         if (cardPlayManager == null)
         {
             Debug.LogError("There is no cardplay manager script, please place one in the scene");
         }
-        currSprite = GetComponent<SpriteRenderer>();
-        if (TileForeground != null && currType != null)
+        if (tileForeground != null && currType != null)
         {
             _tileRowNum = currSprite.sortingOrder;
-            GameObject tileForegroundObj = Instantiate(TileForeground, transform);
+            GameObject tileForegroundObj = Instantiate(tileForeground, transform);
             tileForegroundObj.GetComponent<TileForeground>().Initialize(currType, _tileRowNum, false, SeasonType.SPRING);
         }
     }
@@ -67,18 +76,17 @@ public class Tile : MonoBehaviour
 
     }
 
-    public void updateAppearance(TileTypeSO tile)
+    public void UpdateEditorTileAppearance(TileTypeSO tile)
     {
         if (tile == null) { return; }
-
         prevType = currType;
         currType = tile;
-        GetComponent<SpriteRenderer>().sprite = currType.picture;
+        GetComponent<SpriteRenderer>().sprite = currType.seasonSprites[0];
     }
 
     public void undoTile()
     {
-        updateAppearance(prevType);
+        UpdateEditorTileAppearance(prevType);
     }
 
     public void ApplyBuildTile(BuildingCard building)
@@ -98,14 +106,16 @@ public class Tile : MonoBehaviour
         if (!isBuild)
         {
             currBuilding = building;
-            currSprite.sprite = building.buildingSprite;
-            if (transform.childCount > 0)
+            
+            if (transform.childCount > 0) // clear out current TileForegroundAnim
             {
                 Destroy(transform.GetChild(0).gameObject);
             }
-            GameObject tileForegroundObj = Instantiate(TileForeground, transform);
-            tileForegroundObj.GetComponent<TileForeground>().Initialize(currBuilding, _tileRowNum, false, SeasonType.SPRING);
+
+            GameObject tileForegroundObj = Instantiate(tileForeground, transform);
+            tileForegroundObj.GetComponent<TileForeground>().Initialize(currBuilding, _tileRowNum, false, TimeManager.Instance.CurrentTime.SeasonInYear);
             isBuild = true;
+            UpdateTileAppearance(TimeManager.Instance.CurrentTime.SeasonInYear);
         }
 
     }
@@ -116,17 +126,18 @@ public class Tile : MonoBehaviour
         {
             if (currBuilding.buildingType == BuildingManagement.BuildingType.ACRE)
             {
-                //currSprite.sprite = crop.buildingSprite;
-
+                PointInTime currSeason = TimeManager.Instance.CurrentTime;
                 currSeed = crop;
                 if (transform.childCount > 0)
                 {
                     Destroy(transform.GetChild(0).gameObject);
                 }
-                GameObject tileForegroundObj = Instantiate(TileForeground, transform);
+                GameObject tileForegroundObj = Instantiate(tileForeground, transform);
                 tileForegroundObj.GetComponent<TileForeground>().Initialize(currSeed, _tileRowNum, false, SeasonType.SPRING);
                 isBuild = true;
                 isSeed = true;
+
+                
             }
             else
             {
@@ -145,14 +156,13 @@ public class Tile : MonoBehaviour
         {
             if (currBuilding.buildingType == BuildingManagement.BuildingType.ANIMALPEN)
             {
-                //currSprite.sprite = animal.buildingSprite;
                 currAnimal = animal;
                 isAnimal = true;
                 if (transform.childCount > 0)
                 {
                     Destroy(transform.GetChild(0).gameObject);
                 }
-                GameObject tileForegroundObj = Instantiate(TileForeground, transform);
+                GameObject tileForegroundObj = Instantiate(tileForeground, transform);
                 tileForegroundObj.GetComponent<TileForeground>().Initialize(animal, _tileRowNum, false, SeasonType.SPRING);
                 isBuild = true;
             }
@@ -172,7 +182,85 @@ public class Tile : MonoBehaviour
         _tileRowNum = currentRow * 10;
         GetComponent<SpriteRenderer>().sortingOrder = _tileRowNum;
     }
+    
+    public void SetTileSeasonAppearance(SeasonType currSeason, Sprite[] sprites){
+        switch(currSeason){
+            case SeasonType.SPRING: 
+                currSprite.sprite = sprites[0];
+                break;
+            case SeasonType.SUMMER:
+                currSprite.sprite = sprites[1];
+                break;
+            case SeasonType.FALL:
+                currSprite.sprite = sprites[2];
+                break;
+            case SeasonType.WINTER:
+                currSprite.sprite = sprites[3];
+                break;
+            default:
+            break;
+        }
+    }
 
+    public void UpdateTileAppearance(SeasonType currTime){
+
+        UpdateTileAnimatableAppearance(currTime);
+
+        if(!isBuild){
+            SetTileSeasonAppearance(currTime, currType.seasonSprites);
+            return;
+        } else if(isBuild) {
+            if(currType.type == BuildingManagement.TileType.HILLS){
+                SetTileSeasonAppearance(currTime, currBuilding.hill_BuildingSprite);
+            }else if(currType.type == BuildingManagement.TileType.PLAINS){
+                SetTileSeasonAppearance(currTime, currBuilding.plain_BuildingSprite);
+            }
+            return;
+        }
+    }
+
+    public void UpdateTileAnimatableAppearance(SeasonType currTime){
+        if(transform.childCount > 0){ // check if there is a tile animatable object
+           TileForeground currTileAnim =  transform.GetComponentInChildren<TileForeground>();
+           if(currTileAnim!= null){ 
+            // IMPORTANT: Every Tile Object has a TileAnim Object as a child 
+            //but not every  TileAnim object has a TileAnimChild object.
+            if(currTileAnim.transform.childCount>0){ 
+                 currTileAnim.UpdateForSeasonAndAgePercentage(currTime, 0f);
+            }
+           
+           }
+        }
+    }
+
+    public void UpdateCropGrowth(SeasonType season){
+        if(!isSeed){
+            return;
+        } else {
+            cropAge++;
+            float ageRatio = cropAge/currSeed.cropTotalTurnsTillPayoff;
+
+            if(ageRatio == 1f){ // if done growing
+                playerDataManager.IncreaseInventoryItemAmount(currSeed.payoffResource, currSeed.payoffAmount);
+                isSeed = false;
+                cropAge = 0;
+
+                GameObject tileAnim = transform.GetChild(0).gameObject;
+                if(tileAnim != null){
+                     Destroy(transform.GetChild(0).gameObject); // destroy TileAnim object
+                }
+
+                return;
+
+            } else if(transform.childCount > 0) { // have a tile animatable object
+                TileForeground currTileAnim =  transform.GetComponentInChildren<TileForeground>();
+                if(currTileAnim != null){
+                    currTileAnim.UpdateForSeasonAndAgePercentage(season, ageRatio);
+                }
+               
+            }
+        }
+    }
 
 }
 

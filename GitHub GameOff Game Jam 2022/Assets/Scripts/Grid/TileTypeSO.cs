@@ -5,7 +5,7 @@ using BuildingManagement;
 public class TileTypeSO : ScriptableObject
 {
     public TileType type;
-    public Sprite picture;
+    public Sprite[] seasonSprites = new Sprite[4]; // 0 spring, 1 Summer, 2 Fall, 3 Winter
     public GameObject tileForegroundChildPrefab;
 
 }
