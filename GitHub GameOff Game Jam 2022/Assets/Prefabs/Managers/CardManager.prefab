@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fda7ea44256f7444892ff71029f2f7f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnFinishProcessing:
+    m_PersistentCalls:
+      m_Calls: []
   cardList:
   - {fileID: 11400000, guid: 258d2be981e477142891e60a3e5b9c75, type: 2}
   - {fileID: 11400000, guid: 3141937bd53cc23409b6c7530443d6c3, type: 2}
@@ -67,7 +70,7 @@ MonoBehaviour:
   seedPrimary: {r: 0.56078434, g: 1, b: 0.63159114, a: 1}
   seedSecondary: {r: 0.40610537, g: 0.735849, b: 0.46204403, a: 1}
   livestockPrimary: {r: 0.56078434, g: 0.6596765, b: 1, a: 1}
-  livestockSecondary: {r: 0.41451588, g: 0.49255946, b: 0.764151, a: 0}
+  livestockSecondary: {r: 0.41451588, g: 0.49255946, b: 0.764151, a: 1}
   discardPanel: {fileID: 0}
   cardDiscardedThisTurn: 0
   deckSize: 240

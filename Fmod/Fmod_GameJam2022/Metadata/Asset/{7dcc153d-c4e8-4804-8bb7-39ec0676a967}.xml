@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="EncodableAsset" id="{7dcc153d-c4e8-4804-8bb7-39ec0676a967}">
 		<property name="assetPath">
-			<value>Crop Placement/</value>
+			<value>Card Discard Panel/</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{b7aa6906-19d9-4154-8c59-dd20609b7309}</destination>

@@ -10,6 +10,9 @@ public class GameWonPanel : MonoBehaviour {
     private void Awake() {
         Assert.IsNull(Instance);
         Instance = this;
+
+        Assert.IsNotNull(ObjToShow);
+        ObjToShow.SetActive(false);
     }
 
     public void Show() {
