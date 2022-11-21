@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c341cea1d7edb0546a3a3d50232322e8, type: 3}
+  m_Name: WheatCard
+  m_EditorClassIdentifier: 
+  cardSprite: {fileID: 21300000, guid: 38d9fbea1ec51f34082db39ee0b16192, type: 3}
+  cardTitle: Wheat
+  cardSummary: 
+  cardEffectKeys: []
+  cardEffectValues: []
+  cardCost: 10
+  buildingType: 0
+  finalSprite: {fileID: 0}
+  tileForegroundChildPrefab: {fileID: 290865623841320278, guid: 9be5cf1dc80a45e49b6f1def06068f7c, type: 3}
+  payoffResource: {fileID: 11400000, guid: 7a84d3e4d06d24246be27cda976d6fc7, type: 2}
+  payoffAmount: 0

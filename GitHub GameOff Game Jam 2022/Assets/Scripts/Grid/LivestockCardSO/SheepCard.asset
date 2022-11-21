@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 719be7926bf7ff744be33c3980d6e266, type: 3}
+  m_Name: SheepCard
+  m_EditorClassIdentifier: 
+  cardSprite: {fileID: -5177388603050735206, guid: 1027fa609d223754aa26bb1ebc783025, type: 3}
+  buildingSprite: {fileID: 21300000, guid: e676b941c53cce24694f5e81c468c1a4, type: 3}
+  cardTitle: 
+  cardSummary: 
+  cardEffectKeys: []
+  cardEffectValues: []
+  cardCost: 10
+  animalType: 4
+  tileForegroundChildPrefab: {fileID: 290865623841320278, guid: ea720299c7e559b4d92950886b988dbd, type: 3}
+  payoffResource: {fileID: 0}
+  payoffAmount: 0
