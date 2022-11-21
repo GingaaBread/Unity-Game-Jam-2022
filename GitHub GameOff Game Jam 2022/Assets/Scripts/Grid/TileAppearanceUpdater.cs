@@ -10,7 +10,7 @@ public class TileAppearanceUpdater :  ComputerPhaseStep
     private void NotifyTileofTimeChange(){
         Tile[] allTiles = GetComponentsInChildren<Tile>();
         foreach(Tile t in allTiles){
-            t.UpdateTileAppearance(TimeManager.Instance.CurrentTime);
+            t.UpdateTileAppearance(TimeManager.Instance.CurrentTime.SeasonInYear);
             t.UpdateCropGrowth(TimeManager.Instance.CurrentTime.SeasonInYear);
         }
     }

@@ -36,9 +36,10 @@ public class MapManager : EditorWindow
         forest = (TileTypeSO)AssetDatabase.LoadAssetAtPath("Assets/Scripts/Grid/TileTypes/Forest.asset", typeof(TileTypeSO));
         hills = (TileTypeSO)AssetDatabase.LoadAssetAtPath("Assets/Scripts/Grid/TileTypes/Hills.asset", typeof(TileTypeSO));
         // tile =  PrefabUtility.LoadPrefabContents("Assets/Prefabs/Map/Tile.prefab");
-        GUILayout.Label("Tile Selection", EditorStyles.label);
+        GUILayout.Label("Tile Selection", EditorStyles.boldLabel);
+        EditorGUILayout.Space(30);
         GUILayout.BeginVertical();
-        EditorGUILayout.LabelField("Tile Type", GUILayout.MaxWidth(125));
+        EditorGUILayout.LabelField("Tile Type",EditorStyles.boldLabel, GUILayout.MaxWidth(125));
         if (GUILayout.Button("Forest"))
         {
             foreach (GameObject i in Selection.gameObjects)
@@ -47,7 +48,7 @@ public class MapManager : EditorWindow
                 {
                     Debug.LogError("Forest tile asset null");
                 }
-                i.gameObject.GetComponent<Tile>().updateAppearance(forest);
+                i.gameObject.GetComponent<Tile>().UpdateEditorTileAppearance(forest);
             }
         }
         if (GUILayout.Button("Lake"))
@@ -58,7 +59,7 @@ public class MapManager : EditorWindow
                 {
                     Debug.LogError("Lake tile asset null");
                 }
-                i.gameObject.GetComponent<Tile>().updateAppearance(lake);
+                i.gameObject.GetComponent<Tile>().UpdateEditorTileAppearance(lake);
             }
         }
         if (GUILayout.Button("Mountains"))
@@ -69,7 +70,7 @@ public class MapManager : EditorWindow
                 {
                     Debug.LogError("Mountain tile asset null");
                 }
-                i.gameObject.GetComponent<Tile>().updateAppearance(mountains);
+                i.gameObject.GetComponent<Tile>().UpdateEditorTileAppearance(mountains);
             }
         }
         if (GUILayout.Button("Plains"))
@@ -80,7 +81,7 @@ public class MapManager : EditorWindow
                 {
                     Debug.LogError("Plain tile asset null");
                 }
-                i.gameObject.GetComponent<Tile>().updateAppearance(plain);
+                i.gameObject.GetComponent<Tile>().UpdateEditorTileAppearance(plain);
             }
         }
 
@@ -92,11 +93,12 @@ public class MapManager : EditorWindow
                 {
                     Debug.LogError("Hills tile asset null");
                 }
-                i.gameObject.GetComponent<Tile>().updateAppearance(hills);
+                i.gameObject.GetComponent<Tile>().UpdateEditorTileAppearance(hills);
             }
         }
 
-        EditorGUILayout.LabelField("Generate Map", GUILayout.MaxWidth(125));
+        GUILayout.Space(30);
+        EditorGUILayout.LabelField("Generate Map",EditorStyles.boldLabel ,GUILayout.MaxWidth(125));
         rows = EditorGUILayout.IntField("Rows", rows);
         columns = EditorGUILayout.IntField("Columns", columns);
         mapSpawnOrigin = EditorGUILayout.Vector2Field("Top Left Corner", mapSpawnOrigin);
@@ -104,20 +106,21 @@ public class MapManager : EditorWindow
         parentObject = EditorGUILayout.ObjectField("Parent Object", parentObject, typeof(Transform), true) as Transform;
         if(GUILayout.Button("Generate Map"))
         {
-            generateMap(rows, columns);
+            GenerateMap(rows, columns);
         }
         if(GUILayout.Button("Delete Map"))
         {
             if(parentObject!= null){
-                foreach(Transform child in parentObject.GetComponentInChildren<Transform>()){
-                    DestroyImmediate(child.gameObject);
+                Transform[] children = parentObject.GetComponentsInChildren<Transform>();
+               for(int i = 1 ; i < children.Length; i++){ // index set at 1 to not delete parent transform
+                    DestroyImmediate(children[i].gameObject);
                 }
             }
         }
         GUILayout.EndVertical();
     }
 
-    private void generateMap(int rows, int columns){
+    private void GenerateMap(int rows, int columns){
          float spriteWidth = tile.GetComponent<SpriteRenderer>().size.x;
         float spriteHeight = tile.GetComponent<SpriteRenderer>().size.y;
         for (int width = 0; width < columns; width++){

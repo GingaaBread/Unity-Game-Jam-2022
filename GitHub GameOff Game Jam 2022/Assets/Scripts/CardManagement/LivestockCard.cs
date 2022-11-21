@@ -10,9 +10,7 @@ public class LivestockCard : ActionCardSO
     private CardPlayManager cardPlayManager;
     public AnimalType animalType;
     public GameObject tileForegroundChildPrefab;
-
-    public Sprite[] hill_LiveStockSprite = new Sprite[4];
-    public Sprite[] plains_LiveStockSprite = new Sprite[4];
+    public float turnsTillLivestockPayoff = 2f;
 
     [Header("Resource Payoff")]
     public ResourceSO payoffResource;
