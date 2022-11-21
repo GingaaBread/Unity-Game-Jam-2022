@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b30e40ce3b0b445881e72b8193aab1, type: 3}
   m_Name: Orange
   m_EditorClassIdentifier: 
+  basePrice: 30
+  season: 0
+  iconSprite: {fileID: 21300000, guid: b31c4b1313f66d14282717bcb8a7ef66, type: 3}
