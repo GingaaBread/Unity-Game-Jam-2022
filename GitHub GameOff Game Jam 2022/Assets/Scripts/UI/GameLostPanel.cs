@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.Assertions;
 
-public class GameWonPanel : MonoBehaviour {
+public class GameLostPanel : MonoBehaviour {
 
     [SerializeField] private GameObject ObjToShow;
 
-    public static GameWonPanel Instance { get; private set; }
+    public static GameLostPanel Instance { get; private set; }
 
     private void Awake() {
         Assert.IsNull(Instance);

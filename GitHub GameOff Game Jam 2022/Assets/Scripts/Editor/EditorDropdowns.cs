@@ -106,4 +106,12 @@ public class EditorDropdowns : EditorWindow
         GameWonPanel.Instance.Show();
     }
 
+    // Game Lost Panel
+
+    [MenuItem("Gamejam/GameLostPanel/Show")]
+    static void ShowGameLostPanel() {
+        if (!EditorApplication.isPlaying) { return; }
+        GameLostPanel.Instance.Show();
+    }
+
 }
