@@ -230,6 +230,7 @@ public class CardManager : ComputerPhaseStep
         if (!isComputerPhaseDuringGameInit)
         {
             cardDiscardedThisTurn = false;
+            print("Now here I should unlock all handcards!");
         }
     }
 }

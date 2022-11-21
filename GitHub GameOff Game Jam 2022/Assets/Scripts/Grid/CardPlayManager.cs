@@ -9,9 +9,9 @@ using UnityEngine;
 public class CardPlayManager : MonoBehaviour
 {
    
-    public BuildingCard currBuildingBeingPlayed;
-    public SeedCard currSeedBeingPlayed;
-    public LivestockCard currAnimalBeingPlayed;
+    [HideInInspector] public BuildingCard currBuildingBeingPlayed;
+    [HideInInspector] public SeedCard currSeedBeingPlayed;
+    [HideInInspector] public LivestockCard currAnimalBeingPlayed;
     
     //TODO: Add seperate methods for building and planting/livestock
     public void AddCurCard(BuildingCard card){

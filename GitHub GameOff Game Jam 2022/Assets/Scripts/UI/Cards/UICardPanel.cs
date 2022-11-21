@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 using FMODUnity;
-public class UICardPanel : ComputerPhaseStep, IPointerDownHandler
+
+public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler, IPointerDownHandler
 {
     public ActionCardSO CardToDisplay { get; set; }
     public bool isDetailedCard = false;
@@ -30,6 +30,9 @@ public class UICardPanel : ComputerPhaseStep, IPointerDownHandler
     [SerializeField] private Image effectPanelImage;
     [SerializeField] private Image effectSeparatorPanelImage;
     [SerializeField] private Image actionButtonPanelImage;
+
+    [Header("Audio")]
+    [SerializeField] private StudioEventEmitter audioEmitter;
 
     /// <summary>
     /// Sets up all UI components, rendering the selected CardToDisplay
@@ -88,10 +91,6 @@ public class UICardPanel : ComputerPhaseStep, IPointerDownHandler
         }
     }
 
-    public void OnPointerDown(PointerEventData E){
-        GetComponent<StudioEventEmitter>().Play();
-        CardToDisplay.Action();
-    }
     private void ApplyColourScheme(Color prm, Color drk)
     {
         // Apply the primary colours
@@ -147,5 +146,11 @@ public class UICardPanel : ComputerPhaseStep, IPointerDownHandler
     {
         if (!isDetailedCard)
             UIMainPanel.Instance.DisplayDetailedCard(this, GetCardIndex());
+    }
+
+    public void OnPointerDown(PointerEventData E)
+    {
+        audioEmitter.Play();
+        CardToDisplay.Action();
     }
 }

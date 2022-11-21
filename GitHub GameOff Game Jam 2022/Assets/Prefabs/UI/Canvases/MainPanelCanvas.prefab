@@ -2475,6 +2475,7 @@ MonoBehaviour:
   effectPanelImage: {fileID: 4364389168150865938}
   effectSeparatorPanelImage: {fileID: 3809372117033795920}
   actionButtonPanelImage: {fileID: 6663503887360228213}
+  audioEmitter: {fileID: 0}
 --- !u!1 &2035937066060259397
 GameObject:
   m_ObjectHideFlags: 0
@@ -4204,6 +4205,7 @@ MonoBehaviour:
   effectPanelImage: {fileID: 2071126026816781337}
   effectSeparatorPanelImage: {fileID: 2071126025788290657}
   actionButtonPanelImage: {fileID: 2071126026038356332}
+  audioEmitter: {fileID: 0}
 --- !u!95 &2423548174059114655
 Animator:
   serializedVersion: 4
@@ -8900,6 +8902,7 @@ GameObject:
   - component: {fileID: 4600640023528341162}
   - component: {fileID: 4600640023528341160}
   - component: {fileID: 1724671457160466322}
+  - component: {fileID: 2690072263961091982}
   m_Layer: 5
   m_Name: DetailedCardPanel
   m_TagString: Untagged
@@ -9004,6 +9007,7 @@ MonoBehaviour:
   effectPanelImage: {fileID: 4600640023180428984}
   effectSeparatorPanelImage: {fileID: 4600640022160002240}
   actionButtonPanelImage: {fileID: 4600640021877396429}
+  audioEmitter: {fileID: 2690072263961091982}
 --- !u!114 &1724671457160466322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9017,6 +9021,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handcardIndex: 0
+--- !u!114 &2690072263961091982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4600640023528341164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1848115962
+      Data2: 1234363983
+      Data3: -1974029381
+      Data4: 997299171
+    Path: event:/SFX/UI/Play_ButtonClick
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &4600640023582693709
 GameObject:
   m_ObjectHideFlags: 0
@@ -10565,6 +10599,7 @@ MonoBehaviour:
   effectPanelImage: {fileID: 5719749233121890892}
   effectSeparatorPanelImage: {fileID: 344555470900767160}
   actionButtonPanelImage: {fileID: 6380944487296450096}
+  audioEmitter: {fileID: 0}
 --- !u!1 &6375859778823069562
 GameObject:
   m_ObjectHideFlags: 0
