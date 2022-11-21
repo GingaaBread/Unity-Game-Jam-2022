@@ -18,7 +18,7 @@ public class Shop : MonoBehaviour
     /// <summary>
     /// How many items does this shop buy?
     /// </summary>
-    
+    [Range(1, 5)]
     public int itemAmount = 1;
 
     private List<ResourceSO> resources = new List<ResourceSO>(); 
@@ -33,11 +33,6 @@ public class Shop : MonoBehaviour
     private int amountSold;
 
     public float CostMultiplier { get { return costMultiplier; } }
-
-    private void Start()
-    {
-        if (itemAmount > displayer.MaxDisplayAmount) itemAmount = 1;
-    }
 
     // Gets called everytime an item is sold in this shop
     public void SoldItem() 
@@ -61,5 +56,6 @@ public class Shop : MonoBehaviour
         amountSold = 0;
 
     }
+
 
 }

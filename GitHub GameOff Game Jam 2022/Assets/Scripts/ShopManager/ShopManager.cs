@@ -16,8 +16,6 @@ public class ShopManager : MonoBehaviour
 {
 
     public static ShopManager Instance;
-
-
     /// <summary>
     /// GameObject that holds all the cities
     /// </summary>
