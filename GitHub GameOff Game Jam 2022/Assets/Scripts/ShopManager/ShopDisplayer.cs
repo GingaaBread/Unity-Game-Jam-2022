@@ -28,11 +28,11 @@ public class ShopDisplayer : MonoBehaviour
     private Image[] resourceIcons = new Image[5];
 
     // Do not edit this value
-    private int maxDisplayAmount = 5;
+    private const int MAX_DISPLAY_AMOUNT = 5;
     /// <summary>
     /// Returns the max amount of items that can be displayed in the shop
     /// </summary>
-    public int MaxDisplayAmount { get { return maxDisplayAmount; } }
+    public int MaxDisplayAmount { get { return MAX_DISPLAY_AMOUNT; } }
 
     TextMeshProUGUI cityNameText;
     TextMeshProUGUI resourcePriceText;

@@ -178,6 +178,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimeManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2967632090181863415, guid: 4895444155b19e34d97e89e653c8c33c, type: 3}
+      propertyPath: DebugMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2967632090181863415, guid: 4895444155b19e34d97e89e653c8c33c, type: 3}
+      propertyPath: ComputerPhaseSteps.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4895444155b19e34d97e89e653c8c33c, type: 3}
 --- !u!1001 &189560608
@@ -1062,12 +1070,12 @@ GameObject:
   m_Component:
   - component: {fileID: 954399234}
   m_Layer: 5
-  m_Name: InventoryUI
+  m_Name: InventoryUI (hidden)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &954399234
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1086,7 +1094,7 @@ RectTransform:
   - {fileID: 710856985}
   - {fileID: 610265680}
   m_Father: {fileID: 1523574738}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1429,7 +1437,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1523574738}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1634,8 +1642,8 @@ RectTransform:
   - {fileID: 2104087434}
   - {fileID: 918222564}
   - {fileID: 1847691560}
-  - {fileID: 1091703246}
   - {fileID: 954399234}
+  - {fileID: 1091703246}
   m_Father: {fileID: 1528617633}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2226,6 +2234,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1847691561}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: UpdateShop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1001 &1220567741369953633
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2360,7 +2380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3645467798499156821, guid: c5e466ebe6ecfcc42b847c772fdd3e6f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3645467798499156821, guid: c5e466ebe6ecfcc42b847c772fdd3e6f, type: 3}
       propertyPath: m_AnchorMin.x
@@ -2368,15 +2388,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3645467798499156821, guid: c5e466ebe6ecfcc42b847c772fdd3e6f, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3645467798499156821, guid: c5e466ebe6ecfcc42b847c772fdd3e6f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3645467798499156821, guid: c5e466ebe6ecfcc42b847c772fdd3e6f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3645467798499156821, guid: c5e466ebe6ecfcc42b847c772fdd3e6f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2408,11 +2428,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3645467798499156821, guid: c5e466ebe6ecfcc42b847c772fdd3e6f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 3645467798499156821, guid: c5e466ebe6ecfcc42b847c772fdd3e6f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -65
       objectReference: {fileID: 0}
     - target: {fileID: 3645467798499156821, guid: c5e466ebe6ecfcc42b847c772fdd3e6f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
