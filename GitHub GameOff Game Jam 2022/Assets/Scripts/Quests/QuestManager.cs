@@ -1,6 +1,7 @@
 using PlayerData;
 using System;
 using System.Collections.Generic;
+using TimeManagement;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -8,7 +9,7 @@ using UnityEngine.Assertions;
 /// 
 /// </summary>
 /// <author>Ben</author>
-public class QuestManager : MonoBehaviour
+public class QuestManager : ComputerPhaseStep
 {
 
     public static QuestManager Instance { get; private set; }
@@ -19,8 +20,9 @@ public class QuestManager : MonoBehaviour
 
     [Header("Pool Of ResourceCollection Quests To Choose From")]
     [SerializeField] private ResourceCollectionQuestSO[] ResourceCollectionQuests;
-    [SerializeField] private TilePlacementQuestSO[]      TilePlacementQuests;
-    [SerializeField] private MoneyFromSalesQuestSO[]     MoneyForActionQuests;
+
+    [SerializeField] private TilePlacementQuestSO[] TilePlacementQuests;
+    [SerializeField] private MoneyFromSalesQuestSO[] MoneyForActionQuests;
     private List<AbstractQuestSO> _activeQuests;
 
     [Header("Quest Selection Logic")]
@@ -28,7 +30,13 @@ public class QuestManager : MonoBehaviour
     [SerializeField] [Range(0, 3)] private int TilePlacementQuestsToSelect;
     [SerializeField] [Range(0, 3)] private int MoneyFromActionQuestsToSelect;
 
-    private void Awake() {
+    [Header("Win condition logic")]
+    [SerializeField] [Range(1, 3)] private int WinRequiresNMissionsComplete;
+
+    [Header("Loss condition logic")]
+    [SerializeField] [Range(1, 20)] private int LoseWhenWeReachYearN;
+
+    private new void Awake() {
         Assert.IsNull(Instance);
         Instance = this;
 
@@ -84,31 +92,79 @@ public class QuestManager : MonoBehaviour
         foreach (AbstractQuestSO quest in _activeQuests) {
             quest.NotifyOfResourceCollected(resource, countCollected);
         }
-        CheckIfGameIsWonAndReactAccordingly();
+        if (IsGameWon())
+            ShowWinScreen();
     }
 
     public void NotifyOfTilePlaced(ActionCardSO card) {
         foreach (AbstractQuestSO quest in _activeQuests) {
             quest.NotifyOfTilePlaced(card);
         }
-        CheckIfGameIsWonAndReactAccordingly();
+        if (IsGameWon())
+            ShowWinScreen();
     }
 
     public void NotifyOfResourceSale(ResourceSO resource, int MoneyEarnedFromSale) {
         foreach (AbstractQuestSO quest in _activeQuests) {
             quest.NotifyOfResourceSale(resource, MoneyEarnedFromSale);
         }
-        CheckIfGameIsWonAndReactAccordingly();
+        if (IsGameWon())
+            ShowWinScreen();
     }
 
-    public void CheckIfGameIsWonAndReactAccordingly() {
+    private bool IsGameWon() {
+        int questsWon = 0;
 
         foreach (AbstractQuestSO quest in _activeQuests) {
-            if (quest.GetPercentageCompleted() < 100)
-                return;
+            if (quest.GetPercentageCompleted() == 100)
+                questsWon += 1;
+        }
+        
+        if(questsWon >= WinRequiresNMissionsComplete) 
+            return true;
+        else 
+            return false;
+    }
+
+    private bool IsGameLost() {
+        if (TimeManager.Instance.CurrentTime.Year >= LoseWhenWeReachYearN)
+            return true;
+        else
+            return false;
+    }
+
+    public string[] GetQuestTextForWill() {
+        string[] questStrings = new string[_activeQuests.Count];
+
+        for(int i=0; i<_activeQuests.Count; i++) {
+            questStrings[i] = _activeQuests[i].GetQuestAsSentence();
         }
 
+        return questStrings;
+    }
+
+    private void ShowWinScreen() {
         GameWonPanel.Instance.Show();
     }
 
+    private void ShowLossScreen() {
+        GameLostPanel.Instance.Show();
+    }
+
+    public override void StartProcessingForComputerPhase(bool isComputerPhaseDuringGameInit) {
+        if (isComputerPhaseDuringGameInit) {
+            OnInitializeGame();
+            OnFinishProcessing.Invoke();
+        } else {
+            if (IsGameLost()) {
+                ShowLossScreen();
+            } else {
+                OnFinishProcessing.Invoke();
+            }
+        }
+    }
+
+    protected override object[] CheckForMissingReferences() {
+        return null;
+    }
 }
