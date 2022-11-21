@@ -100,7 +100,7 @@ public class Tile : MonoBehaviour
         if (!isBuild)
         {
             currBuilding = building;
-            currSprite.sprite = building.buildingSprite;
+            
             if (transform.childCount > 0)
             {
                 Destroy(transform.GetChild(0).gameObject);
@@ -108,6 +108,7 @@ public class Tile : MonoBehaviour
             GameObject tileForegroundObj = Instantiate(TileForeground, transform);
             tileForegroundObj.GetComponent<TileForeground>().Initialize(currBuilding, _tileRowNum, false, SeasonType.SPRING);
             isBuild = true;
+            UpdateTileAppearance(TimeManager.Instance.CurrentTime);
         }
 
     }
@@ -118,8 +119,7 @@ public class Tile : MonoBehaviour
         {
             if (currBuilding.buildingType == BuildingManagement.BuildingType.ACRE)
             {
-                //currSprite.sprite = crop.buildingSprite;
-
+                PointInTime currSeason = TimeManager.Instance.CurrentTime;
                 currSeed = crop;
                 if (transform.childCount > 0)
                 {
@@ -129,6 +129,8 @@ public class Tile : MonoBehaviour
                 tileForegroundObj.GetComponent<TileForeground>().Initialize(currSeed, _tileRowNum, false, SeasonType.SPRING);
                 isBuild = true;
                 isSeed = true;
+
+                
             }
             else
             {
@@ -147,7 +149,6 @@ public class Tile : MonoBehaviour
         {
             if (currBuilding.buildingType == BuildingManagement.BuildingType.ANIMALPEN)
             {
-                //currSprite.sprite = animal.buildingSprite;
                 currAnimal = animal;
                 isAnimal = true;
                 if (transform.childCount > 0)
@@ -174,23 +175,36 @@ public class Tile : MonoBehaviour
         _tileRowNum = currentRow * 10;
         GetComponent<SpriteRenderer>().sortingOrder = _tileRowNum;
     }
-
-    public void UpdateTileAppearance(PointInTime currTime){
+    public void SetTileAppearance(PointInTime currTime, Sprite[] sprites){
         switch(currTime.SeasonInYear){
             case SeasonType.SPRING: 
-                currSprite.sprite = currType.seasonSprites[0];
+                currSprite.sprite = sprites[0];
                 break;
             case SeasonType.SUMMER:
-                currSprite.sprite = currType.seasonSprites[1];
+                currSprite.sprite = sprites[1];
                 break;
             case SeasonType.FALL:
-                currSprite.sprite = currType.seasonSprites[2];
+                currSprite.sprite = sprites[2];
                 break;
             case SeasonType.WINTER:
-                currSprite.sprite = currType.seasonSprites[3];
+                currSprite.sprite = sprites[3];
                 break;
             default:
             break;
+        }
+    }
+
+    public void UpdateTileAppearance(PointInTime currTime){
+        if(!isBuild){
+            SetTileAppearance(currTime, currType.seasonSprites);
+            return;
+        } else if(isBuild) {
+            if(currType.type == BuildingManagement.TileType.HILLS){
+                SetTileAppearance(currTime, currBuilding.hill_BuildingSprite);
+            }else if(currType.type == BuildingManagement.TileType.PLAINS){
+                SetTileAppearance(currTime, currBuilding.plain_BuildingSprite);
+            }
+            return;
         }
     }
 }

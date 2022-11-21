@@ -9,7 +9,8 @@ public class SeedCard : ActionCardSO
 {
     private CardPlayManager cardPlayManager;
     public SeedType buildingType;
-    public Sprite finalSprite;
+    public Sprite[] hill_SeedSprite = new Sprite[4];
+    public Sprite[] plains_SeedSprite = new Sprite[4];
     public GameObject tileForegroundChildPrefab;
 
     [Header("Resource Payoff")]
