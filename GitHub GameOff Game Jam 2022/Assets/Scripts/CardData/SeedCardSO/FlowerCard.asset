@@ -19,7 +19,17 @@ MonoBehaviour:
   cardEffectValues: []
   cardCost: 10
   buildingType: 2
-  finalSprite: {fileID: 0}
+  hill_SeedSprite:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  plains_SeedSprite:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   tileForegroundChildPrefab: {fileID: 290865623841320278, guid: e0cbf8588aaa0004a8af8e8e4839ef27, type: 3}
+  cropTotalTurnsTillPayoff: 5
   payoffResource: {fileID: 11400000, guid: e8cb8992e4acb744ab9d493ac9ba2a1b, type: 2}
   payoffAmount: 0

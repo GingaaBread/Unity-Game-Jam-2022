@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _debugMode_AutoInitUsingDefaults: 0
-  _defaultTileType: 0
+  _defaultTileType: {fileID: 0}
   _defaultBuidlingCard: {fileID: 0}
   _defaultLivestockCard: {fileID: 0}
   _defaultSeedCard: {fileID: 0}

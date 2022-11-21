@@ -12,6 +12,7 @@ public class SeedCard : ActionCardSO
     public Sprite[] hill_SeedSprite = new Sprite[4];
     public Sprite[] plains_SeedSprite = new Sprite[4];
     public GameObject tileForegroundChildPrefab;
+    public int cropTotalTurnsTillPayoff = 1;
 
     [Header("Resource Payoff")]
     public ResourceSO payoffResource;

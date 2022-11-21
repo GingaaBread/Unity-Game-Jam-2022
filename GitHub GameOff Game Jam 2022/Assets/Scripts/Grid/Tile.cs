@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using TimeManagement;
+using PlayerData;
 
-// Author: Rohaid 
+/// <Author> Author: Rohaid </Author> 
 // Purpose: Stores the state of the tile in play and updates the physical appearance based on its state.
 
 // when a sucessful tile placement 
@@ -29,6 +30,10 @@ public class Tile : MonoBehaviour
     [SerializeField]
     private GameObject TileForeground;
 
+    private float cropAge = 0;
+
+    private PlayerDataManager playerDataManager;
+
 
     void Awake()
     {
@@ -42,6 +47,7 @@ public class Tile : MonoBehaviour
         }
 
         cardPlayManager = FindObjectOfType<CardPlayManager>();
+        playerDataManager = FindObjectOfType<PlayerDataManager>();
         if (cardPlayManager == null)
         {
             Debug.LogError("There is no cardplay manager script, please place one in the scene");
@@ -195,6 +201,15 @@ public class Tile : MonoBehaviour
     }
 
     public void UpdateTileAppearance(PointInTime currTime){
+        if(transform.childCount > 0){
+           TileForeground curr =  transform.GetComponentInChildren<TileForeground>();
+           if(curr!= null){
+            if(curr.transform.childCount>0){
+                 curr.UpdateForSeasonAndAgePercentage(currTime.SeasonInYear, 0f);
+            }
+           
+           }
+        }
         if(!isBuild){
             SetTileAppearance(currTime, currType.seasonSprites);
             return;
@@ -207,6 +222,26 @@ public class Tile : MonoBehaviour
             return;
         }
     }
+
+    public void UpdateCropGrowth(SeasonType season){
+        if(!isSeed){
+            return;
+        } else {
+            cropAge++;
+            float ageRatio = cropAge/((float)currSeed.cropTotalTurnsTillPayoff);
+            if(ageRatio == 1f){
+                playerDataManager.IncreaseInventoryItemAmount(currSeed.payoffResource, currSeed.payoffAmount);
+                isSeed = false;
+                cropAge = 0;
+                Destroy(transform.GetChild(0).gameObject);
+                return;
+            }
+            if(transform.childCount > 0) { // have a tile animatable object
+                transform.GetComponentInChildren<TileForeground>().UpdateForSeasonAndAgePercentage(season, ageRatio);
+            }
+        }
+    }
+
 }
 
 

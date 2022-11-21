@@ -11,6 +11,7 @@ public class TileAppearanceUpdater :  ComputerPhaseStep
         Tile[] allTiles = GetComponentsInChildren<Tile>();
         foreach(Tile t in allTiles){
             t.UpdateTileAppearance(TimeManager.Instance.CurrentTime);
+            t.UpdateCropGrowth(TimeManager.Instance.CurrentTime.SeasonInYear);
         }
     }
     public override void StartProcessingForComputerPhase(bool isComputerPhaseDuringGameInit) {
