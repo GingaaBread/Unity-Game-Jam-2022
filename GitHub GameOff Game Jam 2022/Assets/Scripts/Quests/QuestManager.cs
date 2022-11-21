@@ -20,6 +20,7 @@ public class QuestManager : ComputerPhaseStep
 
     [Header("Pool Of ResourceCollection Quests To Choose From")]
     [SerializeField] private ResourceCollectionQuestSO[] ResourceCollectionQuests;
+
     [SerializeField] private TilePlacementQuestSO[] TilePlacementQuests;
     [SerializeField] private MoneyFromSalesQuestSO[] MoneyForActionQuests;
     private List<AbstractQuestSO> _activeQuests;
@@ -143,9 +144,13 @@ public class QuestManager : ComputerPhaseStep
     public override void StartProcessingForComputerPhase(bool isComputerPhaseDuringGameInit) {
         if (isComputerPhaseDuringGameInit) {
             OnInitializeGame();
+            OnFinishProcessing.Invoke();
         } else {
-            if (IsGameLost())
+            if (IsGameLost()) {
                 ShowLossScreen();
+            } else {
+                OnFinishProcessing.Invoke();
+            }
         }
     }
 
