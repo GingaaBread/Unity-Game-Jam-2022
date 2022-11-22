@@ -6,9 +6,9 @@ using TimeManagement;
 using PlayerData;
 
 /// <Author> Author: Rohaid </Author> 
-// Purpose: Stores the state of the tile in play and updates the physical appearance based on its state.
-
-// when a sucessful tile placement 
+/// <Summary>Purpose: Stores the state of the tile in play,
+/// updates the physical appearance based on its state,
+/// updates the ResourceManager when crops are done growing/livestock are done. </Summary>
 public class Tile : MonoBehaviour
 {
 
@@ -31,6 +31,7 @@ public class Tile : MonoBehaviour
     private GameObject tileForeground;
 
     private float cropAge = 0;
+    private float animalAge = 0;
 
     private PlayerDataManager playerDataManager;
 
@@ -260,6 +261,20 @@ public class Tile : MonoBehaviour
                
             }
         }
+    }
+
+    public void UpdateLivestockGrowth(SeasonType season){
+        if(!isAnimal){
+            return;
+        }else{
+            animalAge++;
+            if(animalAge == currAnimal.turnsTillLivestockPayoff){
+                playerDataManager.IncreaseInventoryItemAmount(currAnimal.payoffResource, currAnimal.payoffAmount);
+                animalAge = 0;
+            }
+
+        }
+
     }
 
 }
