@@ -20,11 +20,10 @@ public class CityA : CityDemandSO
         Debug.Log($"Trying to access time {TimeManager.Instance} Gino wins");
         Debug.Log($"Trying to access time {TimeManager.Instance.CurrentTime}");
         Debug.Log($"Trying to access time {TimeManager.Instance.CurrentTime.SeasonInYear}");
-        SeasonType season = TimeManager.Instance.CurrentTime.SeasonInYear;
 
         foreach (ResourceSO res in availableResources) 
         {
-            if (res.season == season) return res;
+            if (res.seasonBonus == ShopManager.Instance.SeasonInBonus) return res;
         }
 
         return null;
