@@ -146,7 +146,6 @@ public class CardManager : ComputerPhaseStep
 
     public void RemoveCardOnUse(int cardIndex)
     {
-        print($"cardIndex is {cardIndex}");
         playerHandcards.RemoveAt(cardIndex);
         cardPanels.RemoveAt(cardIndex);
         UIMainPanel.Instance.DestroyCard(cardIndex);

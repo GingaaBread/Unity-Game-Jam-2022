@@ -2499,6 +2499,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isDetailedCard: 1
+  isPreviewCard: 0
   titleText: {fileID: 4427929935281808184}
   iconImage: {fileID: 1239544255182708873}
   discardIconImage: {fileID: 0}
@@ -4229,6 +4230,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isDetailedCard: 1
+  isPreviewCard: 1
   titleText: {fileID: 2071126026792572489}
   iconImage: {fileID: 2071126025153024310}
   discardIconImage: {fileID: 4356754586755408770}
@@ -9032,6 +9034,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isDetailedCard: 1
+  isPreviewCard: 0
   titleText: {fileID: 4600640023168953576}
   iconImage: {fileID: 4600640022863391639}
   discardIconImage: {fileID: 4784484639842987368}
@@ -10654,6 +10657,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isDetailedCard: 1
+  isPreviewCard: 0
   titleText: {fileID: 6965988924440354287}
   iconImage: {fileID: 7524196958259659733}
   discardIconImage: {fileID: 0}

@@ -10,7 +10,7 @@ using FMODUnity;
 public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler, IPointerDownHandler
 {
     public ActionCardSO CardToDisplay { get; set; }
-    public bool isDetailedCard = false;
+    public bool isDetailedCard = false, isPreviewCard = false;
 
     [Header("Main UI Components")]
     [SerializeField] private TMP_Text titleText;
@@ -143,15 +143,19 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler, IPointerDown
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (!isDetailedCard)
+        if (!isDetailedCard && !isPreviewCard)
             UIMainPanel.Instance.DisplayDetailedCard(this, GetCardIndex());
     }
 
     public void OnPointerDown(PointerEventData E)
     {
-        audioEmitter.Play();
-        CardManager.Instance.RemoveCardOnUse(UIMainPanel.Instance.GetDetailHandcardIndex());
-        QuestManager.Instance.NotifyOfTilePlaced(CardToDisplay);
-        CardToDisplay.Action();
+        if (!isPreviewCard)
+        {
+            audioEmitter.Play();
+            CardManager.Instance.RemoveCardOnUse(UIMainPanel.Instance.GetDetailHandcardIndex());
+            QuestManager.Instance.NotifyOfTilePlaced(CardToDisplay);
+            CardToDisplay.Action();
+            UIMainPanel.Instance.HideDetailedCard();
+        }
     }
 }
