@@ -103,21 +103,21 @@ namespace TimeManagement
         }
 
         private void FinishComputerPhase() {
-            if(CurrentPhase != Phase.Computer) throw new Exception($"TimeManager.FinishComputerPhase called when already in that phase");
+            if(CurrentPhase != Phase.Computer) throw new Exception($"TimeManager.FinishComputerPhase called when in {CurrentPhase} phase");
             CurrentPhase = Phase.PreTurn; 
             if (DebugMode) Debug.Log($"TimeManager phase now {CurrentPhase}");
             OnStartPreTurn.Invoke();
         }
 
         public void FinishPreTurnPhase() {
-            if (CurrentPhase != Phase.PreTurn) throw new Exception($"TimeManager.FinishPreTurnPhase called when already in that phase");
+            if (CurrentPhase != Phase.PreTurn) throw new Exception($"TimeManager.FinishPreTurnPhase called when in {CurrentPhase} phase");
             CurrentPhase = Phase.PlayerTurn; 
             if (DebugMode) Debug.Log($"TimeManager phase now {CurrentPhase}");
             OnStartPlayerTurn.Invoke();
         }
 
         public void FinishPlayerTurnPhase() {
-            if (CurrentPhase != Phase.PlayerTurn) throw new Exception($"TimeManager.FinishPlayerTurnPhase called when already in that phase");
+            if (CurrentPhase != Phase.PlayerTurn) throw new Exception($"TimeManager.FinishPlayerTurnPhase called when in {CurrentPhase} phase");
             CurrentPhase = Phase.Computer;
             if (DebugMode) Debug.Log($"TimeManager phase now {CurrentPhase}");
 

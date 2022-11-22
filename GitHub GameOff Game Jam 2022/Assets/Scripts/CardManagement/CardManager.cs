@@ -232,5 +232,7 @@ public class CardManager : ComputerPhaseStep
             cardDiscardedThisTurn = false;
             print("Now here I should unlock all handcards!");
         }
+
+        OnFinishProcessing.Invoke(); // tell time manager that this computer phase step is done
     }
 }
