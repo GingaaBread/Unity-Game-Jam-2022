@@ -22,7 +22,9 @@ public class GameSetupStep : ComputerPhaseStep
 
         // TODO: give building, and enqueue building reception
         // TODO: get quests
-        // TODO: get cards
+
+        // get cards
+        CardManager.Instance.GiveCard(5);
 
         // foreach(Tile A in CropHarvest) {
             // ALT call method in Tile to do stuff 
