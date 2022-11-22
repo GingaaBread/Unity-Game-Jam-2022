@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3645467798499156821}
   - component: {fileID: 8629371222913676574}
   - component: {fileID: 2327780231241994462}
+  - component: {fileID: -6794600941426016733}
   m_Layer: 5
   m_Name: ResourceIcon
   m_TagString: Untagged
@@ -77,6 +78,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-6794600941426016733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2473750768550559211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 859fdcf9d0823a74aace34bdc4ac03a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 2327780231241994462}
+  amount: {fileID: 3740905945139964331}
 --- !u!1 &8942835573578516618
 GameObject:
   m_ObjectHideFlags: 0

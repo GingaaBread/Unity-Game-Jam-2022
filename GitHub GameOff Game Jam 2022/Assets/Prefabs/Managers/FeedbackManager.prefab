@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765825064878663613}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 74.68793, y: -64.39508, z: -0.40446997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -54,3 +54,17 @@ MonoBehaviour:
   confirmationTitleText: {fileID: 0}
   moneyNotificationIcon: {fileID: 21300000, guid: 03be2f8d95e95a44782850808671a338, type: 3}
   buildingNotificationIcon: {fileID: 21300000, guid: 03be2f8d95e95a44782850808671a338, type: 3}
+  moneySoundEvent:
+    Guid:
+      Data1: 761073007
+      Data2: 1230423256
+      Data3: 115764125
+      Data4: -1677974483
+    Path: event:/SFX/Player/Play_MoneyRecieved
+  buildingSoundEvent:
+    Guid:
+      Data1: 1008738631
+      Data2: 1111941503
+      Data3: 66453695
+      Data4: 1933626932
+    Path: event:/SFX/Player/Play_BuildingRecieved

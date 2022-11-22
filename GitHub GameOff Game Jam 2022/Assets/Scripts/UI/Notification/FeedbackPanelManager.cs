@@ -1,6 +1,7 @@
 namespace UIManagement
 {
     using BuildingManagement;
+    using FMODUnity;
     using System;
     using System.Collections.Generic;
     using TimeManagement;
@@ -66,8 +67,13 @@ namespace UIManagement
 
         [Header("UI Notification Icons")]
         [SerializeField] private Sprite moneyNotificationIcon; 
-        [SerializeField] private Sprite buildingNotificationIcon; 
+        [SerializeField] private Sprite buildingNotificationIcon;
 
+
+
+        [Header("Sounds")]
+        [SerializeField] private EventReference moneySoundEvent;
+        [SerializeField] private EventReference buildingSoundEvent;
 
 
         // In the beginning of each turn, all panels will be dequeued and displayed
@@ -437,11 +443,13 @@ namespace UIManagement
 
             if (currentPanel is MoneyReceptionUIPanel moneyPanel)
             {
+                RuntimeManager.PlayOneShot(moneySoundEvent);
                 notificationPanelText.text = $"Received {moneyPanel.ReceivedMoneyAmount}$!";
                 DisplayNotification(Color.yellow, moneyNotificationIcon);
             }
             else if (currentPanel is BuildingReceptionUIPanel buildingPanel)
             {
+                RuntimeManager.PlayOneShot(buildingSoundEvent);
                 notificationPanelText.text = $"Received {buildingPanel.ReceivedBuildingType}!";
                 DisplayNotification(Color.red, buildingNotificationIcon);
             }

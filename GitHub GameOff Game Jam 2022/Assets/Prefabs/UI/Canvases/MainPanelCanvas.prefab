@@ -2089,6 +2089,7 @@ GameObject:
   - component: {fileID: 5088795975514352700}
   - component: {fileID: 5776066783015084433}
   - component: {fileID: 8332510053286139916}
+  - component: {fileID: 1807363326108649018}
   m_Layer: 5
   m_Name: DiscardButton
   m_TagString: Untagged
@@ -2212,6 +2213,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1807363326108649018}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8332510053286139916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2227,6 +2240,36 @@ MonoBehaviour:
   hoverAnimator: {fileID: 8642375601887043905}
   hoverTriggerName: Open
   dehoverTriggerName: Close
+--- !u!114 &1807363326108649018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795303576055697976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1419906851
+      Data2: 1119330259
+      Data3: 1197014709
+      Data4: 471358345
+    Path: event:/SFX/Cards/Play_Card_Discard
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1920251178087353286
 GameObject:
   m_ObjectHideFlags: 0
@@ -8903,6 +8946,7 @@ GameObject:
   - component: {fileID: 4600640023528341160}
   - component: {fileID: 1724671457160466322}
   - component: {fileID: 2690072263961091982}
+  - component: {fileID: 5724634582218069117}
   m_Layer: 5
   m_Name: DetailedCardPanel
   m_TagString: Untagged
@@ -9043,6 +9087,36 @@ MonoBehaviour:
     Path: event:/SFX/UI/Play_ButtonClick
   Event: 
   PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &5724634582218069117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4600640023528341164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1060737301
+      Data2: 1229844503
+      Data3: -1371941187
+      Data4: -480482046
+    Path: event:/SFX/UI/Play_MouseHover_Card
+  Event: 
+  PlayEvent: 11
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
@@ -10612,6 +10686,7 @@ GameObject:
   - component: {fileID: 8972645868154090949}
   - component: {fileID: 8947626316605535886}
   - component: {fileID: 3245668532264807276}
+  - component: {fileID: 1285702674124160583}
   m_Layer: 5
   m_Name: KeepButton
   m_TagString: Untagged
@@ -10735,6 +10810,48 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1285702674124160583}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1285702674124160583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6375859778823069562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1811702630
+      Data2: 1214165547
+      Data3: -1930509689
+      Data4: 484949037
+    Path: event:/SFX/Cards/Play_Card_Accept
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &6404030058549287553
 GameObject:
   m_ObjectHideFlags: 0
@@ -10864,6 +10981,7 @@ GameObject:
   - component: {fileID: 4889343376814318147}
   - component: {fileID: 2405592468595832657}
   - component: {fileID: 2997556204068246614}
+  - component: {fileID: 4597191298092486870}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -10965,6 +11083,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardScaleAnimator: {fileID: 0}
   panelContainer: {fileID: 46862523463803782}
+--- !u!114 &4597191298092486870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6648415978481683607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 247890019
+      Data2: 1284127262
+      Data3: 1086620825
+      Data4: 1608098820
+    Path: event:/SFX/Panel Slides/Play_DiscardPanel_Slide
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &6782002542321809338
 GameObject:
   m_ObjectHideFlags: 0

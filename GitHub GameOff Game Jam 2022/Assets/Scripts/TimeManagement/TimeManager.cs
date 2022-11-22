@@ -59,7 +59,7 @@ namespace TimeManagement
 
             IndexOfCurrentlyRunningStep = -1;
         }
-        
+
         private void Start()
         {
             HandleOnInitGame();

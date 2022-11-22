@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using PlayerData;
 using TimeManagement;
+using UnityEngine;
 
 
 /// CROSTZARD (author)
@@ -12,7 +10,7 @@ using TimeManagement;
 /// </summary>
 /// 
 
-public class ShopManager : MonoBehaviour
+public class ShopManager : ComputerPhaseStep
 {
 
     public static ShopManager Instance;
@@ -35,11 +33,6 @@ public class ShopManager : MonoBehaviour
             Debug.LogError("There is more than 1 Shop Manager in the scene!!!");
         }
     }
-    private void Start()
-    {
-        UpdateShop();
-
-    }
 
     /// <summary>
     /// Sell the resource the shop is buying
@@ -54,9 +47,8 @@ public class ShopManager : MonoBehaviour
             ResourceSO resource = shop.Resources[i];
             int price = GetPrice(resource, shop);
 
-            Debug.Log($"Sold 1 {resource.name} to {shop.City.cityName}!");
-            Debug.Log($"money increased by: {price} !");
-            Debug.Log("-----------------");
+            // Notify of quest update
+            QuestManager.Instance.NotifyOfResourceSale(resource, price);
 
             PlayerDataManager dataManager = PlayerDataManager.Instance;
             if (dataManager.HasItemInInventory(resource))
@@ -107,5 +99,20 @@ public class ShopManager : MonoBehaviour
             Shop shop = t.GetComponent<Shop>();
             shop.UpdateResource();
         } 
+    }
+
+    public override void StartProcessingForComputerPhase(bool isComputerPhaseDuringGameInit)
+    {
+        if (isComputerPhaseDuringGameInit)
+        {
+            UpdateShop();
+        }
+
+        OnFinishProcessing.Invoke();
+    }
+
+    protected override object[] CheckForMissingReferences()
+    {
+        return new object[0];
     }
 }
