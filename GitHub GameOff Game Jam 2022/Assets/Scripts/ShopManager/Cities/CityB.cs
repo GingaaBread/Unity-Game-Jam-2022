@@ -26,12 +26,11 @@ public class CityB : CityDemandSO
             AddToQueue();    
         }
 
-        PlayerData.ResourceSO resource = queue.Dequeue();
+        ResourceSO resource = queue.Dequeue();
 
         return resource;
 
     }
-
 
     private void AddToQueue() 
     { 
@@ -40,8 +39,4 @@ public class CityB : CityDemandSO
             queue.Enqueue(availableResources[i]);
         }
     }
-
-
-
-
 }

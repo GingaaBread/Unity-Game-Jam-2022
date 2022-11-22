@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cityName: CityB
   availableResources:
-  - {fileID: 11400000, guid: 17d02b6fab71dd94980e01d6f71af17d, type: 2}
-  - {fileID: 11400000, guid: ff0683a9db512bb41ab7a5ce87afbf57, type: 2}
+  - {fileID: 11400000, guid: b1521a81f69160a468a1cc5ec9a7e4f1, type: 2}
+  - {fileID: 11400000, guid: 28add7d5f259fca4daaddb3c50d31118, type: 2}
+  - {fileID: 11400000, guid: af3bf3ec6b5dc25439f3eba4e29af987, type: 2}
+  - {fileID: 11400000, guid: 47792c8d53da84f4d9ddcc19372aebff, type: 2}

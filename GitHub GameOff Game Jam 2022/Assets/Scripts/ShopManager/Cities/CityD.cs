@@ -33,7 +33,7 @@ public class CityD : CityDemandSO
         for (int i = 0; i < availableResources.Count; i++)
         {
             ResourceSO resource = availableResources[i];
-            if(resource.season != TimeManager.Instance.CurrentTime.SeasonInYear) 
+            if (resource.seasonBonus != ShopManager.Instance.SeasonInBonus) 
             {
                 queue.Enqueue(availableResources[i]);
             }

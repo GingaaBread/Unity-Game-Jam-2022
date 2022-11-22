@@ -19,6 +19,8 @@ public class ShopManager : ComputerPhaseStep
     /// </summary>
     public Transform cityHolder;
 
+    public ResourceSO.SeasonBonus SeasonInBonus { get { return SeasonType2SeasonBonus(TimeManager.Instance.CurrentTime.SeasonInYear); }}
+
     private int costBonus = 2;
 
     private void Awake()
@@ -77,12 +79,9 @@ public class ShopManager : ComputerPhaseStep
 
         int price = (int)(basePrice * multiplier);
 
-        if(resource.season == TimeManager.Instance.CurrentTime.SeasonInYear) 
-        { 
-            if(resource.name == "Wheat" || resource.name == "Rice" || resource.name == "Flowers" || resource.name == "Oats") 
-            {
-                price = (int)(basePrice * multiplier + costBonus);
-            }
+        if(resource.seasonBonus == SeasonInBonus) 
+        {
+            price = (int)(basePrice * multiplier + costBonus);
         }
 
         return price;
@@ -99,6 +98,22 @@ public class ShopManager : ComputerPhaseStep
             Shop shop = t.GetComponent<Shop>();
             shop.UpdateResource();
         } 
+    }
+    /// <summary>
+    /// Interprets a seasonType enum as a seasonBonus enum (seasonBonus is an enum used in the ResourdSO's to determine what season they get a bonus on)  
+    /// </summary>
+    /// <param name="seasonType"></param>
+    /// <returns></returns>
+    public ResourceSO.SeasonBonus SeasonType2SeasonBonus(SeasonType seasonType) 
+    { 
+        switch (seasonType) 
+        {
+            case SeasonType.SUMMER: return ResourceSO.SeasonBonus.SUMMER;
+            case SeasonType.FALL: return ResourceSO.SeasonBonus.FALL;
+            case SeasonType.WINTER: return ResourceSO.SeasonBonus.WINTER;
+            case SeasonType.SPRING: return ResourceSO.SeasonBonus.SPRING;
+        }
+        return ResourceSO.SeasonBonus.NONE; // This never happens because SEASONTYPE is always one of the upper four.
     }
 
     public override void StartProcessingForComputerPhase(bool isComputerPhaseDuringGameInit)
