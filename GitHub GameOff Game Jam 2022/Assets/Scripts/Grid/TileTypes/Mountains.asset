@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 620639c1198b9784c8534ef188a2aa78, type: 3}
+  m_Name: Mountains
+  m_EditorClassIdentifier: 
+  type: 1
+  seasonSprites:
+  - {fileID: 21300000, guid: cae4ac9b3d341074585ac9e46acfd000, type: 3}
+  - {fileID: 21300000, guid: 4e9b06f54e021eb4abe9022adc150b1c, type: 3}
+  - {fileID: 21300000, guid: e93bcd1012cdd0f4aa099ebf25664bb9, type: 3}
+  - {fileID: 21300000, guid: 8eacffbc64466ac4e91d8895f91e017e, type: 3}
+  tileForegroundChildPrefab: {fileID: 0}

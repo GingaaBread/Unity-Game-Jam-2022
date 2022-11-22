@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{bcbd93bd-52fc-47d4-be4f-1882ceb76db1}">
+		<property name="assetPath">
+			<value>Sell Item/Communications, Typewriter, Hermes Media 3, Mechanism, Ding SND43098-003.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.6906041666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b7aa6906-19d9-4154-8c59-dd20609b7309}</destination>
+		</relationship>
+	</object>
+</objects>

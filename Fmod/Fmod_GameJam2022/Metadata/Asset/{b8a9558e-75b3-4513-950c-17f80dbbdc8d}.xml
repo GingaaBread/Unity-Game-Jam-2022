@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{b8a9558e-75b3-4513-950c-17f80dbbdc8d}">
+		<property name="assetPath">
+			<value>Turn Progress Meter/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b7aa6906-19d9-4154-8c59-dd20609b7309}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="Workspace" id="{bfb41b3c-c19b-4846-8ba8-7122ecd7252d}">
+		<property name="builtBanksOutputDirectory">
+			<value>../../GitHub GameOff Game Jam 2022/FmodAssets</value>
+		</property>
+		<relationship name="masterEventFolder">
+			<destination>{fc4566cd-cf12-467d-86a3-c6f7d1039d25}</destination>
+		</relationship>
+		<relationship name="masterTagFolder">
+			<destination>{15736d42-2a7e-4b75-84f9-9287e11a1357}</destination>
+		</relationship>
+		<relationship name="masterEffectPresetFolder">
+			<destination>{a96c5dd0-ac04-4312-9384-50c46bb6655b}</destination>
+		</relationship>
+		<relationship name="masterParameterPresetFolder">
+			<destination>{7fe8974b-4fb8-4d0c-b27c-560f66f4627b}</destination>
+		</relationship>
+		<relationship name="masterBankFolder">
+			<destination>{6e2c0c10-a1d4-48fa-a124-c9e58af8d28b}</destination>
+		</relationship>
+		<relationship name="masterSandboxFolder">
+			<destination>{bb91adb2-7ebe-4cdf-bdd2-661eb08f4604}</destination>
+		</relationship>
+		<relationship name="masterAssetFolder">
+			<destination>{b7aa6906-19d9-4154-8c59-dd20609b7309}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{45baf6bb-ba58-470d-94af-21ff4b381c7b}</destination>
+		</relationship>
+		<relationship name="profilerSessionFolder">
+			<destination>{cbe2281c-b946-4d0e-bc32-521037e94c1f}</destination>
+		</relationship>
+		<relationship name="platforms">
+			<destination>{ee329329-6e33-45c8-bc2d-649cae10485b}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{afaa162b-7b1d-43e6-a2d8-66613ed2ab78}">
+		<property name="assetPath">
+			<value>Crop Placement/Dirt_Movement_001-008.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.96458049886621311</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b7aa6906-19d9-4154-8c59-dd20609b7309}</destination>
+		</relationship>
+	</object>
+</objects>
