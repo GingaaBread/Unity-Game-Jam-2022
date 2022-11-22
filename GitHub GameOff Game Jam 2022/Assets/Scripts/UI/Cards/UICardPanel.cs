@@ -150,7 +150,7 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler, IPointerDown
     public void OnPointerDown(PointerEventData E)
     {
         audioEmitter.Play();
-        CardManager.Instance.RemoveCardOnUse(GetCardIndex());
+        CardManager.Instance.RemoveCardOnUse(UIMainPanel.Instance.GetDetailHandcardIndex());
         QuestManager.Instance.NotifyOfTilePlaced(CardToDisplay);
         CardToDisplay.Action();
     }
