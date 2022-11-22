@@ -12,6 +12,7 @@ public class TileAppearanceUpdater :  ComputerPhaseStep
         foreach(Tile t in allTiles){
             t.UpdateTileAppearance(TimeManager.Instance.CurrentTime.SeasonInYear);
             t.UpdateCropGrowth(TimeManager.Instance.CurrentTime.SeasonInYear);
+            t.UpdateLivestockGrowth(TimeManager.Instance.CurrentTime.SeasonInYear);
         }
     }
     public override void StartProcessingForComputerPhase(bool isComputerPhaseDuringGameInit) {
