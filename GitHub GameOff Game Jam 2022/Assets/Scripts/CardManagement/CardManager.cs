@@ -90,7 +90,7 @@ public class CardManager : ComputerPhaseStep
     /// <param name="amount"> amount given </param>
     public void GiveCard(int amount = 1) 
     {
-        if (cardsDrawn >= deckSize) 
+        if (cardsDrawn >= deckSize || cardsDrawn >= shuffledCards.Count) 
             throw new ApplicationException("Drawing deck is out of cards!");
 
         for (int i = 0; i < amount; i++)
@@ -252,6 +252,11 @@ public class CardManager : ComputerPhaseStep
             foreach (var cardPanel in cardPanels)
             {
                 cardPanel.UnlockDiscardButton();
+            }
+
+            while (playerHandcards.Count < 5)
+            {
+                GiveCard(1);
             }
         }
 
