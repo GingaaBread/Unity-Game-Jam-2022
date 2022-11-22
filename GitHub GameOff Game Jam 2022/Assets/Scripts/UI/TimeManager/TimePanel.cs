@@ -29,7 +29,6 @@ namespace TimeManagement
 
         private void UpdateUIElementsForNewTime(PointInTime time)
         {
-            print("Running UpdateUIElements");
             if (!time.IsStartingPointInTime())
             {
                 sliderAnimator.SetTrigger("Next");
