@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardSprite: {fileID: 21300000, guid: 38d9fbea1ec51f34082db39ee0b16192, type: 3}
   cardTitle: Strawberry
-  cardSummary: 
+  cardSummary: Once harvested, gives 1 strawberry
   cardEffectKeys: []
   cardEffectValues: []
   cardCost: 10
   buildingType: 6
-  finalSprite: {fileID: 0}
   tileForegroundChildPrefab: {fileID: 290865623841320278, guid: 9be5cf1dc80a45e49b6f1def06068f7c, type: 3}
+  cropTotalTurnsTillPayoff: 9
   payoffResource: {fileID: 11400000, guid: b1521a81f69160a468a1cc5ec9a7e4f1, type: 2}
-  payoffAmount: 0
+  payoffAmount: 1

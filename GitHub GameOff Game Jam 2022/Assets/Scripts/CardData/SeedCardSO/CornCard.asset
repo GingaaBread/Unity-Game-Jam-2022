@@ -14,22 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardSprite: {fileID: 21300000, guid: 38d9fbea1ec51f34082db39ee0b16192, type: 3}
   cardTitle: Corn
-  cardSummary: 
+  cardSummary: Once harvested, gives 1 corn
   cardEffectKeys: []
   cardEffectValues: []
-  cardCost: 10
+  cardCost: 6
   buildingType: 4
-  hill_SeedSprite:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  plains_SeedSprite:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   tileForegroundChildPrefab: {fileID: 290865623841320278, guid: 9be5cf1dc80a45e49b6f1def06068f7c, type: 3}
   cropTotalTurnsTillPayoff: 5
   payoffResource: {fileID: 11400000, guid: 5d8727db39ca84f4487a6d5fd71cdf08, type: 2}
-  payoffAmount: 0
+  payoffAmount: 1

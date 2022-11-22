@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardSprite: {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
   cardTitle: Fish
-  cardSummary: 
+  cardSummary: Can be caught every 8 turns
   cardEffectKeys: []
   cardEffectValues: []
-  cardCost: 10
+  cardCost: 52
   animalType: 3
   tileForegroundChildPrefab: {fileID: 290865623841320278, guid: bdc7f36fd35741341a1284becc75f4cf, type: 3}
+  turnsTillLivestockPayoff: 8
   payoffResource: {fileID: 0}
   payoffAmount: 0

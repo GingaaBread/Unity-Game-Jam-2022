@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardSprite: {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
   cardTitle: Bees
-  cardSummary: produce honey every nine turns
+  cardSummary: Produce honey every nine turns
   cardEffectKeys: []
   cardEffectValues: []
-  cardCost: 10
+  cardCost: 66
   animalType: 2
   tileForegroundChildPrefab: {fileID: 135514813546859715, guid: a8ec8f21d0eaefa4abdb3b90829f5280, type: 3}
+  turnsTillLivestockPayoff: 9
   payoffResource: {fileID: 0}
   payoffAmount: 0

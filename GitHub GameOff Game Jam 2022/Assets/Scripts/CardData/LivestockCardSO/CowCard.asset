@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardSprite: {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
   cardTitle: Cow
-  cardSummary: produce milk every four turns.
+  cardSummary: Produce milk every four turns
   cardEffectKeys: []
   cardEffectValues: []
-  cardCost: 10
+  cardCost: 20
   animalType: 0
   tileForegroundChildPrefab: {fileID: 290865623841320278, guid: bdc7f36fd35741341a1284becc75f4cf, type: 3}
+  turnsTillLivestockPayoff: 4
   payoffResource: {fileID: 0}
   payoffAmount: 0

@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardSprite: {fileID: 21300000, guid: 38d9fbea1ec51f34082db39ee0b16192, type: 3}
   cardTitle: Nuts
-  cardSummary: 
+  cardSummary: Once harvested, gives 1 nut
   cardEffectKeys: []
   cardEffectValues: []
   cardCost: 10
   buildingType: 7
-  finalSprite: {fileID: 0}
   tileForegroundChildPrefab: {fileID: 290865623841320278, guid: 9be5cf1dc80a45e49b6f1def06068f7c, type: 3}
+  cropTotalTurnsTillPayoff: 4
   payoffResource: {fileID: 11400000, guid: af3bf3ec6b5dc25439f3eba4e29af987, type: 2}
-  payoffAmount: 0
+  payoffAmount: 1
