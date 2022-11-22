@@ -36,7 +36,7 @@ public class UIMainPanel : MonoBehaviour
         Instance = this;
     }
 
-    public void DisplayCard(ActionCardSO cardToDisplay)
+    public UICardPanel DisplayCard(ActionCardSO cardToDisplay)
     {
         if (CardManager.Instance.MaximumHandcardLimitReached())
             throw new ArgumentException("Trying to display a card despite having reached the maximum handcard limit.");
@@ -45,6 +45,8 @@ public class UIMainPanel : MonoBehaviour
 
         newCard.CardToDisplay = cardToDisplay;
         newCard.Render();
+
+        return newCard;
     }
 
     public void LockAllHandcards()

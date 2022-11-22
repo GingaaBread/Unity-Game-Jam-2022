@@ -59,6 +59,7 @@ public class CardManager : ComputerPhaseStep
     private int cardsDrawn, consideredDiscardIndex = -1;
    
     private List<ActionCardSO> playerHandcards = new List<ActionCardSO>();
+    private List<UICardPanel> cardPanels = new List<UICardPanel>();
 
     private List<ActionCardSO> cropCards = new List<ActionCardSO>();
     private List<ActionCardSO> buildCards = new List<ActionCardSO>();
@@ -94,7 +95,9 @@ public class CardManager : ComputerPhaseStep
 
             playerHandcards.Add(drawnCard);
             cardsDrawn++;
-            UIMainPanel.Instance.DisplayCard(drawnCard);
+
+            var newCard = UIMainPanel.Instance.DisplayCard(drawnCard);
+            cardPanels.Add(newCard);
         }
     }
     
@@ -127,6 +130,8 @@ public class CardManager : ComputerPhaseStep
             throw new ApplicationException("Trying to confirm the discard action before the system is ready.");
 
         playerHandcards.RemoveAt(consideredDiscardIndex);
+        cardPanels.RemoveAt(consideredDiscardIndex);
+
         discardPanel.HandleUIDiscard(consideredDiscardIndex);        
 
         cardDiscardedThisTurn = true;
@@ -230,7 +235,11 @@ public class CardManager : ComputerPhaseStep
         if (!isComputerPhaseDuringGameInit)
         {
             cardDiscardedThisTurn = false;
-            print("Now here I should unlock all handcards!");
+           
+            foreach (var cardPanel in cardPanels)
+            {
+                cardPanel.UnlockDiscardButton();
+            }
         }
 
         OnFinishProcessing.Invoke(); // tell time manager that this computer phase step is done
