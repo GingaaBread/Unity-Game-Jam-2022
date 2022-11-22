@@ -49,6 +49,8 @@ public class UIMainPanel : MonoBehaviour
         return newCard;
     }
 
+    public int GetDetailHandcardIndex() => detailedCardScript.handcardIndex;
+
     public void LockAllHandcards()
     {
         if (shouldLockDiscardButtonsForCards)
