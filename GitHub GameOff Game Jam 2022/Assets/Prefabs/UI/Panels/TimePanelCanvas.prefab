@@ -33,9 +33,9 @@ RectTransform:
   m_Father: {fileID: 7112556542085544041}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 250, y: -86.998}
   m_SizeDelta: {x: 330.288, y: 79.918}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &289414181850737008
@@ -250,12 +250,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7112556542085544041}
+  - component: {fileID: 5293192885383259116}
   - component: {fileID: 1121565761961427508}
   - component: {fileID: 288570673633944934}
   - component: {fileID: 2720414708015238765}
   - component: {fileID: 8455621277423050200}
   - component: {fileID: 7662884654015109653}
-  - component: {fileID: 5293192885383259116}
   m_Layer: 5
   m_Name: SeasonChangeAnimationPanel
   m_TagString: Untagged
@@ -288,6 +288,60 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 149.26678}
   m_SizeDelta: {x: 0, y: -298.5336}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5293192885383259116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2212639559174210684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a5cc6192e1674eb7a71e8001c0ec1ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endTurnPanelSlideEventName:
+    Guid:
+      Data1: 268474106
+      Data2: 1311761141
+      Data3: 322667141
+      Data4: -119369438
+    Path: event:/SFX/EndTurn/Play_EndTurn_PanelSlide
+  endSeasonNotificationEventName:
+    Guid:
+      Data1: 466922130
+      Data2: 1316274657
+      Data3: -213050952
+      Data4: 1187994808
+    Path: event:/SFX/EndTurn/Play_EndSeasonNotification
+  endTurnSpringSeasonEventName:
+    Guid:
+      Data1: -1325034364
+      Data2: 1227485163
+      Data3: 1614453181
+      Data4: -1877369123
+    Path: event:/SFX/Season/Play_SFXSpring
+  endTurnSummerSeasonEventName:
+    Guid:
+      Data1: -1953271790
+      Data2: 1155641688
+      Data3: -1805852264
+      Data4: 1147539809
+    Path: event:/SFX/Season/Play_SFXSummer
+  endTurnFallSeasonEventName:
+    Guid:
+      Data1: -1068564527
+      Data2: 1235867287
+      Data3: -212802155
+      Data4: 482754556
+    Path: event:/SFX/Season/Play_SFXAutumn
+  endTurnWinterSeasonEventName:
+    Guid:
+      Data1: 1188915730
+      Data2: 1322551252
+      Data3: 1290661281
+      Data4: -12473118
+    Path: event:/SFX/Season/Play_SFXWinter
 --- !u!222 &1121565761961427508
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -392,39 +446,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &5293192885383259116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2212639559174210684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a5cc6192e1674eb7a71e8001c0ec1ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  endTurnPanelSlideEventName:
-    Guid:
-      Data1: 268474106
-      Data2: 1311761141
-      Data3: 322667141
-      Data4: -119369438
-    Path: event:/SFX/EndTurn/Play_EndTurn_PanelSlide
-  endSeasonNotificationEventName:
-    Guid:
-      Data1: 466922130
-      Data2: 1316274657
-      Data3: -213050952
-      Data4: 1187994808
-    Path: event:/SFX/EndTurn/Play_EndSeasonNotification
-  endTurnSeasonEventName:
-    Guid:
-      Data1: 814497812
-      Data2: 1167745308
-      Data3: -1599237973
-      Data4: -1090361520
-    Path: event:/SFX/EndTurn/Play_EndTurn_Seasons
 --- !u!1 &2605655698898372131
 GameObject:
   m_ObjectHideFlags: 0
@@ -2438,7 +2459,7 @@ MonoBehaviour:
       Data2: 1234363983
       Data3: -1974029381
       Data4: 997299171
-    Path: event:/SFX/Play_ButtonClick
+    Path: event:/SFX/UI/Play_ButtonClick
   Event: 
   PlayEvent: 0
   StopEvent: 0

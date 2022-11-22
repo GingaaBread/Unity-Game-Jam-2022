@@ -1,3 +1,4 @@
+using FMODUnity;
 using System;
 using System.Collections.Generic;
 using TimeManagement;
@@ -29,6 +30,9 @@ public class CardManager : ComputerPhaseStep
     public const int MAX_HANDCARD_AMOUNT = 5;
 
     public ActionCardSO[] cardList;
+
+    [Header("Audio")]
+    [SerializeField] private EventReference cardReceivedSoundEvent;
 
     [Header("Card Colour Schemes")]
     public Color buildingPrimary;
@@ -98,6 +102,8 @@ public class CardManager : ComputerPhaseStep
 
             var newCard = UIMainPanel.Instance.DisplayCard(drawnCard);
             cardPanels.Add(newCard);
+
+            RuntimeManager.PlayOneShot(cardReceivedSoundEvent);
         }
     }
     
@@ -136,6 +142,14 @@ public class CardManager : ComputerPhaseStep
 
         cardDiscardedThisTurn = true;
         consideredDiscardIndex = -1;
+    }
+
+    public void RemoveCardOnUse(int cardIndex)
+    {
+        print($"cardIndex is {cardIndex}");
+        playerHandcards.RemoveAt(cardIndex);
+        cardPanels.RemoveAt(cardIndex);
+        UIMainPanel.Instance.DestroyCard(cardIndex);
     }
         
     // IMPORTANT: 

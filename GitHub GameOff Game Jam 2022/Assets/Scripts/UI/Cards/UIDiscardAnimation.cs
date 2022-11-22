@@ -1,3 +1,4 @@
+using FMODUnity;
 using UIManagement;
 using UnityEngine;
 
@@ -15,7 +16,10 @@ public class UIDiscardAnimation : MonoBehaviour
     /// Played when the discard animation has finished.
     /// Plays the pop-out animation of the card panel
     /// </summary>
-    public void PlayPanelPopOutAnimation() => cardScaleAnimator.Play("PopOut");
+    public void PlayPanelPopOutAnimation()
+    {
+        cardScaleAnimator.Play("PopOut");
+    }
 
     /// <summary>
     /// Played when the pop-out animation has finished.

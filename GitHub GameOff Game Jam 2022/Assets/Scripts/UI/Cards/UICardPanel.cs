@@ -136,8 +136,7 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler, IPointerDown
     public override void StartProcessingForComputerPhase(bool isComputerPhaseDuringGameInit)
     {
         if (!isComputerPhaseDuringGameInit)
-        {
-            print("Unlocking");
+        { 
             UnlockDiscardButton();
         }
     }
@@ -151,6 +150,8 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler, IPointerDown
     public void OnPointerDown(PointerEventData E)
     {
         audioEmitter.Play();
+        CardManager.Instance.RemoveCardOnUse(GetCardIndex());
+        QuestManager.Instance.NotifyOfTilePlaced(CardToDisplay);
         CardToDisplay.Action();
     }
 }

@@ -79,7 +79,7 @@ public class InventoryManager : MonoBehaviour
                 GameObject icon = Instantiate(resourcePrefab, resourceHolder);
                 PositionIcon(icon.transform);
 
-                ResourceDisplayer displayer = icon.transform.GetComponent<ResourceDisplayer>();
+                ResourceDisplayer displayer = icon.GetComponent<ResourceDisplayer>();
                 displayer.SetUpResourceIcon(resource);
 
                 resourceIcons.Add(resource.name, displayer);

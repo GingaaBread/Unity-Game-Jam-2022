@@ -10,7 +10,7 @@ public class ResourceDisplayer : MonoBehaviour
 
     public Image icon;
     public TextMeshProUGUI amount;
-    public TextMeshProUGUI resourceName;
+    //public TextMeshProUGUI resourceName;
 
     /// <summary>
     /// Sets itself up. Changes their text and image according to the ResourceSO its representing.
@@ -18,7 +18,7 @@ public class ResourceDisplayer : MonoBehaviour
     /// <param name="resource"></param>
     public void SetUpResourceIcon(ResourceSO resource) 
     {
-        resourceName.text = resource.name;
+        //resourceName.text = resource.name;
         amount.text = "x" + PlayerDataManager.Instance.GetInventoryItemAmount(resource).ToString();
         icon.sprite = resource.iconSprite;
 

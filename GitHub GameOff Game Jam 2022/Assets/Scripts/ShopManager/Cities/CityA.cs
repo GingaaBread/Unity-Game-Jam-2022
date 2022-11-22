@@ -17,6 +17,9 @@ public class CityA : CityDemandSO
 
     public override ResourceSO RandomResource() 
     {
+        Debug.Log($"Trying to access time {TimeManager.Instance} Gino wins");
+        Debug.Log($"Trying to access time {TimeManager.Instance.CurrentTime}");
+        Debug.Log($"Trying to access time {TimeManager.Instance.CurrentTime.SeasonInYear}");
         SeasonType season = TimeManager.Instance.CurrentTime.SeasonInYear;
 
         foreach (ResourceSO res in availableResources) 
