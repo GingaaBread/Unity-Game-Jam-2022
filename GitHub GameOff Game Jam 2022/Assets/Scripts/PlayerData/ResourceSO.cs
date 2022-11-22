@@ -7,8 +7,10 @@ namespace PlayerData
     public class ResourceSO : ScriptableObject
     {
 
+        public enum SeasonBonus {SUMMER, WINTER, FALL, SPRING, NONE };
+
         public int basePrice;
-        public TimeManagement.SeasonType season;
+        public SeasonBonus seasonBonus = SeasonBonus.NONE;
         public Sprite iconSprite;
 
     }

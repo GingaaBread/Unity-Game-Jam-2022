@@ -17,11 +17,10 @@ public class CityA : CityDemandSO
 
     public override ResourceSO RandomResource() 
     {
-        SeasonType season = TimeManager.Instance.CurrentTime.SeasonInYear;
 
         foreach (ResourceSO res in availableResources) 
         {
-            if (res.season == season) return res;
+            if (res.seasonBonus == ShopManager.Instance.SeasonInBonus) return res;
         }
 
         return null;
