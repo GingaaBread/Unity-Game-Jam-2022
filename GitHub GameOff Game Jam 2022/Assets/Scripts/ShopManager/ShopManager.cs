@@ -36,11 +36,6 @@ public class ShopManager : ComputerPhaseStep
         }
     }
 
-    private void Start()
-    {
-        Invoke("UpdateShop", 2);
-    }
-
 
     /// <summary>
     /// Sell the resource the shop is buying
