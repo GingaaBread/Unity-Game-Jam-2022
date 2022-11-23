@@ -16,14 +16,14 @@ public class LivestockCard : ActionCardSO
     public ResourceSO payoffResource;
     public int payoffAmount;
 
-    public override void Action()
+    public override void Action(UICardPanel uiPanel)
     {
         cardPlayManager = FindObjectOfType<CardPlayManager>();
         if(cardPlayManager == null){
             Debug.LogError("CardPlayManager script missing!");
             return;
         }
-        cardPlayManager.AddCurCard(this);
+        cardPlayManager.AddCurCard(this, uiPanel);
         // build action here
     }
 }

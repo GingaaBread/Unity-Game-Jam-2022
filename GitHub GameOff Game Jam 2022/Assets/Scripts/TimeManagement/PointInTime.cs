@@ -11,8 +11,8 @@ namespace TimeManagement
         // hardcoded definitions of how time should progress
         private static readonly int FIRST_YEAR = 1;
         private static readonly SeasonType[] SEASON_IN_YEAR_SEQUENCE = 
-        { 
-            SeasonType.SUMMER, SeasonType.FALL, SeasonType.WINTER, SeasonType.SPRING 
+        {
+            SeasonType.SPRING, SeasonType.SUMMER, SeasonType.FALL, SeasonType.WINTER
         };
         private static readonly int FIRST_ROUND_IN_SEASON = 1;
         private static readonly int LAST_ROUND_IN_SEASON = 3;

@@ -19,7 +19,7 @@ MonoBehaviour:
   cardEffectValues: []
   cardCost: 4
   buildingType: 3
-  tileForegroundChildPrefab: {fileID: 290865623841320278, guid: 9be5cf1dc80a45e49b6f1def06068f7c, type: 3}
+  tileForegroundChildPrefab: {fileID: 290865623841320278, guid: 48870b7c714366343ab71412fbe15f0f, type: 3}
   cropTotalTurnsTillPayoff: 7
   payoffResource: {fileID: 11400000, guid: 24dc3e76c1dc56d408a1866d556248f8, type: 2}
   payoffAmount: 1
