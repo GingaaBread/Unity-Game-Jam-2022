@@ -19487,19 +19487,19 @@ PrefabInstance:
     - target: {fileID: 2967632090181863415, guid: 4895444155b19e34d97e89e653c8c33c, type: 3}
       propertyPath: ComputerPhaseSteps.Array.data[4]
       value: 
-      objectReference: {fileID: 8034905168187687053}
+      objectReference: {fileID: 1184405310}
     - target: {fileID: 2967632090181863415, guid: 4895444155b19e34d97e89e653c8c33c, type: 3}
       propertyPath: ComputerPhaseSteps.Array.data[5]
       value: 
-      objectReference: {fileID: 1519117729}
+      objectReference: {fileID: 8034905168187687053}
     - target: {fileID: 2967632090181863415, guid: 4895444155b19e34d97e89e653c8c33c, type: 3}
       propertyPath: ComputerPhaseSteps.Array.data[6]
       value: 
-      objectReference: {fileID: 1607362926}
+      objectReference: {fileID: 1519117729}
     - target: {fileID: 2967632090181863415, guid: 4895444155b19e34d97e89e653c8c33c, type: 3}
       propertyPath: ComputerPhaseSteps.Array.data[7]
       value: 
-      objectReference: {fileID: 1184405310}
+      objectReference: {fileID: 1607362926}
     - target: {fileID: 2967632090181863415, guid: 4895444155b19e34d97e89e653c8c33c, type: 3}
       propertyPath: ComputerPhaseSteps.Array.data[8]
       value: 
