@@ -36,6 +36,12 @@ public class ShopManager : ComputerPhaseStep
         }
     }
 
+    private void Start()
+    {
+        Invoke("UpdateShop", 2);
+    }
+
+
     /// <summary>
     /// Sell the resource the shop is buying
     /// </summary>
@@ -46,6 +52,12 @@ public class ShopManager : ComputerPhaseStep
         for (int i = 0; i < shop.itemAmount; i++) 
         {
             if (shop.Resources == null) return;
+            if (shop.Resources.Count == 0) 
+            {
+                Debug.LogError("Shop's resources count 0. None available for buying"); 
+                return;
+            }
+            
             ResourceSO resource = shop.Resources[i];
             int price = GetPrice(resource, shop);
 
