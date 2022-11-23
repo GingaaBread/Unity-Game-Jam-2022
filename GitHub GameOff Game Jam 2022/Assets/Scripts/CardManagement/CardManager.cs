@@ -118,6 +118,8 @@ public class CardManager : ComputerPhaseStep
         else if (cardDiscardedThisTurn)
             throw new ApplicationException("A card has already been discarded this turn. This should be checked before" +
                 "calling the function!");
+        
+        CardPlayManager.Instance.ResetCurrentPlay();
 
         consideredDiscardIndex = cardIndex;
 
@@ -137,7 +139,7 @@ public class CardManager : ComputerPhaseStep
 
         playerHandcards.RemoveAt(consideredDiscardIndex);
         cardPanels.RemoveAt(consideredDiscardIndex);
-
+        
         discardPanel.HandleUIDiscard(consideredDiscardIndex);        
 
         cardDiscardedThisTurn = true;
@@ -149,6 +151,18 @@ public class CardManager : ComputerPhaseStep
         playerHandcards.RemoveAt(cardIndex);
         cardPanels.RemoveAt(cardIndex);
         UIMainPanel.Instance.DestroyCard(cardIndex);
+    }
+
+    public void RemoveCardOnUse(UICardPanel currentUIPanel)
+    {
+        Assert.IsFalse(currentUIPanel.isDetailedCard);
+
+        UIMainPanel.Instance.HideDetailedCard();
+        playerHandcards.Remove(currentUIPanel.CardToDisplay);
+        cardPanels.Remove(currentUIPanel);
+
+        Debug.Log($"Current index is {currentUIPanel.GetCardIndex()}");
+        UIMainPanel.Instance.DestroyCard(currentUIPanel.GetCardIndex());
     }
         
     // IMPORTANT: 

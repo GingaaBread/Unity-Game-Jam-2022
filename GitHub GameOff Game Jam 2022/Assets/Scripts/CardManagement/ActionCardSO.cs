@@ -10,7 +10,7 @@ public abstract class ActionCardSO : ScriptableObject
     public string[] cardEffectValues;
     public int cardCost = 10;
 
-    public abstract void Action();
+    public abstract void Action(UICardPanel uiPanel);
 
     public override string ToString()
     {
