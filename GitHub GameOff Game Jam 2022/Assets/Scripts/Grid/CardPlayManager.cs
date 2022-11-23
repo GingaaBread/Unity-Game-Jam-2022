@@ -31,6 +31,16 @@ public class CardPlayManager : MonoBehaviour
         Instance = this;
     }
 
+    public void ResetCurrentPlay()
+    {
+        currAnimalBeingPlayed = null;
+        currSeedBeingPlayed = null;
+        currAnimalBeingPlayed = null;
+        currentUIPanel = null;
+
+        UIMainPanel.Instance.HideDetailedCard();
+    }
+
     //TODO: Add seperate methods for building and planting/livestock
     public void AddCurCard(BuildingCard card, UICardPanel uiPanel)
     {
@@ -71,9 +81,7 @@ public class CardPlayManager : MonoBehaviour
                 RemoveCardAndUpdateQuests();
             }
 
-            UIMainPanel.Instance.HideDetailedCard();
-            currBuildingBeingPlayed = null;
-            currentUIPanel = null;
+            ResetCurrentPlay();
         }
         else if (currSeedBeingPlayed != null)
         {
@@ -84,9 +92,7 @@ public class CardPlayManager : MonoBehaviour
                 RemoveCardAndUpdateQuests();
             }
 
-            UIMainPanel.Instance.HideDetailedCard();
-            currSeedBeingPlayed = null;
-            currentUIPanel = null;
+            ResetCurrentPlay();
         }
         else if (currAnimalBeingPlayed != null)
         {
@@ -97,9 +103,7 @@ public class CardPlayManager : MonoBehaviour
                 RemoveCardAndUpdateQuests();
             }
 
-            UIMainPanel.Instance.HideDetailedCard();
-            currAnimalBeingPlayed = null;
-            currentUIPanel = null;
+            ResetCurrentPlay();
         }
         else
         {

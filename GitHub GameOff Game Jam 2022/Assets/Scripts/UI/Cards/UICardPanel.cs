@@ -143,13 +143,17 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler, IPointerDown
     
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (!isDetailedCard && !isPreviewCard)
+        if (!isDetailedCard && !isPreviewCard && !CardPlayManager.Instance.PlayIsInProgress())
             UIMainPanel.Instance.DisplayDetailedCard(this, GetCardIndex());
     }
 
     public void OnPointerDown(PointerEventData E)
     {
-        if (!isPreviewCard)
+        if (isDetailedCard && CardPlayManager.Instance.PlayIsInProgress())
+        {
+            CardPlayManager.Instance.ResetCurrentPlay();
+        }
+        else if (!isPreviewCard)
         {
             audioEmitter.Play();
 
