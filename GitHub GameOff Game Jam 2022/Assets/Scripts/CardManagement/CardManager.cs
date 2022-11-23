@@ -270,23 +270,14 @@ public class CardManager : ComputerPhaseStep
 
     public override void StartProcessingForComputerPhase(bool isComputerPhaseDuringGameInit)
     {
+        cardDiscardedThisTurn = false;
+
         if (isComputerPhaseDuringGameInit) {
             InitializeDeckWithCards();
-        }
-
-        if (!isComputerPhaseDuringGameInit)
-        {
-            cardDiscardedThisTurn = false;
-           
+        } else {
             foreach (var cardPanel in cardPanels)
-            {
                 cardPanel.UnlockDiscardButton();
-            }
-
-            while (playerHandcards.Count < 5)
-            {
-                GiveCard(1);
-            }
+            GiveCard(5 - playerHandcards.Count);
         }
 
         OnFinishProcessing.Invoke(); // tell time manager that this computer phase step is done
