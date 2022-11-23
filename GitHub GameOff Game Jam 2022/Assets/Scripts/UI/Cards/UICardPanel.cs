@@ -152,7 +152,9 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler, IPointerDown
         if (!isPreviewCard)
         {
             audioEmitter.Play();
-            CardToDisplay.Action(this);
+
+            var smallPanel = UIMainPanel.Instance.GetDetailHandcardPanel();
+            CardToDisplay.Action(smallPanel);
         }
     }
 }

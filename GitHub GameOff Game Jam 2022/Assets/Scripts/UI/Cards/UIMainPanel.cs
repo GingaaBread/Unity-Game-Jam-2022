@@ -51,6 +51,8 @@ public class UIMainPanel : MonoBehaviour
 
     public int GetDetailHandcardIndex() => detailedCardScript.handcardIndex;
 
+    public UICardPanel GetDetailHandcardPanel() => cardContainer.transform.GetChild(detailedCardScript.handcardIndex).gameObject.GetComponent<UICardPanel>();
+
     public void LockAllHandcards()
     {
         if (shouldLockDiscardButtonsForCards)

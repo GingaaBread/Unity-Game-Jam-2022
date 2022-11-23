@@ -1,20 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-     /// <author> Ro <author>
-    ///<summary> Keeps track of what card was clicked and what tile was clicked
-      ///  in order to perform the necessary build/plant/livestock action 
-        /// </summary>
+/// <author> Ro <author>
+///<summary> Keeps track of what card was clicked and what tile was clicked
+///  in order to perform the necessary build/plant/livestock action 
+/// </summary>
 public class CardPlayManager : MonoBehaviour
 {
-   
+    // The singleton
+    private static CardPlayManager _instance = null;
+    public static CardPlayManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+                throw new Exception("CardPlayManager singleton was called without CardPlayManager being set up (check that CardPlayManager is in the scene)");
+            return _instance;
+        }
+        private set { _instance = value; }
+    }
+
     [HideInInspector] public BuildingCard currBuildingBeingPlayed;
     [HideInInspector] public SeedCard currSeedBeingPlayed;
     [HideInInspector] public LivestockCard currAnimalBeingPlayed;
 
     private UICardPanel currentUIPanel;
-    
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     //TODO: Add seperate methods for building and planting/livestock
     public void AddCurCard(BuildingCard card, UICardPanel uiPanel)
     {
@@ -35,7 +51,9 @@ public class CardPlayManager : MonoBehaviour
         currAnimalBeingPlayed = card;
         currentUIPanel = uiPanel;
     }
-    
+
+    public bool PlayIsInProgress() => currentUIPanel != null;
+
     private void RemoveCardAndUpdateQuests()
     {
         CardManager.Instance.RemoveCardOnUse(currentUIPanel);
@@ -53,6 +71,7 @@ public class CardPlayManager : MonoBehaviour
                 RemoveCardAndUpdateQuests();
             }
 
+            UIMainPanel.Instance.HideDetailedCard();
             currBuildingBeingPlayed = null;
             currentUIPanel = null;
         }
@@ -65,6 +84,7 @@ public class CardPlayManager : MonoBehaviour
                 RemoveCardAndUpdateQuests();
             }
 
+            UIMainPanel.Instance.HideDetailedCard();
             currSeedBeingPlayed = null;
             currentUIPanel = null;
         }
@@ -77,6 +97,7 @@ public class CardPlayManager : MonoBehaviour
                 RemoveCardAndUpdateQuests();
             }
 
+            UIMainPanel.Instance.HideDetailedCard();
             currAnimalBeingPlayed = null;
             currentUIPanel = null;
         }

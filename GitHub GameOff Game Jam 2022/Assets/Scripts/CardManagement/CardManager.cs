@@ -153,8 +153,13 @@ public class CardManager : ComputerPhaseStep
 
     public void RemoveCardOnUse(UICardPanel currentUIPanel)
     {
+        Assert.IsFalse(currentUIPanel.isDetailedCard);
+
+        UIMainPanel.Instance.HideDetailedCard();
         playerHandcards.Remove(currentUIPanel.CardToDisplay);
         cardPanels.Remove(currentUIPanel);
+
+        Debug.Log($"Current index is {currentUIPanel.GetCardIndex()}");
         UIMainPanel.Instance.DestroyCard(currentUIPanel.GetCardIndex());
     }
         
