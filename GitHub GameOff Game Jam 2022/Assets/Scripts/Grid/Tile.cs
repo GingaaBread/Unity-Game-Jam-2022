@@ -90,18 +90,18 @@ public class Tile : MonoBehaviour
         UpdateEditorTileAppearance(prevType);
     }
 
-    public void ApplyBuildTile(BuildingCard building)
+    public bool ApplyBuildTile(BuildingCard building)
     {
         if (currType.type == BuildingManagement.TileType.LAKE || currType.type == BuildingManagement.TileType.FOREST
         || currType.type == BuildingManagement.TileType.MOUNTAIN)
         {
-            return;
+            return false;
         }
 
         if (building == null)
         {
             Debug.LogError("Building being passed in is null.");
-            return;
+            return false;
         }
 
         if (!isBuild)
@@ -117,11 +117,14 @@ public class Tile : MonoBehaviour
             tileForegroundObj.GetComponent<TileForeground>().Initialize(currBuilding, _tileRowNum, false, TimeManager.Instance.CurrentTime.SeasonInYear);
             isBuild = true;
             UpdateTileAppearance(TimeManager.Instance.CurrentTime.SeasonInYear);
+
+            return true;
         }
 
+        return false;
     }
 
-    public void ApplyCropTile(SeedCard crop)
+    public bool ApplyCropTile(SeedCard crop)
     {
         if (isBuild && !isSeed)
         {
@@ -138,20 +141,20 @@ public class Tile : MonoBehaviour
                 isBuild = true;
                 isSeed = true;
 
-                
+                return true;
             }
             else
             {
-                return;
+                return false;
             }
         }
         else
         {
-            return;
+            return false;
         }
     }
 
-    public void ApplyLivestockTile(LivestockCard animal)
+    public bool ApplyLivestockTile(LivestockCard animal)
     {
         if (isBuild && !isAnimal)
         {
@@ -166,15 +169,17 @@ public class Tile : MonoBehaviour
                 GameObject tileForegroundObj = Instantiate(tileForeground, transform);
                 tileForegroundObj.GetComponent<TileForeground>().Initialize(animal, _tileRowNum, false, SeasonType.SPRING);
                 isBuild = true;
+
+                return true;
             }
             else
             {
-                return;
+                return false;
             }
         }
         else
         {
-            return;
+            return false;
         }
     }
 

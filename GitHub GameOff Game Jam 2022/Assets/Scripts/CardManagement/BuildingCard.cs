@@ -10,14 +10,14 @@ public class BuildingCard : ActionCardSO
     public Sprite[] plain_BuildingSprite = new Sprite[4]; // 0 = Spring, 1 = Summer, 2 = Autumn, 3 = Winter.
     public GameObject tileForegroundChildPrefab;
 
-    public override void Action()
+    public override void Action(UICardPanel uiPanel)
     {
         cardPlayManager = FindObjectOfType<CardPlayManager>();
         if(cardPlayManager == null){
             Debug.LogError("CardPlayManager script missing!");
             return;
         }
-        cardPlayManager.AddCurCard(this);
+        cardPlayManager.AddCurCard(this, uiPanel);
         // build action here
     }
 }

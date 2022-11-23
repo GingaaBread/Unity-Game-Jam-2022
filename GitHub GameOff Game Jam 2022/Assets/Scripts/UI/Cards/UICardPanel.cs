@@ -140,7 +140,7 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler, IPointerDown
             UnlockDiscardButton();
         }
     }
-
+    
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (!isDetailedCard && !isPreviewCard)
@@ -152,10 +152,7 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler, IPointerDown
         if (!isPreviewCard)
         {
             audioEmitter.Play();
-            CardManager.Instance.RemoveCardOnUse(UIMainPanel.Instance.GetDetailHandcardIndex());
-            QuestManager.Instance.NotifyOfTilePlaced(CardToDisplay);
-            CardToDisplay.Action();
-            UIMainPanel.Instance.HideDetailedCard();
+            CardToDisplay.Action(this);
         }
     }
 }
