@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b30e40ce3b0b445881e72b8193aab1, type: 3}
   m_Name: Fish
   m_EditorClassIdentifier: 
-  basePrice: 52
+  basePrice: 12
   seasonBonus: 4
-  iconSprite: {fileID: 21300000, guid: 5537e90fcf9eb2748a21ae24d54b783c, type: 3}
+  iconSprite: {fileID: 21300000, guid: a0f3c0b4d7080874f82c6b074e9af2ae, type: 3}

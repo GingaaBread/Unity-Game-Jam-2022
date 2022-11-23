@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b30e40ce3b0b445881e72b8193aab1, type: 3}
   m_Name: Pumpkins
   m_EditorClassIdentifier: 
-  basePrice: 8
+  basePrice: 22
   seasonBonus: 4
-  iconSprite: {fileID: 21300000, guid: 72e9ed94afb22ef4d83fe581f50b80a5, type: 3}
+  iconSprite: {fileID: 21300000, guid: 61c7c6dc0855a764da11c718dea469d1, type: 3}

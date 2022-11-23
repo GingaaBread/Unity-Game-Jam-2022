@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b30e40ce3b0b445881e72b8193aab1, type: 3}
   m_Name: Strawberry
   m_EditorClassIdentifier: 
-  basePrice: 10
+  basePrice: 60
   seasonBonus: 4
-  iconSprite: {fileID: 21300000, guid: 1bd0f916853012b42a2749a657d31659, type: 3}
+  iconSprite: {fileID: 21300000, guid: 9caed8cd8f553df46ab1dee2b134c1c2, type: 3}

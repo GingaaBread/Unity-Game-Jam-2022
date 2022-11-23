@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b30e40ce3b0b445881e72b8193aab1, type: 3}
   m_Name: Rice
   m_EditorClassIdentifier: 
-  basePrice: 4
+  basePrice: 14
   seasonBonus: 2
-  iconSprite: {fileID: 21300000, guid: 61d1d2b3deb549d489578356d1511d7c, type: 3}
+  iconSprite: {fileID: 0}
