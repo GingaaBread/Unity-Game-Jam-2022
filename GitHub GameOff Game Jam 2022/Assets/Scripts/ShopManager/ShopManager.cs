@@ -23,7 +23,7 @@ public class ShopManager : ComputerPhaseStep
 
     private int costBonus = 2;
 
-    private void Awake()
+    private new void Awake()
     {
         if (Instance == null)
         {
