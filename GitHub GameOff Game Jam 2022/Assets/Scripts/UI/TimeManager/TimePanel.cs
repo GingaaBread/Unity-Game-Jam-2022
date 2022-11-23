@@ -33,6 +33,7 @@ namespace TimeManagement
             {
                 sliderAnimator.SetTrigger("Next");
             }
+            UpdateTextComponents();
         }
 
         public void OnEndTurnButtonClicked() => TimeManager.Instance.FinishPlayerTurnPhase();
