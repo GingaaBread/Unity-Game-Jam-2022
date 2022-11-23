@@ -33,7 +33,7 @@ public class CardPlayManager : MonoBehaviour
 
     public void ResetCurrentPlay()
     {
-        currAnimalBeingPlayed = null;
+        currBuildingBeingPlayed = null;
         currSeedBeingPlayed = null;
         currAnimalBeingPlayed = null;
         currentUIPanel = null;
