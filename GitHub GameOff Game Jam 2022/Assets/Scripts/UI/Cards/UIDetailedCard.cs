@@ -7,7 +7,8 @@ public class UIDetailedCard : MonoBehaviour, IPointerExitHandler
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        UIMainPanel.Instance.HideDetailedCard();
+        if (!CardPlayManager.Instance.PlayIsInProgress())
+            UIMainPanel.Instance.HideDetailedCard();
     }
 
     public void OpenDiscardPanel() => CardManager.Instance.ConsiderCardDiscard(handcardIndex);

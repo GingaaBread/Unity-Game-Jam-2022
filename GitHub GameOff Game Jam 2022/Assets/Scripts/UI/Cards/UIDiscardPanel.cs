@@ -43,6 +43,7 @@ public class UIDiscardPanel : InspectorReferenceChecker
     public void HandleUIDiscard(int cardIndex)
     {
         UIMainPanel.Instance.DestroyCard(cardIndex);
+        UIMainPanel.Instance.HideDetailedCard();
         gameObject.SetActive(false);
     }
 

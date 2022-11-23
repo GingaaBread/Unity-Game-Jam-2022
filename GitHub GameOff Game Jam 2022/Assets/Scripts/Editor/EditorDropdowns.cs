@@ -13,17 +13,6 @@ public class EditorDropdowns : EditorWindow
         Debug.Log($"Time: {TimeManager.Instance.CurrentTime} and Phase: {TimeManager.Instance.CurrentPhase}");
     }
 
-    // Card Test
-
-    [MenuItem("Gamejam/Cards/Draw", false, 0)] static void DrawCard() {
-        if (!EditorApplication.isPlaying) { return; }
-        CardManager.Instance.GiveCard(1);
-    }
-    [MenuItem("Gamejam/Cards/AddBalancedCards", false, 0)] static void AddBalancedCards() {
-        if (!EditorApplication.isPlaying) { return; }
-        CardManager.Instance.AddBalancedCards();
-    }
-
     // Resource Test
 
     [MenuItem("Gamejam/Resource/TestAdd", false, 0)] static void AddTestResource() {
