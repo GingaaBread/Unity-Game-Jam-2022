@@ -24,6 +24,8 @@ public class CardPlayManager : MonoBehaviour
     [HideInInspector] public SeedCard currSeedBeingPlayed;
     [HideInInspector] public LivestockCard currAnimalBeingPlayed;
 
+    public Color hoverTint;
+
     private UICardPanel currentUIPanel;
 
     private void Awake()

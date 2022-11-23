@@ -156,6 +156,7 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler, IPointerDown
         else if (!isPreviewCard)
         {
             audioEmitter.Play();
+            UIMainPanel.Instance.PlaySelectionAnimation();
 
             var smallPanel = UIMainPanel.Instance.GetDetailHandcardPanel();
             CardToDisplay.Action(smallPanel);
