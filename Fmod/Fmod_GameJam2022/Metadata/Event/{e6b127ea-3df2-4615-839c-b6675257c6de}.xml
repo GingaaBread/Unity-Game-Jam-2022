@@ -130,9 +130,6 @@
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>
 		</property>
-		<property name="amount">
-			<value>5</value>
-		</property>
 	</object>
 	<object class="FadeCurve" id="{eba557b7-81f4-4e79-a0dc-dd4f6d379cd4}">
 		<relationship name="startPoint">
