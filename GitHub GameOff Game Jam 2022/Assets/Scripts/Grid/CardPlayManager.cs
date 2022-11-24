@@ -24,6 +24,8 @@ public class CardPlayManager : MonoBehaviour
     [HideInInspector] public SeedCard currSeedBeingPlayed;
     [HideInInspector] public LivestockCard currAnimalBeingPlayed;
 
+    public Color hoverTint;
+
     private UICardPanel currentUIPanel;
 
     private void Awake()
@@ -33,7 +35,7 @@ public class CardPlayManager : MonoBehaviour
 
     public void ResetCurrentPlay()
     {
-        currAnimalBeingPlayed = null;
+        currBuildingBeingPlayed = null;
         currSeedBeingPlayed = null;
         currAnimalBeingPlayed = null;
         currentUIPanel = null;
@@ -81,6 +83,7 @@ public class CardPlayManager : MonoBehaviour
                 RemoveCardAndUpdateQuests();
             }
 
+            curr.ResetTileColour();
             ResetCurrentPlay();
         }
         else if (currSeedBeingPlayed != null)
@@ -92,6 +95,7 @@ public class CardPlayManager : MonoBehaviour
                 RemoveCardAndUpdateQuests();
             }
 
+            curr.ResetTileColour();
             ResetCurrentPlay();
         }
         else if (currAnimalBeingPlayed != null)
@@ -103,6 +107,7 @@ public class CardPlayManager : MonoBehaviour
                 RemoveCardAndUpdateQuests();
             }
 
+            curr.ResetTileColour();
             ResetCurrentPlay();
         }
         else

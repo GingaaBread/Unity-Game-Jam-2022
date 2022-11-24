@@ -21,5 +21,5 @@ MonoBehaviour:
   animalType: 0
   tileForegroundChildPrefab: {fileID: 290865623841320278, guid: bdc7f36fd35741341a1284becc75f4cf, type: 3}
   turnsTillLivestockPayoff: 4
-  payoffResource: {fileID: 0}
-  payoffAmount: 0
+  payoffResource: {fileID: 11400000, guid: 69d1550e7c09c3845a363c2ad4540d45, type: 2}
+  payoffAmount: 1
