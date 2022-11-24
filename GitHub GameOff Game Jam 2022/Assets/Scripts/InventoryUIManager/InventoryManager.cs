@@ -23,18 +23,11 @@ public class InventoryManager : MonoBehaviour
     /// GameObject that holds all other icons.
     /// </summary>
     public Transform resourceHolder;
-    
-    /// <summary>
-    /// I position icons from top to bottom. Starting on this postion.
-    /// </summary>
-    public Transform resourceStartPosition;
 
     /// <summary>
     /// This dictionary is a quick way to access each individual icon. The key is just the resource's name.
     /// </summary>
     private Dictionary<string, ResourceDisplayer> resourceIcons = new Dictionary<string, ResourceDisplayer>();
-
-    private Vector3 startPosition;
 
     private void Awake()
     {
@@ -47,7 +40,7 @@ public class InventoryManager : MonoBehaviour
 
     void Start()
     {
-        startPosition = resourceStartPosition.localPosition;
+
     }
 
     void Update()
@@ -77,7 +70,6 @@ public class InventoryManager : MonoBehaviour
             {
 
                 GameObject icon = Instantiate(resourcePrefab, resourceHolder);
-                PositionIcon(icon.transform);
 
                 ResourceDisplayer displayer = icon.GetComponent<ResourceDisplayer>();
                 displayer.SetUpResourceIcon(resource);
@@ -95,16 +87,6 @@ public class InventoryManager : MonoBehaviour
             }
         }
         
-    }
-
-    private void PositionIcon(Transform icon) 
-    {
-        int count = resourceHolder.childCount;
-
-        Vector3 pos = startPosition;
-        pos.y *= count;
-        icon.transform.localPosition = pos;
-
     }
 
 }

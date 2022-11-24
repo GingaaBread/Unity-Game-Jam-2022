@@ -46,9 +46,14 @@ public class Shop : MonoBehaviour
     public void UpdateResource() 
     {
         for (int i = 0; i < itemAmount; i++) 
-        { 
-            resources.Add(city.RandomResource());
-            displayer.UpdateShopDisplay(i);
+        {
+            if (city.availableResources.Count >= 4) 
+            { 
+                resources.Add(city.RandomResource());
+                displayer.UpdateShopDisplay(i);
+            }else
+                Debug.LogError($"{city.name} does not have more than 3 items in their resource pool (This can cause problems when randomly choosing an item for the shop to buy)");
+            
         }
 
         
