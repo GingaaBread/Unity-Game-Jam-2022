@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b30e40ce3b0b445881e72b8193aab1, type: 3}
   m_Name: Oats
   m_EditorClassIdentifier: 
-  basePrice: 24
+  basePrice: 6
   seasonBonus: 3
   iconSprite: {fileID: 21300000, guid: cb8cf082eb6d4c94388233876286cf6a, type: 3}
