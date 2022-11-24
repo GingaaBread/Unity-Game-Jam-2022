@@ -83,6 +83,7 @@ public class CardPlayManager : MonoBehaviour
                 RemoveCardAndUpdateQuests();
             }
 
+            curr.ResetTileColour();
             ResetCurrentPlay();
         }
         else if (currSeedBeingPlayed != null)
@@ -94,6 +95,7 @@ public class CardPlayManager : MonoBehaviour
                 RemoveCardAndUpdateQuests();
             }
 
+            curr.ResetTileColour();
             ResetCurrentPlay();
         }
         else if (currAnimalBeingPlayed != null)
@@ -105,6 +107,7 @@ public class CardPlayManager : MonoBehaviour
                 RemoveCardAndUpdateQuests();
             }
 
+            curr.ResetTileColour();
             ResetCurrentPlay();
         }
         else

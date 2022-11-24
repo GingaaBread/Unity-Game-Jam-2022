@@ -71,9 +71,11 @@ public class Tile : MonoBehaviour
 
     private void OnMouseExit()
     {
-        GetComponent<SpriteRenderer>().color = Color.white;
+        ResetTileColour();
     }
     
+    public void ResetTileColour() => GetComponent<SpriteRenderer>().color = Color.white;
+
     void OnMouseDown()
     {
         if (currType != null)

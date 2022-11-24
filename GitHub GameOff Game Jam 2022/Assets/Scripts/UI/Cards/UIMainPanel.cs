@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.UI;
 
 public class UIMainPanel : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class UIMainPanel : MonoBehaviour
     [SerializeField] private UICardPanel detailedCardPanel;
     [SerializeField] private UIDetailedCard detailedCardScript;
     [SerializeField] private Animator detailedCardAnimator;
+    [SerializeField] private Image detailedCardAnimatorImage;
     [SerializeField] private RectTransform detailedCardPanelRectTransform;
     [SerializeField] private RectTransform detailedCardPaddingLeftRectTransform;
     [SerializeField] private RectTransform detailedCardPaddingRightRectTransform;
@@ -89,7 +91,11 @@ public class UIMainPanel : MonoBehaviour
         detailedCardPanel.Render();
     }
 
-    public void PlaySelectionAnimation() => detailedCardAnimator.gameObject.SetActive(true);
+    public void PlaySelectionAnimation(Color selectionBorderColour)
+    {
+        detailedCardAnimator.gameObject.SetActive(true);
+        detailedCardAnimatorImage.color = selectionBorderColour;
+    }
 
     public void StopSelectionAnimation() => detailedCardAnimator.gameObject.SetActive(false);
 
