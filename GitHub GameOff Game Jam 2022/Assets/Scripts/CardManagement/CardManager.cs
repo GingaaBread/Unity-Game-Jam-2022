@@ -51,7 +51,7 @@ public class CardManager : ComputerPhaseStep
     [SerializeField] private UIDiscardPanel discardPanel;
 
     [Header("Drawing deck")]
-    [SerializeField] [Range(0,10)] private int buildCardsToAddToStartingHand;
+    [SerializeField] public ActionCardSO[] requiredCardsInStartingHand;
 
     [Header("Drawing deck")]
     [HideInInspector] public bool cardDiscardedThisTurn;
@@ -169,7 +169,9 @@ public class CardManager : ComputerPhaseStep
     private void InitializeDeckWithCards() {
         List<ActionCardSO> tempDeck = new List<ActionCardSO>();
 
-        tempDeck.AddRange(MakeRandomSelectionFromList(buildCards, buildCardsToAddToStartingHand));
+        if (requiredCardsInStartingHand!= null) {
+            tempDeck.AddRange(requiredCardsInStartingHand);
+        }
 
         while (tempDeck.Count < deckSize) {
             List<ActionCardSO> balancedPile = GeneratePileOfCards();
