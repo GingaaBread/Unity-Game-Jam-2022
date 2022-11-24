@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using TimeManagement;
@@ -62,6 +60,21 @@ public class Tile : MonoBehaviour
             tileForegroundObj.GetComponent<TileForeground>().Initialize(currType, _tileRowNum, false, SeasonType.SPRING);
         }
     }
+
+    private void OnMouseOver()
+    {
+        if (CardPlayManager.Instance.PlayIsInProgress())
+        {
+            GetComponent<SpriteRenderer>().color = CardPlayManager.Instance.hoverTint;
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        ResetTileColour();
+    }
+    
+    public void ResetTileColour() => GetComponent<SpriteRenderer>().color = Color.white;
 
     void OnMouseDown()
     {

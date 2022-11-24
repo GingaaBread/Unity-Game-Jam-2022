@@ -34,6 +34,8 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler, IPointerDown
     [Header("Audio")]
     [SerializeField] private StudioEventEmitter audioEmitter;
 
+    private Color selectionBorderColour;
+
     /// <summary>
     /// Sets up all UI components, rendering the selected CardToDisplay
     /// </summary>
@@ -105,6 +107,7 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler, IPointerDown
         iconPanelImage.color = drk;
         summaryPanelImage.color = drk;
         effectPanelImage.color = drk;
+        selectionBorderColour = drk;
     }
 
     private void AssertLegalEffectSetup()
@@ -156,6 +159,7 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler, IPointerDown
         else if (!isPreviewCard)
         {
             audioEmitter.Play();
+            UIMainPanel.Instance.PlaySelectionAnimation(selectionBorderColour);
 
             var smallPanel = UIMainPanel.Instance.GetDetailHandcardPanel();
             CardToDisplay.Action(smallPanel);
