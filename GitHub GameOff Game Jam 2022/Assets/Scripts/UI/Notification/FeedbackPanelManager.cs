@@ -109,6 +109,13 @@ namespace UIManagement
             public int ReceivedMoneyAmount { get; set; }
         }
 
+        private class GenericMessageUIPanel : UIPanel
+        {
+            public string message;
+            public GenericMessageUIPanel(string message) { this.message = message; }
+        }
+
+
         /// <summary>
         /// A short notification displaying the received building
         /// </summary>
@@ -171,6 +178,16 @@ namespace UIManagement
             Assert.IsNotNull(confirmationTitleText, $"{GetType().Name} missing required editor input confirmationTitleText");
             Assert.IsNotNull(moneyNotificationIcon, $"{GetType().Name} missing required editor input moneyNotificationIcon");
             Assert.IsNotNull(buildingNotificationIcon, $"{GetType().Name} missing required editor input buildingNotificationIcon");
+        }
+
+        public void EnqueueGenericMessage(bool shouldBeEnqueuedToInstantQueue, string message) {
+            var panel = new GenericMessageUIPanel(message);
+
+            if (shouldBeEnqueuedToInstantQueue) {
+                uiPanelInstantDisplayQueue.Enqueue(panel);
+            } else {
+                uiPanelTurnStartQueue.Enqueue(panel);
+            }
         }
 
         /// <summary>
@@ -405,7 +422,14 @@ namespace UIManagement
         {
             notificationPanel.SetActive(true);
             notificationPanelImage.color = panelColour;
-            notificationPanelIconImage.sprite = notificationIcon;
+            if (notificationIcon != null) {
+                notificationPanelIconImage.sprite = notificationIcon;
+                notificationPanelIconImage.enabled = true;
+            } else {
+                notificationPanelIconImage.sprite = null;
+                notificationPanelIconImage.enabled = false;
+            }
+
             notificationPanelAnimator.Play("UINotificationPanelDisplay");
         }
 
@@ -441,6 +465,8 @@ namespace UIManagement
                 currentPanel = uiPanelInstantDisplayQueue.Dequeue();
             }
 
+            notificationPanelText.text = "";
+
             if (currentPanel is MoneyReceptionUIPanel moneyPanel)
             {
                 RuntimeManager.PlayOneShot(moneySoundEvent);
@@ -463,6 +489,11 @@ namespace UIManagement
                 discardPanel.Panel.gameObject.SetActive(true);
                 discardPanel.Panel.DisplaySelf(discardPanel.ConsideredCard);
             }
+            else if (currentPanel is GenericMessageUIPanel genericMessageUIPanel)
+            {
+                notificationPanelText.text = genericMessageUIPanel.message;
+                DisplayNotification(Color.yellow, null);
+            } 
             else throw new NotImplementedException($"The UI panel '{currentPanel}' is not yet implemented!");
         }
 

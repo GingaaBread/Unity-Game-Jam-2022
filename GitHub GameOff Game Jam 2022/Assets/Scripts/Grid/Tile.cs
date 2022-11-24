@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 using TimeManagement;
 using PlayerData;
 using FMODUnity;
+using UIManagement;
 
 /// <Author> Author: Rohaid </Author> 
 /// <Summary>Purpose: Stores the state of the tile in play,
@@ -275,6 +276,9 @@ public class Tile : MonoBehaviour
                 isSeed = false;
                 cropAge = 0;
 
+                FeedbackPanelManager.Instance.EnqueueGenericMessage(false, 
+                    $"{currSeed.payoffAmount} {currSeed.payoffResource.name.ToLower()} harvested!");
+
                 GameObject tileAnim = transform.GetChild(0).gameObject;
                 if (tileAnim != null)
                 {
@@ -309,6 +313,9 @@ public class Tile : MonoBehaviour
             {
                 playerDataManager.IncreaseInventoryItemAmount(currAnimal.payoffResource, currAnimal.payoffAmount);
                 animalAge = 0;
+
+                FeedbackPanelManager.Instance.EnqueueGenericMessage(false,
+                    $"{currAnimal.payoffAmount} {currAnimal.payoffResource.name.ToLower()} harvested!");
             }
 
         }
