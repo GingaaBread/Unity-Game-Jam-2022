@@ -24,8 +24,6 @@ public class InventoryManager : MonoBehaviour
     /// </summary>
     public Transform resourceHolder;
 
-    public MoneyDisplayer moneyDisplayer;
-
     /// <summary>
     /// This dictionary is a quick way to access each individual icon. The key is just the resource's name.
     /// </summary>
@@ -89,11 +87,6 @@ public class InventoryManager : MonoBehaviour
             }
         }
         
-    }
-
-    public void UpdateInventoryMoneyDisplay() 
-    {
-        moneyDisplayer.UpdateMoneyDisplay();
     }
 
 }
