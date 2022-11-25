@@ -204,9 +204,9 @@ public class CardManager : ComputerPhaseStep
         List<ActionCardSO> pile = new List<ActionCardSO>();
 
         // Ratios per pile
-        int buildCardsToAdd = 6;
-        int livestockCardsToAdd = Random.Range(2, 3);
-        int cropCardsToAdd = 24 - livestockCardsToAdd;
+        int buildCardsToAdd = Random.Range(4, 5);
+        int livestockCardsToAdd = 2;
+        int cropCardsToAdd = 22 - buildCardsToAdd;
 
         pile.AddRange(MakeRandomSelectionFromList(cropCards, cropCardsToAdd));
         pile.AddRange(MakeRandomSelectionFromList(buildCards, buildCardsToAdd));

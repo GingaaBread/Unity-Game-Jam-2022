@@ -82,7 +82,9 @@ MonoBehaviour:
   discardPanel: {fileID: 0}
   requiredCardsInStartingHand:
   - {fileID: 11400000, guid: 258d2be981e477142891e60a3e5b9c75, type: 2}
+  - {fileID: 11400000, guid: e9d00cd6f4785b047b6bab98f73c7d27, type: 2}
   - {fileID: 11400000, guid: 258d2be981e477142891e60a3e5b9c75, type: 2}
   - {fileID: 11400000, guid: 258d2be981e477142891e60a3e5b9c75, type: 2}
+  - {fileID: 11400000, guid: 3fc2734d23c476148a7948a15aed78a7, type: 2}
   cardDiscardedThisTurn: 0
   deckSize: 240
