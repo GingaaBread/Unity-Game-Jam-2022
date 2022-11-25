@@ -83,5 +83,6 @@ MonoBehaviour:
   requiredCardsInStartingHand:
   - {fileID: 11400000, guid: 258d2be981e477142891e60a3e5b9c75, type: 2}
   - {fileID: 11400000, guid: 258d2be981e477142891e60a3e5b9c75, type: 2}
+  - {fileID: 11400000, guid: 258d2be981e477142891e60a3e5b9c75, type: 2}
   cardDiscardedThisTurn: 0
   deckSize: 240
