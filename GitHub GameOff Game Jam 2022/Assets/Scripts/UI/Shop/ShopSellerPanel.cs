@@ -13,6 +13,8 @@ public class ShopSellerPanel : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI characterSpeechObj;
     [SerializeField] private TextMeshProUGUI characterNameObj;
     [SerializeField] private TextMeshProUGUI characterCityObj;
+    [SerializeField] private ShopResourcePanel resourceAObj;
+    [SerializeField] private ShopResourcePanel resourceBObj;
 
     // todo: resource icons
 
@@ -22,15 +24,18 @@ public class ShopSellerPanel : MonoBehaviour {
         Assert.IsNotNull(characterSpeechObj);
         Assert.IsNotNull(characterNameObj);
         Assert.IsNotNull(characterCityObj);
+        Assert.IsNotNull(resourceAObj);
+        Assert.IsNotNull(resourceBObj);
 
         characterImageObj.sprite = buyer.CharacterImage_Summary;
         characterSpeechObj.text = buyer.CharacterSpeech_Summary;
         characterNameObj.text = buyer.CharacterName;
         characterCityObj.text = buyer.CharacterCity;
+
+        // set up resources
+        resourceAObj.SetClickable(false);
+        resourceAObj.SetClickable(false);
     }
-
-
-
 
 }
 

@@ -324,7 +324,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TRADE
+  m_text: SELL ITEMS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1542,7 +1542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7668934402363061712, guid: 3ac9983bc6a164644bac6a1a050de45b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 55
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7668934402363061712, guid: 3ac9983bc6a164644bac6a1a050de45b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1635,7 +1635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7668934402363061712, guid: 3ac9983bc6a164644bac6a1a050de45b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7668934402363061712, guid: 3ac9983bc6a164644bac6a1a050de45b, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1643,7 +1643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7668934402363061712, guid: 3ac9983bc6a164644bac6a1a050de45b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7668934402363061712, guid: 3ac9983bc6a164644bac6a1a050de45b, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1683,7 +1683,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7668934402363061712, guid: 3ac9983bc6a164644bac6a1a050de45b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 195
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7668934402363061712, guid: 3ac9983bc6a164644bac6a1a050de45b, type: 3}
       propertyPath: m_AnchoredPosition.y

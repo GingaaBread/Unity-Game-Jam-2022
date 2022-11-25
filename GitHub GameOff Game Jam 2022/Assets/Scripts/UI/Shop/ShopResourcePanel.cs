@@ -15,6 +15,7 @@ public class ShopResourcePanel : MonoBehaviour
     [SerializeField] private bool showPricePanel;
 
     public bool IsSelected { get; private set; }
+    public bool IsClickable { get; private set; }
     public bool IsPriceVisible { get; private set; }
     public ResourceSO Resource { get; private set; }
 
@@ -31,7 +32,10 @@ public class ShopResourcePanel : MonoBehaviour
 
     private void UpdateUIBasedOnState() {
         resourceImageObj.sprite = Resource != null ? Resource.iconSprite : null;
+        
         highlightObj.SetActive(IsSelected);
+
+        buttonObj.enabled = IsClickable;
 
         if (IsPriceVisible) {
             pricePanel.setText(Resource != null ? Resource.basePrice.ToString() : "?");
@@ -53,6 +57,11 @@ public class ShopResourcePanel : MonoBehaviour
 
     public void SetPriceVisible(bool isVisible) {
         this.IsPriceVisible = isVisible;
+        UpdateUIBasedOnState();
+    }
+
+    public void SetClickable(bool isClickable) {
+        this.IsClickable = IsClickable;
         UpdateUIBasedOnState();
     }
 }
