@@ -218,17 +218,11 @@ public class Tile : MonoBehaviour
         switch(type){
             case BonusType.TurnBonus:
                 turnsTillCropHarvest += bonus.seasonBonus.BonusAmount;
-                if(turnsTillCropHarvest <= 0){
-                    Debug.LogError($"{bonus.name} is making the number of turns negative.");
-                    turnsTillCropHarvest = currSeed.cropTotalTurnsTillPayoff;
-                }
+                Debug.Assert(turnsTillCropHarvest>0, $"{bonus.name} is making the number of turns negative or equal to zero.");
                 return;
             case BonusType.CropBonus:
                 cropHarvestAmount += bonus.seasonBonus.BonusAmount;
-                if(cropHarvestAmount <= 0){
-                    Debug.LogError($"{bonus.name} is making the harvest amount negative.");
-                    turnsTillCropHarvest = currSeed.payoffAmount;
-                }
+                Debug.Assert(cropHarvestAmount>0, $"{bonus.name} is making the harvest amount negative or equal to zero.");
                 return;
             case BonusType.NoBonus:
                 return;
