@@ -31,6 +31,9 @@ public class CardManager : ComputerPhaseStep
 
     public ActionCardSO[] cardList;
 
+    [Header("Debug")]
+    [SerializeField] private bool DebugMode;
+
     [Header("Audio")]
     [SerializeField] private EventReference cardReceivedSoundEvent;
 
@@ -48,19 +51,18 @@ public class CardManager : ComputerPhaseStep
     [SerializeField] private UIDiscardPanel discardPanel;
 
     [Header("Drawing deck")]
+    [SerializeField] public ActionCardSO[] requiredCardsInStartingHand;
 
+    [Header("Drawing deck")]
     [HideInInspector] public bool cardDiscardedThisTurn;
+
 
     /// <summary>
     /// Max amount of cards on a drawing deck.
     /// </summary>
     public int deckSize = 240;
-    /// <summary>
-    /// Amount of cards added to the drawing deck each turn.
-    /// </summary>
-    public int pileSize = 30;
 
-    private int cardsDrawn, consideredDiscardIndex = -1;
+    private int consideredDiscardIndex = -1;
    
     private List<ActionCardSO> playerHandcards = new List<ActionCardSO>();
     private List<UICardPanel> cardPanels = new List<UICardPanel>();
@@ -69,8 +71,7 @@ public class CardManager : ComputerPhaseStep
     private List<ActionCardSO> buildCards = new List<ActionCardSO>();
     private List<ActionCardSO> liveStockCards = new List<ActionCardSO>();
 
-    private List<ActionCardSO> shuffledCards = new List<ActionCardSO>();
-    private List<ActionCardSO> piledCards = new List<ActionCardSO>();
+    private Queue<ActionCardSO> deck;
 
     private new void Awake()
     {
@@ -81,26 +82,25 @@ public class CardManager : ComputerPhaseStep
 
         CheckNull();
         GetCardTypes();
-        AddBalancedCards();
     }
 
     /// <summary>
     /// Gives the player an amount of cards.
     /// </summary>
-    /// <param name="amount"> amount given </param>
-    public void GiveCard(int amount = 1) 
+    /// <param name="amountOfCardsToGive"> amount given </param>
+    public void GiveCard(int amountOfCardsToGive = 1) 
     {
-        if (cardsDrawn >= deckSize || cardsDrawn >= shuffledCards.Count) 
+        Assert.IsNotNull(deck, "can't give player cards before card manager has been initialized");
+
+        if (deck.Count < amountOfCardsToGive) 
             throw new ApplicationException("Drawing deck is out of cards!");
 
-        for (int i = 0; i < amount; i++)
+        for (int i = 0; i < amountOfCardsToGive; i++)
         {
-            var drawnCard = shuffledCards[cardsDrawn];
-
+            ActionCardSO drawnCard = deck.Dequeue();
             playerHandcards.Add(drawnCard);
-            cardsDrawn++;
 
-            var newCard = UIMainPanel.Instance.DisplayCard(drawnCard);
+            UICardPanel newCard = UIMainPanel.Instance.DisplayCard(drawnCard);
             cardPanels.Add(newCard);
 
             RuntimeManager.PlayOneShot(cardReceivedSoundEvent);
@@ -116,8 +116,7 @@ public class CardManager : ComputerPhaseStep
         if (cardIndex >= MAX_HANDCARD_AMOUNT)
             throw new ApplicationException("The selected card has an index bigger than the maximum allowed index.");
         else if (cardDiscardedThisTurn)
-            throw new ApplicationException("A card has already been discarded this turn. This should be checked before" +
-                "calling the function!");
+            throw new ApplicationException("A card has already been discarded this turn. This should be checked before calling the function!");
         
         CardPlayManager.Instance.ResetCurrentPlay();
 
@@ -160,69 +159,84 @@ public class CardManager : ComputerPhaseStep
         UIMainPanel.Instance.HideDetailedCard();
         playerHandcards.Remove(currentUIPanel.CardToDisplay);
         cardPanels.Remove(currentUIPanel);
-
-        Debug.Log($"Current index is {currentUIPanel.GetCardIndex()}");
         UIMainPanel.Instance.DestroyCard(currentUIPanel.GetCardIndex());
     }
         
-    // IMPORTANT: 
-
-    // ADD THIS FUNCTION (ShuffleCards) EVERY TIME A TURN ENDS 
     /// <summary>
     /// Adds and shuffles cards appropriately to the deck
     /// </summary>
     /// 
-    public void AddBalancedCards() 
-    {
-        if (shuffledCards.Count >= deckSize) return;
+    private void InitializeDeckWithCards() {
+        List<ActionCardSO> tempDeck = new List<ActionCardSO>();
 
-        int addAmount = (cardsDrawn + pileSize > deckSize) ? deckSize - cardsDrawn : pileSize;
+        if (requiredCardsInStartingHand!= null) {
+            tempDeck.AddRange(requiredCardsInStartingHand);
+        }
 
-        int x = 24;                 // crop card amount
-        int y = Random.Range(3, 5); // build card amount
-        int z = 6 - y;              // livestock card amount
+        while (tempDeck.Count < deckSize) {
+            List<ActionCardSO> balancedPile = GeneratePileOfCards();
+            List<ActionCardSO> randomizedBalancedPile = MakeRandomizedCopy(balancedPile);
+            tempDeck.AddRange(randomizedBalancedPile);
 
-        for (int i = 0; i < addAmount; i++)
-        {
-            if (i < x)
-            {
-                // Crop cards
-                int rand = Random.Range(0, cropCards.Count);
-                piledCards.Add(cropCards[rand]);
-            }
-            else if (i >= x && i < x + z && liveStockCards.Count > 0)
-            {
-                // Livestock cards
-                int rand = Random.Range(0, liveStockCards.Count);
-                piledCards.Add(liveStockCards[rand]);
-            }
-            else if (buildCards.Count > 0)
-            {
-                // BuildCards
-                int rand = Random.Range(0, buildCards.Count);
-                piledCards.Add(buildCards[rand]);
+            if (DebugMode) {
+                Debug.Log("########## Generated pile: ");
+                Debug.Log("BalancedPile: " + GenerateCollectionOfCardTypeLogString(balancedPile));
+                Debug.Log("RandomizedTo: " + GenerateCollectionOfCardTypeLogString(randomizedBalancedPile));
             }
         }
 
-        RandomizeList(piledCards);
+        deck = new Queue<ActionCardSO>(tempDeck);
+        if (DebugMode) Debug.Log($"########## Finished making deck of {deck.Count} cards");
+    }
+
+    private string GenerateCollectionOfCardTypeLogString(List<ActionCardSO> cards) {
+        string s = "";
+        foreach(ActionCardSO card in cards) {
+            if (card is LivestockCard)  s += "L";
+            if (card is SeedCard)       s += "S";
+            if (card is BuildingCard)   s += "B";
+        }
+        return s;
+    }
+
+    private List<ActionCardSO> GeneratePileOfCards() {
+
+        List<ActionCardSO> pile = new List<ActionCardSO>();
+
+        // Ratios per pile
+        int buildCardsToAdd = Random.Range(4, 5);
+        int livestockCardsToAdd = 2;
+        int cropCardsToAdd = 22 - buildCardsToAdd;
+
+        pile.AddRange(MakeRandomSelectionFromList(cropCards, cropCardsToAdd));
+        pile.AddRange(MakeRandomSelectionFromList(buildCards, buildCardsToAdd));
+        pile.AddRange(MakeRandomSelectionFromList(liveStockCards, livestockCardsToAdd));
+
+        return pile;
     }
 
     public bool MaximumHandcardLimitReached() => playerHandcards.Count > MAX_HANDCARD_AMOUNT;
 
-    private void RandomizeList(List<ActionCardSO> list) 
-    {
-        int startSize = list.Count;
-
-        for (int i = 0; i < startSize; i++)
-        {
-            int rand = Random.Range(0, list.Count);
-
-            ActionCardSO item = list[rand];
-            list.Remove(item);
-            shuffledCards.Add(item);
+    private static List<ActionCardSO> MakeRandomSelectionFromList(List<ActionCardSO> listToSelectFrom, int desiredListSize) {
+        List<ActionCardSO> selection = new List<ActionCardSO>();
+        while (desiredListSize > 0) { 
+            selection.Add(listToSelectFrom[Random.Range(0, listToSelectFrom.Count)]);
+            desiredListSize--; 
         }
+        return selection;
+    }
 
-        list.Clear();
+    private static List<ActionCardSO> MakeRandomizedCopy(List<ActionCardSO> list) 
+    {
+        List<ActionCardSO> inputListCopy = new List<ActionCardSO>(list);
+        List<ActionCardSO> randomizedList = new List<ActionCardSO>();
+
+        while (inputListCopy.Count > 0) {
+            ActionCardSO randomCard = inputListCopy[Random.Range(0, inputListCopy.Count)];
+            randomizedList.Add(randomCard);
+            inputListCopy.Remove(randomCard);
+        }
+        return randomizedList;
     }
 
     private void GetCardTypes() 
@@ -259,19 +273,14 @@ public class CardManager : ComputerPhaseStep
 
     public override void StartProcessingForComputerPhase(bool isComputerPhaseDuringGameInit)
     {
-        if (!isComputerPhaseDuringGameInit)
-        {
-            cardDiscardedThisTurn = false;
-           
-            foreach (var cardPanel in cardPanels)
-            {
-                cardPanel.UnlockDiscardButton();
-            }
+        cardDiscardedThisTurn = false;
 
-            while (playerHandcards.Count < 5)
-            {
-                GiveCard(1);
-            }
+        if (isComputerPhaseDuringGameInit) {
+            InitializeDeckWithCards();
+        } else {
+            foreach (var cardPanel in cardPanels)
+                cardPanel.UnlockDiscardButton();
+            GiveCard(5 - playerHandcards.Count);
         }
 
         OnFinishProcessing.Invoke(); // tell time manager that this computer phase step is done
