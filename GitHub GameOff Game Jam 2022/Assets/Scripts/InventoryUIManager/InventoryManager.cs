@@ -93,6 +93,7 @@ public class InventoryManager : MonoBehaviour
 
     public void UpdateInventoryMoneyDisplay() 
     {
+        if (moneyDisplayer == null) return;
         moneyDisplayer.UpdateMoneyDisplay();
     }
 
