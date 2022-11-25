@@ -253,31 +253,11 @@ MonoBehaviour:
   characterSpeechObj: {fileID: 7781628420290468332}
   characterNameObj: {fileID: 6789285641083989348}
   shopPanelObj: {fileID: 0}
-  SpriteDefault:
-  - {fileID: 1853522911, guid: 25f288a8153849144a4688bfc2b902eb, type: 3}
-  - {fileID: 1581936055, guid: 25f288a8153849144a4688bfc2b902eb, type: 3}
-  - {fileID: 6413979, guid: 25f288a8153849144a4688bfc2b902eb, type: 3}
-  - {fileID: -779856563, guid: 25f288a8153849144a4688bfc2b902eb, type: 3}
-  SpriteAfterPurchase:
-  - {fileID: 1853522911, guid: 25f288a8153849144a4688bfc2b902eb, type: 3}
-  - {fileID: 1581936055, guid: 25f288a8153849144a4688bfc2b902eb, type: 3}
-  - {fileID: 6413979, guid: 25f288a8153849144a4688bfc2b902eb, type: 3}
-  - {fileID: -779856563, guid: 25f288a8153849144a4688bfc2b902eb, type: 3}
-  CharacterName:
-  - NameA
-  - NameB
-  - NameC
-  - NameD
-  CharacterSpeechDefault:
-  - default greeting A
-  - default greeting B
-  - default greeting C
-  - default greeting D
-  CharacterSpeechAfterPurchase:
-  - thank you A
-  - thank you B
-  - thank you C
-  - thank you D
+  Buyers:
+  - {fileID: 11400000, guid: 1b332184c6349d84ba79805dbf6e7f0d, type: 2}
+  - {fileID: 11400000, guid: 50e6613b36e7e3f47b9ea3aa56d5a693, type: 2}
+  - {fileID: 11400000, guid: 113e83592eee3954eb2e08e17dda6ef3, type: 2}
+  - {fileID: 11400000, guid: 01e85b16489ae064d88ccabc80663ece, type: 2}
 --- !u!1 &2257318422218589218
 GameObject:
   m_ObjectHideFlags: 0
@@ -1562,7 +1542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7668934402363061712, guid: 3ac9983bc6a164644bac6a1a050de45b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 7668934402363061712, guid: 3ac9983bc6a164644bac6a1a050de45b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1655,7 +1635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7668934402363061712, guid: 3ac9983bc6a164644bac6a1a050de45b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7668934402363061712, guid: 3ac9983bc6a164644bac6a1a050de45b, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1663,7 +1643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7668934402363061712, guid: 3ac9983bc6a164644bac6a1a050de45b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7668934402363061712, guid: 3ac9983bc6a164644bac6a1a050de45b, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1703,7 +1683,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7668934402363061712, guid: 3ac9983bc6a164644bac6a1a050de45b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 195
       objectReference: {fileID: 0}
     - target: {fileID: 7668934402363061712, guid: 3ac9983bc6a164644bac6a1a050de45b, type: 3}
       propertyPath: m_AnchoredPosition.y

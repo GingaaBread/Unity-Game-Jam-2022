@@ -12,8 +12,10 @@ public class ShopResourcePanel : MonoBehaviour
     [SerializeField] private GameObject highlightObj;
     [SerializeField] private Button buttonObj;
     [SerializeField] private ShopPricePanel pricePanel;
+    [SerializeField] private bool showPricePanel;
 
     public bool IsSelected { get; private set; }
+    public bool IsPriceVisible { get; private set; }
     public ResourceSO Resource { get; private set; }
 
     private void Awake() {
@@ -30,7 +32,13 @@ public class ShopResourcePanel : MonoBehaviour
     private void UpdateUIBasedOnState() {
         resourceImageObj.sprite = Resource != null ? Resource.iconSprite : null;
         highlightObj.SetActive(IsSelected);
-        pricePanel.setText(Resource != null ? Resource.basePrice.ToString() : "?");
+
+        if (IsPriceVisible) {
+            pricePanel.setText(Resource != null ? Resource.basePrice.ToString() : "?");
+            pricePanel.gameObject.SetActive(true);
+        } else {
+            pricePanel.gameObject.SetActive(false);
+        }
     }
 
     public void SetResource(ResourceSO resource) {
@@ -43,4 +51,8 @@ public class ShopResourcePanel : MonoBehaviour
         UpdateUIBasedOnState();
     }
 
+    public void SetPriceVisible(bool isVisible) {
+        this.IsPriceVisible = isVisible;
+        UpdateUIBasedOnState();
+    }
 }

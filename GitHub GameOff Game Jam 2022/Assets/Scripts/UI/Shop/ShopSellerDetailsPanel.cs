@@ -17,11 +17,7 @@ public class ShopSellerDetailsPanel : MonoBehaviour
     [SerializeField] private ShopPanel shopPanelObj;
 
     [Header("sprites to use for character")]
-    [SerializeField] Sprite[] SpriteDefault;
-    [SerializeField] Sprite[] SpriteAfterPurchase;
-    [SerializeField] string[] CharacterName;
-    [SerializeField] string[] CharacterSpeechDefault;
-    [SerializeField] string[] CharacterSpeechAfterPurchase;
+    [SerializeField] Shop_BuyerSO[] Buyers;
 
     private int _shopIndex;
 
@@ -32,18 +28,8 @@ public class ShopSellerDetailsPanel : MonoBehaviour
         Assert.IsNotNull(characterSpeechObj);
         Assert.IsNotNull(characterNameObj);
         Assert.IsNotNull(shopPanelObj);
-
-        Assert.IsNotNull(SpriteDefault);
-        Assert.IsNotNull(SpriteAfterPurchase);
-        Assert.IsNotNull(CharacterName);
-        Assert.IsNotNull(CharacterSpeechDefault);
-        Assert.IsNotNull(CharacterSpeechAfterPurchase);
-
-        Assert.IsTrue(SpriteDefault.Length == 4);
-        Assert.IsTrue(SpriteAfterPurchase.Length == 4);
-        Assert.IsTrue(CharacterName.Length == 4);
-        Assert.IsTrue(CharacterSpeechDefault.Length == 4);
-        Assert.IsTrue(CharacterSpeechAfterPurchase.Length == 4);
+        Assert.IsNotNull(Buyers);
+        Assert.IsTrue(Buyers.Length == 4);
 
         _shopIndex = 0;
         this.gameObject.SetActive(false);
@@ -56,17 +42,20 @@ public class ShopSellerDetailsPanel : MonoBehaviour
         // update resource buttons ui
         resourcePanelAObj.SetSelected(true);
         resourcePanelBObj.SetSelected(false);
-        if (shopIndex == 3) {
+        resourcePanelAObj.SetPriceVisible(true);
+        resourcePanelBObj.SetPriceVisible(true);
+        resourcePanelAObj.SetResource(Buyers[_shopIndex].resourceA);
+        resourcePanelBObj.SetSelected(Buyers[_shopIndex].resourceB);
+        if (Buyers[_shopIndex].resourceB != null) {
             resourcePanelBObj.gameObject.SetActive(true);
         } else {
             resourcePanelBObj.gameObject.SetActive(false);
         }
 
         // update character image, name, speech
-        characterImageObj.sprite = SpriteDefault[shopIndex];
-        characterSpeechObj.text = CharacterSpeechDefault[shopIndex];
-        characterNameObj.text = CharacterName[shopIndex];
-
+        characterImageObj.sprite = Buyers[_shopIndex].CharacterImage_Detail;
+        characterSpeechObj.text = Buyers[_shopIndex].CharacterSpeech_Detail;
+        characterNameObj.text = Buyers[_shopIndex].CharacterName;
     }
 
     public void OnSelectResourceA() {
@@ -83,8 +72,8 @@ public class ShopSellerDetailsPanel : MonoBehaviour
         Assert.IsTrue(resourcePanelAObj.IsSelected || resourcePanelBObj.IsSelected, "never expected to have no resource selected in shop details screen");
 
         // update character image, speech
-        characterImageObj.sprite = SpriteAfterPurchase[_shopIndex];
-        characterSpeechObj.text = CharacterSpeechAfterPurchase[_shopIndex];
+        characterImageObj.sprite = Buyers[_shopIndex].CharacterImage_DetailAfterPurchase;
+        characterSpeechObj.text = Buyers[_shopIndex].CharacterSpeech_DetailAfterPurchase;
 
         // figure out what resource selected
         ResourceSO resourceBeingSold = resourcePanelAObj.IsSelected ? resourcePanelAObj.Resource : resourcePanelBObj.Resource;
