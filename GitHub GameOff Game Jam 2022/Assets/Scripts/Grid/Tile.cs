@@ -8,7 +8,9 @@ using UIManagement;
 /// <Author> Author: Rohaid </Author> 
 /// <Summary>Purpose: Stores the state of the tile in play,
 /// updates the physical appearance based on its state,
-/// updates the ResourceManager when crops are done growing/livestock are done. </Summary>
+/// updates the ResourceManager when crops are done growing/livestock are done.
+/// Plays SFX when tiles are placed and handles bonuses.
+/// </Summary>
 public class Tile : MonoBehaviour
 {
 
@@ -31,10 +33,12 @@ public class Tile : MonoBehaviour
     private GameObject tileForeground;
 
     private float cropAge = 0;
+    private float turnsTillCropHarvest = 0;
+    private int cropHarvestAmount = 0;
     private float animalAge = 0;
 
     private PlayerDataManager playerDataManager;
-
+    private bool _bonusApplied;
 
     void Awake()
     {
@@ -75,7 +79,7 @@ public class Tile : MonoBehaviour
     {
         ResetTileColour();
     }
-    
+
     public void ResetTileColour() => GetComponent<SpriteRenderer>().color = Color.white;
 
     void OnMouseDown()
@@ -150,6 +154,15 @@ public class Tile : MonoBehaviour
                 tileForegroundObj.GetComponent<TileForeground>().Initialize(currSeed, _tileRowNum, false, SeasonType.SPRING);
                 isBuild = true;
                 isSeed = true;
+
+                //variables store these values because they will be changed by effects;
+                //and I don't want to change the values in the SO because those changes 
+                //will persist outside of play mode.
+                cropHarvestAmount = crop.payoffAmount;
+                turnsTillCropHarvest = crop.cropTotalTurnsTillPayoff;
+                if(crop.bonus != null){
+                    ApplyBonus(crop.bonus);
+                }
                 PlayTileSFX(crop.buildingType);
                 return true;
             }
@@ -164,6 +177,69 @@ public class Tile : MonoBehaviour
         }
     }
 
+    private void ApplyBonus(TileBonus bonus)
+    {
+        if (bonus.isSeasonBonus)
+        {
+            ApplySeasonBonus(bonus);
+        }
+
+    }
+
+    private void ApplySeasonBonus(TileBonus bonus) 
+    {
+        if(_bonusApplied){
+            return;
+        } else{
+            if(bonus.seasonBonus.stage == StageType.PlantedBonus){
+                if(TimeManager.Instance.CurrentTime.SeasonInYear == bonus.seasonBonus.Season){
+                    ApplyBonusType(bonus);
+                }
+                _bonusApplied = true;
+            } else if (bonus.seasonBonus.stage == StageType.GrowingBonus){
+                if(TimeManager.Instance.CurrentTime.SeasonInYear == bonus.seasonBonus.Season){
+                    ApplyBonusType(bonus);
+                    _bonusApplied = true; 
+                    //important to put in here because this section checks every turn the plant 
+                    //is growing
+                }
+            } else if (bonus.seasonBonus.stage == StageType.HarvestBonus && (cropAge == turnsTillCropHarvest)){
+                if(TimeManager.Instance.CurrentTime.SeasonInYear == bonus.seasonBonus.Season){
+                    ApplyBonusType(bonus);
+                }
+                _bonusApplied = true;
+            }
+            return;
+        }
+    }
+
+    private void ApplyBonusType(TileBonus bonus){
+        BonusType type = bonus.seasonBonus.bonus;
+        switch(type){
+            case BonusType.TurnBonus:
+                turnsTillCropHarvest += bonus.seasonBonus.BonusAmount;
+                if(turnsTillCropHarvest <= 0){
+                    Debug.LogError($"{bonus.name} is making the number of turns negative.");
+                    turnsTillCropHarvest = currSeed.cropTotalTurnsTillPayoff;
+                }
+                return;
+            case BonusType.CropBonus:
+                cropHarvestAmount += bonus.seasonBonus.BonusAmount;
+                if(cropHarvestAmount <= 0){
+                    Debug.LogError($"{bonus.name} is making the harvest amount negative.");
+                    turnsTillCropHarvest = currSeed.payoffAmount;
+                }
+                return;
+            case BonusType.NoBonus:
+                return;
+        }
+    }
+
+    private void ResetBonus(){
+        _bonusApplied = false;
+        cropHarvestAmount = 0;
+        turnsTillCropHarvest = 0;
+    }
     public bool ApplyLivestockTile(LivestockCard animal)
     {
         if (isBuild && !isAnimal)
@@ -268,16 +344,19 @@ public class Tile : MonoBehaviour
         else
         {
             cropAge++;
-            float ageRatio = cropAge / currSeed.cropTotalTurnsTillPayoff;
-
-            if (ageRatio == 1f)
+            float ageRatio = cropAge / turnsTillCropHarvest;
+            if(currSeed.bonus != null){
+                 ApplySeasonBonus(currSeed.bonus);
+            }
+           
+            if (ageRatio == 1f) 
             { // if done growing
-                playerDataManager.IncreaseInventoryItemAmount(currSeed.payoffResource, currSeed.payoffAmount);
+                playerDataManager.IncreaseInventoryItemAmount(currSeed.payoffResource, cropHarvestAmount);
                 isSeed = false;
                 cropAge = 0;
-
-                FeedbackPanelManager.Instance.EnqueueGenericMessage(false, 
-                    $"{currSeed.payoffAmount} {currSeed.payoffResource.name.ToLower()} harvested!");
+                int trueCropAmount = cropHarvestAmount == 0 ? currSeed.payoffAmount : cropHarvestAmount;
+                FeedbackPanelManager.Instance.EnqueueGenericMessage(false,
+                    $"{trueCropAmount} {currSeed.payoffResource.name.ToLower()} harvested!");
 
                 GameObject tileAnim = transform.GetChild(0).gameObject;
                 if (tileAnim != null)
@@ -285,6 +364,8 @@ public class Tile : MonoBehaviour
                     Destroy(transform.GetChild(0).gameObject); // destroy TileAnim object
                 }
 
+                currSeed = null;
+                ResetBonus();
                 return;
 
             }
@@ -345,7 +426,6 @@ public class Tile : MonoBehaviour
     {
         PlayTileSFX("SFX/Crops/Play_CropPlacement");
     }
-
     private void PlayTileSFX(BuildingManagement.AnimalType a)
     {
         switch (a)
@@ -369,7 +449,6 @@ public class Tile : MonoBehaviour
                 break;
         }
     }
-
     private void DeleteForegroundAnim()
     {
         if (transform.childCount > 0) // clear out current TileForegroundAnim
@@ -377,6 +456,8 @@ public class Tile : MonoBehaviour
             Destroy(transform.GetChild(0).gameObject);
         }
     }
+
+
 }
 
 
