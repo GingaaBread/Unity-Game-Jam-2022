@@ -22,6 +22,16 @@ public class UIMainPanel : MonoBehaviour
         private set { _instance = value; }
     }
 
+    [Header("Card Sprites")]
+    public Sprite buildingBackgroundSprite;
+    public Sprite livestockBackgroundSprite;
+    public Sprite seedBackgroundSprite;
+
+    public Color buildingCardColour;
+    public Color livestockCardColour;
+    public Color seedCardColour;
+
+    [Header("Other Components")]
     [SerializeField] private GameObject cardContainer;
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject detailCardContainer;

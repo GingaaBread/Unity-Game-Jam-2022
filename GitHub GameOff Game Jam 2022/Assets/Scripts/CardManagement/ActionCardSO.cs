@@ -5,6 +5,7 @@ public abstract class ActionCardSO : ScriptableObject
 {
     public Sprite cardSprite;
     public string cardTitle;
+    public string cardSubtitle;
     public string cardSummary;
     public string[] cardEffectKeys;
     public string[] cardEffectValues;
