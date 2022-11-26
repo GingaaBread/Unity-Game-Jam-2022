@@ -18,7 +18,12 @@ public class CityA : CityDemandSO
     public override ResourceSO RandomResource() 
     {
 
-        if (ShopManager.Instance == null) Debug.LogError("Shop Manager is not in the scene/ is disabled!"); return null;
+        if (ShopManager.Instance == null) 
+        { 
+            Debug.LogError("Shop Manager is not in the scene/ is disabled!"); 
+            return null;
+        
+        } 
 
         foreach (ResourceSO res in availableResources) 
         {
