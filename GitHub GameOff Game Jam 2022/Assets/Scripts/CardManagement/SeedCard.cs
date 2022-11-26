@@ -11,10 +11,13 @@ public class SeedCard : ActionCardSO
     public SeedType buildingType;
     public GameObject tileForegroundChildPrefab;
     public float cropTotalTurnsTillPayoff = 2f;
-
+ 
     [Header("Resource Payoff")]
     public ResourceSO payoffResource;
     public int payoffAmount;
+
+    [Header("Tile Bonus Effect")]
+    public TileBonus bonus;
 
     public override void Action(UICardPanel uiPanel)
     {
