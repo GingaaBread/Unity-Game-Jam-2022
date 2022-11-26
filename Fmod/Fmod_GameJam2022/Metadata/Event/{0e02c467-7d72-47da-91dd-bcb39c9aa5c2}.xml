@@ -127,9 +127,6 @@
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>
 		</property>
-		<property name="amount">
-			<value>6.5</value>
-		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{631e37d1-36a0-4f4a-8004-8d9434bec5e1}">
 		<relationship name="effects">

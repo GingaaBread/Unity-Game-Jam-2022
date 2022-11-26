@@ -72,6 +72,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{9128cc15-a6c1-4ef8-9fc7-5172fae771b6}">
+		<property name="volume">
+			<value>1</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{2d8c27db-74e9-45c8-9334-2002d1f027f7}</destination>
 		</relationship>
@@ -126,6 +129,8 @@
 	<object class="MixerBusEffectChain" id="{2d8c27db-74e9-45c8-9334-2002d1f027f7}">
 		<relationship name="effects">
 			<destination>{3f3ac0a8-3dce-49ca-ba0b-10c896f86f73}</destination>
+			<destination>{abfc9f25-a217-4ae3-8dd6-7211abcc013d}</destination>
+			<destination>{14ac971a-0399-4472-b963-e0cde77e8915}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{2b072fc6-1422-4bfc-8aa0-76a789b2134a}" />
@@ -178,6 +183,16 @@
 	</object>
 	<object class="MixerBusPanner" id="{87746fe5-c772-4d09-aba3-77813f3eb5d6}" />
 	<object class="MixerBusFader" id="{3f3ac0a8-3dce-49ca-ba0b-10c896f86f73}" />
+	<object class="ThreeEQEffect" id="{abfc9f25-a217-4ae3-8dd6-7211abcc013d}">
+		<property name="highGain">
+			<value>4</value>
+		</property>
+	</object>
+	<object class="DistortionEffect" id="{14ac971a-0399-4472-b963-e0cde77e8915}">
+		<property name="level">
+			<value>0.349999994</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{71270792-e4c0-4dff-b0f8-bf664c1dc70e}">
 		<property name="position">
 			<value>1.5614035087719296</value>
