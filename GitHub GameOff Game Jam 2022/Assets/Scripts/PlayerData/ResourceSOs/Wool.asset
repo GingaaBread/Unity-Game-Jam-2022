@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basePrice: 8
   seasonBonus: 4
-  iconSprite: {fileID: -5177388603050735206, guid: 1027fa609d223754aa26bb1ebc783025, type: 3}
+  iconSprite: {fileID: 21300000, guid: 8dde9821679e6de4b82ed0db93f7e47e, type: 3}
