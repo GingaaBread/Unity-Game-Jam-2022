@@ -23,3 +23,4 @@ MonoBehaviour:
   cropTotalTurnsTillPayoff: 7
   payoffResource: {fileID: 11400000, guid: 24dc3e76c1dc56d408a1866d556248f8, type: 2}
   payoffAmount: 1
+  bonus: {fileID: 11400000, guid: 2fd5dcfd393cd914191c400483e16e12, type: 2}
