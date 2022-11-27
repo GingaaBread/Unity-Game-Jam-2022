@@ -11,10 +11,10 @@ public class ShopAndInventoryPanel : MonoBehaviour
 
     private void Awake() {
         Assert.IsNotNull(canvasToDisable);
-        canvasToDisable.enabled = false;
+        canvasToDisable.gameObject.SetActive(false);
     }
 
     public void SetShopAndInventoryVisibility(bool iSVisible) {
-        canvasToDisable.enabled = iSVisible;
+        canvasToDisable.gameObject.SetActive( iSVisible);
     }
 }

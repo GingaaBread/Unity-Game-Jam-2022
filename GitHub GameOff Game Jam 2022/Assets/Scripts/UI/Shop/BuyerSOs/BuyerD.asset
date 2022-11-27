@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd8aaff5f6b07e1488eb871726b7991e, type: 3}
   m_Name: BuyerD
   m_EditorClassIdentifier: 
-  CharacterImage_Summary: {fileID: -779856563, guid: 25f288a8153849144a4688bfc2b902eb, type: 3}
-  CharacterImage_Detail: {fileID: -779856563, guid: 25f288a8153849144a4688bfc2b902eb, type: 3}
-  CharacterImage_DetailAfterPurchase: {fileID: 21300000, guid: 94eb7e2410db7ab42ab14c9bd2871e25, type: 3}
+  resourceA: {fileID: 0}
+  resourceB: {fileID: 0}
+  CharacterImage_Summary: {fileID: 21300000, guid: 2f915495d15c364438cead495582aff3, type: 3}
+  CharacterImage_Detail: {fileID: 21300000, guid: d443fa8fdd6c2d5419a7af994721a834, type: 3}
+  CharacterImage_DetailAfterPurchase: {fileID: 21300000, guid: 9caed8cd8f553df46ab1dee2b134c1c2, type: 3}
   CharacterName: Perry
   CharacterCity: Pafort City
   CharacterSpeech_Summary: ZZZzzzz

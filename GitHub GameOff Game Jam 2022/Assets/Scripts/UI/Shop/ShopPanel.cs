@@ -52,8 +52,20 @@ public class ShopPanel : ComputerPhaseStep
     public void EnterShop3() => EnterShop(3);
 
     private void EnterShop(int shopIndex) {
+        sellerAPanelObj.gameObject.SetActive(false);
+        sellerBPanelObj.gameObject.SetActive(false);
+        sellerCPanelObj.gameObject.SetActive(false);
+        sellerDPanelObj.gameObject.SetActive(false);
         sellerDetailsPanelObj.gameObject.SetActive(true);
         sellerDetailsPanelObj.ShowShopDetails(shopIndex);
+    }
+
+    public void ExitShopDetails() {
+        sellerAPanelObj.gameObject.SetActive(true);
+        sellerBPanelObj.gameObject.SetActive(true);
+        sellerCPanelObj.gameObject.SetActive(true);
+        sellerDPanelObj.gameObject.SetActive(true);
+        sellerDetailsPanelObj.gameObject.SetActive(false);
     }
 
     internal void AttemptToSell(ResourceSO resourceBeingSold, int amount) {
