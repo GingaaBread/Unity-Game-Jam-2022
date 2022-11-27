@@ -3,12 +3,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TimeManagement;
+using UIManagement;
 using UnityEngine;
 using UnityEngine.Assertions;
 
 public class ShopPanel : ComputerPhaseStep
 {
 
+    [Header("debugging")]
+    [SerializeField] private bool DebugMode;
+
+    [Header("references to other objects")]
     [SerializeField] private ShopSellerPanel sellerAPanelObj;
     [SerializeField] private ShopSellerPanel sellerBPanelObj;
     [SerializeField] private ShopSellerPanel sellerCPanelObj;
@@ -71,28 +76,69 @@ public class ShopPanel : ComputerPhaseStep
         sellerDetailsPanelObj.gameObject.SetActive(false);
     }
 
-    internal void AttemptToSell(ResourceSO resourceBeingSold, int amount) {
-        // TODO: implement check for sell logic
-        // TODO: give money?
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="resourceBeingSold">resource to be sold</param>
+    /// <param name="amountBeingSold"> number of resources to be sold</param>
+    /// <returns>true if sale succeeded. false otherwise (if not enough inventory)</returns>
+    internal bool AttemptToSell(ResourceSO resourceBeingSold, int amountBeingSold) {
+
+        if (DebugMode) { Debug.Log($"attempted to sell {amountBeingSold} {resourceBeingSold}"); }
+
+        // don't sell if player doesn't have enough in inventory
+        if (PlayerDataManager.Instance.GetInventoryItemAmount(resourceBeingSold) < amountBeingSold) {
+            return false; 
+        }
+
+        int price = resourceBeingSold.basePrice;
+
+        // buyer D's resource B will be purchased for 50% of its usual asking price
+        if (resourceBeingSold == buyers[3].resourceB) {
+            price = Mathf.CeilToInt(price/2); 
+        }
+
+        PlayerDataManager.Instance.DecreaseInventoryItemAmount(resourceBeingSold, amountBeingSold);
+        PlayerDataManager.Instance.IncreaseMoneyAmount(price);
+        QuestManager.Instance.NotifyOfResourceSale(resourceBeingSold, price);
+        FeedbackPanelManager.Instance.EnqueueMoneyReception(price, true);
+
+        return true;
     }
 
     public override void StartProcessingForComputerPhase(bool isComputerPhaseDuringGameInit) {
 
-        if(TimeManager.Instance.CurrentTime.RoundInSeason != 1) {
+        if (TimeManager.Instance.CurrentTime.RoundInSeason != 1) {
             OnFinishProcessing.Invoke(); // tell time manager we're done
             return;
         }
 
-        // set resource for seller index 0
+        // update each buyer SO with their current resources
+        UpdateResourcesForBuyerA();
+        UpdateResourcesForBuyerB();
+        UpdateResourcesForBuyerC();
+        UpdateResourcesForBuyerD();
+
+        // update seller panels with resources now set in their respective seller SOs
+        sellerAPanelObj.UpdateResourcesUIBasedOnBuyer();
+        sellerBPanelObj.UpdateResourcesUIBasedOnBuyer();
+        sellerCPanelObj.UpdateResourcesUIBasedOnBuyer();
+        sellerDPanelObj.UpdateResourcesUIBasedOnBuyer();
+
+        OnFinishProcessing.Invoke(); // tell time manager we're done
+    }
+
+    private void UpdateResourcesForBuyerA() {
         switch (TimeManager.Instance.CurrentTime.SeasonInYear) {
             case SeasonType.SUMMER: buyers[0].resourceA = Resource_SummerBonus; break;
-            case SeasonType.FALL:   buyers[0].resourceA = Resource_AutumnBonus; break;
+            case SeasonType.FALL: buyers[0].resourceA = Resource_AutumnBonus; break;
             case SeasonType.WINTER: buyers[0].resourceA = Resource_WinterBonus; break;
             case SeasonType.SPRING: buyers[0].resourceA = Resource_SpringBonus; break;
         }
         buyers[0].resourceB = null;
-
-        // set resource for seller index 1
+    }
+    
+    private void UpdateResourcesForBuyerB() {
         if (buyers[1].resourceA == null) {
             buyers[1].resourceA = Resource_RareCrops[0];
         } else {
@@ -101,8 +147,9 @@ public class ShopPanel : ComputerPhaseStep
             buyers[1].resourceA = Resource_RareCrops[newIndex];
         }
         buyers[1].resourceB = null;
+    }
 
-        // set resource for seller index 2
+    private void UpdateResourcesForBuyerC() {
         if (buyers[2].resourceA == null) {
             buyers[2].resourceA = Resource_Livestock[0];
         } else {
@@ -111,8 +158,9 @@ public class ShopPanel : ComputerPhaseStep
             buyers[2].resourceA = Resource_Livestock[newIndex];
         }
         buyers[2].resourceB = null;
+    }
 
-        // set resource for seller index 3
+    private void UpdateResourcesForBuyerD() {
         List<ResourceSO> acceptablePool = new List<ResourceSO>(Resource_BuyerD);
         acceptablePool.Remove(buyers[0].resourceA); // exclude item on special from pool of options
         if (buyers[3].resourceA == null) {
@@ -125,15 +173,8 @@ public class ShopPanel : ComputerPhaseStep
             newIndex = (Array.IndexOf(Resource_BuyerD, buyers[3].resourceB) + 2) % Resource_BuyerD.Length;
             buyers[3].resourceB = Resource_BuyerD[newIndex];
         }
-
-        // update seller panels with resources now set in their respective seller SOs
-        sellerAPanelObj.UpdateResourcesUIBasedOnBuyer();
-        sellerBPanelObj.UpdateResourcesUIBasedOnBuyer();
-        sellerCPanelObj.UpdateResourcesUIBasedOnBuyer();
-        sellerDPanelObj.UpdateResourcesUIBasedOnBuyer();
-
-        OnFinishProcessing.Invoke(); // tell time manager we're done
     }
+
 
     protected override object[] CheckForMissingReferences() { return null; }
 }

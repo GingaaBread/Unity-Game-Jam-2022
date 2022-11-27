@@ -22,7 +22,9 @@ public class BadInventoryPanel : MonoBehaviour
         text += $"Money: {PlayerDataManager.Instance.AmountOfMoney}\n";
 
         foreach(ResourceSO resource in PlayerDataManager.Instance.GetResourcesContained()) {
-            text += $"{resource.name.ToLower()}: {PlayerDataManager.Instance.GetInventoryItemAmount(resource)}\n";
+            int amount = PlayerDataManager.Instance.GetInventoryItemAmount(resource);
+            if(amount > 0)
+                text += $"{resource.name.ToLower()}: {amount}\n";
         }
 
 

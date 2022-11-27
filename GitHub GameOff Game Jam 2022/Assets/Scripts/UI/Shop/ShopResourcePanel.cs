@@ -17,7 +17,10 @@ public class ShopResourcePanel : MonoBehaviour
     public bool IsSelected { get; private set; }
     public bool IsClickable { get; private set; }
     public bool IsPriceVisible { get; private set; }
+    public int Price { get; private set; }
     public ResourceSO Resource { get; private set; }
+
+
 
     private void Awake() {
         Assert.IsNotNull(resourceImageObj);
@@ -38,11 +41,16 @@ public class ShopResourcePanel : MonoBehaviour
         buttonObj.enabled = IsClickable;
 
         if (IsPriceVisible) {
-            pricePanel.setText(Resource != null ? Resource.basePrice.ToString() : "?");
+            pricePanel.setText(Price.ToString());
             pricePanel.gameObject.SetActive(true);
         } else {
             pricePanel.gameObject.SetActive(false);
         }
+    }
+
+    public void SetPrice(int price) {
+        this.Price = price;
+        UpdateUIBasedOnState();
     }
 
     public void SetResource(ResourceSO resource) {

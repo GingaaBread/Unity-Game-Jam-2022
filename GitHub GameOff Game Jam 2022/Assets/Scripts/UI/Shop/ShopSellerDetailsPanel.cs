@@ -47,6 +47,11 @@ public class ShopSellerDetailsPanel : MonoBehaviour
         resourcePanelBObj.SetClickable(true);
         resourcePanelAObj.SetResource(Buyers[_shopIndex].resourceA);
         resourcePanelBObj.SetResource(Buyers[_shopIndex].resourceB);
+
+        resourcePanelAObj.SetPrice(Buyers[_shopIndex].resourceA.basePrice);
+        if (Buyers[_shopIndex].resourceB != null)
+            resourcePanelBObj.SetPrice(Mathf.CeilToInt(Buyers[_shopIndex].resourceB.basePrice/2));
+
         if (Buyers[_shopIndex].resourceB != null) {
             resourcePanelBObj.gameObject.SetActive(true);
         } else {
@@ -72,15 +77,20 @@ public class ShopSellerDetailsPanel : MonoBehaviour
     public void OnPressSell() {
         Assert.IsTrue(resourcePanelAObj.IsSelected || resourcePanelBObj.IsSelected, "never expected to have no resource selected in shop details screen");
 
-        // update character image, speech
-        characterImageObj.sprite = Buyers[_shopIndex].CharacterImage_DetailAfterPurchase;
-        characterSpeechObj.text = Buyers[_shopIndex].CharacterSpeech_DetailAfterPurchase;
-
         // figure out what resource selected
         ResourceSO resourceBeingSold = resourcePanelAObj.IsSelected ? resourcePanelAObj.Resource : resourcePanelBObj.Resource;
 
         // propagate the sell command up to the shop panel, passing the resource sold
-        shopPanelObj.AttemptToSell(resourceBeingSold, 1);
+        bool wasSaleSuccessful = shopPanelObj.AttemptToSell(resourceBeingSold, 1);
+
+        if (wasSaleSuccessful) {
+            // update character image, speech
+            characterImageObj.sprite = Buyers[_shopIndex].CharacterImage_DetailAfterPurchase;
+            characterSpeechObj.text = Buyers[_shopIndex].CharacterSpeech_DetailAfterPurchase;
+        } else {
+            characterImageObj.sprite = Buyers[_shopIndex].CharacterImage_Detail;
+            characterSpeechObj.text = "You don't have any to sell!";
+        }
     }
 
 }
