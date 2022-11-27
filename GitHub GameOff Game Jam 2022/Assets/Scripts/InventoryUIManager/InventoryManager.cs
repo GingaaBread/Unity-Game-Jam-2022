@@ -93,15 +93,11 @@ public class InventoryManager : MonoBehaviour
 
     public void UpdateInventoryMoneyDisplay() 
     {
-        /*
         if (moneyDisplayer == null) 
         {
-            // Use the new InventoryCanvas
-            Debug.LogError("Money displayer is not in the scene. Are you using an old iteration of the InventoryCanvas?");
             return;
         }
         moneyDisplayer.UpdateMoneyDisplay();
-        */
     }
 
 }

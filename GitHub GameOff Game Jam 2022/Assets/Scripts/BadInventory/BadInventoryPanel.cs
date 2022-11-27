@@ -9,6 +9,14 @@ public class BadInventoryPanel : MonoBehaviour
 {
     [SerializeField] public TextMeshProUGUI textObj;
 
+    /// <summary>
+    /// note from CROSTZARD
+    /// I've re-added the MoneyDisplayer script (Check InventoryManager script to see how it works)
+    /// MoneyDisplayer is being used again for displaying the player's coin amount on the screen
+    /// We can get rid of this script
+    /// </summary>
+
+
     private void Awake() {
         Assert.IsNotNull(textObj);
     }
