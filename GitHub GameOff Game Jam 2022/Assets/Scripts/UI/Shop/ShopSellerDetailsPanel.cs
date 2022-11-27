@@ -46,7 +46,7 @@ public class ShopSellerDetailsPanel : MonoBehaviour
         resourcePanelAObj.SetClickable(true);
         resourcePanelBObj.SetClickable(true);
         resourcePanelAObj.SetResource(Buyers[_shopIndex].resourceA);
-        resourcePanelBObj.SetSelected(Buyers[_shopIndex].resourceB);
+        resourcePanelBObj.SetResource(Buyers[_shopIndex].resourceB);
         if (Buyers[_shopIndex].resourceB != null) {
             resourcePanelBObj.gameObject.SetActive(true);
         } else {

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd8aaff5f6b07e1488eb871726b7991e, type: 3}
   m_Name: BuyerC
   m_EditorClassIdentifier: 
-  resourceA: {fileID: 0}
+  resourceA: {fileID: 11400000, guid: 1b08147cfe99cbf4497b214e574414d4, type: 2}
   resourceB: {fileID: 0}
-  CharacterImage_Summary: {fileID: 21300000, guid: 251b8a72c97cc9f45b1403e21943a0e9, type: 3}
-  CharacterImage_Detail: {fileID: 21300000, guid: 911e759b96189d4418d03f5d78a9a57c, type: 3}
-  CharacterImage_DetailAfterPurchase: {fileID: 21300000, guid: f8865cdbcfb964247855b2da8da2cb8c, type: 3}
+  CharacterImage_Summary: {fileID: 21300000, guid: 07491fb9851550c4fa96afe374304c06, type: 3}
+  CharacterImage_Detail: {fileID: 21300000, guid: 3f2b32441896af74bab5d5217777d7a7, type: 3}
+  CharacterImage_DetailAfterPurchase: {fileID: 21300000, guid: 3d35966ecd015774997b25af08fc7bda, type: 3}
   CharacterName: Gino
   CharacterCity: Giledo City
   CharacterSpeech_Summary: Mmhmm?

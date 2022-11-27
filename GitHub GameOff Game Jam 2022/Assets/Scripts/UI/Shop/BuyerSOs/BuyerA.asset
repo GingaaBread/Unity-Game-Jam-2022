@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd8aaff5f6b07e1488eb871726b7991e, type: 3}
   m_Name: BuyerA
   m_EditorClassIdentifier: 
-  resourceA: {fileID: 0}
+  resourceA: {fileID: 11400000, guid: 8899f5d05677f694eac54b2f49e33f8f, type: 2}
   resourceB: {fileID: 0}
-  CharacterImage_Summary: {fileID: 21300000, guid: d5df5fb831085894aa0697daeab3914b, type: 3}
-  CharacterImage_Detail: {fileID: 21300000, guid: 2ed428d2d695aff4da9b10380917c072, type: 3}
-  CharacterImage_DetailAfterPurchase: {fileID: 21300000, guid: 757ce0240e8d45e44a5f4aad8a9d8c2d, type: 3}
+  CharacterImage_Summary: {fileID: 21300000, guid: 815f2a0167cbbdc4d813a526a1ae4a67, type: 3}
+  CharacterImage_Detail: {fileID: 21300000, guid: 48de7e125deb11e42a81e23d76b74729, type: 3}
+  CharacterImage_DetailAfterPurchase: {fileID: 21300000, guid: 91409a52ff713674fba8accbf7b36d5f, type: 3}
   CharacterName: Emile
   CharacterCity: Emmellingen
   CharacterSpeech_Summary: Welcome!

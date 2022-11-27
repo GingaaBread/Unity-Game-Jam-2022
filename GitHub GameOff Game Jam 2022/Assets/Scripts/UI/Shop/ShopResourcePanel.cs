@@ -61,7 +61,7 @@ public class ShopResourcePanel : MonoBehaviour
     }
 
     public void SetClickable(bool isClickable) {
-        this.IsClickable = IsClickable;
+        this.IsClickable = isClickable;
         UpdateUIBasedOnState();
     }
 }

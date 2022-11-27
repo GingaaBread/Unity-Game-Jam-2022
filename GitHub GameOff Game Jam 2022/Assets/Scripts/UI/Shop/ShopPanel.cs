@@ -22,6 +22,7 @@ public class ShopPanel : ComputerPhaseStep
     [SerializeField] private ResourceSO Resource_WinterBonus;
     [SerializeField] private ResourceSO[] Resource_RareCrops;
     [SerializeField] private ResourceSO[] Resource_Livestock;
+    [SerializeField] private ResourceSO[] Resource_BuyerD;
 
     [SerializeField] private Shop_BuyerSO[] buyers;
 
@@ -42,6 +43,8 @@ public class ShopPanel : ComputerPhaseStep
         Assert.IsTrue(Resource_RareCrops.Length > 0);
         Assert.IsNotNull(Resource_Livestock);
         Assert.IsTrue(Resource_Livestock.Length > 0);
+        Assert.IsNotNull(Resource_BuyerD);
+        Assert.IsTrue(Resource_BuyerD.Length > 0);
 
         sellerDetailsPanelObj.gameObject.SetActive(false);
     }
@@ -80,7 +83,7 @@ public class ShopPanel : ComputerPhaseStep
             return;
         }
 
-        // set resource for seller 0
+        // set resource for seller index 0
         switch (TimeManager.Instance.CurrentTime.SeasonInYear) {
             case SeasonType.SUMMER: buyers[0].resourceA = Resource_SummerBonus; break;
             case SeasonType.FALL:   buyers[0].resourceA = Resource_AutumnBonus; break;
@@ -89,17 +92,17 @@ public class ShopPanel : ComputerPhaseStep
         }
         buyers[0].resourceB = null;
 
-        // set resource for seller 1
+        // set resource for seller index 1
         if (buyers[1].resourceA == null) {
             buyers[1].resourceA = Resource_RareCrops[0];
         } else {
             // get the next resource in the list
             int newIndex = (Array.IndexOf(Resource_RareCrops, buyers[1].resourceA) + 1) % Resource_RareCrops.Length;
-            buyers[1].resourceA = Resource_Livestock[newIndex];
+            buyers[1].resourceA = Resource_RareCrops[newIndex];
         }
         buyers[1].resourceB = null;
 
-        // set resource for seller 2
+        // set resource for seller index 2
         if (buyers[2].resourceA == null) {
             buyers[2].resourceA = Resource_Livestock[0];
         } else {
@@ -109,8 +112,19 @@ public class ShopPanel : ComputerPhaseStep
         }
         buyers[2].resourceB = null;
 
-        // set resource for seller 3
-
+        // set resource for seller index 3
+        List<ResourceSO> acceptablePool = new List<ResourceSO>(Resource_BuyerD);
+        acceptablePool.Remove(buyers[0].resourceA); // exclude item on special from pool of options
+        if (buyers[3].resourceA == null) {
+            buyers[3].resourceA = Resource_BuyerD[0];
+            buyers[3].resourceB = Resource_BuyerD[1];
+        } else {
+            // get the next resource in the list
+            int newIndex = (Array.IndexOf(Resource_BuyerD, buyers[3].resourceA) + 2) % Resource_BuyerD.Length;
+            buyers[3].resourceA = Resource_BuyerD[newIndex];
+            newIndex = (Array.IndexOf(Resource_BuyerD, buyers[3].resourceB) + 2) % Resource_BuyerD.Length;
+            buyers[3].resourceB = Resource_BuyerD[newIndex];
+        }
 
         // update seller panels with resources now set in their respective seller SOs
         sellerAPanelObj.UpdateResourcesUIBasedOnBuyer();
@@ -120,7 +134,6 @@ public class ShopPanel : ComputerPhaseStep
 
         OnFinishProcessing.Invoke(); // tell time manager we're done
     }
-
 
     protected override object[] CheckForMissingReferences() { return null; }
 }
