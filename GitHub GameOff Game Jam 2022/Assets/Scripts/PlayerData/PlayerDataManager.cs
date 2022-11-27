@@ -174,5 +174,9 @@ namespace PlayerData
 
             return 0;
         }
+
+        public List<ResourceSO> GetResourcesContained() {
+            return new List<ResourceSO>(inventoryDictionary.Keys);
+        }
     }
 }
