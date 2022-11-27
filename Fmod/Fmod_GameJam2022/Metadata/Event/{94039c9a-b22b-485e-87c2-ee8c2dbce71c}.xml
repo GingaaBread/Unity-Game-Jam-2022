@@ -103,6 +103,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{2e33717a-b8f8-4547-b039-b0869eb715a8}">
+		<property name="volume">
+			<value>-6.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -126,9 +129,6 @@
 	<object class="RandomizerModulator" id="{52a4fe90-2bbb-42f5-a75a-d23200cf5e5b}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>
-		</property>
-		<property name="amount">
-			<value>4.5</value>
 		</property>
 	</object>
 	<object class="FadeCurve" id="{c885f95f-7dbe-4cd3-a10f-f637588e9d6c}">

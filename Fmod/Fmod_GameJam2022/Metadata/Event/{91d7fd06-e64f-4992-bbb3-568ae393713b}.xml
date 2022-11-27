@@ -103,7 +103,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{b102eef0-4110-474f-91ff-584170fc89f1}">
 		<property name="volume">
-			<value>-8.5</value>
+			<value>-22</value>
 		</property>
 		<property name="name">
 			<value>ButtonClick002</value>
@@ -121,6 +121,8 @@
 	<object class="MixerBusEffectChain" id="{ca586084-c97e-456c-b28c-06cf134ee9a1}">
 		<relationship name="effects">
 			<destination>{5629cc04-4fb8-4600-8b6f-4fcec85267ca}</destination>
+			<destination>{f764b9e3-51aa-4f71-bc81-db9fe5ce87ef}</destination>
+			<destination>{1c63403a-6c45-4ec3-bc13-3193cb8a24e3}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{6e1271b0-ff01-4455-b554-08a607843099}" />
@@ -155,6 +157,19 @@
 	</object>
 	<object class="MixerBusPanner" id="{54f2126c-e4f9-4623-a6df-02622e6b29bc}" />
 	<object class="MixerBusFader" id="{5629cc04-4fb8-4600-8b6f-4fcec85267ca}" />
+	<object class="DistortionEffect" id="{f764b9e3-51aa-4f71-bc81-db9fe5ce87ef}">
+		<property name="level">
+			<value>0.264999986</value>
+		</property>
+	</object>
+	<object class="ChorusEffect" id="{1c63403a-6c45-4ec3-bc13-3193cb8a24e3}">
+		<property name="rate">
+			<value>0.0249999985</value>
+		</property>
+		<property name="depth">
+			<value>12.5</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{7d8225bb-eb31-4440-98eb-7bc29726b0c9}">
 		<property name="position">
 			<value>0.1022814902767946</value>
