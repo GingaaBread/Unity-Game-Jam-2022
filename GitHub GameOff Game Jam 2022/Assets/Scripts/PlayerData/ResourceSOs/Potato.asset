@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b30e40ce3b0b445881e72b8193aab1, type: 3}
   m_Name: Potato
   m_EditorClassIdentifier: 
-  basePrice: 8
+  basePrice: 26
   seasonBonus: 4
   iconSprite: {fileID: 21300000, guid: b33b4130a3f89e4428e1097cff1a408c, type: 3}

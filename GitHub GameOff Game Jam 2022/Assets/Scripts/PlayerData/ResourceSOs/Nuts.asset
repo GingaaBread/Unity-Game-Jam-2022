@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b30e40ce3b0b445881e72b8193aab1, type: 3}
   m_Name: Nuts
   m_EditorClassIdentifier: 
-  basePrice: 10
+  basePrice: 16
   seasonBonus: 4
   iconSprite: {fileID: 21300000, guid: b86d3fb466e4bd1428d0ad60dd34c8fa, type: 3}
