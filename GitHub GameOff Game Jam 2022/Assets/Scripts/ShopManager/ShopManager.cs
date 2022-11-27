@@ -57,7 +57,7 @@ public class ShopManager : ComputerPhaseStep
             int price = GetPrice(resource, shop);
 
             PlayerDataManager dataManager = PlayerDataManager.Instance;
-            if (dataManager.HasItemInInventory(resource))
+            if (dataManager.GetInventoryItemAmount(resource) > 0)
             {
                 dataManager.DecreaseInventoryItemAmount(resource, 1);
                 dataManager.IncreaseMoneyAmount(price);
