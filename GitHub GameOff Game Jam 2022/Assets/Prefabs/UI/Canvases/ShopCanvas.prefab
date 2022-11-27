@@ -1148,7 +1148,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourcePrefab: {fileID: 2473750768550559211, guid: c5e466ebe6ecfcc42b847c772fdd3e6f, type: 3}
   resourceHolder: {fileID: 5045508239711883650}
-  resourceStartPosition: {fileID: 5045508241789333032}
 --- !u!1 &5045508241435060890
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,7 +1283,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!114 &5045508241570093572
 MonoBehaviour:

@@ -13,4 +13,8 @@ public class ShopAndInventoryPanel : MonoBehaviour
         Assert.IsNotNull(canvasToDisable);
         canvasToDisable.enabled = false;
     }
+
+    public void SetShopAndInventoryVisibility(bool iSVisible) {
+        canvasToDisable.enabled = iSVisible;
+    }
 }

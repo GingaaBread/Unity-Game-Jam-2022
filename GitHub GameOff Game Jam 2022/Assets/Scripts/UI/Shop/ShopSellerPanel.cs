@@ -1,3 +1,4 @@
+using PlayerData;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -35,6 +36,15 @@ public class ShopSellerPanel : MonoBehaviour {
         // set up resources
         resourceAObj.SetClickable(false);
         resourceAObj.SetClickable(false);
+    }
+
+    public void UpdateResourcesUIBasedOnBuyer() {
+        resourceAObj.SetResource(buyer.resourceA);
+
+        if (buyer.resourceB != null)
+            resourceBObj.SetResource(buyer.resourceB);
+        else
+            resourceBObj.gameObject.SetActive(false);
     }
 
 }

@@ -32,7 +32,6 @@ public class ShopSellerDetailsPanel : MonoBehaviour
         Assert.IsTrue(Buyers.Length == 4);
 
         _shopIndex = 0;
-        this.gameObject.SetActive(false);
     }
 
     public void ShowShopDetails(int shopIndex) {
