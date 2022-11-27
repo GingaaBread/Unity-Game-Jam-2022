@@ -42,6 +42,7 @@ public class UIMainPanel : MonoBehaviour
     [SerializeField] private RectTransform detailedCardPanelRectTransform;
     [SerializeField] private RectTransform detailedCardPaddingLeftRectTransform;
     [SerializeField] private RectTransform detailedCardPaddingRightRectTransform;
+    [SerializeField] private UIInspectorPanel inspectorPanel;
 
     private void Awake()
     {
@@ -83,9 +84,10 @@ public class UIMainPanel : MonoBehaviour
         Destroy(cardContainer.transform.GetChild(cardIndex).gameObject);
     }
 
-    public void DisplayDetailCardPanel()
+    public void DisplayDetailCardPanel(ActionCardSO cardToInspect)
     {
         detailCardContainer.SetActive(true);
+        inspectorPanel.Render(cardToInspect);
     }
 
     public bool InDetailCardPanel() => detailCardContainer.activeInHierarchy;

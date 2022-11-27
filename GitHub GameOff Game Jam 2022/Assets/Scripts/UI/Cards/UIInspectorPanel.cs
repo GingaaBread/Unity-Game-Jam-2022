@@ -15,6 +15,7 @@ public class UIInspectorPanel : MonoBehaviour
     [SerializeField] private TMP_Text cardTitleText;
     [SerializeField] private TMP_Text cardSubtitleText;
     [SerializeField] private TMP_Text placementText;
+    [SerializeField] private TMP_Text costText;
 
     public void Render(ActionCardSO cardToInspect)
     {
@@ -40,6 +41,7 @@ public class UIInspectorPanel : MonoBehaviour
 
         cardObjectImage.sprite = cardToInspect.cardSprite;
         cardCostText.text = cardToInspect.cardCost.ToString();
+        costText.text = cardToInspect.cardCost.ToString();
         cardDescriptionText.text = cardToInspect.cardSummary;
         cardTitleText.text = cardToInspect.cardTitle;
         cardSubtitleText.text = cardToInspect.cardSubtitle;
