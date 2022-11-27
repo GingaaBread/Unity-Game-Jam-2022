@@ -56,15 +56,15 @@ public class ShopManager : ComputerPhaseStep
             ResourceSO resource = shop.Resources[i];
             int price = GetPrice(resource, shop);
 
-            // Notify of quest update
-            QuestManager.Instance.NotifyOfResourceSale(resource, price);
-
             PlayerDataManager dataManager = PlayerDataManager.Instance;
             if (dataManager.HasItemInInventory(resource))
             {
                 dataManager.DecreaseInventoryItemAmount(resource, 1);
                 dataManager.IncreaseMoneyAmount(price);
                 shop.SoldItem();
+
+                // Notify of quest update
+                QuestManager.Instance.NotifyOfResourceSale(resource, price);
             }
         }
     }
