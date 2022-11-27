@@ -17,7 +17,7 @@ namespace TimeManagement
         [SerializeField] private Animator sliderAnimator;
         [SerializeField] private Image currentSeasonIconImage;
         [SerializeField] private Sprite[] seasonIcons;
-        [SerializeField] private Button EndTurnButton;
+        [SerializeField] private Animator endTurnButtonAnimator;
 
         [Header("End of Season Animation")]
         [SerializeField] private TMP_Text animationSeasonText;
@@ -25,7 +25,7 @@ namespace TimeManagement
 
         protected override object[] CheckForMissingReferences() => new object[] 
         {
-            currentSeasonText, footerText, sliderAnimator, newSeasonAnimator, animationSeasonText, currentSeasonIconImage, EndTurnButton
+            currentSeasonText, footerText, sliderAnimator, newSeasonAnimator, animationSeasonText, currentSeasonIconImage
         };
 
         private void UpdateUIElementsForNewTime(PointInTime time)
@@ -38,7 +38,6 @@ namespace TimeManagement
         }
 
         public void OnEndTurnButtonClicked() {
-            EndTurnButton.interactable = false;
             TimeManager.Instance.FinishPlayerTurnPhase();
         }
 
@@ -86,17 +85,8 @@ namespace TimeManagement
             }
         }
 
-        public void HandlePlayerTurnStart() {
-            EndTurnButton.interactable = true;
-        }
-
         public override void StartProcessingForComputerPhase(bool isComputerPhaseDuringGameInit) 
         {
-            if (isComputerPhaseDuringGameInit) {
-                TimeManager.OnStartPlayerTurn.AddListener(HandlePlayerTurnStart);
-                EndTurnButton.interactable = false;
-            }
-
             UpdateUIElementsForNewTime(TimeManager.Instance.CurrentTime);
             OnFinishProcessing.Invoke();
         }
