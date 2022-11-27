@@ -179,6 +179,63 @@ public class Tile : MonoBehaviour
         }
     }
 
+    private void ApplyBonus(TileBonus bonus)
+    {
+        if (bonus.isSeasonBonus)
+        {
+            ApplySeasonBonus(bonus);
+        }
+
+    }
+
+    private void ApplySeasonBonus(TileBonus bonus) 
+    {
+        if(_bonusApplied){
+            return;
+        } else{
+            if(bonus.seasonBonus.stage == StageType.PlantedBonus){
+                if(TimeManager.Instance.CurrentTime.SeasonInYear == bonus.seasonBonus.Season){
+                    ApplyBonusType(bonus);
+                }
+                _bonusApplied = true;
+            } else if (bonus.seasonBonus.stage == StageType.GrowingBonus){
+                if(TimeManager.Instance.CurrentTime.SeasonInYear == bonus.seasonBonus.Season){
+                    ApplyBonusType(bonus);
+                    _bonusApplied = true; 
+                    //important to put in here because this section checks every turn the plant 
+                    //is growing
+                }
+            } else if (bonus.seasonBonus.stage == StageType.HarvestBonus && (cropAge == turnsTillCropHarvest)){
+                if(TimeManager.Instance.CurrentTime.SeasonInYear == bonus.seasonBonus.Season){
+                    ApplyBonusType(bonus);
+                }
+                _bonusApplied = true;
+            }
+            return;
+        }
+    }
+
+    private void ApplyBonusType(TileBonus bonus){
+        BonusType type = bonus.seasonBonus.bonus;
+        switch(type){
+            case BonusType.TurnBonus:
+                turnsTillCropHarvest += bonus.seasonBonus.BonusAmount;
+                Debug.Assert(turnsTillCropHarvest>0, $"{bonus.name} is making the number of turns negative or equal to zero.");
+                return;
+            case BonusType.CropBonus:
+                cropHarvestAmount += bonus.seasonBonus.BonusAmount;
+                Debug.Assert(cropHarvestAmount>0, $"{bonus.name} is making the harvest amount negative or equal to zero.");
+                return;
+            case BonusType.NoBonus:
+                return;
+        }
+    }
+
+    private void ResetBonus(){
+        _bonusApplied = false;
+        cropHarvestAmount = 0;
+        turnsTillCropHarvest = 0;
+    }
     public bool ApplyLivestockTile(LivestockCard animal)
     {
         if (isBuild && !isAnimal)

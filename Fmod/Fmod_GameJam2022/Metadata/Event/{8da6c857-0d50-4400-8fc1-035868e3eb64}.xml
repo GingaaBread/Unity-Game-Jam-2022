@@ -132,6 +132,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{191a9110-5229-4915-ae1c-83a186dc3255}">
+		<property name="volume">
+			<value>2</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{f0aa7109-393a-4650-a66f-a3461b0132cc}</destination>
 		</relationship>
@@ -164,6 +167,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{0fb9ed94-40ee-4bc6-9a0e-53b544abf209}">
+		<property name="volume">
+			<value>-10.5</value>
+		</property>
 		<property name="name">
 			<value>Hamer</value>
 		</property>
@@ -226,6 +232,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{3a5bd804-a22b-4396-acf4-e5c0cb504f50}">
+		<property name="volume">
+			<value>-9</value>
+		</property>
 		<property name="name">
 			<value>Dirt Scoop</value>
 		</property>
@@ -326,7 +335,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{a9c94518-c5b0-4b82-a882-4ee3bc4842f3}">
 		<property name="volume">
-			<value>-3.5</value>
+			<value>-8</value>
 		</property>
 		<property name="name">
 			<value>Rock Drop</value>
@@ -361,7 +370,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{53cac647-a36a-470f-bf8d-e2126848757a}">
 		<property name="volume">
-			<value>-16.5</value>
+			<value>-18.5</value>
 		</property>
 		<property name="name">
 			<value>Drill</value>
