@@ -38,7 +38,8 @@ public class Tile : MonoBehaviour
     private float animalAge = 0;
 
     private PlayerDataManager playerDataManager;
-    private bool _bonusApplied;
+    private bool _bonusSeasonApplied;
+    private bool _bonusTileApplied;
 
     void Awake()
     {
@@ -52,13 +53,12 @@ public class Tile : MonoBehaviour
         }
 
         cardPlayManager = FindObjectOfType<CardPlayManager>();
+        Debug.Assert(cardPlayManager != null, "There is no cardplay manager script, please place one in the scene");
         playerDataManager = FindObjectOfType<PlayerDataManager>();
+        Debug.Assert(playerDataManager != null, "There is no player data manager script, please place one in the scene");
         currSprite = GetComponent<SpriteRenderer>();
 
-        if (cardPlayManager == null)
-        {
-            Debug.LogError("There is no cardplay manager script, please place one in the scene");
-        }
+
         if (tileForeground != null && currType != null)
         {
             _tileRowNum = currSprite.sortingOrder;
@@ -111,6 +111,7 @@ public class Tile : MonoBehaviour
 
     public bool ApplyBuildTile(BuildingCard building)
     {
+
         if (currType.type == BuildingManagement.TileType.LAKE || currType.type == BuildingManagement.TileType.FOREST
         || currType.type == BuildingManagement.TileType.MOUNTAIN)
         {
@@ -160,7 +161,8 @@ public class Tile : MonoBehaviour
                 //will persist outside of play mode.
                 cropHarvestAmount = crop.payoffAmount;
                 turnsTillCropHarvest = crop.cropTotalTurnsTillPayoff;
-                if(crop.bonus != null){
+                if (crop.bonus != null)
+                {
                     ApplyBonus(crop.bonus);
                 }
                 PlayTileSFX(crop.buildingType);
@@ -177,63 +179,6 @@ public class Tile : MonoBehaviour
         }
     }
 
-    private void ApplyBonus(TileBonus bonus)
-    {
-        if (bonus.isSeasonBonus)
-        {
-            ApplySeasonBonus(bonus);
-        }
-
-    }
-
-    private void ApplySeasonBonus(TileBonus bonus) 
-    {
-        if(_bonusApplied){
-            return;
-        } else{
-            if(bonus.seasonBonus.stage == StageType.PlantedBonus){
-                if(TimeManager.Instance.CurrentTime.SeasonInYear == bonus.seasonBonus.Season){
-                    ApplyBonusType(bonus);
-                }
-                _bonusApplied = true;
-            } else if (bonus.seasonBonus.stage == StageType.GrowingBonus){
-                if(TimeManager.Instance.CurrentTime.SeasonInYear == bonus.seasonBonus.Season){
-                    ApplyBonusType(bonus);
-                    _bonusApplied = true; 
-                    //important to put in here because this section checks every turn the plant 
-                    //is growing
-                }
-            } else if (bonus.seasonBonus.stage == StageType.HarvestBonus && (cropAge == turnsTillCropHarvest)){
-                if(TimeManager.Instance.CurrentTime.SeasonInYear == bonus.seasonBonus.Season){
-                    ApplyBonusType(bonus);
-                }
-                _bonusApplied = true;
-            }
-            return;
-        }
-    }
-
-    private void ApplyBonusType(TileBonus bonus){
-        BonusType type = bonus.seasonBonus.bonus;
-        switch(type){
-            case BonusType.TurnBonus:
-                turnsTillCropHarvest += bonus.seasonBonus.BonusAmount;
-                Debug.Assert(turnsTillCropHarvest>0, $"{bonus.name} is making the number of turns negative or equal to zero.");
-                return;
-            case BonusType.CropBonus:
-                cropHarvestAmount += bonus.seasonBonus.BonusAmount;
-                Debug.Assert(cropHarvestAmount>0, $"{bonus.name} is making the harvest amount negative or equal to zero.");
-                return;
-            case BonusType.NoBonus:
-                return;
-        }
-    }
-
-    private void ResetBonus(){
-        _bonusApplied = false;
-        cropHarvestAmount = 0;
-        turnsTillCropHarvest = 0;
-    }
     public bool ApplyLivestockTile(LivestockCard animal)
     {
         if (isBuild && !isAnimal)
@@ -339,11 +284,12 @@ public class Tile : MonoBehaviour
         {
             cropAge++;
             float ageRatio = cropAge / turnsTillCropHarvest;
-            if(currSeed.bonus != null){
-                 ApplySeasonBonus(currSeed.bonus);
+            if (currSeed.bonus != null)
+            {
+                ApplySeasonBonus(currSeed.bonus);
             }
-           
-            if (ageRatio == 1f) 
+
+            if (ageRatio == 1f)
             { // if done growing
                 playerDataManager.IncreaseInventoryItemAmount(currSeed.payoffResource, cropHarvestAmount);
                 isSeed = false;
@@ -451,6 +397,100 @@ public class Tile : MonoBehaviour
         }
     }
 
+    private void ApplyBonus(CardBonus bonus)
+    {
+        if (bonus.seasonBonus != null)
+        {
+            ApplySeasonBonus(bonus);
+        }
+
+        if (bonus.tileBonus != null)
+        {
+            ApplyTileBonus(bonus);
+        }
+
+    }
+
+
+
+    private void ApplySeasonBonus(CardBonus bonus)
+    {
+        if (_bonusSeasonApplied)
+        {
+            return;
+        }
+        else
+        {
+            if (bonus.seasonBonus.stage == StageType.PlantedBonus)
+            {
+                if (TimeManager.Instance.CurrentTime.SeasonInYear == bonus.seasonBonus.Season)
+                {
+                    ApplyBonusEffect(bonus.seasonBonus.bonus, bonus.seasonBonus.BonusAmount);
+                }
+                _bonusSeasonApplied = true;
+            }
+            else if (bonus.seasonBonus.stage == StageType.GrowingBonus)
+            {
+                if (TimeManager.Instance.CurrentTime.SeasonInYear == bonus.seasonBonus.Season)
+                {
+                    ApplyBonusEffect(bonus.seasonBonus.bonus, bonus.seasonBonus.BonusAmount);
+                    _bonusSeasonApplied = true;
+                    //important to put in here because this section checks every turn the plant 
+                    //is growing
+                }
+            }
+            else if (bonus.seasonBonus.stage == StageType.HarvestBonus && (cropAge == turnsTillCropHarvest))
+            {
+                if (TimeManager.Instance.CurrentTime.SeasonInYear == bonus.seasonBonus.Season)
+                {
+                    ApplyBonusEffect(bonus.seasonBonus.bonus, bonus.seasonBonus.BonusAmount);
+                }
+                _bonusSeasonApplied = true;
+            }
+            return;
+        }
+    }
+
+    private void ApplyTileBonus(CardBonus bonus)
+    {
+        if (_bonusTileApplied)
+        {
+            return;
+        }
+        else
+        {
+            if (bonus.tileBonus.TileType == currType.type)
+            {
+                ApplyBonusEffect(bonus.tileBonus.bonus, bonus.tileBonus.BonusAmount);
+            }
+            _bonusSeasonApplied = true;
+        }
+    }
+
+    private void ApplyBonusEffect(BonusType bonus, int bonusAmount)
+    {
+        switch (bonus)
+        {
+            case BonusType.TurnBonus:
+                turnsTillCropHarvest += bonusAmount;
+                Debug.Assert(turnsTillCropHarvest > 0, $"{currSeed.bonus.name} is making the number of turns negative or equal to zero.");
+                return;
+            case BonusType.CropBonus:
+                cropHarvestAmount += bonusAmount;
+                Debug.Assert(cropHarvestAmount > 0, $"{currSeed.bonus.name} is making the harvest amount negative or equal to zero.");
+                return;
+            case BonusType.NoBonus:
+                return;
+        }
+    }
+
+    private void ResetBonus()
+    {
+        _bonusSeasonApplied = false;
+        _bonusTileApplied = false;
+        cropHarvestAmount = 0;
+        turnsTillCropHarvest = 0;
+    }
 
 }
 
