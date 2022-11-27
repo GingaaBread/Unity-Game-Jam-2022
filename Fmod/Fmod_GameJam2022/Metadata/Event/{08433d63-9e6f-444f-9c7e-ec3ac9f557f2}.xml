@@ -103,9 +103,12 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{e4ac8165-9628-4542-be49-1da2b859b6ff}">
+<<<<<<< HEAD
 		<property name="volume">
 			<value>-8</value>
 		</property>
+=======
+>>>>>>> dev
 		<property name="name">
 			<value>PanelSlideIn</value>
 		</property>

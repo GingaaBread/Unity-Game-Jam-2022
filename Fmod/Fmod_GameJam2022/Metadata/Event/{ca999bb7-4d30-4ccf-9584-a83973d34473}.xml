@@ -98,9 +98,6 @@
 		<relationship name="modulators">
 			<destination>{9d976e46-9f1d-415f-866f-43779ce7eae9}</destination>
 		</relationship>
-		<relationship name="fadeInCurve">
-			<destination>{5b1fddb2-c5b6-491f-9546-e8d62befa962}</destination>
-		</relationship>
 		<relationship name="fadeOutCurve">
 			<destination>{71d61d74-1863-4473-a503-e74aa3cb44bf}</destination>
 		</relationship>
@@ -109,9 +106,12 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{6cb80836-9d47-417f-92f0-0b5a24e65169}">
+<<<<<<< HEAD
 		<property name="volume">
 			<value>-8</value>
 		</property>
+=======
+>>>>>>> dev
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -140,14 +140,6 @@
 			<value>5.5</value>
 		</property>
 	</object>
-	<object class="FadeCurve" id="{5b1fddb2-c5b6-491f-9546-e8d62befa962}">
-		<relationship name="startPoint">
-			<destination>{23f9a7f7-5754-4eaf-b543-2186c3f11a24}</destination>
-		</relationship>
-		<relationship name="endPoint">
-			<destination>{bb3248a6-9a01-48a0-8674-dd403bb54d21}</destination>
-		</relationship>
-	</object>
 	<object class="FadeCurve" id="{71d61d74-1863-4473-a503-e74aa3cb44bf}">
 		<relationship name="startPoint">
 			<destination>{a0210e55-2231-4cac-8d46-372bd61e336e}</destination>
@@ -168,25 +160,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{edbbf8db-c04a-4abb-8233-fb04ca5805e0}" />
 	<object class="MixerBusFader" id="{bf7629c6-6ba9-453d-952e-edff0d20ce06}" />
-	<object class="AutomationPoint" id="{23f9a7f7-5754-4eaf-b543-2186c3f11a24}">
-		<property name="position">
-			<value>0</value>
-		</property>
-		<property name="value">
-			<value>0</value>
-		</property>
-		<property name="curveShape">
-			<value>-0.2547189</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{bb3248a6-9a01-48a0-8674-dd403bb54d21}">
-		<property name="position">
-			<value>0.0084350780397067244</value>
-		</property>
-		<property name="value">
-			<value>1</value>
-		</property>
-	</object>
 	<object class="AutomationPoint" id="{a0210e55-2231-4cac-8d46-372bd61e336e}">
 		<property name="position">
 			<value>0.39642967066789814</value>

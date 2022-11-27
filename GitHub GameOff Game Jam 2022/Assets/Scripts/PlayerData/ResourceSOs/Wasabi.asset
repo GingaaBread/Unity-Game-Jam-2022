@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b30e40ce3b0b445881e72b8193aab1, type: 3}
   m_Name: Wasabi
   m_EditorClassIdentifier: 
-  basePrice: 6
+  basePrice: 28
   seasonBonus: 4
   iconSprite: {fileID: 21300000, guid: 9ae90aec1096d0c4196803146b79c35c, type: 3}

@@ -16,8 +16,8 @@ public class SeedCard : ActionCardSO
     public ResourceSO payoffResource;
     public int payoffAmount;
 
-    [Header("Tile Bonus Effect")]
-    public TileBonus bonus;
+    [Header("Card Bonus Effect")]
+    public CardBonus bonus;
 
     public override void Action(UICardPanel uiPanel)
     {
