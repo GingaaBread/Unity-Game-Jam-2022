@@ -570,10 +570,10 @@ MonoBehaviour:
       m_Calls: []
   m_text: "As you know, Homer and I each own half the company and, despite our deteriorating
     relationship, I cannot convince him to let me buy him out. The only thing he
-    would agree to was <size=130%>a bet</size>. Winner takes all.\r\n\r\nAnd so,
+    would agree to was a <size=120%>bet</size>. Winner takes all.\r\n\r\nAnd so,
     my dying wish is for you to finish my work for me, win the bet, and take back
     the farm\u2013your rightful inheritance. The bet requires you to complete tasks
-    that Homer and I have agreed on. \r"
+    that Homer and I have agreed on. \r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bcee2794dd9445040ba1239a28a39382, type: 2}
   m_sharedMaterial: {fileID: 5639136235681520820, guid: bcee2794dd9445040ba1239a28a39382, type: 2}
@@ -681,7 +681,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -50, y: 50}
+  m_AnchoredPosition: {x: -50, y: 99.6}
   m_SizeDelta: {x: 200, y: 40}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &8256631615342075215
@@ -1436,10 +1436,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Dearest Junior, \r\n\r\nI love you very much. You are my most talented
-    heir. \r\n\r\nIt is with great sadness that I pass from this world unable to
-    leave you my company. When I started it with your uncle Homer all those years
-    ago, I never imagined the betrayal and hurt our farms would cause me.\r"
+  m_text: "Dearest Junior, \r\n\r\nI love you very much. I feel blessed to know that
+    I raised such a wonderful child. \r\n\r\nI wish I could have left you all that
+    is mine before I die. Know that it greatly pains me to leave without full assurance
+    that my farms have been passed into your hands. When I started the company with
+    your uncle Homer all those years ago, I never imagined the betrayal and hurt
+    he would cause me. \r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bcee2794dd9445040ba1239a28a39382, type: 2}
   m_sharedMaterial: {fileID: 5639136235681520820, guid: bcee2794dd9445040ba1239a28a39382, type: 2}
@@ -1559,8 +1561,11 @@ MonoBehaviour:
   page3TextBeforeMissions: 'The tasks are as follows:
 
 '
-  page3TextAfterMissions: "\nThese tasks will be challenging, but I have full confidence
-    in you and your abilities.\r\n\r\nMuch love,\r\nYour mother, Yara\r"
+  page3TextAfterMissions: "\nThese tasks will be challenging, but you\u2019ve grown
+    into an amazing farmer. I have full confidence in you and your abilities. The
+    farms will flourish in your hands.\r\n\r\nPlease remember to be true to yourself
+    and give yourself wholeheartedly to all your endeavors. Live a good life for
+    me. \r\n\r\nI love you more than I can say.\r\n\r\nYour mother, Yara\r"
   ObjToShow: {fileID: 4880671559096941890}
   page1Obj: {fileID: 6477103514709574954}
   page2Obj: {fileID: 8666520522333510981}
@@ -1736,10 +1741,10 @@ RectTransform:
   m_Father: {fileID: 4880671559096941246}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2102, y: 1080}
+  m_SizeDelta: {x: 2102, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &4880671560355669854
 CanvasRenderer:
@@ -1769,16 +1774,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 98901e75a1679f844a04c8627e3b3749, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 803f13e21f6461a47a4275cac10f375a, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 2
 --- !u!1 &5253352575730791359
 GameObject:
   m_ObjectHideFlags: 0
@@ -1955,7 +1960,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 622, y: 21.999992}
-  m_SizeDelta: {x: 622, y: -259.99985}
+  m_SizeDelta: {x: 600, y: -259.99985}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6500335256826666676
 CanvasRenderer:
@@ -1978,16 +1983,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9864789, g: 0.990566, b: 0.8098967, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
+  m_Sprite: {fileID: 21300000, guid: c853774944601434d93c216db120b7fd, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2054,7 +2059,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 518, y: 22.00002}
-  m_SizeDelta: {x: 622, y: -259.99985}
+  m_SizeDelta: {x: 600, y: -259.99985}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1788500694387919426
 CanvasRenderer:
@@ -2077,16 +2082,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9864789, g: 0.990566, b: 0.8098967, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
+  m_Sprite: {fileID: 21300000, guid: c853774944601434d93c216db120b7fd, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2445,14 +2450,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.40000004, g: 0.29411766, b: 0.21176472, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7482667652216324306, guid: d2a75e64621c79740ad700e63a53f1c6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 637d671d39d4e184584cf8b6fdc5b532, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2501,7 +2506,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 581, y: 21.999992}
-  m_SizeDelta: {x: 622, y: -259.99985}
+  m_SizeDelta: {x: 600, y: -259.99985}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &404771669702399027
 CanvasRenderer:
@@ -2524,16 +2529,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9864789, g: 0.990566, b: 0.8098967, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
+  m_Sprite: {fileID: 21300000, guid: c853774944601434d93c216db120b7fd, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1

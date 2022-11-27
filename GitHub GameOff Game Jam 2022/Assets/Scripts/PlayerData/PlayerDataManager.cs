@@ -58,6 +58,8 @@ namespace PlayerData
         {
             Assert.IsTrue(amount > 0);
             AmountOfMoney += amount;
+
+            if (InventoryManager.Instance != null) InventoryManager.Instance.UpdateInventoryMoneyDisplay();
         }
 
         /// <summary>
@@ -75,6 +77,8 @@ namespace PlayerData
 
             if (AmountOfMoney < 0) throw new ArithmeticException("The last transaction " +
                 "left the player with a negative money balance. This should never be the case.");
+
+            if (InventoryManager.Instance != null && AmountOfMoney >= 0) InventoryManager.Instance.UpdateInventoryMoneyDisplay();
         }
 
         // The following methods are all syntactic sugar for ==, <, >, and >=
