@@ -333,7 +333,7 @@
 	</object>
 	<object class="SingleSound" id="{d00270ba-aff4-4990-b6f8-9b8f5da660b4}">
 		<property name="start">
-			<value>186.55172413793105</value>
+			<value>479.59481186479235</value>
 		</property>
 		<property name="length">
 			<value>186</value>
@@ -343,6 +343,9 @@
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{401b7d55-20b3-4c72-8ee2-0bef471a8fa4}">
+		<property name="start">
+			<value>293.0430877268617</value>
+		</property>
 		<property name="length">
 			<value>181.33335416666668</value>
 		</property>
@@ -352,7 +355,7 @@
 	</object>
 	<object class="SingleSound" id="{515ebd97-57c1-43cc-bd29-6fffef5bbd0c}">
 		<property name="start">
-			<value>690.40874837162073</value>
+			<value>983.45183609848027</value>
 		</property>
 		<property name="length">
 			<value>192.00002083333334</value>
@@ -363,7 +366,7 @@
 	</object>
 	<object class="SingleSound" id="{11003e1f-5f82-40e4-9b10-01714f6a1ac2}">
 		<property name="start">
-			<value>395.75885943274284</value>
+			<value>688.80194715960374</value>
 		</property>
 		<property name="length">
 			<value>241.41179166666666</value>
@@ -431,9 +434,6 @@
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{c2fd9fca-aa22-4be6-92de-dfbf772e7987}">
-		<property name="start">
-			<value>925.75516488519725</value>
-		</property>
 		<property name="length">
 			<value>241.41179166666666</value>
 		</property>
@@ -457,7 +457,7 @@
 	</object>
 	<object class="LoopRegion" id="{63bddf1c-e00a-4856-8c8c-e9ca06162ec1}">
 		<property name="position">
-			<value>16.017736976878581</value>
+			<value>309.06082470374031</value>
 		</property>
 		<property name="length">
 			<value>165.31561718978784</value>
@@ -471,7 +471,7 @@
 	</object>
 	<object class="TempoMarker" id="{cae3fb03-6644-435c-86c1-217b51f6791a}">
 		<property name="position">
-			<value>0</value>
+			<value>293.0430877268617</value>
 		</property>
 		<property name="tempo">
 			<value>90</value>
@@ -485,7 +485,7 @@
 	</object>
 	<object class="TempoMarker" id="{ca507999-c5a4-4846-8fc4-fe4449b8462e}">
 		<property name="position">
-			<value>186.55172413793105</value>
+			<value>479.59481186479235</value>
 		</property>
 		<property name="tempo">
 			<value>80</value>
@@ -502,7 +502,7 @@
 	</object>
 	<object class="LoopRegion" id="{fe09f970-3057-4538-beff-3d41071a4680}">
 		<property name="position">
-			<value>207.58639389122411</value>
+			<value>500.62948161808521</value>
 		</property>
 		<property name="length">
 			<value>164.96533024670694</value>
@@ -516,7 +516,7 @@
 	</object>
 	<object class="NamedMarker" id="{c5a85106-9c3d-4fad-93ff-9680f4cb396e}">
 		<property name="position">
-			<value>186.55172413793105</value>
+			<value>479.59481186479235</value>
 		</property>
 		<property name="name">
 			<value>Summer</value>
@@ -530,7 +530,7 @@
 	</object>
 	<object class="NamedMarker" id="{f49b48b5-9a74-4aa8-9c6d-8e59dd15876d}">
 		<property name="position">
-			<value>0</value>
+			<value>293.0430877268617</value>
 		</property>
 		<property name="name">
 			<value>Spring</value>
@@ -544,7 +544,7 @@
 	</object>
 	<object class="TransitionRegion" id="{a1c41cd6-c4f4-4521-901d-00be140523cf}">
 		<property name="position">
-			<value>9.7279209083207672</value>
+			<value>302.77100863518245</value>
 		</property>
 		<property name="length">
 			<value>171.6054332583459</value>
@@ -570,7 +570,7 @@
 	</object>
 	<object class="TempoMarker" id="{bf06c1a0-2c51-4a9f-8f0e-92ac988f15d0}">
 		<property name="position">
-			<value>690.40874837162073</value>
+			<value>983.45183609848027</value>
 		</property>
 		<property name="tempo">
 			<value>85</value>
@@ -584,7 +584,7 @@
 	</object>
 	<object class="NamedMarker" id="{9c9f5645-5f5d-4780-a287-0a5fbe4c30fb}">
 		<property name="position">
-			<value>690.40874837162073</value>
+			<value>983.45183609848027</value>
 		</property>
 		<property name="name">
 			<value>Winter</value>
@@ -598,7 +598,7 @@
 	</object>
 	<object class="TransitionRegion" id="{1eefddf4-fef2-488a-bcba-3b24b273d3d0}">
 		<property name="position">
-			<value>195.72559787622936</value>
+			<value>488.76868560309066</value>
 		</property>
 		<property name="length">
 			<value>176.82612626170169</value>
@@ -624,7 +624,7 @@
 	</object>
 	<object class="LoopRegion" id="{244897d2-2018-4fd2-a204-bd1d254381c6}">
 		<property name="position">
-			<value>712.99547465489627</value>
+			<value>1006.0385623817556</value>
 		</property>
 		<property name="length">
 			<value>169.41329455005774</value>
@@ -638,7 +638,7 @@
 	</object>
 	<object class="TempoMarker" id="{43c684b4-c58d-4768-a9a4-48f904b629d1}">
 		<property name="position">
-			<value>395.75885943274284</value>
+			<value>688.80194715960374</value>
 		</property>
 		<property name="tempo">
 			<value>85</value>
@@ -652,7 +652,7 @@
 	</object>
 	<object class="NamedMarker" id="{a4e24668-6f18-481c-8f2d-e0ec49debea0}">
 		<property name="position">
-			<value>395.75885943274284</value>
+			<value>688.80194715960374</value>
 		</property>
 		<property name="name">
 			<value>Autumn</value>
@@ -666,7 +666,7 @@
 	</object>
 	<object class="TransitionRegion" id="{3f1833ba-12b2-4d97-bce2-ac468aa92094}">
 		<property name="position">
-			<value>704.36944118944552</value>
+			<value>997.41252891630484</value>
 		</property>
 		<property name="length">
 			<value>178.03932801550843</value>
@@ -692,7 +692,7 @@
 	</object>
 	<object class="LoopRegion" id="{db60d2af-6650-489d-ae7c-d8d3fb6365c2}">
 		<property name="position">
-			<value>446.60030292858494</value>
+			<value>739.64339065544573</value>
 		</property>
 		<property name="length">
 			<value>190.57034817082445</value>
@@ -706,7 +706,7 @@
 	</object>
 	<object class="TransitionRegion" id="{8bdc5014-be87-4ff4-ab1c-0e33fdcc12b5}">
 		<property name="position">
-			<value>405.26722590663371</value>
+			<value>698.31031363349462</value>
 		</property>
 		<property name="length">
 			<value>231.90342519277579</value>
@@ -732,7 +732,7 @@
 	</object>
 	<object class="TempoMarker" id="{fc705847-e895-4165-8592-ce4c06ae48bf}">
 		<property name="position">
-			<value>925.75516488519725</value>
+			<value>0</value>
 		</property>
 		<property name="tempo">
 			<value>85</value>
@@ -746,7 +746,7 @@
 	</object>
 	<object class="NamedMarker" id="{de7f14d8-92e5-4016-8db3-a9d464b22c75}">
 		<property name="position">
-			<value>925.75516488519725</value>
+			<value>0</value>
 		</property>
 		<property name="name">
 			<value>Autumn B</value>
@@ -760,7 +760,7 @@
 	</object>
 	<object class="TransitionRegion" id="{e24a2a42-17d6-4879-99aa-60e6c9c89597}">
 		<property name="position">
-			<value>935.26353135908812</value>
+			<value>9.5083664738908737</value>
 		</property>
 		<property name="length">
 			<value>231.90342519277579</value>
@@ -786,7 +786,7 @@
 	</object>
 	<object class="LoopRegion" id="{e17d3d24-1ca2-4194-b0dd-7acb3b431a71}">
 		<property name="position">
-			<value>976.59660838103935</value>
+			<value>50.841443495842711</value>
 		</property>
 		<property name="length">
 			<value>190.57034817082445</value>
@@ -896,10 +896,10 @@
 	</object>
 	<object class="ParameterCondition" id="{8357756c-fc59-48b4-8750-df63231cbf07}">
 		<property name="minimum">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<property name="maximum">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{30cddbf8-5a64-40c4-b8c1-ea10c4d420a9}</destination>
@@ -920,10 +920,10 @@
 	</object>
 	<object class="ParameterCondition" id="{d389b319-698e-4128-9ad5-aad57f1c271e}">
 		<property name="minimum">
-			<value>2</value>
+			<value>3</value>
 		</property>
 		<property name="maximum">
-			<value>2</value>
+			<value>3</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{30cddbf8-5a64-40c4-b8c1-ea10c4d420a9}</destination>
@@ -944,10 +944,10 @@
 	</object>
 	<object class="ParameterCondition" id="{35e50c23-530f-4487-8f00-c95f64e9f8d1}">
 		<property name="minimum">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<property name="maximum">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{30cddbf8-5a64-40c4-b8c1-ea10c4d420a9}</destination>
@@ -968,10 +968,10 @@
 	</object>
 	<object class="ParameterCondition" id="{b9564a18-cfdc-45fd-b0c3-4a98ea57f617}">
 		<property name="minimum">
-			<value>3</value>
+			<value>4</value>
 		</property>
 		<property name="maximum">
-			<value>3</value>
+			<value>4</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{30cddbf8-5a64-40c4-b8c1-ea10c4d420a9}</destination>
@@ -992,10 +992,10 @@
 	</object>
 	<object class="ParameterCondition" id="{7545cf2a-74f1-4930-81b6-e5d690d9dc9f}">
 		<property name="minimum">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<property name="maximum">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{30cddbf8-5a64-40c4-b8c1-ea10c4d420a9}</destination>
