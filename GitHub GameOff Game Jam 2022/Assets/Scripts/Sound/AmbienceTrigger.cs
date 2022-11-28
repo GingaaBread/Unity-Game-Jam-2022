@@ -31,9 +31,7 @@ public class AmbienceTrigger : ComputerPhaseStep
 
             // After the will music jump to spring
             musicEventInstance.setParameterByName("Season", 1);
-
-            print("Jumping to param 1!");
-
+            
             hasBeenExecuted = true;
         }
     }
@@ -44,8 +42,6 @@ public class AmbienceTrigger : ComputerPhaseStep
         {
             // The seasons should be 1 for spring, 2 for summer, 3 for autumn, 4 for winter (and 0 for the will)
             musicEventInstance.setParameterByName("Season", (int) TimeManager.Instance.CurrentTime.SeasonInYear + 1);
-
-            print($"Jumping to param {((int)TimeManager.Instance.CurrentTime.SeasonInYear + 1)}!");
         }
 
         OnFinishProcessing.Invoke();
