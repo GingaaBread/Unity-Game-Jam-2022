@@ -15,6 +15,7 @@ public class UIInspectorPanel : MonoBehaviour
     [SerializeField] private TMP_Text resourceResellText;
     [SerializeField] private GameObject maturingContainer;
     [SerializeField] private GameObject resourcesContainer;
+    [SerializeField] private GameObject bonusContainer;
 
     [Header("Detail UI Components")]
     [SerializeField] private TMP_Text cardTitleText;
@@ -26,6 +27,7 @@ public class UIInspectorPanel : MonoBehaviour
     {
         maturingContainer.SetActive(false);
         resourcesContainer.SetActive(false);
+        bonusContainer.SetActive(false);
 
         if (cardToInspect is SeedCard card)
         {
@@ -40,6 +42,8 @@ public class UIInspectorPanel : MonoBehaviour
             resourcesContainer.SetActive(true);
             resourceText.text = $"Once cultivated, yields {card.payoffAmount}x {card.cardTitle.ToLower()}";
             resourceResellText.text = $"- 1 {card.cardTitle.ToLower()} can be sold for {card.payoffResource.basePrice} <sprite=1>";
+
+            bonusContainer.SetActive(true);
         }
         else if (cardToInspect is BuildingCard)
         {
