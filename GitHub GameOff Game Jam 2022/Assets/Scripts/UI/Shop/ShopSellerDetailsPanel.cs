@@ -79,9 +79,11 @@ public class ShopSellerDetailsPanel : MonoBehaviour
 
         // figure out what resource selected
         ResourceSO resourceBeingSold = resourcePanelAObj.IsSelected ? resourcePanelAObj.Resource : resourcePanelBObj.Resource;
+        // figure out what the price should be
+        int price = resourcePanelAObj.IsSelected ? resourceBeingSold.basePrice : Mathf.CeilToInt(resourceBeingSold.basePrice / 2);
 
         // propagate the sell command up to the shop panel, passing the resource sold
-        bool wasSaleSuccessful = shopPanelObj.AttemptToSell(resourceBeingSold, 1);
+        bool wasSaleSuccessful = shopPanelObj.AttemptToSell(resourceBeingSold, 1, price);
 
         if (wasSaleSuccessful) {
             // update character image, speech
