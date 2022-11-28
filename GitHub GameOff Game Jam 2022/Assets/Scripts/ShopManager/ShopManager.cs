@@ -10,7 +10,7 @@ using UnityEngine;
 /// </summary>
 /// 
 
-public class ShopManager : ComputerPhaseStep
+public class ShopManager : MonoBehaviour
 {
 
     public static ShopManager Instance;
@@ -23,7 +23,7 @@ public class ShopManager : ComputerPhaseStep
 
     private int costBonus = 2;
 
-    private new void Awake()
+    private void Awake()
     {
         if (Instance == null)
         {
@@ -123,18 +123,4 @@ public class ShopManager : ComputerPhaseStep
         return ResourceSO.SeasonBonus.NONE; // This never happens because SEASONTYPE is always one of the upper four.
     }
 
-    public override void StartProcessingForComputerPhase(bool isComputerPhaseDuringGameInit)
-    {
-        if (isComputerPhaseDuringGameInit)
-        {
-            UpdateShop();
-        }
-
-        OnFinishProcessing.Invoke();
-    }
-
-    protected override object[] CheckForMissingReferences()
-    {
-        return new object[0];
-    }
 }
