@@ -53,7 +53,6 @@ public class WillPanel : ComputerPhaseStep {
     }
 
     public void OnPlayerAcceptsWill() {
-        AmbienceTrigger.Instance.PlayFarmAmbience();
         ObjToShow.SetActive(false);
         OnFinishProcessing.Invoke();
     }

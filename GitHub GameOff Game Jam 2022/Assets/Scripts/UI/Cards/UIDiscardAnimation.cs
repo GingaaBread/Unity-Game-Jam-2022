@@ -11,12 +11,6 @@ public class UIDiscardAnimation : MonoBehaviour
 {
     [SerializeField] private Animator cardScaleAnimator;
     [SerializeField] private GameObject panelContainer;
-    [SerializeField] private EventReference slideInSound;
-    [SerializeField] private EventReference slideOutSound;
-
-    public void PlaySlideInSound() => RuntimeManager.PlayOneShot(slideInSound);
-    
-    public void PlaySlideOutSound() => RuntimeManager.PlayOneShot(slideOutSound);
 
     /// <summary>
     /// Played when the discard animation has finished.

@@ -2309,7 +2309,6 @@ GameObject:
   - component: {fileID: 2272373737458347651}
   - component: {fileID: 627439706302607699}
   - component: {fileID: 8929853235781134716}
-  - component: {fileID: 2409979269525772184}
   m_Layer: 5
   m_Name: EndTurnButton
   m_TagString: Untagged
@@ -2522,25 +2521,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2409979269525772184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2605655700752351140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f402007fd00fa2447997b7ad54d58d07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hoverSound:
-    Guid:
-      Data1: -1055760238
-      Data2: 1176100311
-      Data3: -3748673
-      Data4: 1588207811
-    Path: event:/SFX/UI/Play_MouseHover
 --- !u!1 &2605655700761283459
 GameObject:
   m_ObjectHideFlags: 0
