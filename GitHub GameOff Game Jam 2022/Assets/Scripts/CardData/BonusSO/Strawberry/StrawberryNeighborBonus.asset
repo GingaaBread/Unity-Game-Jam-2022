@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebd6d25ea02790f4fafe980c68d0f86b, type: 3}
-  m_Name: PumpkinBonus
+  m_Script: {fileID: 11500000, guid: cdfa8b8a5dba4dd4db383a4126bbccc2, type: 3}
+  m_Name: StrawberryNeighborBonus
   m_EditorClassIdentifier: 
-  SeasonBonus: {fileID: 11400000, guid: 087902616aa4e6943ba6de6cd2130540, type: 2}
-  TileBonus: {fileID: 11400000, guid: 8a01c0788c9a12b4d990eeb5bbcdf84f, type: 2}
-  NeighborBonus: []
+  AnyAnimal: 0
+  AnimalBonus: 5
+  TileBonus: 2
+  Bonus: 1
+  BonusAmount: -2

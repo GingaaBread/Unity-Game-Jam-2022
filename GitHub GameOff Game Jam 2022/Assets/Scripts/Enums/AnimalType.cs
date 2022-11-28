@@ -9,6 +9,7 @@ namespace BuildingManagement
        PIG,
        BEES,
        FISH,
-       SHEEP
+       SHEEP,
+       NONE,
     }
 }
