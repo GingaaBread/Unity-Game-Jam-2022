@@ -51,7 +51,7 @@ public class CardManager : ComputerPhaseStep
     [SerializeField] private UIDiscardPanel discardPanel;
 
     [Header("Drawing deck")]
-    [SerializeField] [Range(0,10)] private int buildCardsToAddToStartingHand;
+    [SerializeField] public ActionCardSO[] requiredCardsInStartingHand;
 
     [Header("Drawing deck")]
     [HideInInspector] public bool cardDiscardedThisTurn;
@@ -169,7 +169,9 @@ public class CardManager : ComputerPhaseStep
     private void InitializeDeckWithCards() {
         List<ActionCardSO> tempDeck = new List<ActionCardSO>();
 
-        tempDeck.AddRange(MakeRandomSelectionFromList(buildCards, buildCardsToAddToStartingHand));
+        if (requiredCardsInStartingHand!= null) {
+            tempDeck.AddRange(requiredCardsInStartingHand);
+        }
 
         while (tempDeck.Count < deckSize) {
             List<ActionCardSO> balancedPile = GeneratePileOfCards();
@@ -201,9 +203,10 @@ public class CardManager : ComputerPhaseStep
 
         List<ActionCardSO> pile = new List<ActionCardSO>();
 
-        int cropCardsToAdd = 24;                       // crop card amount
-        int buildCardsToAdd = Random.Range(3, 5);      // build card amount
-        int livestockCardsToAdd = 6 - buildCardsToAdd; // livestock card amount
+        // Ratios per pile
+        int buildCardsToAdd = Random.Range(4, 5);
+        int livestockCardsToAdd = 2;
+        int cropCardsToAdd = 22 - buildCardsToAdd;
 
         pile.AddRange(MakeRandomSelectionFromList(cropCards, cropCardsToAdd));
         pile.AddRange(MakeRandomSelectionFromList(buildCards, buildCardsToAdd));
@@ -276,8 +279,13 @@ public class CardManager : ComputerPhaseStep
             InitializeDeckWithCards();
         } else {
             foreach (var cardPanel in cardPanels)
+            {
                 cardPanel.UnlockDiscardButton();
+            }
+            
             GiveCard(5 - playerHandcards.Count);
+
+            CardPlayManager.Instance.ResetCurrentPlay();
         }
 
         OnFinishProcessing.Invoke(); // tell time manager that this computer phase step is done

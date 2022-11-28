@@ -2,6 +2,7 @@ using PlayerData;
 using System;
 using System.Collections.Generic;
 using TimeManagement;
+using UIManagement;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -159,9 +160,21 @@ public class QuestManager : ComputerPhaseStep
             if (IsGameLost()) {
                 ShowLossScreen();
             } else {
+
+                if (IsStartOfFinalYear()) {
+                    FeedbackPanelManager.Instance.EnqueueGenericMessage(false, $"Only 1 year left!");
+                }
                 OnFinishProcessing.Invoke();
             }
         }
+    }
+
+    private bool IsStartOfFinalYear() {
+        PointInTime time = TimeManager.Instance.CurrentTime;
+        if (time.Year == LoseWhenWeReachYearN-1 && time.IsFirstRoundOfSeason() && time.IsFirstSeasonOfYear()) 
+            return true;
+        else 
+            return false;
     }
 
     protected override object[] CheckForMissingReferences() {

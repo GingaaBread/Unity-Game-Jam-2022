@@ -75,6 +75,7 @@ public class UIMainPanel : MonoBehaviour
 
     public void DisplayDetailCardPanel()
     {
+        CardPlayManager.Instance.ResetCurrentPlay();
         detailCardContainer.SetActive(true);
     }
 

@@ -17,6 +17,7 @@ namespace TimeManagement
         [SerializeField] private Animator sliderAnimator;
         [SerializeField] private Image currentSeasonIconImage;
         [SerializeField] private Sprite[] seasonIcons;
+        [SerializeField] private Animator endTurnButtonAnimator;
 
         [Header("End of Season Animation")]
         [SerializeField] private TMP_Text animationSeasonText;
@@ -36,7 +37,9 @@ namespace TimeManagement
             UpdateTextComponents();
         }
 
-        public void OnEndTurnButtonClicked() => TimeManager.Instance.FinishPlayerTurnPhase();
+        public void OnEndTurnButtonClicked() {
+            TimeManager.Instance.FinishPlayerTurnPhase();
+        }
 
         public void UpdateTextComponents()
         {

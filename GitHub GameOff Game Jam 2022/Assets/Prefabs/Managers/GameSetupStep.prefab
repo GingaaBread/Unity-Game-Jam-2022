@@ -47,4 +47,4 @@ MonoBehaviour:
   OnFinishProcessing:
     m_PersistentCalls:
       m_Calls: []
-  StartingMoney: 30
+  StartingMoney: 126

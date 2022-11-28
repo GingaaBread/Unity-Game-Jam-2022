@@ -5,9 +5,9 @@ namespace TimeManagement
     /// </summary>
     public enum SeasonType
     {
+        SPRING,
         SUMMER,
         FALL,
-        WINTER,
-        SPRING
+        WINTER        
     }
 }
