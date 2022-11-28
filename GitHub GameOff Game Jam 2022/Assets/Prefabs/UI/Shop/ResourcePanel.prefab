@@ -261,6 +261,7 @@ GameObject:
   - component: {fileID: 2221898316445322393}
   - component: {fileID: 9217449542457496180}
   - component: {fileID: 6990928985246772130}
+  - component: {fileID: 4160228848563274772}
   m_Layer: 5
   m_Name: ResourceButton
   m_TagString: Untagged
@@ -370,7 +371,49 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9217449542457496180}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4160228848563274772}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4160228848563274772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8813133601463217433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1055760238
+      Data2: 1176100311
+      Data3: -3748673
+      Data4: 1588207811
+    Path: event:/SFX/UI/Play_MouseHover
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &8383041340679259091
 PrefabInstance:
   m_ObjectHideFlags: 0

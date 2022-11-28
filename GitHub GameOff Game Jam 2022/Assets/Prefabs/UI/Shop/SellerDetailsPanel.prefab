@@ -222,6 +222,13 @@ MonoBehaviour:
   characterSpeechObj: {fileID: 7781628420290468332}
   characterNameObj: {fileID: 6789285641083989348}
   shopPanelObj: {fileID: 0}
+  sellFailedSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: event:/SFX/UI/Play_FailedSale
   Buyers:
   - {fileID: 11400000, guid: 1b332184c6349d84ba79805dbf6e7f0d, type: 2}
   - {fileID: 11400000, guid: 50e6613b36e7e3f47b9ea3aa56d5a693, type: 2}

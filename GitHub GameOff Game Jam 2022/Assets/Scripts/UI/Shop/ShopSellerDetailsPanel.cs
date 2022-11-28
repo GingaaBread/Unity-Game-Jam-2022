@@ -5,6 +5,7 @@ using UnityEngine.Assertions;
 using UnityEngine.UI;
 using TMPro;
 using PlayerData;
+using FMODUnity;
 
 public class ShopSellerDetailsPanel : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class ShopSellerDetailsPanel : MonoBehaviour
     [SerializeField] private TextMeshProUGUI characterSpeechObj;
     [SerializeField] private TextMeshProUGUI characterNameObj;
     [SerializeField] private ShopPanel shopPanelObj;
+    [SerializeField] private EventReference sellFailedSound;
 
     [Header("sprites to use for character")]
     [SerializeField] Shop_BuyerSO[] Buyers;
@@ -92,6 +94,7 @@ public class ShopSellerDetailsPanel : MonoBehaviour
         } else {
             characterImageObj.sprite = Buyers[_shopIndex].CharacterImage_Detail;
             characterSpeechObj.text = "You don't have any to sell!";
+            RuntimeManager.PlayOneShot(sellFailedSound);
         }
     }
 
