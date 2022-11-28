@@ -10,6 +10,11 @@ public class UIInspectorPanel : MonoBehaviour
     [SerializeField] private Image cardDescriptionPanelImage;
     [SerializeField] private TMP_Text cardCostText;
     [SerializeField] private TMP_Text cardDescriptionText;
+    [SerializeField] private TMP_Text maturingText;
+    [SerializeField] private TMP_Text resourceText;
+    [SerializeField] private TMP_Text resourceResellText;
+    [SerializeField] private GameObject maturingContainer;
+    [SerializeField] private GameObject resourcesContainer;
 
     [Header("Detail UI Components")]
     [SerializeField] private TMP_Text cardTitleText;
@@ -19,11 +24,22 @@ public class UIInspectorPanel : MonoBehaviour
 
     public void Render(ActionCardSO cardToInspect)
     {
-        if (cardToInspect is SeedCard)
+        maturingContainer.SetActive(false);
+        resourcesContainer.SetActive(false);
+
+        if (cardToInspect is SeedCard card)
         {
             backgroundPanelImage.sprite = UIMainPanel.Instance.seedBackgroundSprite;
             cardDescriptionPanelImage.color = UIMainPanel.Instance.seedCardColour;
+
             placementText.text = "Cost of planting";
+
+            maturingContainer.SetActive(true);
+            maturingText.text = $"Takes {(int) card.cropTotalTurnsTillPayoff} turns to mature";
+
+            resourcesContainer.SetActive(true);
+            resourceText.text = $"Once cultivated, yields {card.payoffAmount}x {card.cardTitle.ToLower()}";
+            resourceResellText.text = $"- 1 {card.cardTitle.ToLower()} can be sold for {card.payoffResource.basePrice} <sprite=1>";
         }
         else if (cardToInspect is BuildingCard)
         {
