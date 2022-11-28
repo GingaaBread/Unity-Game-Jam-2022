@@ -102,6 +102,7 @@ public class ShopPanel : ComputerPhaseStep
         PlayerDataManager.Instance.IncreaseMoneyAmount(price);
         QuestManager.Instance.NotifyOfResourceSale(resourceBeingSold, price);
         FeedbackPanelManager.Instance.EnqueueMoneyReception(price, true);
+        FeedbackPanelManager.Instance.InitiateInstantDisplayQueue();
 
         return true;
     }
