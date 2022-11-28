@@ -640,7 +640,7 @@
 	<object class="MixerBusFader" id="{976941df-3d0c-454f-ae02-421e960d17ab}" />
 	<object class="ThreeEQEffect" id="{dfa99078-0c68-4f78-ac6e-6b72f9c35c55}">
 		<property name="highGain">
-			<value>-5.5</value>
+			<value>-1</value>
 		</property>
 	</object>
 	<object class="SFXReverbEffect" id="{cffad144-3562-48ad-bfdc-fea13379da56}">

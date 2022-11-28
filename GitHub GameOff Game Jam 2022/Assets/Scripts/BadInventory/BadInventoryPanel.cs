@@ -15,6 +15,8 @@ public class BadInventoryPanel : MonoBehaviour
 
     void Update()
     {
+        if (textObj == null) return;
+
         if (PlayerDataManager.Instance == null)
             return;
 

@@ -9,7 +9,7 @@ public class MoneyDisplayer : MonoBehaviour
 
     public TextMeshProUGUI amountText;
 
-    
+
     public void UpdateMoneyDisplay() 
     {
         if (amountText == null) return;
