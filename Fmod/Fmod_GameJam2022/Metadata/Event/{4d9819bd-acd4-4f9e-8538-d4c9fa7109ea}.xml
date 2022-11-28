@@ -46,6 +46,9 @@
 		</relationship>
 	</object>
 	<object class="MixerInput" id="{f25d1dd5-ec13-41f7-9467-4495af550ae4}">
+		<relationship name="masters">
+			<destination>{c2ae1023-c932-4550-9ef1-c7133195a139}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{bd8f2bae-610b-4663-bdf1-163f70a57bf1}</destination>
 		</relationship>
@@ -108,6 +111,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{a155a5d4-861a-4f56-951c-d4adfcc1e75f}">
+		<property name="volume">
+			<value>-2.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -126,7 +132,11 @@
 			<destination>{2af67fa0-dad5-4540-8646-05485fec6eef}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{aa1b48cc-9d87-4fbe-bea7-4bc6d29b4d54}" />
+	<object class="MixerBusPanner" id="{aa1b48cc-9d87-4fbe-bea7-4bc6d29b4d54}">
+		<relationship name="modulators">
+			<destination>{e254db3d-a4e2-4caf-a31b-d0cf69de333a}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{b1de333e-fed6-4a2f-9b90-51371f8a46e4}" />
 	<object class="RandomizerModulator" id="{659f7970-d1ff-46d5-bdf9-ff9218203efd}">
 		<property name="nameOfPropertyBeingModulated">
@@ -176,6 +186,9 @@
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{3e928d4b-2288-4b81-88ba-c0f1bab42de4}">
+		<property name="volume">
+			<value>-6.5</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{f6f2b484-dc64-4209-bcb4-25a300ce4e00}</destination>
 		</relationship>
@@ -187,6 +200,14 @@
 	</object>
 	<object class="MixerBusPanner" id="{426d95be-1462-437a-b439-50e95dfe9653}" />
 	<object class="MixerBusFader" id="{2af67fa0-dad5-4540-8646-05485fec6eef}" />
+	<object class="RandomizerModulator" id="{e254db3d-a4e2-4caf-a31b-d0cf69de333a}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>stereoPan</value>
+		</property>
+		<property name="amount">
+			<value>32</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{ba057c24-f225-44b7-b414-d0ce59306f7a}">
 		<property name="position">
 			<value>1.1228070175438596</value>

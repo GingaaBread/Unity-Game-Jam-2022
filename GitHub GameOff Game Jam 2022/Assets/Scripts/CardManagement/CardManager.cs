@@ -279,8 +279,13 @@ public class CardManager : ComputerPhaseStep
             InitializeDeckWithCards();
         } else {
             foreach (var cardPanel in cardPanels)
+            {
                 cardPanel.UnlockDiscardButton();
+            }
+            
             GiveCard(5 - playerHandcards.Count);
+
+            CardPlayManager.Instance.ResetCurrentPlay();
         }
 
         OnFinishProcessing.Invoke(); // tell time manager that this computer phase step is done

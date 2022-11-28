@@ -109,7 +109,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{56db1029-3692-4bc1-ab61-ed83c0b0a832}">
 		<property name="volume">
-			<value>-10</value>
+			<value>-14.5</value>
 		</property>
 		<property name="name">
 			<value>Coins</value>
@@ -128,6 +128,7 @@
 		<relationship name="effects">
 			<destination>{e50461bb-6558-408b-b5a3-435b3e3d0475}</destination>
 			<destination>{06141296-8202-4fc3-9d64-393c977030dd}</destination>
+			<destination>{4da7592e-a48c-4b0b-9313-da892564ffc2}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{5488b23b-f7d2-4b31-b37a-6c4f07c7d591}" />
@@ -187,7 +188,7 @@
 	<object class="MixerBusFader" id="{e50461bb-6558-408b-b5a3-435b3e3d0475}" />
 	<object class="ThreeEQEffect" id="{06141296-8202-4fc3-9d64-393c977030dd}">
 		<property name="lowGain">
-			<value>-12</value>
+			<value>-6.5</value>
 		</property>
 		<property name="highGain">
 			<value>-9</value>
@@ -197,6 +198,11 @@
 		</property>
 		<property name="highCrossover">
 			<value>7500</value>
+		</property>
+	</object>
+	<object class="DistortionEffect" id="{4da7592e-a48c-4b0b-9313-da892564ffc2}">
+		<property name="level">
+			<value>0.275000006</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{fda90f6a-13a1-4aca-b2e4-027c2965aa03}">

@@ -5,6 +5,11 @@ public class UIDetailedCard : MonoBehaviour, IPointerExitHandler
 {
     [HideInInspector] public int handcardIndex;
 
+    private void Start()
+    {
+        UIMainPanel.Instance.HideDetailedCard();
+    }
+
     public void OnPointerExit(PointerEventData eventData)
     {
         if (!CardPlayManager.Instance.PlayIsInProgress())
