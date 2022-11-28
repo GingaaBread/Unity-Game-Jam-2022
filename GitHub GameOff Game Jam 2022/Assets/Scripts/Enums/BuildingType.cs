@@ -8,6 +8,6 @@ namespace BuildingManagement
     public enum BuildingType
     {
         ACRE,
-        ANIMALPEN,
+        ANIMALPEN, 
     }
 }

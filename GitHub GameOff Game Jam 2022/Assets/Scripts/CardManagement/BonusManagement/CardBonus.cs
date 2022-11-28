@@ -8,8 +8,9 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "CardBonus/CardBonus")]
 
 public class CardBonus : ScriptableObject{
-    public SeasonBonus seasonBonus;
-    public TileBonus tileBonus;
+    public SeasonBonus SeasonBonus;
+    public TileBonus TileBonus;
+    public NeighborBonus[] NeighborBonus = {};
 }
 
 
