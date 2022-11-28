@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0653d2d198bba26499251797d03a20d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnFinishProcessing:
+    m_PersistentCalls:
+      m_Calls: []
   farmAmbience:
     Guid:
       Data1: -1188090171
@@ -51,3 +54,10 @@ MonoBehaviour:
       Data3: -10654062
       Data4: 1057919396
     Path: event:/SFX/Ambiance/Play_FarmAmbiance
+  music:
+    Guid:
+      Data1: -2051015262
+      Data2: 1183933018
+      Data3: 2143312022
+      Data4: 1768285126
+    Path: event:/Music/Seasons
