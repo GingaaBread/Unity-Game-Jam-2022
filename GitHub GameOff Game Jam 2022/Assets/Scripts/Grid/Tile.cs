@@ -343,6 +343,7 @@ public class Tile : MonoBehaviour
 
     private void ApplySeasonBonus(CardBonus bonus){
         if (_bonusSeasonApplied) return;
+        if (bonus.SeasonBonus == null) return;
       
             if (bonus.SeasonBonus.stage == StageType.PlantedBonus){
                 if (TimeManager.Instance.CurrentTime.SeasonInYear == bonus.SeasonBonus.Season){
@@ -377,7 +378,7 @@ public class Tile : MonoBehaviour
         
     }
 
-        private void ApplyNeighborBonus(NeighborBonus[] NeighborBonus){
+    private void ApplyNeighborBonus(NeighborBonus[] NeighborBonus){
         //Works with the current map but no garuntee it would work with different sized tiles.
         Vector3 adjustedCenter = new Vector3(transform.position.x, transform.position.y - .5f, transform.position.z);
 
