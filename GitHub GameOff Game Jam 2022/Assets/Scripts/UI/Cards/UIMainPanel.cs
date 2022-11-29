@@ -27,6 +27,20 @@ public class UIMainPanel : MonoBehaviour
     public Sprite livestockBackgroundSprite;
     public Sprite seedBackgroundSprite;
 
+    [Space(5f)]
+
+    public Sprite buildingTextSprite;
+    public Sprite livestockTextSprite;
+    public Sprite seedTextSprite;
+
+    [Space(5f)]
+
+    public Sprite buildingDetailSprite;
+    public Sprite livestockDetailSprite;
+    public Sprite seedDetailSprite;
+
+    [Space(5f)]
+
     public Color buildingCardColour;
     public Color livestockCardColour;
     public Color seedCardColour;

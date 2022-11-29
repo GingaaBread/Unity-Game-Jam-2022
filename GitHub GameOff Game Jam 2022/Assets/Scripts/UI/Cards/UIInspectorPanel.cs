@@ -8,6 +8,8 @@ public class UIInspectorPanel : MonoBehaviour
     [SerializeField] private Image backgroundPanelImage;
     [SerializeField] private Image cardObjectImage;
     [SerializeField] private Image cardDescriptionPanelImage;
+    [SerializeField] private Image cardDetailPanelImage;
+    [SerializeField] private Image[] textPanelImages;
     [SerializeField] private TMP_Text cardCostText;
     [SerializeField] private TMP_Text cardDescriptionText;
     [SerializeField] private TMP_Text maturingText;
@@ -32,9 +34,11 @@ public class UIInspectorPanel : MonoBehaviour
         if (cardToInspect is SeedCard card)
         {
             backgroundPanelImage.sprite = UIMainPanel.Instance.seedBackgroundSprite;
+            cardDetailPanelImage.sprite = UIMainPanel.Instance.seedDetailSprite;
             cardDescriptionPanelImage.color = UIMainPanel.Instance.seedCardColour;
 
             placementText.text = "Cost of planting";
+            cardDescriptionText.color = Color.white;
 
             maturingContainer.SetActive(true);
             maturingText.text = $"Takes {(int) card.cropTotalTurnsTillPayoff} turns to mature";
@@ -44,18 +48,39 @@ public class UIInspectorPanel : MonoBehaviour
             resourceResellText.text = $"- 1 {card.cardTitle.ToLower()} can be sold for {card.payoffResource.basePrice} <sprite=1>";
 
             bonusContainer.SetActive(true);
+
+            foreach (var textPanel in textPanelImages)
+            {
+                textPanel.sprite = UIMainPanel.Instance.seedTextSprite;
+            }
         }
         else if (cardToInspect is BuildingCard)
         {
             backgroundPanelImage.sprite = UIMainPanel.Instance.buildingBackgroundSprite;
+            cardDetailPanelImage.sprite = UIMainPanel.Instance.buildingDetailSprite;
             cardDescriptionPanelImage.color = UIMainPanel.Instance.buildingCardColour;
+
             placementText.text = "Cost of building";
+            cardDescriptionText.color = Color.white;
+
+            foreach (var textPanel in textPanelImages)
+            {
+                textPanel.sprite = UIMainPanel.Instance.buildingTextSprite;
+            }
         }
         else if (cardToInspect is LivestockCard)
         {
             backgroundPanelImage.sprite = UIMainPanel.Instance.livestockBackgroundSprite;
+            cardDetailPanelImage.sprite = UIMainPanel.Instance.livestockDetailSprite;
             cardDescriptionPanelImage.color = UIMainPanel.Instance.livestockCardColour;
+
             placementText.text = "Cost of placing";
+            cardDescriptionText.color = Color.black;
+
+            foreach (var textPanel in textPanelImages)
+            {
+                textPanel.sprite = UIMainPanel.Instance.livestockTextSprite;
+            }
         }
         else throw new System.NotImplementedException($"Card type '{cardToInspect.GetType()}' is not yet implemented!");
 

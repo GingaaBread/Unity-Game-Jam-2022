@@ -1283,9 +1283,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shouldLockDiscardButtonsForCards: 1
   detailedCardYPosition: 0
-  buildingBackgroundSprite: {fileID: 0}
-  livestockBackgroundSprite: {fileID: 0}
+  buildingBackgroundSprite: {fileID: 21300000, guid: 826684963130ba342b7af4401d0e492e, type: 3}
+  livestockBackgroundSprite: {fileID: 21300000, guid: 6fe703af02ed50146be7cbc31de43ed6, type: 3}
   seedBackgroundSprite: {fileID: 21300000, guid: e94747e6965caad419cd516b251b4bff, type: 3}
+  buildingTextSprite: {fileID: 21300000, guid: 57b4aefde116939489f99649f4780e7c, type: 3}
+  livestockTextSprite: {fileID: 21300000, guid: 2bd4f5d4c330d094dad1853d6a3ca422, type: 3}
+  seedTextSprite: {fileID: 21300000, guid: d48cbc36a7069a74bae5c3c21979e84e, type: 3}
+  buildingDetailSprite: {fileID: 21300000, guid: a4369f2be96f42d4b846bac3c312268a, type: 3}
+  livestockDetailSprite: {fileID: 21300000, guid: 9e4009b7aba20c141b05e32d97814014, type: 3}
+  seedDetailSprite: {fileID: 21300000, guid: 10833c76a5be2814789c9a3324700129, type: 3}
   buildingCardColour: {r: 0.5529412, g: 0.39607844, b: 0.23137255, a: 1}
   livestockCardColour: {r: 0.85882354, g: 0.7176471, b: 0.16470589, a: 1}
   seedCardColour: {r: 0.2784314, g: 0.5176471, b: 0.38431376, a: 1}
@@ -11807,6 +11813,12 @@ MonoBehaviour:
   backgroundPanelImage: {fileID: 208140766363320663}
   cardObjectImage: {fileID: 3728126369301794315}
   cardDescriptionPanelImage: {fileID: 4957688588923049174}
+  cardDetailPanelImage: {fileID: 8502041186822210786}
+  textPanelImages:
+  - {fileID: 5143952827697022044}
+  - {fileID: 3098255117974180162}
+  - {fileID: 4983556272138610149}
+  - {fileID: 7911435214885330816}
   cardCostText: {fileID: 3303007411854316370}
   cardDescriptionText: {fileID: 6804879386573495004}
   maturingText: {fileID: 2165535024330212344}
@@ -12125,7 +12137,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- 1 flower can be sold for 15 <sprite=1>'
+  m_text: 1 flower can be sold for 15 <sprite=1>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d9cbb3f98856c164892a4f9e9cee6e06, type: 2}
   m_sharedMaterial: {fileID: 3877106909241861327, guid: d9cbb3f98856c164892a4f9e9cee6e06, type: 2}
@@ -12152,13 +12164,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
+  m_fontSize: 23.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 5
-  m_fontSizeMax: 22
-  m_fontStyle: 0
+  m_fontSizeMax: 23.6
+  m_fontStyle: 2
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
