@@ -171,7 +171,6 @@
 		</relationship>
 		<relationship name="sounds">
 			<destination>{b53d2614-f8f1-4f01-b6d7-af0241fdcbc1}</destination>
-			<destination>{0b92ea92-5491-4df5-8b26-95cfe83ac874}</destination>
 			<destination>{967ea709-6a1c-4789-92e6-9550b8453d29}</destination>
 		</relationship>
 		<relationship name="playPercentages">
@@ -438,7 +437,6 @@
 			<destination>{0d76c13c-d6be-41b4-a5f0-7ca6b8954c73}</destination>
 		</relationship>
 	</object>
-	<object class="SilenceSound" id="{0b92ea92-5491-4df5-8b26-95cfe83ac874}" />
 	<object class="SingleSound" id="{967ea709-6a1c-4789-92e6-9550b8453d29}">
 		<relationship name="audioFile">
 			<destination>{0d76c13c-d6be-41b4-a5f0-7ca6b8954c73}</destination>
@@ -446,7 +444,7 @@
 	</object>
 	<object class="PlayPercentage" id="{70057aca-501d-4e5c-9e3c-d040bb9f79cc}">
 		<property name="percentage">
-			<value>80</value>
+			<value>50</value>
 		</property>
 		<relationship name="sound">
 			<destination>{b53d2614-f8f1-4f01-b6d7-af0241fdcbc1}</destination>
@@ -638,14 +636,13 @@
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{976941df-3d0c-454f-ae02-421e960d17ab}" />
-	<object class="ThreeEQEffect" id="{dfa99078-0c68-4f78-ac6e-6b72f9c35c55}">
-		<property name="highGain">
-			<value>-1</value>
-		</property>
-	</object>
+	<object class="ThreeEQEffect" id="{dfa99078-0c68-4f78-ac6e-6b72f9c35c55}" />
 	<object class="SFXReverbEffect" id="{cffad144-3562-48ad-bfdc-fea13379da56}">
 		<property name="decayTime">
 			<value>1400</value>
+		</property>
+		<property name="lowShelfGain">
+			<value>-9.5</value>
 		</property>
 		<property name="wetLevel">
 			<value>-7.5</value>
