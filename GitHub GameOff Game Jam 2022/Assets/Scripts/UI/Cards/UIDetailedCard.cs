@@ -18,7 +18,7 @@ public class UIDetailedCard : MonoBehaviour, IPointerExitHandler
         if (Input.GetButtonDown("OpenDetailPanel") && !UIMainPanel.Instance.InDetailCardPanel())
         {
             UIMainPanel.Instance.HideDetailedCard();
-            UIMainPanel.Instance.DisplayDetailCardPanel(CardManager.Instance.GetHandcardAt(handcardIndex));
+            UIMainPanel.Instance.DisplayDetailCardPanel(CardManager.Instance.GetHandcardAt(handcardIndex), handcardIndex);
         }
     }
 }

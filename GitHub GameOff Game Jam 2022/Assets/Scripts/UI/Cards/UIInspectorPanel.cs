@@ -28,8 +28,17 @@ public class UIInspectorPanel : MonoBehaviour
     [SerializeField] private TMP_Text placementText;
     [SerializeField] private TMP_Text costText;
 
-    public void Render(ActionCardSO cardToInspect)
+    [Header("Arrow Buttons")]
+    [SerializeField] private Button priorButton;
+    [SerializeField] private Button nextButton;
+
+    private int currentIndex;
+
+    public void Render(ActionCardSO cardToInspect, int index)
     {
+        this.currentIndex = index;
+        SetupArrowButtons();
+
         maturingContainer.SetActive(false);
         resourcesContainer.SetActive(false);
         bonusContainer.SetActive(false);
@@ -111,5 +120,36 @@ public class UIInspectorPanel : MonoBehaviour
         cardTitleText.text = cardToInspect.cardTitle;
         cardSubtitleText.text = cardToInspect.cardSubtitle;
 
+    }
+
+    public void SelectNext()
+    {
+        currentIndex++;
+        SetupArrowButtons();
+        Render(CardManager.Instance.GetHandcardAt(currentIndex), currentIndex);
+    }
+
+    public void SelectPrior()
+    {
+        currentIndex--;
+        SetupArrowButtons();
+        Render(CardManager.Instance.GetHandcardAt(currentIndex), currentIndex);
+    }
+
+    private void SetupArrowButtons()
+    {
+        if (currentIndex == 0)
+        {
+            priorButton.interactable = false;
+        }
+        else if (currentIndex == CardManager.Instance.GetHandcardSize() - 1)
+        {
+            nextButton.interactable = false;
+        }
+        else
+        {
+            priorButton.interactable = true;
+            nextButton.interactable = true;
+        }
     }
 }

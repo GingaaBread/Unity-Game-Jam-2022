@@ -98,10 +98,10 @@ public class UIMainPanel : MonoBehaviour
         Destroy(cardContainer.transform.GetChild(cardIndex).gameObject);
     }
 
-    public void DisplayDetailCardPanel(ActionCardSO cardToInspect)
+    public void DisplayDetailCardPanel(ActionCardSO cardToInspect, int index)
     {
         detailCardContainer.SetActive(true);
-        inspectorPanel.Render(cardToInspect);
+        inspectorPanel.Render(cardToInspect, index);
     }
 
     public bool InDetailCardPanel() => detailCardContainer.activeInHierarchy;

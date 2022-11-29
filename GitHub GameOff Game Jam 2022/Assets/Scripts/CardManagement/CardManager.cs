@@ -89,9 +89,11 @@ public class CardManager : ComputerPhaseStep
         if (index >= playerHandcards.Count) throw new IndexOutOfRangeException("The handcard index may not be bigger than the handcard amount!");
         else if (index < 0) throw new IndexOutOfRangeException("The handcard index may not be negative!");
         else if (playerHandcards.Count == 0) throw new ApplicationException("There are no handcards. Should not try to get one.");
-
+        
         return playerHandcards[index];
     }
+
+    public int GetHandcardSize() => playerHandcards.Count;
 
     /// <summary>
     /// Gives the player an amount of cards.
