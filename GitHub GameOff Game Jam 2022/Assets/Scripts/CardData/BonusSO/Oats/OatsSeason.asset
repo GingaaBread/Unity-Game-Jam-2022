@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bonus: 1
   stage: 2
-  Season: 2
+  Season: 3
   BonusAmount: 2
