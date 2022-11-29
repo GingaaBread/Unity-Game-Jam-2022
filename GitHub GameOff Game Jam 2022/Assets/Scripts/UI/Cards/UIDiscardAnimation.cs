@@ -36,7 +36,6 @@ public class UIDiscardAnimation : MonoBehaviour
     public void ConfirmDiscardInCardManager()
     {
         CardManager.Instance.ConfirmDiscard();
-        FeedbackPanelManager.Instance.InitiateNextPanel();
     }
 
     /// <summary>
@@ -44,7 +43,6 @@ public class UIDiscardAnimation : MonoBehaviour
     /// </summary>
     public void InitiateNextQueueElement()
     {
-        FeedbackPanelManager.Instance.InitiateNextPanel();
         panelContainer.SetActive(false);
     }
 }

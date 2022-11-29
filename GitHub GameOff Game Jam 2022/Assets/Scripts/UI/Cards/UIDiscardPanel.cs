@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class UIDiscardPanel : InspectorReferenceChecker
 {
-    [SerializeField] private UICardPanel cardToDiscard;
     [SerializeField] private TMP_Text cardToDiscardTitle;
     [SerializeField] private Animator discardAnimator;
     [SerializeField] private Animator scaleAnimator;
@@ -17,8 +16,7 @@ public class UIDiscardPanel : InspectorReferenceChecker
     public void DisplaySelf(ActionCardSO consideredCard)
     {
         cardToDiscardTitle.text = $"Discard <i>{consideredCard.cardTitle}</i>?";
-        cardToDiscard.CardToDisplay = consideredCard;
-        cardToDiscard.Render();
+        this.gameObject.SetActive(true);
     }
 
     /// <summary>
@@ -49,6 +47,6 @@ public class UIDiscardPanel : InspectorReferenceChecker
 
     protected override object[] CheckForMissingReferences() => new object[]
     {
-        cardToDiscard, cardToDiscardTitle, discardAnimator
+        cardToDiscardTitle, discardAnimator
     };
 }
