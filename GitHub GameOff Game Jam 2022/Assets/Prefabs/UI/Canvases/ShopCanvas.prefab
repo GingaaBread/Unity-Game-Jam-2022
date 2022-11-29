@@ -438,7 +438,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5045508240849897907
 RectTransform:
   m_ObjectHideFlags: 0
@@ -471,9 +471,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4518eab6717bea9428cfe2e02cda09f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnFinishProcessing:
-    m_PersistentCalls:
-      m_Calls: []
   cityHolder: {fileID: 5045508241710858220}
 --- !u!1 &5045508241071690514
 GameObject:
@@ -637,7 +634,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5045508241402466645
 RectTransform:
   m_ObjectHideFlags: 0

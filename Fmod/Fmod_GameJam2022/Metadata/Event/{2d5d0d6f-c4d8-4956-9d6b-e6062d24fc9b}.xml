@@ -109,7 +109,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{56db1029-3692-4bc1-ab61-ed83c0b0a832}">
 		<property name="volume">
-			<value>-14.5</value>
+			<value>-17.5</value>
 		</property>
 		<property name="name">
 			<value>Coins</value>
@@ -191,7 +191,7 @@
 			<value>-6.5</value>
 		</property>
 		<property name="highGain">
-			<value>-9</value>
+			<value>-9.5</value>
 		</property>
 		<property name="lowCrossover">
 			<value>900</value>
