@@ -66,6 +66,7 @@ MonoBehaviour:
   OnFinishProcessing:
     m_PersistentCalls:
       m_Calls: []
+  DebugMode: 0
   sellerAPanelObj: {fileID: 6775894793787527942}
   sellerBPanelObj: {fileID: 2464232283225322164}
   sellerCPanelObj: {fileID: 2591499185950535792}
@@ -98,6 +99,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 50e6613b36e7e3f47b9ea3aa56d5a693, type: 2}
   - {fileID: 11400000, guid: 113e83592eee3954eb2e08e17dda6ef3, type: 2}
   - {fileID: 11400000, guid: 01e85b16489ae064d88ccabc80663ece, type: 2}
+  saleFailedFMODEvent:
+    Guid:
+      Data1: 1130897031
+      Data2: 1200426986
+      Data3: -822659198
+      Data4: 736397582
+    Path: event:/SFX/UI/Play_FailedSale
 --- !u!1001 &3113253250470144229
 PrefabInstance:
   m_ObjectHideFlags: 0
