@@ -73,4 +73,4 @@ MonoBehaviour:
   TilePlacementQuestsToSelect: 1
   MoneyFromActionQuestsToSelect: 1
   WinRequiresNMissionsComplete: 2
-  LoseWhenWeReachYearN: 4
+  LoseWhenWeReachYearN: 5

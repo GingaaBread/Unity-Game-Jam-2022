@@ -4,6 +4,7 @@ public class WillSigniature : MonoBehaviour {
 
     public void OnSigniatureAnimationComplete() {
         WillPanel.Instance.OnPlayerAcceptsWill();
+        AmbienceTrigger.Instance.PlayFarmAmbience();
     }
 
 }

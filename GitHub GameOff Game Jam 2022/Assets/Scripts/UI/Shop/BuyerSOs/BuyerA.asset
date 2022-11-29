@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd8aaff5f6b07e1488eb871726b7991e, type: 3}
+  m_Name: BuyerA
+  m_EditorClassIdentifier: 
+  resourceA: {fileID: 11400000, guid: 8899f5d05677f694eac54b2f49e33f8f, type: 2}
+  resourceB: {fileID: 0}
+  CharacterImage_Summary: {fileID: 21300000, guid: 815f2a0167cbbdc4d813a526a1ae4a67, type: 3}
+  CharacterImage_Detail: {fileID: 21300000, guid: 48de7e125deb11e42a81e23d76b74729, type: 3}
+  CharacterImage_DetailAfterPurchase: {fileID: 21300000, guid: 91409a52ff713674fba8accbf7b36d5f, type: 3}
+  CharacterName: Emile
+  CharacterCity: Emmellingen
+  CharacterSpeech_Summary: Welcome!
+  CharacterSpeech_Detail: Nice day today
+  CharacterSpeech_DetailAfterPurchase: Thank you, come again!

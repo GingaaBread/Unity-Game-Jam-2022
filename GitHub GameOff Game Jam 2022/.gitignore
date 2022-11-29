@@ -87,3 +87,6 @@ fmod_editor.log
 /Assets/FMODAssets/*
 /Assets/FMODStudioCache.meta
 
+/[Aa]ssets/Fonts/DM_Sans/
+/[Aa]ssets/Fonts/Nunito/
+/[Aa]ssets/Fonts/DancingScript/

@@ -100,6 +100,7 @@ public class UIMainPanel : MonoBehaviour
 
     public void DisplayDetailCardPanel(ActionCardSO cardToInspect, int index)
     {
+        CardPlayManager.Instance.ResetCurrentPlay();
         detailCardContainer.SetActive(true);
         inspectorPanel.Render(cardToInspect, index);
     }

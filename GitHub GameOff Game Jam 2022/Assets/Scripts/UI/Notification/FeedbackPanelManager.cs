@@ -134,16 +134,6 @@ namespace UIManagement
         }
 
         /// <summary>
-        /// An entire panel displaying the card discard panel
-        /// with both a cancel and confirmation button
-        /// </summary>
-        private class CardDiscardUIPanel : UIPanel
-        {
-            public UIDiscardPanel Panel { get; set; }
-            public ActionCardSO ConsideredCard { get; set; }
-        }
-
-        /// <summary>
         /// On game start, setup the singleton, the queues, and add the listener
         /// </summary>
         private void Awake() 
@@ -258,21 +248,6 @@ namespace UIManagement
             {
                 uiPanelTurnStartQueue.Enqueue(panel);
             }
-        }
-
-        /// <summary>
-        /// Enqueues the discard panel prompt to the direct queue.
-        /// Note that it cannot and should not be enqueued to the new-turn queue.
-        /// </summary>
-        /// <param name="discardPanel">The panel to open</param>
-        /// <param name="consideredCard">The card to display in the panel</param>
-        public void EnqueueDiscardCardInstantly(UIDiscardPanel discardPanel, ActionCardSO consideredCard)
-        {
-            uiPanelInstantDisplayQueue.Enqueue(new CardDiscardUIPanel()
-            {
-                ConsideredCard = consideredCard,
-                Panel = discardPanel
-            });
         }
 
         /// <summary>
@@ -470,7 +445,7 @@ namespace UIManagement
             if (currentPanel is MoneyReceptionUIPanel moneyPanel)
             {
                 RuntimeManager.PlayOneShot(moneySoundEvent);
-                notificationPanelText.text = $"Received {moneyPanel.ReceivedMoneyAmount}$!";
+                notificationPanelText.text = $"Received {moneyPanel.ReceivedMoneyAmount} coins!";
                 DisplayNotification(Color.yellow, moneyNotificationIcon);
             }
             else if (currentPanel is BuildingReceptionUIPanel buildingPanel)
@@ -483,11 +458,6 @@ namespace UIManagement
             {
                 notificationPanelText.text = $"Received Card: {cardPanel.ReceivedCard}!";
                 DisplayCardConfirmation("New Card Received:", cardPanel.ReceivedCard);
-            }
-            else if (currentPanel is CardDiscardUIPanel discardPanel)
-            {
-                discardPanel.Panel.gameObject.SetActive(true);
-                discardPanel.Panel.DisplaySelf(discardPanel.ConsideredCard);
             }
             else if (currentPanel is GenericMessageUIPanel genericMessageUIPanel)
             {

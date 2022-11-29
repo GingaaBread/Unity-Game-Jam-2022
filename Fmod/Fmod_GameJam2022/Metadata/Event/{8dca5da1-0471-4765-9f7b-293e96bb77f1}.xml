@@ -46,6 +46,9 @@
 		</relationship>
 	</object>
 	<object class="MixerInput" id="{71bd8e72-face-4e0b-9a82-bf3f9585209d}">
+		<relationship name="masters">
+			<destination>{c2ae1023-c932-4550-9ef1-c7133195a139}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{34570c94-8521-41ef-8b7d-e6c6e4c3cdd6}</destination>
 		</relationship>
@@ -127,7 +130,11 @@
 			<destination>{f4694ab1-c096-48a6-87dc-cb684165ce50}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{d9021caa-d5b4-4041-b19e-a7164edb1ab2}" />
+	<object class="MixerBusPanner" id="{d9021caa-d5b4-4041-b19e-a7164edb1ab2}">
+		<relationship name="modulators">
+			<destination>{5b1764e1-c5ff-4050-a835-9fc5de7893a6}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{8599739d-2614-4fb6-b5de-1528db747aa7}" />
 	<object class="RandomizerModulator" id="{d5162f08-8881-4628-9c26-7dd0fd08b8d9}">
 		<property name="nameOfPropertyBeingModulated">
@@ -172,6 +179,14 @@
 	</object>
 	<object class="MixerBusPanner" id="{e6661678-4980-482f-82f9-a287740b0f3d}" />
 	<object class="MixerBusFader" id="{f4694ab1-c096-48a6-87dc-cb684165ce50}" />
+	<object class="RandomizerModulator" id="{5b1764e1-c5ff-4050-a835-9fc5de7893a6}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>stereoPan</value>
+		</property>
+		<property name="amount">
+			<value>24.5</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{e4daae0f-7372-48c0-8574-79ae5a77f608}">
 		<property name="position">
 			<value>1.6783625730994152</value>

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b30e40ce3b0b445881e72b8193aab1, type: 3}
   m_Name: Honey
   m_EditorClassIdentifier: 
-  basePrice: 66
+  basePrice: 16
   seasonBonus: 4
-  iconSprite: {fileID: 21300000, guid: 8b0171a99decaff41b0eac052504bd73, type: 3}
+  iconSprite: {fileID: 21300000, guid: d0a0072bbe35ad54ea5672e3ac2f5c9f, type: 3}
