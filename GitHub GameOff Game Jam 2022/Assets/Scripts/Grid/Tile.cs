@@ -31,6 +31,8 @@ public class Tile : MonoBehaviour
 
     [SerializeField]
     private GameObject tileForeground;
+    [SerializeField]
+    private GameObject bonusAppearance;
 
     private float cropAge = 0;
     private float turnsTillCropHarvest = 0;
@@ -40,7 +42,11 @@ public class Tile : MonoBehaviour
     private PlayerDataManager playerDataManager;
     private bool _bonusSeasonApplied;
     private bool _bonusTileApplied;
-
+    private int bonusSign = 0;
+    [SerializeField]
+    private Sprite positive;
+    [SerializeField]
+    private Sprite negative;
     void Awake(){
         if (currType != null && currType.seasonSprites != null){
             GetComponent<SpriteRenderer>().sprite = currType.seasonSprites[0];
@@ -59,6 +65,11 @@ public class Tile : MonoBehaviour
             _tileRowNum = currSprite.sortingOrder;
             GameObject tileForegroundObj = Instantiate(tileForeground, transform);
             tileForegroundObj.GetComponent<TileForeground>().Initialize(currType, _tileRowNum, false, SeasonType.SPRING);
+        }
+        if(bonusAppearance !=  null){
+            GameObject game = Instantiate(bonusAppearance, transform);
+            game.GetComponent<SpriteRenderer>().sortingOrder = _tileRowNum + 9;
+            game.SetActive(false);
         }
     }
 
@@ -247,18 +258,13 @@ public class Tile : MonoBehaviour
 
             if (ageRatio == 1f){ // if done growing
                 playerDataManager.IncreaseInventoryItemAmount(currSeed.payoffResource, cropHarvestAmount);
-                isSeed = false;
-                cropAge = 0;
                 int trueCropAmount = cropHarvestAmount == 0 ? currSeed.payoffAmount : cropHarvestAmount;
                 FeedbackPanelManager.Instance.EnqueueGenericMessage(false,
                     $"{trueCropAmount} {currSeed.payoffResource.name.ToLower()} harvested!");
-
-                GameObject tileAnim = transform.GetChild(0).gameObject;
-                if (tileAnim != null){
-                    Destroy(transform.GetChild(0).gameObject); // destroy TileAnim object
-                }
-
+                isSeed = false;
+                cropAge = 0;
                 currSeed = null;
+                DeleteForegroundAnim();
                 ResetBonus();
                 return;
 
@@ -284,6 +290,16 @@ public class Tile : MonoBehaviour
                     $"{currAnimal.payoffAmount} {currAnimal.payoffResource.name.ToLower()} harvested!");
             }
 
+    }
+
+    private void UpdateBonusAppearance(){
+         SpriteRenderer bonusObject = transform.Find("Bonus(Clone)").GetComponent<SpriteRenderer>();
+         bonusObject.gameObject.SetActive(true);
+        if(bonusSign >= 0){
+           bonusObject.sprite = positive;
+        }else{
+           bonusObject.sprite = negative;
+        }
     }
 
     private void PlayTileSFX(string SFX){
@@ -328,8 +344,9 @@ public class Tile : MonoBehaviour
     }
     private void DeleteForegroundAnim(){
         if (transform.childCount > 0){ // clear out current TileForegroundAnim
-        
-            Destroy(transform.GetChild(0).gameObject);
+            TileForeground animChild = transform.GetComponentInChildren<TileForeground>();
+            if(animChild == null) return;
+            Destroy(animChild.gameObject);
         }
     }
 
@@ -370,7 +387,8 @@ public class Tile : MonoBehaviour
 
     private void ApplyTileBonus(CardBonus bonus){
         if (_bonusTileApplied) return;
-        
+        if(bonus.TileBonus == null) return; 
+
         if (bonus.TileBonus.TileType == currType.type){
                 ApplyBonusEffect(bonus.TileBonus.bonus, bonus.TileBonus.BonusAmount);
         }
@@ -419,18 +437,24 @@ public class Tile : MonoBehaviour
     }
 
     private void ApplyBonusEffect(BonusType bonus, int bonusAmount){
+        int sign = 0;
         switch (bonus){
             case BonusType.TurnBonus:
                 turnsTillCropHarvest += bonusAmount;
                 Debug.Assert(turnsTillCropHarvest > 0, $"{currSeed.bonus.name} is making the number of turns negative or equal to zero.");
-                return;
+                sign = bonusAmount < 0 ? 1: -1;
+                bonusSign += sign;
+                break;
             case BonusType.CropBonus:
                 cropHarvestAmount += bonusAmount;
                 Debug.Assert(cropHarvestAmount > 0, $"{currSeed.bonus.name} is making the harvest amount negative or equal to zero.");
-                return;
+                sign = bonusAmount > 0 ? 1:-1;
+                bonusSign += sign;
+                break;
             case BonusType.NoBonus:
-                return;
+                break;
         }
+        UpdateBonusAppearance();
     }
 
     private void ResetBonus(){
@@ -438,6 +462,8 @@ public class Tile : MonoBehaviour
         _bonusTileApplied = false;
         cropHarvestAmount = 0;
         turnsTillCropHarvest = 0;
+        bonusSign = 0;
+        transform.Find("Bonus(Clone)").gameObject.SetActive(false);
     }
 
     private bool checkHasAnimalBonus(Tile tile){
