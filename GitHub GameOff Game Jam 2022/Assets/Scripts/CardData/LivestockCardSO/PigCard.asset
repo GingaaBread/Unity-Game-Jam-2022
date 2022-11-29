@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 719be7926bf7ff744be33c3980d6e266, type: 3}
   m_Name: PigCard
   m_EditorClassIdentifier: 
-  cardSprite: {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
+  cardSprite: {fileID: 21300000, guid: 6f86c3b339ec9df43bb3b548d89e88bb, type: 3}
   cardTitle: Pig
+  cardSubtitle: 
   cardSummary: Produces pork every 3 turns
   cardEffectKeys: []
   cardEffectValues: []
