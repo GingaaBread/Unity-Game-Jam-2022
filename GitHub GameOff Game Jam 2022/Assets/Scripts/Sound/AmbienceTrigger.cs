@@ -23,6 +23,12 @@ public class AmbienceTrigger : ComputerPhaseStep
         musicEventInstance.start();
     }
 
+    public void TriggerGameOverSound(bool gameWon)
+    {
+        if (gameWon) musicEventInstance.setParameterByName("WinLose", 1);
+        else musicEventInstance.setParameterByName("WinLose", 2);
+    }
+
     public void PlayFarmAmbience()
     {
         if (!hasBeenExecuted)
