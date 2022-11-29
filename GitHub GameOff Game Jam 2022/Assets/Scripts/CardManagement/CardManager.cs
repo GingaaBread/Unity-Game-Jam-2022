@@ -124,8 +124,7 @@ public class CardManager : ComputerPhaseStep
 
         var consideredCard = playerHandcards[cardIndex];
 
-        FeedbackPanelManager.Instance.EnqueueDiscardCardInstantly(discardPanel, consideredCard);
-        FeedbackPanelManager.Instance.InitiateInstantDisplayQueue();
+        discardPanel.DisplaySelf(consideredCard);
     }
     
     /// <summary>
