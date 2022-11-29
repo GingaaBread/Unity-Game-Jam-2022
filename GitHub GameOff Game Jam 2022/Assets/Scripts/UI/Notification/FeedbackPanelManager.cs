@@ -445,7 +445,7 @@ namespace UIManagement
             if (currentPanel is MoneyReceptionUIPanel moneyPanel)
             {
                 RuntimeManager.PlayOneShot(moneySoundEvent);
-                notificationPanelText.text = $"Received {moneyPanel.ReceivedMoneyAmount}$!";
+                notificationPanelText.text = $"Received {moneyPanel.ReceivedMoneyAmount} coins!";
                 DisplayNotification(Color.yellow, moneyNotificationIcon);
             }
             else if (currentPanel is BuildingReceptionUIPanel buildingPanel)
