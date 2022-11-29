@@ -15,9 +15,12 @@ public class UIInspectorPanel : MonoBehaviour
     [SerializeField] private TMP_Text maturingText;
     [SerializeField] private TMP_Text resourceText;
     [SerializeField] private TMP_Text resourceResellText;
+    [SerializeField] private GameObject locationTextContainer;
     [SerializeField] private GameObject maturingContainer;
     [SerializeField] private GameObject resourcesContainer;
     [SerializeField] private GameObject bonusContainer;
+    [SerializeField] private GameObject livestockLocationContainer;
+    [SerializeField] private RectTransform detailPanel;
 
     [Header("Detail UI Components")]
     [SerializeField] private TMP_Text cardTitleText;
@@ -30,9 +33,13 @@ public class UIInspectorPanel : MonoBehaviour
         maturingContainer.SetActive(false);
         resourcesContainer.SetActive(false);
         bonusContainer.SetActive(false);
+        locationTextContainer.SetActive(false);
+        livestockLocationContainer.SetActive(false);
 
         if (cardToInspect is SeedCard card)
         {
+            detailPanel.sizeDelta = new Vector3(detailPanel.sizeDelta.x, 620f);
+
             backgroundPanelImage.sprite = UIMainPanel.Instance.seedBackgroundSprite;
             cardDetailPanelImage.sprite = UIMainPanel.Instance.seedDetailSprite;
             cardDescriptionPanelImage.color = UIMainPanel.Instance.seedCardColour;
@@ -54,8 +61,12 @@ public class UIInspectorPanel : MonoBehaviour
                 textPanel.sprite = UIMainPanel.Instance.seedTextSprite;
             }
         }
-        else if (cardToInspect is BuildingCard)
+        else if (cardToInspect is BuildingCard buildingCard)
         {
+            detailPanel.sizeDelta = new Vector3(detailPanel.sizeDelta.x, 360f);
+
+            locationTextContainer.SetActive(true);
+
             backgroundPanelImage.sprite = UIMainPanel.Instance.buildingBackgroundSprite;
             cardDetailPanelImage.sprite = UIMainPanel.Instance.buildingDetailSprite;
             cardDescriptionPanelImage.color = UIMainPanel.Instance.buildingCardColour;
@@ -68,14 +79,23 @@ public class UIInspectorPanel : MonoBehaviour
                 textPanel.sprite = UIMainPanel.Instance.buildingTextSprite;
             }
         }
-        else if (cardToInspect is LivestockCard)
+        else if (cardToInspect is LivestockCard livestockCard)
         {
+            detailPanel.sizeDelta = new Vector3(detailPanel.sizeDelta.x, 500f);
+
+            livestockLocationContainer.SetActive(true);
+
             backgroundPanelImage.sprite = UIMainPanel.Instance.livestockBackgroundSprite;
             cardDetailPanelImage.sprite = UIMainPanel.Instance.livestockDetailSprite;
             cardDescriptionPanelImage.color = UIMainPanel.Instance.livestockCardColour;
 
             placementText.text = "Cost of placing";
             cardDescriptionText.color = Color.black;
+
+            resourcesContainer.SetActive(true);
+            resourceText.text = $"Every {livestockCard.turnsTillLivestockPayoff} turns, yields {livestockCard.payoffAmount}x {livestockCard.payoffResource.name.ToLower()}";
+            resourceResellText.text = $"- 1 {livestockCard.payoffResource.name.ToLower()} can be sold for {livestockCard.payoffResource.basePrice} <sprite=1>";
+
 
             foreach (var textPanel in textPanelImages)
             {
