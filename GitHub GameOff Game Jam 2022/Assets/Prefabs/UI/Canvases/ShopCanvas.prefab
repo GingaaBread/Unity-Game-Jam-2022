@@ -509,7 +509,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 50, y: 50}
+  m_AnchoredPosition: {x: 130, y: 50}
   m_SizeDelta: {x: 180, y: 80}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &5045508241071690519
@@ -669,7 +669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourcePrefab: {fileID: 2473750768550559211, guid: c5e466ebe6ecfcc42b847c772fdd3e6f, type: 3}
   resourceHolder: {fileID: 0}
-  moneyDisplayer: {fileID: 0}
+  moneyDisplayers: []
 --- !u!1 &5045508241570093574
 GameObject:
   m_ObjectHideFlags: 0
