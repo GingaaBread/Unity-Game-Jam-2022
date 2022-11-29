@@ -352,6 +352,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjToShow: {fileID: 4880671559096941890}
+  gameLostMusic:
+    Guid:
+      Data1: -2051015262
+      Data2: 1183933018
+      Data3: 2143312022
+      Data4: 1768285126
+    Path: event:/Music/Seasons
 --- !u!1 &4880671559096941890
 GameObject:
   m_ObjectHideFlags: 0
