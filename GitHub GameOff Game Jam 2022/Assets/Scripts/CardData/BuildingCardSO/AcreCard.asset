@@ -22,7 +22,7 @@ MonoBehaviour:
   cardEffectValues:
   - Growing crops
   - Plains & Hills
-  cardCost: 30
+  cardCost: 22
   buildingType: 0
   hill_BuildingSprite:
   - {fileID: 21300000, guid: 0bde8b6887925aa4085198a7700f3441, type: 3}
