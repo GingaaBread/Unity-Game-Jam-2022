@@ -16,6 +16,7 @@ MonoBehaviour:
   PreviewBackground: {fileID: 21300000, guid: 81e181d24259e4f439559c90ee95d14e, type: 3}
   cardSprite: {fileID: 21300000, guid: 99130e1534206f24098dece077be6bb4, type: 3}
   summaryBackground: {fileID: 21300000, guid: a4369f2be96f42d4b846bac3c312268a, type: 3}
+  costBackground: {fileID: 21300000, guid: 57b4aefde116939489f99649f4780e7c, type: 3}
   cardTitle: Acre
   cardSubtitle: 
   cardSummary: Tills land to ready it for planing crops

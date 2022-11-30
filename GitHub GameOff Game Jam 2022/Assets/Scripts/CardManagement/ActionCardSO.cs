@@ -7,6 +7,7 @@ public abstract class ActionCardSO : ScriptableObject
     public Sprite PreviewBackground;
     public Sprite cardSprite;
     public Sprite summaryBackground;
+    public Sprite costBackground;
     public string cardTitle;
     public string cardSubtitle;
     public string cardSummary;

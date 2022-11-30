@@ -16,6 +16,7 @@ MonoBehaviour:
   PreviewBackground: {fileID: 21300000, guid: 81e181d24259e4f439559c90ee95d14e, type: 3}
   cardSprite: {fileID: 21300000, guid: 070e92d3fa28126488e1c4e969fa82ed, type: 3}
   summaryBackground: {fileID: 21300000, guid: 10833c76a5be2814789c9a3324700129, type: 3}
+  costBackground: {fileID: 21300000, guid: d48cbc36a7069a74bae5c3c21979e84e, type: 3}
   cardTitle: Potato
   cardSubtitle: Solanum tuberosum
   cardSummary: Once harvested, gives 1 potato
