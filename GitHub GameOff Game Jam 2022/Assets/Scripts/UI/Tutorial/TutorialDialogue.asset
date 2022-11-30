@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0608c644fe08dfb4aa78a043517d13d8, type: 3}
+  m_Name: TutorialDialogue
+  m_EditorClassIdentifier: 
+  speakers:
+  - {fileID: 21300000, guid: 30b97ddcbe4d4ce4bba8f46fe755455f, type: 3}
+  - {fileID: 21300000, guid: 9ad84c68f84347d4eb0533c597a50e05, type: 3}
+  - {fileID: 21300000, guid: 902ffa91740027745bbb4e864801a1e3, type: 3}
+  - {fileID: 21300000, guid: 218d7908138e7d44cb943fbfa5240420, type: 3}
+  - {fileID: 21300000, guid: 218d7908138e7d44cb943fbfa5240420, type: 3}
+  - {fileID: 21300000, guid: 218d7908138e7d44cb943fbfa5240420, type: 3}
+  - {fileID: 21300000, guid: 218d7908138e7d44cb943fbfa5240420, type: 3}
+  - {fileID: 21300000, guid: 218d7908138e7d44cb943fbfa5240420, type: 3}
+  - {fileID: 21300000, guid: 218d7908138e7d44cb943fbfa5240420, type: 3}
+  - {fileID: 21300000, guid: 218d7908138e7d44cb943fbfa5240420, type: 3}
+  - {fileID: 21300000, guid: 218d7908138e7d44cb943fbfa5240420, type: 3}
+  - {fileID: 21300000, guid: 218d7908138e7d44cb943fbfa5240420, type: 3}
+  - {fileID: 21300000, guid: 218d7908138e7d44cb943fbfa5240420, type: 3}
+  - {fileID: 21300000, guid: 218d7908138e7d44cb943fbfa5240420, type: 3}
+  - {fileID: 21300000, guid: 218d7908138e7d44cb943fbfa5240420, type: 3}
+  lines:
+  - 'Hi, my name is Perry! I''m a local grocer.
+
+    If you want, I''ll help you
+    start setting up your farm. '
+  - 'Let''s start with planting your first crops. You''ll see you have some cards
+    in your hand.
+
+'
+  - Each one represents a farm resource, like an acre you can plow or a crop you
+    can plant.
+  - 'Each turn, you''ll get new cards to replace the ones you played. You can have
+    a maximum of five cards in your hand. '
+  - 'There are 3 types of cards: building cards, livestock cards, and crop cards. '
+  - Building cards can only be placed on hill or plain tiles, livestock cards can
+    only be placed on top of animal pens, and crop cards can only be placed on free
+    acres.
+  - 'Speaking of tiles, as a new farmer you should try and get acquainted with the
+    different types of land on your farm. Here is a handy guide for reference! '
+  - Watch out for seasons too! They will affect your crop growth in unexpected ways.
+    Be sure to pay attention to the extra details of your cards.
+  - 'When your crops are done growing or your animals have created a product, all
+    the resources will be collect automatically. '
+  - All resources end up in the store. There you can sell them to earn coins and
+    use those coins to plant more crops. It seems like an ideal business!
+  - Resources are located on the left and local grocers are on the right. You'll
+    find me there too! I buy crops for Pafort ctiy.
+  - Most grocers only want to buy one resource each season but, since we're friends,
+    I'll buy two. The second one I can only buy at half price though, sorry. I'm
+    not made of money! Haha
+  - 'The other grocers all have their own area of specialty. For instance.
+
+    Emile
+    will always buy crops at a premium.  Get to know each of us better and learn
+    our quirks!'
+  - 'Now that the business part is done, you''re all set up and ready to go! You
+    can see the requirements of the bet here whenever you want. '
+  - ' I wish you the best of luck! Win that bet for all of us, okay? I know you''ll
+    make your mother proud. You''ve got this!'
+  screenshots:
+  - {fileID: 21300000, guid: 9a08bc6abcdd74746a09c553480a3290, type: 3}
+  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
+  - {fileID: 21300000, guid: 6091406fa63b19f42abc3533fc92749b, type: 3}
+  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
+  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
+  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
+  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
+  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
+  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
+  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
+  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
+  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
+  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
+  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
+  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
