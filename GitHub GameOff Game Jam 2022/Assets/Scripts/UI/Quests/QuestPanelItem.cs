@@ -17,24 +17,43 @@ public class QuestPanelItem : MonoBehaviour {
         Assert.IsNotNull(questText);
         Assert.IsNotNull(percentageCompletedSlider);
         Assert.IsNotNull(percentageCompletedText);
+
+        string[] germanHumour = new string[] { };
     }
 
     public void Initialize(BaseQuest quest) {
         this.quest = quest;
         quest.CurrentUpdateSubscription().AddListener(UpdateUI);
+        quest.CurrentUpdateSubscription().AddListener(() =>
+        {
+            quest.UnsubscribeFromUpdate(UpdateUI);
+            quest.CurrentUpdateSubscription().AddListener(UpdateUI);
+        });
         UpdateUI();
     }
 
     public void UpdateUI() {
-        print("Updating UI!");
-        questTitle.text = quest.questName +  " " + quest.GetQuestStepProgress();
-        questText.text = quest.GetCurrentPrompt() + " (currently " + quest.GetStatusAsSentence() + ")";
-        // progress bar
-        int floorOfPercentageCompleted = Mathf.FloorToInt(quest.GetPercentageCompleted());
-        percentageCompletedSlider.minValue = 0;
-        percentageCompletedSlider.maxValue = 100;
-        percentageCompletedSlider.value    = floorOfPercentageCompleted;
-        percentageCompletedText.text = floorOfPercentageCompleted + "%";
+        if (quest.IsDone())
+        {
+            questTitle.text = quest.questName + " " + quest.GetQuestStepProgress();
+            questText.text = "Quest completed!";
+
+            percentageCompletedSlider.minValue = 0;
+            percentageCompletedSlider.maxValue = 100;
+            percentageCompletedSlider.value = 100;
+            percentageCompletedText.text = "100%";
+        }
+        else
+        {
+            questTitle.text = quest.questName + " " + quest.GetQuestStepProgress();
+            questText.text = quest.GetCurrentPrompt() + " (currently " + quest.GetStatusAsSentence() + ")";
+            // progress bar
+            int floorOfPercentageCompleted = Mathf.FloorToInt(quest.GetPercentageCompleted());
+            percentageCompletedSlider.minValue = 0;
+            percentageCompletedSlider.maxValue = 100;
+            percentageCompletedSlider.value = floorOfPercentageCompleted;
+            percentageCompletedText.text = floorOfPercentageCompleted + "%";
+        }
     }
 
 }

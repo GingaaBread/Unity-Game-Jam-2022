@@ -1,4 +1,5 @@
 using PlayerData;
+using UIManagement;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,26 +11,23 @@ public class BaseQuest : ScriptableObject
     public AbstractQuestSO finalGoal;
     public string finalReward;
 
-    private int currentlyActiveGoal; // keeps track of the current goal (!) NEEDS TO BE EXPLICITLY SET TO 0
-
-    private void Awake()
-    {
-        currentlyActiveGoal = 0;
-    }
-
+    protected int currentlyActiveGoal; // keeps track of the current goal (!) NEEDS TO BE EXPLICITLY SET TO 0
+    
     private void OnEnable()
     {
         foreach (var questGoal in questGoals)
         {
             questGoal.OnCompletion.AddListener(() =>
             {
-                Debug.Log($"Quest '{questName} completed!");
-                //questGoals[currentlyActiveGoal].OnUpdate.RemoveAllListeners(); do this later
+                FeedbackPanelManager.Instance.EnqueueGenericMessage(true, $"Quest step completed!", FeedbackPanelManager.Instance.questCompletedSound);
+                FeedbackPanelManager.Instance.InitiateInstantDisplayQueue();
                 currentlyActiveGoal++;
                 QuestPanel.Instance.DisplayCompletionAnimation();
             });
         }
     }
+
+    public bool IsDone() => currentlyActiveGoal > questGoals.Length;
 
     public override string ToString() => $"{questName}, at: {GetQuestStepProgress()} with index set to {currentlyActiveGoal}";
 
@@ -41,11 +39,25 @@ public class BaseQuest : ScriptableObject
         else return questGoals[currentlyActiveGoal].OnUpdate;
     }
 
+    public UnityEvent CurrentCompletionSubscription()
+    {
+        if (currentlyActiveGoal >= questGoals.Length) return finalGoal.OnCompletion;
+        else return questGoals[currentlyActiveGoal].OnCompletion;
+    }
+
+    public void UnsubscribeFromUpdate(UnityAction call)
+    {
+        if (currentlyActiveGoal > 0 && currentlyActiveGoal < 4)
+            questGoals[currentlyActiveGoal - 1].OnUpdate.RemoveListener(call);
+    }
+
     /// <summary>
     /// Resets the actual counters of the quest goals and the final goal
     /// </summary>
     public void ResetActualsCounters()
     {
+        currentlyActiveGoal = 0;
+
         foreach (var questGoal in questGoals)
             questGoal.ResetActualsCounters();
 

@@ -65,13 +65,27 @@ public class TilePlacementQuestSO : AbstractQuestSO {
 
     private bool QuestIsCompleted()
     {
-        for (int i = 0; i < targetQuantity.Length; i++)
+        if (operatorType == OperatorType.COMPLETE_ALL)
         {
-            if (targetQuantity[i] > actualQuantity[i])
-                return false;
-        }
+            for (int i = 0; i < targetQuantity.Length; i++)
+            {
+                if (targetQuantity[i] > actualQuantity[i])
+                    return false;
+            }
 
-        return true;
+            return true;
+        }
+        else if (operatorType == OperatorType.COMPLETED_ANY_ONE)
+        {
+            for (int i = 0; i < actualQuantity.Length; i++)
+            {
+                if (actualQuantity[i] >= targetQuantity[i])
+                    return true;
+            }
+
+            return false;
+        }
+        else throw new NotImplementedException("Operator type has not been implemented yet");
     }
 
 }

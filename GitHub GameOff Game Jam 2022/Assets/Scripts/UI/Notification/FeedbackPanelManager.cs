@@ -37,6 +37,9 @@ namespace UIManagement
         public bool doDebugPrints;
 
 
+        [Header("Sounds")]
+        public EventReference questCompletedSound;
+
 
         [Header("UI Notification Panel")]
         // The base GameObject of the notification panel
@@ -258,18 +261,19 @@ namespace UIManagement
         /// </summary>
         private void InitiateQueue()
         {
-            CheckIfQueueIsAlreadyBeingDisplayed();
-
-            // LockActions(); TODO: Implement
-
-            displayState = DISPLAY_STATE_NEW_TURN;
-
-            if (doDebugPrints)
+            if (displayState == DISPLAY_STATE_NONE)
             {
-                print($"[DEBUG]: Locked player actions and set the display state to {displayState}.");
-            }
+                // LockActions(); TODO: Implement
 
-            InitiateNextPanel();
+                displayState = DISPLAY_STATE_NEW_TURN;
+
+                if (doDebugPrints)
+                {
+                    print($"[DEBUG]: Locked player actions and set the display state to {displayState}.");
+                }
+
+                InitiateNextPanel();
+            }
         }
 
         /// <summary>
