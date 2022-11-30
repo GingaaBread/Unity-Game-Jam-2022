@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21a9c22b17e13f4ab0e97807bf39534, type: 3}
   m_Name: QuestA5
   m_EditorClassIdentifier: 
-  questName: Taste of Asia
+  questName: green thumb
   prefabForDisplayingMissionUI: {fileID: 170029945827187893, guid: 4498957a7ab392947820fc47e0385726, type: 3}
   OnUpdate:
     m_PersistentCalls:
@@ -21,3 +21,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 24dc3e76c1dc56d408a1866d556248f8, type: 2}
   - {fileID: 11400000, guid: 28add7d5f259fca4daaddb3c50d31118, type: 2}
   targetQuantity: 2400000012000000
+  resourceQuestSteps:
+  - targetResources:
+    - {fileID: 11400000, guid: 24dc3e76c1dc56d408a1866d556248f8, type: 2}
+    quantities: 01000000
+    moneyReward: 5
+  - targetResources:
+    - {fileID: 11400000, guid: 24dc3e76c1dc56d408a1866d556248f8, type: 2}
+    quantities: 02000000
+    moneyReward: 10
+  - targetResources:
+    - {fileID: 11400000, guid: 24dc3e76c1dc56d408a1866d556248f8, type: 2}
+    - {fileID: 11400000, guid: 28add7d5f259fca4daaddb3c50d31118, type: 2}
+    quantities: 0400000001000000
+    moneyReward: 20
+  - targetResources:
+    - {fileID: 11400000, guid: 24dc3e76c1dc56d408a1866d556248f8, type: 2}
+    - {fileID: 11400000, guid: 28add7d5f259fca4daaddb3c50d31118, type: 2}
+    quantities: 0700000002000000
+    moneyReward: 30

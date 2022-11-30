@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21a9c22b17e13f4ab0e97807bf39534, type: 3}
   m_Name: QuestA6
   m_EditorClassIdentifier: 
-  questName: Cereals
+  questName: make hay while the sun shines
   prefabForDisplayingMissionUI: {fileID: 170029945827187893, guid: 4498957a7ab392947820fc47e0385726, type: 3}
   OnUpdate:
     m_PersistentCalls:
@@ -22,3 +22,28 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8899f5d05677f694eac54b2f49e33f8f, type: 2}
   - {fileID: 11400000, guid: 24dc3e76c1dc56d408a1866d556248f8, type: 2}
   targetQuantity: 0f0000000f0000000f000000
+  resourceQuestSteps:
+  - targetResources:
+    - {fileID: 11400000, guid: 7a84d3e4d06d24246be27cda976d6fc7, type: 2}
+    - {fileID: 11400000, guid: 8899f5d05677f694eac54b2f49e33f8f, type: 2}
+    - {fileID: 11400000, guid: 24dc3e76c1dc56d408a1866d556248f8, type: 2}
+    quantities: 010000000100000001000000
+    moneyReward: 5
+  - targetResources:
+    - {fileID: 11400000, guid: 7a84d3e4d06d24246be27cda976d6fc7, type: 2}
+    - {fileID: 11400000, guid: 8899f5d05677f694eac54b2f49e33f8f, type: 2}
+    - {fileID: 11400000, guid: 24dc3e76c1dc56d408a1866d556248f8, type: 2}
+    quantities: 020000000200000002000000
+    moneyReward: 10
+  - targetResources:
+    - {fileID: 11400000, guid: 7a84d3e4d06d24246be27cda976d6fc7, type: 2}
+    - {fileID: 11400000, guid: 8899f5d05677f694eac54b2f49e33f8f, type: 2}
+    - {fileID: 11400000, guid: 24dc3e76c1dc56d408a1866d556248f8, type: 2}
+    quantities: 040000000400000004000000
+    moneyReward: 20
+  - targetResources:
+    - {fileID: 11400000, guid: 7a84d3e4d06d24246be27cda976d6fc7, type: 2}
+    - {fileID: 11400000, guid: 8899f5d05677f694eac54b2f49e33f8f, type: 2}
+    - {fileID: 11400000, guid: 24dc3e76c1dc56d408a1866d556248f8, type: 2}
+    quantities: 070000000700000007000000
+    moneyReward: 30

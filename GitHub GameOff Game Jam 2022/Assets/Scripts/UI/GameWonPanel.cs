@@ -14,11 +14,10 @@ public class GameWonPanel : MonoBehaviour {
         Assert.IsNotNull(ObjToShow);
         ObjToShow.SetActive(false);
     }
-
+    
     public void Show() {
         ObjToShow.SetActive(true);
+        AmbienceTrigger.Instance.TriggerGameOverSound(true);
     }
-
-
 
 }

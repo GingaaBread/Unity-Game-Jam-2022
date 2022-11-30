@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21a9c22b17e13f4ab0e97807bf39534, type: 3}
   m_Name: QuestA4
   m_EditorClassIdentifier: 
-  questName: White bush
+  questName: cream of the crop
   prefabForDisplayingMissionUI: {fileID: 170029945827187893, guid: 4498957a7ab392947820fc47e0385726, type: 3}
   OnUpdate:
     m_PersistentCalls:
@@ -21,3 +21,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b1521a81f69160a468a1cc5ec9a7e4f1, type: 2}
   - {fileID: 11400000, guid: fdcd416a38e9107408c6bcfd8fe588ac, type: 2}
   targetQuantity: 0c00000018000000
+  resourceQuestSteps:
+  - targetResources:
+    - {fileID: 11400000, guid: fdcd416a38e9107408c6bcfd8fe588ac, type: 2}
+    quantities: 01000000
+    moneyReward: 5
+  - targetResources:
+    - {fileID: 11400000, guid: fdcd416a38e9107408c6bcfd8fe588ac, type: 2}
+    quantities: 02000000
+    moneyReward: 10
+  - targetResources:
+    - {fileID: 11400000, guid: b1521a81f69160a468a1cc5ec9a7e4f1, type: 2}
+    - {fileID: 11400000, guid: fdcd416a38e9107408c6bcfd8fe588ac, type: 2}
+    quantities: 0100000004000000
+    moneyReward: 20
+  - targetResources:
+    - {fileID: 11400000, guid: b1521a81f69160a468a1cc5ec9a7e4f1, type: 2}
+    - {fileID: 11400000, guid: fdcd416a38e9107408c6bcfd8fe588ac, type: 2}
+    quantities: 0200000006000000
+    moneyReward: 30

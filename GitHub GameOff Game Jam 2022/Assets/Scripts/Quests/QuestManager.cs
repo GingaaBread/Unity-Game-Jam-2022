@@ -1,3 +1,4 @@
+using FMODUnity;
 using PlayerData;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,7 @@ public class QuestManager : ComputerPhaseStep
 
     [Header("Loss condition logic")]
     [SerializeField] [Range(1, 20)] private int LoseWhenWeReachYearN;
+    [SerializeField] private EventReference OneYearLeftFMODEventReference;
 
     private new void Awake() {
         Assert.IsNull(Instance);
@@ -162,7 +164,7 @@ public class QuestManager : ComputerPhaseStep
             } else {
 
                 if (IsStartOfFinalYear()) {
-                    FeedbackPanelManager.Instance.EnqueueGenericMessage(false, $"Only 1 year left!");
+                    FeedbackPanelManager.Instance.EnqueueGenericMessage(false, $"Only 1 year left!", OneYearLeftFMODEventReference);
                 }
                 OnFinishProcessing.Invoke();
             }

@@ -10,7 +10,7 @@ using UnityEngine;
 /// </summary>
 /// 
 
-public class ShopManager : ComputerPhaseStep
+public class ShopManager : MonoBehaviour
 {
 
     public static ShopManager Instance;
@@ -23,7 +23,7 @@ public class ShopManager : ComputerPhaseStep
 
     private int costBonus = 2;
 
-    private new void Awake()
+    private void Awake()
     {
         if (Instance == null)
         {
@@ -34,11 +34,6 @@ public class ShopManager : ComputerPhaseStep
 
             Debug.LogError("There is more than 1 Shop Manager in the scene!!!");
         }
-    }
-
-    private void Start()
-    {
-        Invoke("UpdateShop", 2);
     }
 
 
@@ -61,15 +56,15 @@ public class ShopManager : ComputerPhaseStep
             ResourceSO resource = shop.Resources[i];
             int price = GetPrice(resource, shop);
 
-            // Notify of quest update
-            QuestManager.Instance.NotifyOfResourceSale(resource, price);
-
             PlayerDataManager dataManager = PlayerDataManager.Instance;
-            if (dataManager.HasItemInInventory(resource))
+            if (dataManager.GetInventoryItemAmount(resource) > 0)
             {
                 dataManager.DecreaseInventoryItemAmount(resource, 1);
                 dataManager.IncreaseMoneyAmount(price);
                 shop.SoldItem();
+
+                // Notify of quest update
+                QuestManager.Instance.NotifyOfResourceSale(resource, price);
             }
         }
     }
@@ -128,18 +123,4 @@ public class ShopManager : ComputerPhaseStep
         return ResourceSO.SeasonBonus.NONE; // This never happens because SEASONTYPE is always one of the upper four.
     }
 
-    public override void StartProcessingForComputerPhase(bool isComputerPhaseDuringGameInit)
-    {
-        if (isComputerPhaseDuringGameInit)
-        {
-            UpdateShop();
-        }
-
-        OnFinishProcessing.Invoke();
-    }
-
-    protected override object[] CheckForMissingReferences()
-    {
-        return new object[0];
-    }
 }

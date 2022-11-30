@@ -46,6 +46,9 @@
 		</relationship>
 	</object>
 	<object class="MixerInput" id="{d556021d-4802-4e31-90cd-30a4893224a1}">
+		<relationship name="masters">
+			<destination>{c2ae1023-c932-4550-9ef1-c7133195a139}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{803756cc-641e-4b23-9da8-61e412046017}</destination>
 		</relationship>
@@ -110,6 +113,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{0153bc19-fd80-4c95-8c4b-d91760ef26f4}">
+		<property name="volume">
+			<value>0.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -126,9 +132,15 @@
 	<object class="MixerBusEffectChain" id="{2d8c27db-74e9-45c8-9334-2002d1f027f7}">
 		<relationship name="effects">
 			<destination>{3f3ac0a8-3dce-49ca-ba0b-10c896f86f73}</destination>
+			<destination>{1d0a5e16-cf8c-4e10-8428-2d21e0cb30aa}</destination>
+			<destination>{87b0a8c2-e062-4fdf-9e85-8028844efe45}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{2b072fc6-1422-4bfc-8aa0-76a789b2134a}" />
+	<object class="MixerBusPanner" id="{2b072fc6-1422-4bfc-8aa0-76a789b2134a}">
+		<relationship name="modulators">
+			<destination>{3ac75f8e-9a4b-48cd-a319-2f4bdac61576}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{782882f1-8f75-4417-8e4c-efc7ca1f2d0c}" />
 	<object class="RandomizerModulator" id="{c98a502a-f0a8-4faf-9aa0-286421753d95}">
 		<property name="nameOfPropertyBeingModulated">
@@ -178,6 +190,27 @@
 	</object>
 	<object class="MixerBusPanner" id="{87746fe5-c772-4d09-aba3-77813f3eb5d6}" />
 	<object class="MixerBusFader" id="{3f3ac0a8-3dce-49ca-ba0b-10c896f86f73}" />
+	<object class="ThreeEQEffect" id="{1d0a5e16-cf8c-4e10-8428-2d21e0cb30aa}">
+		<property name="highGain">
+			<value>3</value>
+		</property>
+		<property name="highCrossover">
+			<value>6000</value>
+		</property>
+	</object>
+	<object class="DistortionEffect" id="{87b0a8c2-e062-4fdf-9e85-8028844efe45}">
+		<property name="level">
+			<value>0.13499999</value>
+		</property>
+	</object>
+	<object class="RandomizerModulator" id="{3ac75f8e-9a4b-48cd-a319-2f4bdac61576}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>stereoPan</value>
+		</property>
+		<property name="amount">
+			<value>21.5</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{71270792-e4c0-4dff-b0f8-bf664c1dc70e}">
 		<property name="position">
 			<value>1.5614035087719296</value>

@@ -10,6 +10,7 @@ public enum SeedType
     STRAWBERRY,
     NUTS,
     PUMPKINS,
-    WASABI
+    WASABI,
+    NONE,
 }
 }

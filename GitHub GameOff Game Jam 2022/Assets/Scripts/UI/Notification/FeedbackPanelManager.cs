@@ -112,7 +112,8 @@ namespace UIManagement
         private class GenericMessageUIPanel : UIPanel
         {
             public string message;
-            public GenericMessageUIPanel(string message) { this.message = message; }
+            public EventReference fmodEventReference;
+            public GenericMessageUIPanel(string message, EventReference fmodEventReference) { this.message = message; this.fmodEventReference = fmodEventReference; }
         }
 
 
@@ -131,16 +132,6 @@ namespace UIManagement
         private class CardReceptionUIPanel : UIPanel
         {
             public Card ReceivedCard { get; set; }
-        }
-
-        /// <summary>
-        /// An entire panel displaying the card discard panel
-        /// with both a cancel and confirmation button
-        /// </summary>
-        private class CardDiscardUIPanel : UIPanel
-        {
-            public UIDiscardPanel Panel { get; set; }
-            public ActionCardSO ConsideredCard { get; set; }
         }
 
         /// <summary>
@@ -180,8 +171,8 @@ namespace UIManagement
             Assert.IsNotNull(buildingNotificationIcon, $"{GetType().Name} missing required editor input buildingNotificationIcon");
         }
 
-        public void EnqueueGenericMessage(bool shouldBeEnqueuedToInstantQueue, string message) {
-            var panel = new GenericMessageUIPanel(message);
+        public void EnqueueGenericMessage(bool shouldBeEnqueuedToInstantQueue, string message, EventReference fmodEventReference) {
+            var panel = new GenericMessageUIPanel(message, fmodEventReference);
 
             if (shouldBeEnqueuedToInstantQueue) {
                 uiPanelInstantDisplayQueue.Enqueue(panel);
@@ -258,21 +249,6 @@ namespace UIManagement
             {
                 uiPanelTurnStartQueue.Enqueue(panel);
             }
-        }
-
-        /// <summary>
-        /// Enqueues the discard panel prompt to the direct queue.
-        /// Note that it cannot and should not be enqueued to the new-turn queue.
-        /// </summary>
-        /// <param name="discardPanel">The panel to open</param>
-        /// <param name="consideredCard">The card to display in the panel</param>
-        public void EnqueueDiscardCardInstantly(UIDiscardPanel discardPanel, ActionCardSO consideredCard)
-        {
-            uiPanelInstantDisplayQueue.Enqueue(new CardDiscardUIPanel()
-            {
-                ConsideredCard = consideredCard,
-                Panel = discardPanel
-            });
         }
 
         /// <summary>
@@ -470,7 +446,7 @@ namespace UIManagement
             if (currentPanel is MoneyReceptionUIPanel moneyPanel)
             {
                 RuntimeManager.PlayOneShot(moneySoundEvent);
-                notificationPanelText.text = $"Received {moneyPanel.ReceivedMoneyAmount}$!";
+                notificationPanelText.text = $"Received {moneyPanel.ReceivedMoneyAmount} coins!";
                 DisplayNotification(Color.yellow, moneyNotificationIcon);
             }
             else if (currentPanel is BuildingReceptionUIPanel buildingPanel)
@@ -484,15 +460,13 @@ namespace UIManagement
                 notificationPanelText.text = $"Received Card: {cardPanel.ReceivedCard}!";
                 DisplayCardConfirmation("New Card Received:", cardPanel.ReceivedCard);
             }
-            else if (currentPanel is CardDiscardUIPanel discardPanel)
-            {
-                discardPanel.Panel.gameObject.SetActive(true);
-                discardPanel.Panel.DisplaySelf(discardPanel.ConsideredCard);
-            }
             else if (currentPanel is GenericMessageUIPanel genericMessageUIPanel)
             {
                 notificationPanelText.text = genericMessageUIPanel.message;
                 DisplayNotification(Color.yellow, null);
+
+                if(!genericMessageUIPanel.fmodEventReference.IsNull)
+                    RuntimeManager.PlayOneShot(genericMessageUIPanel.fmodEventReference);
             } 
             else throw new NotImplementedException($"The UI panel '{currentPanel}' is not yet implemented!");
         }

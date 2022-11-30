@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{419a0458-7dec-41e9-94b0-0481be88c9d3}">
+		<property name="assetPath">
+			<value>End Turn Transition_Seasons/SFX_EndTurnTransition_Summer_V1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.1333541666666669</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b7aa6906-19d9-4154-8c59-dd20609b7309}</destination>
+		</relationship>
+	</object>
+</objects>

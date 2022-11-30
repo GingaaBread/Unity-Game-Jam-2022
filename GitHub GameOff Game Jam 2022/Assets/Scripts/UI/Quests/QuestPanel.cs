@@ -22,6 +22,8 @@ public class QuestPanel : MonoBehaviour {
         ClearQuests();
     }
 
+    public void OpenDetailMenu() => QuestDetailPanel.Instance.Open();
+
     public void ClearQuests() {
         questsDisplayed.Clear();
         foreach (Transform child in containerForQuests) {
