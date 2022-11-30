@@ -3,35 +3,18 @@ using System;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-[CreateAssetMenu(fileName = "New Tile Placement SO", menuName = "Quests/TilePlacementSO")]
+[CreateAssetMenu(fileName = "New Quest", menuName = "Quests/TilePlacementQuestGoal")]
 public class TilePlacementQuestSO : AbstractQuestSO {
 
-    [SerializeField] public ActionCardSO[] targetCards;
-    [SerializeField] public int[] targetQuantity;
-    public PlacementQuestGoal[] placementQuestGoals;
-
-    [Serializable]
-    public class PlacementQuestGoal
-    {
-        public ActionCardSO[] targetCards;
-        public int[] quantities;
-        public int moneyReward;
-    }
+    public ActionCardSO[] targetCards;
+    public int[] targetQuantity;
+    public OperatorType operatorType;
 
     private int[] actualQuantity; // not serialized because we don't want to save these outside runtime
 
     public void OnEnable() {
+        Assert.IsNotNull(targetCards);
         Assert.IsTrue(targetCards.Length == targetQuantity.Length, $"{this?.name} must have same number of targetQuantity as targetCards");
-    }
-
-    public override string GetQuestAsSentence() {
-        string s = "Place";
-        for(int i = 0; i < targetCards.Length; i++) {
-            if (i > 0)
-                s+= " and";
-            s += $" {targetQuantity[i]} {targetCards[i].name.ToLower()}";
-        }
-        return s;
     }
 
     public override string GetStatusAsSentence() {
@@ -68,10 +51,27 @@ public class TilePlacementQuestSO : AbstractQuestSO {
         for (int i = 0; i < targetCards.Length; i++) {
             if (targetCards[i] == card) {
                 actualQuantity[i] += 1;
+
+                if (QuestIsCompleted())
+                {
+                    OnCompletion.Invoke();
+                }
+
                 OnUpdate.Invoke();
                 return;
             }
         }
+    }
+
+    private bool QuestIsCompleted()
+    {
+        for (int i = 0; i < targetQuantity.Length; i++)
+        {
+            if (targetQuantity[i] > actualQuantity[i])
+                return false;
+        }
+
+        return true;
     }
 
 }

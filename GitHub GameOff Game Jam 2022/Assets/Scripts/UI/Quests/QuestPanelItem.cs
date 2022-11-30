@@ -10,7 +10,7 @@ public class QuestPanelItem : MonoBehaviour {
     [SerializeField] private Slider percentageCompletedSlider;
     [SerializeField] private TextMeshProUGUI percentageCompletedText;
 
-    private AbstractQuestSO quest;
+    private BaseQuest quest;
 
     private void Awake() {
         Assert.IsNotNull(questTitle);
@@ -19,15 +19,15 @@ public class QuestPanelItem : MonoBehaviour {
         Assert.IsNotNull(percentageCompletedText);
     }
 
-    public void Initialize(AbstractQuestSO quest) {
+    public void Initialize(BaseQuest quest) {
         this.quest = quest;
-        quest.OnUpdate.AddListener(UpdateUI);
+        quest.CurrentUpdateSubscription().AddListener(UpdateUI);
         UpdateUI();
     }
 
     public void UpdateUI() {
-        questTitle.text = quest.questName;
-        questText.text = quest.GetQuestAsSentence() + " (currently " + quest.GetStatusAsSentence() + ")";
+        questTitle.text = quest.questName +  " " + quest.GetQuestStepProgress();
+        questText.text = quest.GetCurrentPrompt() + " (currently " + quest.GetStatusAsSentence() + ")";
         // progress bar
         int floorOfPercentageCompleted = Mathf.FloorToInt(quest.GetPercentageCompleted());
         percentageCompletedSlider.minValue = 0;

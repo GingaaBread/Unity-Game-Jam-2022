@@ -1,9 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.Assertions;
-using System;
 
 public class QuestPanel : MonoBehaviour {
 
@@ -31,11 +28,14 @@ public class QuestPanel : MonoBehaviour {
         }
     }
 
-    internal void UpdateQuests(List<AbstractQuestSO> allQuestsToShow) {
+    internal void UpdateQuests(List<BaseQuest> allQuestsToShow) {
         ClearQuests();
-        foreach(AbstractQuestSO quest in allQuestsToShow) {
-            if (quest.prefabForDisplayingMissionUI != null) {
-                GameObject questUIObj = GameObject.Instantiate(quest.prefabForDisplayingMissionUI, containerForQuests, false);
+
+        var questUIPrefab = QuestManager.Instance.questUIPrefab;
+
+        foreach(BaseQuest quest in allQuestsToShow) {
+            if (questUIPrefab != null) {
+                GameObject questUIObj = Instantiate(questUIPrefab, containerForQuests, false);
                 questUIObj.GetComponent<QuestPanelItem>().Initialize(quest);
                 questsDisplayed.Add(questUIObj);
             } else {
