@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae1d97759fa49d64f8eba781db3592cb, type: 3}
   m_Name: PenCard
   m_EditorClassIdentifier: 
-  cardSprite: {fileID: 21300000, guid: f4deb467504364143932d5cc5424d751, type: 3}
+  Background: {fileID: 21300000, guid: 826684963130ba342b7af4401d0e492e, type: 3}
+  PreviewBackground: {fileID: 21300000, guid: 3738819f05251e14085d3a3faed08ad5, type: 3}
+  cardSprite: {fileID: 21300000, guid: 99130e1534206f24098dece077be6bb4, type: 3}
+  summaryBackground: {fileID: 21300000, guid: a4369f2be96f42d4b846bac3c312268a, type: 3}
   cardTitle: Animal Pen
   cardSubtitle: 
   cardSummary: Builds a small animal pen
