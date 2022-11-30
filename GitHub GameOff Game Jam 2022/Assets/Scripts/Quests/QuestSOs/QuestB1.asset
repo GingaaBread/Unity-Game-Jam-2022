@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6380c71497835a5499a33e90f64f89ae, type: 3}
   m_Name: QuestB1
   m_EditorClassIdentifier: 
-  questName: Fields
+  questName: put your hand to the plough
   prefabForDisplayingMissionUI: {fileID: 170029945827187893, guid: 4498957a7ab392947820fc47e0385726, type: 3}
   OnUpdate:
     m_PersistentCalls:
@@ -21,3 +21,23 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 258d2be981e477142891e60a3e5b9c75, type: 2}
   - {fileID: 11400000, guid: 3141937bd53cc23409b6c7530443d6c3, type: 2}
   targetQuantity: 130000000b000000
+  placementQuestGoals:
+  - targetCards:
+    - {fileID: 11400000, guid: 258d2be981e477142891e60a3e5b9c75, type: 2}
+    quantities: 01000000
+    moneyReward: 5
+  - targetCards:
+    - {fileID: 11400000, guid: 258d2be981e477142891e60a3e5b9c75, type: 2}
+    - {fileID: 11400000, guid: 3141937bd53cc23409b6c7530443d6c3, type: 2}
+    quantities: 0200000001000000
+    moneyReward: 10
+  - targetCards:
+    - {fileID: 11400000, guid: 258d2be981e477142891e60a3e5b9c75, type: 2}
+    - {fileID: 11400000, guid: 3141937bd53cc23409b6c7530443d6c3, type: 2}
+    quantities: 0400000002000000
+    moneyReward: 20
+  - targetCards:
+    - {fileID: 11400000, guid: 258d2be981e477142891e60a3e5b9c75, type: 2}
+    - {fileID: 11400000, guid: 3141937bd53cc23409b6c7530443d6c3, type: 2}
+    quantities: 0700000003000000
+    moneyReward: 30
