@@ -23,10 +23,18 @@ MonoBehaviour:
   targetQuantity: 0800000008000000
   placementQuestGoals:
   - targetCards:
-    - {fileID: 11400000, guid: 1e51bc9c81a1f2745a633126b1e6feb4, type: 2}
+    - {fileID: 11400000, guid: 3141937bd53cc23409b6c7530443d6c3, type: 2}
     quantities: 01000000
     moneyReward: 5
   - targetCards:
-    - {fileID: 11400000, guid: 3d1522361bfe910439ee7923317f58a3, type: 2}
+    - {fileID: 11400000, guid: 1e51bc9c81a1f2745a633126b1e6feb4, type: 2}
     quantities: 01000000
     moneyReward: 10
+  - targetCards:
+    - {fileID: 11400000, guid: 3d1522361bfe910439ee7923317f58a3, type: 2}
+    quantities: 01000000
+    moneyReward: 20
+  - targetCards:
+    - {fileID: 11400000, guid: 1e51bc9c81a1f2745a633126b1e6feb4, type: 2}
+    quantities: 02000000
+    moneyReward: 30
