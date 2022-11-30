@@ -24,6 +24,9 @@ public class InventoryManager : MonoBehaviour
     /// </summary>
     public Transform resourceHolder;
 
+
+    public Transform nameRect;
+
     public MoneyDisplayer[] moneyDisplayers;
 
     /// <summary>
