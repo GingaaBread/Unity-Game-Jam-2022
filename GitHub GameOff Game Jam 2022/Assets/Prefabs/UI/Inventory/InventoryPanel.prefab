@@ -123,7 +123,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 0.22
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &3274541486851817558
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,15 +1882,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Pumpkin
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d9cbb3f98856c164892a4f9e9cee6e06, type: 2}
+  m_sharedMaterial: {fileID: 3877106909241861327, guid: d9cbb3f98856c164892a4f9e9cee6e06, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282272589
-  m_fontColor: {r: 0.3019608, g: 0.29411766, b: 0.24313727, a: 1}
+    rgba: 4282140232
+  m_fontColor: {r: 0.2830189, g: 0.27639732, b: 0.23335709, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1910,9 +1910,9 @@ MonoBehaviour:
   m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 36
   m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
