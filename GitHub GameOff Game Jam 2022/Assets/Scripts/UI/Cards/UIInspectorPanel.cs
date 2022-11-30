@@ -138,18 +138,7 @@ public class UIInspectorPanel : MonoBehaviour
 
     private void SetupArrowButtons()
     {
-        if (currentIndex == 0)
-        {
-            priorButton.interactable = false;
-        }
-        else if (currentIndex == CardManager.Instance.GetHandcardSize() - 1)
-        {
-            nextButton.interactable = false;
-        }
-        else
-        {
-            priorButton.interactable = true;
-            nextButton.interactable = true;
-        }
+        priorButton.interactable = currentIndex > 0;
+        nextButton.interactable = currentIndex < CardManager.Instance.GetHandcardSize() - 1;
     }
 }
