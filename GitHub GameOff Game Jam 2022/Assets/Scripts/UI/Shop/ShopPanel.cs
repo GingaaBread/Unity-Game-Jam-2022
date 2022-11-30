@@ -1,3 +1,4 @@
+using FMODUnity;
 using PlayerData;
 using System;
 using System.Collections;
@@ -31,6 +32,8 @@ public class ShopPanel : ComputerPhaseStep
 
     [SerializeField] private Shop_BuyerSO[] buyers;
 
+    [Header("FMOD Event References")]
+    [SerializeField] private EventReference saleFailedFMODEvent;
 
     private new void Awake() {
         Assert.IsNotNull(sellerAPanelObj);
@@ -88,6 +91,9 @@ public class ShopPanel : ComputerPhaseStep
 
         // don't sell if player doesn't have enough in inventory
         if (PlayerDataManager.Instance.GetInventoryItemAmount(resourceBeingSold) < amountBeingSold) {
+            if (!saleFailedFMODEvent.IsNull) {
+                RuntimeManager.PlayOneShot(saleFailedFMODEvent);
+            }
             return false; 
         }
 

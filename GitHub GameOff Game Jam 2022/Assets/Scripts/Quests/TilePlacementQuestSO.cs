@@ -1,6 +1,6 @@
 using PlayerData;
+using System;
 using UnityEngine;
-using System.Collections.Generic;
 using UnityEngine.Assertions;
 
 [CreateAssetMenu(fileName = "New Tile Placement SO", menuName = "Quests/TilePlacementSO")]
@@ -8,6 +8,16 @@ public class TilePlacementQuestSO : AbstractQuestSO {
 
     [SerializeField] public ActionCardSO[] targetCards;
     [SerializeField] public int[] targetQuantity;
+    public PlacementQuestGoal[] placementQuestGoals;
+
+    [Serializable]
+    public class PlacementQuestGoal
+    {
+        public ActionCardSO[] targetCards;
+        public int[] quantities;
+        public int moneyReward;
+    }
+
     private int[] actualQuantity; // not serialized because we don't want to save these outside runtime
 
     public void OnEnable() {
