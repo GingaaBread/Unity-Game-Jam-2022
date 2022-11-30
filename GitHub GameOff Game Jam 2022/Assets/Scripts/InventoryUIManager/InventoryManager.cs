@@ -4,10 +4,6 @@ using UnityEngine;
 using PlayerData;
 
 
-/// <summary>
-/// 
-/// </summary>
-
 
 public class InventoryManager : MonoBehaviour
 {
