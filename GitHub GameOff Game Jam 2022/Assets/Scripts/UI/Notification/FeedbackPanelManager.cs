@@ -112,7 +112,8 @@ namespace UIManagement
         private class GenericMessageUIPanel : UIPanel
         {
             public string message;
-            public GenericMessageUIPanel(string message) { this.message = message; }
+            public EventReference fmodEventReference;
+            public GenericMessageUIPanel(string message, EventReference fmodEventReference) { this.message = message; this.fmodEventReference = fmodEventReference; }
         }
 
 
@@ -170,8 +171,8 @@ namespace UIManagement
             Assert.IsNotNull(buildingNotificationIcon, $"{GetType().Name} missing required editor input buildingNotificationIcon");
         }
 
-        public void EnqueueGenericMessage(bool shouldBeEnqueuedToInstantQueue, string message) {
-            var panel = new GenericMessageUIPanel(message);
+        public void EnqueueGenericMessage(bool shouldBeEnqueuedToInstantQueue, string message, EventReference fmodEventReference) {
+            var panel = new GenericMessageUIPanel(message, fmodEventReference);
 
             if (shouldBeEnqueuedToInstantQueue) {
                 uiPanelInstantDisplayQueue.Enqueue(panel);
@@ -463,6 +464,9 @@ namespace UIManagement
             {
                 notificationPanelText.text = genericMessageUIPanel.message;
                 DisplayNotification(Color.yellow, null);
+
+                if(!genericMessageUIPanel.fmodEventReference.IsNull)
+                    RuntimeManager.PlayOneShot(genericMessageUIPanel.fmodEventReference);
             } 
             else throw new NotImplementedException($"The UI panel '{currentPanel}' is not yet implemented!");
         }

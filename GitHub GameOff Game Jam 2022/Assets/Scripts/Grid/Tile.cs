@@ -47,6 +47,9 @@ public class Tile : MonoBehaviour
     private Sprite positive;
     [SerializeField]
     private Sprite negative;
+
+    [SerializeField] private TileConfigSO tileConfigSO;
+
     void Awake(){
         if (currType != null && currType.seasonSprites != null){
             GetComponent<SpriteRenderer>().sprite = currType.seasonSprites[0];
@@ -260,7 +263,8 @@ public class Tile : MonoBehaviour
                 playerDataManager.IncreaseInventoryItemAmount(currSeed.payoffResource, cropHarvestAmount);
                 int trueCropAmount = cropHarvestAmount == 0 ? currSeed.payoffAmount : cropHarvestAmount;
                 FeedbackPanelManager.Instance.EnqueueGenericMessage(false,
-                    $"{trueCropAmount} {currSeed.payoffResource.name.ToLower()} harvested!");
+                    $"{trueCropAmount} {currSeed.payoffResource.name.ToLower()} harvested!",
+                    tileConfigSO.cropHarvestFmodEventReference);
                 isSeed = false;
                 cropAge = 0;
                 currSeed = null;
@@ -287,7 +291,8 @@ public class Tile : MonoBehaviour
                 animalAge = 0;
 
                 FeedbackPanelManager.Instance.EnqueueGenericMessage(false,
-                    $"{currAnimal.payoffAmount} {currAnimal.payoffResource.name.ToLower()} harvested!");
+                    $"{currAnimal.payoffAmount} {currAnimal.payoffResource.name.ToLower()} harvested!",
+                    tileConfigSO.livestockHarvestFmodEventReference);
             }
 
     }
