@@ -2,12 +2,24 @@ using PlayerData;
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Assertions;
+using System;
 
 [CreateAssetMenu(fileName = "New Resource Collection SO", menuName = "Quests/ResourceCollectionSO")]
 public class ResourceCollectionQuestSO : AbstractQuestSO {
 
     [SerializeField] public ResourceSO[] targetResources;
     [SerializeField] public int[] targetQuantity;
+    public ResourceQuestStep[] resourceQuestSteps;
+
+    [Serializable]
+    public class ResourceQuestStep
+    {
+        public ResourceSO[] targetResources;
+        public int[] quantities;
+        public int moneyReward;
+        // todo: end reward
+    }
+
     private int[] actualQuantity; // not serialized because we don't want to save these outside runtime
 
     public void OnEnable() {
