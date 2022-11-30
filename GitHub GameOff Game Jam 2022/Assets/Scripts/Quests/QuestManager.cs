@@ -99,6 +99,8 @@ public class QuestManager : ComputerPhaseStep
         return chosenQuests;
     }
 
+    public List<BaseQuest> GetActiveQuests() => _activeQuests;
+
     public void NotifyOfResourceCollected(ResourceSO resource, int countCollected) {
         foreach (BaseQuest quest in _activeQuests) {
             quest.NotifyOfResourceCollected(resource, countCollected);

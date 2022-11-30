@@ -27,7 +27,11 @@ public class BaseQuest : ScriptableObject
         }
     }
 
+    public AbstractQuestSO[] GetGoals() => questGoals;
+
     public bool IsDone() => currentlyActiveGoal > questGoals.Length;
+
+    public int GetCurrentStep() => currentlyActiveGoal + 1;
 
     public override string ToString() => $"{questName}, at: {GetQuestStepProgress()} with index set to {currentlyActiveGoal}";
 
