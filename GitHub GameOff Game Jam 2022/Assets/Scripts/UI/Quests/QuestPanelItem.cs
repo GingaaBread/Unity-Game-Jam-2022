@@ -26,6 +26,7 @@ public class QuestPanelItem : MonoBehaviour {
     }
 
     public void UpdateUI() {
+        print("Updating UI!");
         questTitle.text = quest.questName +  " " + quest.GetQuestStepProgress();
         questText.text = quest.GetCurrentPrompt() + " (currently " + quest.GetStatusAsSentence() + ")";
         // progress bar

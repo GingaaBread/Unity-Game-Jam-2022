@@ -10,7 +10,7 @@ public class BaseQuest : ScriptableObject
     public AbstractQuestSO finalGoal;
     public string finalReward;
 
-    private readonly int currentlyActiveGoal; // keeps track of the current goal (!) NEEDS TO BE READONLY
+    private int currentlyActiveGoal = 0; // keeps track of the current goal (!) NEEDS TO BE READONLY
 
     private void OnEnable()
     {
@@ -19,8 +19,8 @@ public class BaseQuest : ScriptableObject
             questGoal.OnCompletion.AddListener(() =>
             {
                 Debug.Log($"Quest '{questName} completed!");
-                questGoals[currentlyActiveGoal].OnUpdate.RemoveAllListeners();
-                //currentlyActiveGoal++;
+                //questGoals[currentlyActiveGoal].OnUpdate.RemoveAllListeners(); do this later
+                currentlyActiveGoal++;
             });
         }
     }

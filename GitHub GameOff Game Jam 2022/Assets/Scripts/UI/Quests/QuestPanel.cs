@@ -24,21 +24,31 @@ public class QuestPanel : MonoBehaviour {
     public void ClearQuests() {
         questsDisplayed.Clear();
         foreach (Transform child in containerForQuests) {
-            GameObject.Destroy(child.gameObject);
+            Destroy(child.gameObject);
         }
     }
 
-    internal void UpdateQuests(List<BaseQuest> allQuestsToShow) {
+    public void SetupPanel(List<BaseQuest> allQuestsToShow) {
+
+        UpdateSelf(allQuestsToShow);
+    }
+
+    private void UpdateSelf(List<BaseQuest> allQuestsToShow)
+    {
         ClearQuests();
 
         var questUIPrefab = QuestManager.Instance.questUIPrefab;
 
-        foreach(BaseQuest quest in allQuestsToShow) {
-            if (questUIPrefab != null) {
+        foreach (BaseQuest quest in allQuestsToShow)
+        {
+            if (questUIPrefab != null)
+            {
                 GameObject questUIObj = Instantiate(questUIPrefab, containerForQuests, false);
                 questUIObj.GetComponent<QuestPanelItem>().Initialize(quest);
                 questsDisplayed.Add(questUIObj);
-            } else {
+            }
+            else
+            {
                 Debug.Log("QuestPanel given a quest without a UI prefab to instantiate for it");
             }
         }

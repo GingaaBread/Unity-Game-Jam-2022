@@ -81,7 +81,7 @@ public class QuestManager : ComputerPhaseStep
             print(quest);
         }
 
-        QuestPanel.Instance.UpdateQuests(_activeQuests);
+        QuestPanel.Instance.SetupPanel(_activeQuests);
     }
 
     private static List<BaseQuest> RandomlyChooseQuests(BaseQuest[] questsPool, int count) {
