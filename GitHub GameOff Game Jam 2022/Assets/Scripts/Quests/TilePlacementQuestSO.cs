@@ -49,7 +49,7 @@ public class TilePlacementQuestSO : AbstractQuestSO {
         Assert.IsNotNull(actualQuantity);
         Assert.IsTrue(targetCards.Length == actualQuantity.Length, $"{this?.name} must have same number of actualQuantity as targetCards");
         for (int i = 0; i < targetCards.Length; i++) {
-            if (targetCards[i] == card) {
+            if (targetCards[i] == card && targetQuantity[i] > actualQuantity[i]) {
                 actualQuantity[i] += 1;
 
                 if (QuestIsCompleted())

@@ -5,6 +5,7 @@ using UnityEngine.Assertions;
 public class QuestPanel : MonoBehaviour {
 
     [SerializeField] private Transform containerForQuests;
+    [SerializeField] private Animator panelAnimator;
 
     private List<GameObject> questsDisplayed = new List<GameObject>();
 
@@ -18,6 +19,8 @@ public class QuestPanel : MonoBehaviour {
         
         ClearQuests();
     }
+
+    public void DisplayCompletionAnimation() => panelAnimator.Play("QuestCompleted");
 
     public void OpenDetailMenu() => QuestDetailPanel.Instance.Open();
 

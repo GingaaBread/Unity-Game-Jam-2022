@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6380c71497835a5499a33e90f64f89ae, type: 3}
-  m_Name: Build4AcresAnd2Pens
+  m_Name: B1_Build1Acre
   m_EditorClassIdentifier: 
-  textPrompt: Build 4 acres and 2 animal pens
+  textPrompt: Build 1 acre
   OnUpdate:
     m_PersistentCalls:
       m_Calls: []
@@ -21,6 +21,5 @@ MonoBehaviour:
       m_Calls: []
   targetCards:
   - {fileID: 11400000, guid: 258d2be981e477142891e60a3e5b9c75, type: 2}
-  - {fileID: 11400000, guid: 3141937bd53cc23409b6c7530443d6c3, type: 2}
-  targetQuantity: 0400000002000000
+  targetQuantity: 01000000
   operatorType: 0

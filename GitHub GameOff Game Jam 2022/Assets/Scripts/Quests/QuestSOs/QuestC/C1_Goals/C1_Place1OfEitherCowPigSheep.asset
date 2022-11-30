@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6380c71497835a5499a33e90f64f89ae, type: 3}
-  m_Name: Place2OfEitherCowPigSheep
+  m_Name: C1_Place1OfEitherCowPigSheep
   m_EditorClassIdentifier: 
-  textPrompt: Place either two cows, pigs or sheep, or two different ones
+  textPrompt: Place either one cow, pig or sheep
   OnUpdate:
     m_PersistentCalls:
       m_Calls: []
@@ -23,5 +23,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1e51bc9c81a1f2745a633126b1e6feb4, type: 2}
   - {fileID: 11400000, guid: 3d1522361bfe910439ee7923317f58a3, type: 2}
   - {fileID: 11400000, guid: 0e5a337f7ebfd4e4b813ea2248843ffd, type: 2}
-  targetQuantity: 020000000200000002000000
+  targetQuantity: 010000000100000001000000
   operatorType: 1
