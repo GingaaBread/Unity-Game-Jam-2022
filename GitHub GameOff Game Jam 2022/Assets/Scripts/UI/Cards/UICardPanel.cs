@@ -15,7 +15,6 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler, IPointerDown
     [Header("Main UI Components")]
     [SerializeField] private TMP_Text titleText;
     [SerializeField] private Image iconImage;
-    [SerializeField] private TMP_Text discardText;
     [SerializeField] private TMP_Text summaryText;
     [SerializeField] private Button discardButton;
     [SerializeField] private TMP_Text costText;
@@ -90,7 +89,7 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler, IPointerDown
 
     protected override object[] CheckForMissingReferences() => new object[]
     {
-        titleText, iconImage, summaryText, costText, discardText
+        titleText, iconImage, summaryText, costText
     };
 
     public override void StartProcessingForComputerPhase(bool isComputerPhaseDuringGameInit)
