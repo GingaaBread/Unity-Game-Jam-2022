@@ -34,43 +34,45 @@ MonoBehaviour:
     If you want, I''ll help you
     start setting up your farm. '
   - 'Let''s start with planting your first crops. You''ll see you have some cards
-    in your hand.
+    in your hand. Each one represents a farm resource, like an acre you can plow
+    or a crop you can plant.
 
 '
-  - Each one represents a farm resource, like an acre you can plow or a crop you
-    can plant.
   - 'Each turn, you''ll get new cards to replace the ones you played. You can have
     a maximum of five cards in your hand. '
   - 'There are 3 types of cards: building cards, livestock cards, and crop cards. '
-  - Building cards can only be placed on hill or plain tiles, livestock cards can
-    only be placed on top of animal pens, and crop cards can only be placed on free
-    acres.
-  - 'Speaking of tiles, as a new farmer you should try and get acquainted with the
-    different types of land on your farm. Here is a handy guide for reference! '
-  - Watch out for seasons too! They will affect your crop growth in unexpected ways.
-    Be sure to pay attention to the extra details of your cards.
+  - Buildings can only be placed on hill or plain tiles.
+  - Livestock can only be placed in animal pens.
+  - Crops can only be placed on free acres.
+  - 'Speaking of tiles, as a new farmer you should get acquainted with the different
+    types of land on your farm. Here is a handy guide for reference! '
+  - Watch out for seasons too! They'll affect your crop growth in unexpected ways.
+    Pay attention to the extra card details!
   - 'When your crops are done growing or your animals have created a product, all
-    the resources will be collect automatically. '
+    the resources will be collected automatically. '
   - All resources end up in the store. There you can sell them to earn coins and
     use those coins to plant more crops. It seems like an ideal business!
   - Resources are located on the left and local grocers are on the right. You'll
     find me there too! I buy crops for Pafort ctiy.
-  - Most grocers only want to buy one resource each season but, since we're friends,
-    I'll buy two. The second one I can only buy at half price though, sorry. I'm
-    not made of money! Haha
-  - 'The other grocers all have their own area of specialty. For instance.
+  - 'Most grocers only want to buy one resource each season but, since we''re friends,
+    I''ll buy two. '
+  - I can only buy the second one at half price though, sorry. I'm not made of money!
+    Haha
+  - 'The other grocers all have their own specialty. For instance, Emile always buys
+    crops at a premium.
 
-    Emile
-    will always buy crops at a premium.  Get to know each of us better and learn
-    our quirks!'
+    Get to know each of our quirks!'
   - 'Now that the business part is done, you''re all set up and ready to go! You
     can see the requirements of the bet here whenever you want. '
-  - ' I wish you the best of luck! Win that bet for all of us, okay? I know you''ll
-    make your mother proud. You''ve got this!'
+  - ' I wish you the best of luck! Win for all of us, okay? I know you''ll make your
+    mother proud. You''ve got this!'
   screenshots:
   - {fileID: 21300000, guid: 9a08bc6abcdd74746a09c553480a3290, type: 3}
   - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
   - {fileID: 21300000, guid: 6091406fa63b19f42abc3533fc92749b, type: 3}
+  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
+  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
+  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
   - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
   - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
   - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}

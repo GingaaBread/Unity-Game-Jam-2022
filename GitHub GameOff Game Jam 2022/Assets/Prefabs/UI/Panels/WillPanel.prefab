@@ -320,8 +320,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "The tasks are as follows:\r\n\nsomesomeosnprio\nqsronqwor\nnwonrqowr\n\nwornqpwroqpwonr\nqwroq\xFCwonr\nqwor\nqnwornq\xFCworn\nqworn\nqworn\nqowrn\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1ea281af05c3f5642b5c27695d77ab97, type: 2}
-  m_sharedMaterial: {fileID: -7033854543375855500, guid: 1ea281af05c3f5642b5c27695d77ab97, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 53c1888edf59f6848b9ca1765ab73919, type: 2}
+  m_sharedMaterial: {fileID: 7847790224043700190, guid: 53c1888edf59f6848b9ca1765ab73919, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -345,8 +345,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 26.5
+  m_fontSizeBase: 26.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -595,8 +595,8 @@ MonoBehaviour:
     the farm\u2013your rightful inheritance. The bet requires you to complete tasks
     that Homer and I have agreed on. \r\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1ea281af05c3f5642b5c27695d77ab97, type: 2}
-  m_sharedMaterial: {fileID: -7033854543375855500, guid: 1ea281af05c3f5642b5c27695d77ab97, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 53c1888edf59f6848b9ca1765ab73919, type: 2}
+  m_sharedMaterial: {fileID: 7847790224043700190, guid: 53c1888edf59f6848b9ca1765ab73919, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -620,8 +620,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39.1
-  m_fontSizeBase: 39.1
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1524,8 +1524,8 @@ MonoBehaviour:
     your uncle Homer all those years ago, I never imagined the betrayal and hurt
     he would cause me. \r"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1ea281af05c3f5642b5c27695d77ab97, type: 2}
-  m_sharedMaterial: {fileID: -7033854543375855500, guid: 1ea281af05c3f5642b5c27695d77ab97, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 53c1888edf59f6848b9ca1765ab73919, type: 2}
+  m_sharedMaterial: {fileID: 7847790224043700190, guid: 53c1888edf59f6848b9ca1765ab73919, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1549,8 +1549,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35.5
-  m_fontSizeBase: 35.5
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
