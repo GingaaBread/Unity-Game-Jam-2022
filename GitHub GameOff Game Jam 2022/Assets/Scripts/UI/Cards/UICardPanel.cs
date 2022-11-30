@@ -27,6 +27,7 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler, IPointerDown
     [SerializeField] private Image ImagePreviewBackground;
     [SerializeField] private Image ImagePreviewForeground;
     [SerializeField] private Image SummaryBackground;
+    [SerializeField] private Image CostBackground;
 
     private Color selectionBorderColour;
 
@@ -45,6 +46,7 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler, IPointerDown
         ImagePreviewBackground.sprite = CardToDisplay.PreviewBackground;
         ImagePreviewForeground.sprite = CardToDisplay.cardSprite;
         SummaryBackground.sprite = CardToDisplay.summaryBackground;
+        CostBackground.sprite = CardToDisplay.costBackground;
 
         // Set the texts
         titleText.text = CardToDisplay.cardTitle;
