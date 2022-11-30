@@ -20,11 +20,32 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{7bb02ff9-f135-4158-ad31-b91258e8d0bc}">
 		<relationship name="effects">
+			<destination>{3e47fe1a-b3ac-4155-8bb4-65d05d9d6099}</destination>
+			<destination>{a2894433-a01c-4582-9d60-dbe46a567379}</destination>
+			<destination>{49171480-027a-42e4-a5a7-f91ab552387c}</destination>
 			<destination>{e27a3a34-6dde-4805-a67c-9503216c05ee}</destination>
 			<destination>{2c8c4490-03be-4f3a-afdd-83848bf1661c}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{b1081a1c-dc25-44e6-aa8e-3ece809a3fb4}" />
+	<object class="CompressorEffect" id="{3e47fe1a-b3ac-4155-8bb4-65d05d9d6099}">
+		<property name="threshold">
+			<value>-10.5</value>
+		</property>
+	</object>
+	<object class="DistortionEffect" id="{a2894433-a01c-4582-9d60-dbe46a567379}">
+		<property name="level">
+			<value>0.0700000003</value>
+		</property>
+	</object>
+	<object class="ThreeEQEffect" id="{49171480-027a-42e4-a5a7-f91ab552387c}">
+		<property name="highGain">
+			<value>4</value>
+		</property>
+		<property name="highCrossover">
+			<value>8000</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{e27a3a34-6dde-4805-a67c-9503216c05ee}" />
 	<object class="MixerSend" id="{2c8c4490-03be-4f3a-afdd-83848bf1661c}">
 		<property name="level">

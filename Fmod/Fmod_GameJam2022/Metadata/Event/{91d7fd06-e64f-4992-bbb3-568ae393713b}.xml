@@ -103,7 +103,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{b102eef0-4110-474f-91ff-584170fc89f1}">
 		<property name="volume">
-			<value>-22</value>
+			<value>-26.5</value>
 		</property>
 		<property name="name">
 			<value>ButtonClick002</value>
@@ -168,7 +168,7 @@
 	<object class="MixerBusFader" id="{5629cc04-4fb8-4600-8b6f-4fcec85267ca}" />
 	<object class="DistortionEffect" id="{f764b9e3-51aa-4f71-bc81-db9fe5ce87ef}">
 		<property name="level">
-			<value>0.264999986</value>
+			<value>0.584999979</value>
 		</property>
 	</object>
 	<object class="ChorusEffect" id="{1c63403a-6c45-4ec3-bc13-3193cb8a24e3}">
