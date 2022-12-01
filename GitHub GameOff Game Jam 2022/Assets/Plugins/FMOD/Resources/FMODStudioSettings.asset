@@ -445,7 +445,7 @@ MonoBehaviour:
       Value: 0
       HasValue: 0
     DSPBufferLength:
-      Value: 4096
+      Value: 2048
       HasValue: 1
     DSPBufferCount:
       Value: 8
