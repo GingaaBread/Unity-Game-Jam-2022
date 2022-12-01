@@ -39,7 +39,7 @@ namespace UIManagement
 
         [Header("Sounds")]
         public EventReference questCompletedSound;
-
+        public EventReference itemReceiveEvent;
 
         [Header("UI Notification Panel")]
         // The base GameObject of the notification panel

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c21a9c22b17e13f4ab0e97807bf39534, type: 3}
-  m_Name: A1_Harvest12WheatAnd10Oat
+  m_Name: A1_3
   m_EditorClassIdentifier: 
-  textPrompt: Harvest 12 wheat and 10 oat
+  textPrompt: Harvest 4 wheat and 5 oat
   OnUpdate:
     m_PersistentCalls:
       m_Calls: []
@@ -22,4 +22,4 @@ MonoBehaviour:
   targetResources:
   - {fileID: 11400000, guid: 7a84d3e4d06d24246be27cda976d6fc7, type: 2}
   - {fileID: 11400000, guid: 8899f5d05677f694eac54b2f49e33f8f, type: 2}
-  targetQuantity: 0c0000000a000000
+  targetQuantity: 0200000002000000

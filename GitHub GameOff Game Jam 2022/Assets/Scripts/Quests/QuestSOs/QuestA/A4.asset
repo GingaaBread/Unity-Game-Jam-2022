@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4d452937f82412438172286eaa28b2d, type: 3}
-  m_Name: A1
+  m_Name: A4
   m_EditorClassIdentifier: 
-  questName: Go against the grain
+  questName: cream of the crop
   questGoals:
-  - {fileID: 11400000, guid: 65b9ec99edb1d6746aabd0f08697c0fa, type: 2}
-  - {fileID: 11400000, guid: 7d91f6f8605dfc54a8bd11160e5d321a, type: 2}
-  - {fileID: 11400000, guid: 08ac52f80f1399b4082256a48b372c04, type: 2}
-  - {fileID: 11400000, guid: 73be7c7ceb9369143ae313e0478f6b57, type: 2}
-  finalGoal: {fileID: 11400000, guid: 07cccaefdcce3ce438adf27042e0f42f, type: 2}
+  - {fileID: 11400000, guid: 634586966a3327c4591e9f91d4ace093, type: 2}
+  - {fileID: 11400000, guid: 429b6c8f80ea2ad44a847c11951b8c84, type: 2}
+  - {fileID: 11400000, guid: cb6893efe0cdf0b4d829bc7ba2de58ff, type: 2}
+  - {fileID: 11400000, guid: 1f4bfbe8784b43848aa3cb659bd3e5bd, type: 2}
+  finalGoal: {fileID: 11400000, guid: 2ba8b410135b074439d8d606604fb732, type: 2}
   finalReward: {fileID: 11400000, guid: b92363ee0001e264e8aef76f1eb0d534, type: 2}

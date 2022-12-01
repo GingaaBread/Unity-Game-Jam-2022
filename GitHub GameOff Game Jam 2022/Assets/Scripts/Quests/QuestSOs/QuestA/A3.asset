@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4d452937f82412438172286eaa28b2d, type: 3}
-  m_Name: A1
+  m_Name: A3
   m_EditorClassIdentifier: 
-  questName: Go against the grain
+  questName: acknowledge the corn
   questGoals:
-  - {fileID: 11400000, guid: 65b9ec99edb1d6746aabd0f08697c0fa, type: 2}
-  - {fileID: 11400000, guid: 7d91f6f8605dfc54a8bd11160e5d321a, type: 2}
-  - {fileID: 11400000, guid: 08ac52f80f1399b4082256a48b372c04, type: 2}
-  - {fileID: 11400000, guid: 73be7c7ceb9369143ae313e0478f6b57, type: 2}
-  finalGoal: {fileID: 11400000, guid: 07cccaefdcce3ce438adf27042e0f42f, type: 2}
+  - {fileID: 11400000, guid: bfdada32d2f12e04ea261e69c2308638, type: 2}
+  - {fileID: 11400000, guid: ccb07beafd52ac14e9f2f75c72fc37df, type: 2}
+  - {fileID: 11400000, guid: ba47e9a1020ef27468ecb18ccd2f6dfc, type: 2}
+  - {fileID: 11400000, guid: 835be88ac3ea57c43811ecb0ca366e85, type: 2}
+  finalGoal: {fileID: 11400000, guid: d7a79a53bc15f9b41b2cbbe59622e9e4, type: 2}
   finalReward: {fileID: 11400000, guid: b92363ee0001e264e8aef76f1eb0d534, type: 2}

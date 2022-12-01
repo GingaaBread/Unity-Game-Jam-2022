@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4d452937f82412438172286eaa28b2d, type: 3}
-  m_Name: A1
+  m_Name: A2
   m_EditorClassIdentifier: 
-  questName: Go against the grain
+  questName: stop and smell the roses
   questGoals:
-  - {fileID: 11400000, guid: 65b9ec99edb1d6746aabd0f08697c0fa, type: 2}
-  - {fileID: 11400000, guid: 7d91f6f8605dfc54a8bd11160e5d321a, type: 2}
-  - {fileID: 11400000, guid: 08ac52f80f1399b4082256a48b372c04, type: 2}
-  - {fileID: 11400000, guid: 73be7c7ceb9369143ae313e0478f6b57, type: 2}
-  finalGoal: {fileID: 11400000, guid: 07cccaefdcce3ce438adf27042e0f42f, type: 2}
+  - {fileID: 11400000, guid: a3b3e1cd37412a743ba8ce8632fa2c45, type: 2}
+  - {fileID: 11400000, guid: 2fd05e58ae0ed9b428a2e05b15934f4b, type: 2}
+  - {fileID: 11400000, guid: 3add5f2b1ff3b5045a008073d439352a, type: 2}
+  - {fileID: 11400000, guid: add031e3efa333e4f92361f57422b82f, type: 2}
+  finalGoal: {fileID: 11400000, guid: 5ca8937f3a3fd54408008aa52b984bcc, type: 2}
   finalReward: {fileID: 11400000, guid: b92363ee0001e264e8aef76f1eb0d534, type: 2}

@@ -52,6 +52,13 @@ MonoBehaviour:
       Data3: -1279468143
       Data4: -1029334372
     Path: event:/SFX/Player/Play_QuestComplete
+  itemReceiveEvent:
+    Guid:
+      Data1: -1811702630
+      Data2: 1214165547
+      Data3: -1930509689
+      Data4: 484949037
+    Path: event:/SFX/Cards/Play_Card_Accept
   notificationPanel: {fileID: 0}
   notificationPanelImage: {fileID: 0}
   notificationPanelIconImage: {fileID: 0}

@@ -9,7 +9,7 @@ public class BaseQuest : ScriptableObject
     public string questName;
     public AbstractQuestSO[] questGoals;
     public AbstractQuestSO finalGoal;
-    public string finalReward;
+    public QuestReward finalReward;
 
     protected int currentlyActiveGoal; // keeps track of the current goal (!) NEEDS TO BE EXPLICITLY SET TO 0
     

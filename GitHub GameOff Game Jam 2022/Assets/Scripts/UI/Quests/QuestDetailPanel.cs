@@ -33,7 +33,7 @@ public class QuestDetailPanel : MonoBehaviour
         if (quest.IsDone())
         {
             completedQuestPanels[index].gameObject.SetActive(true);
-            completedQuestPanels[index].Display(quest.questName, quest.finalReward);
+            completedQuestPanels[index].Display(quest.questName, quest.finalReward.ToString());
 
             uncompletedQuestPanels[index].gameObject.SetActive(false);
         }
