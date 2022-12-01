@@ -13,21 +13,25 @@ MonoBehaviour:
   m_Name: TutorialDialogue
   m_EditorClassIdentifier: 
   speakers:
-  - {fileID: 21300000, guid: 30b97ddcbe4d4ce4bba8f46fe755455f, type: 3}
-  - {fileID: 21300000, guid: 9ad84c68f84347d4eb0533c597a50e05, type: 3}
-  - {fileID: 21300000, guid: 902ffa91740027745bbb4e864801a1e3, type: 3}
-  - {fileID: 21300000, guid: 218d7908138e7d44cb943fbfa5240420, type: 3}
-  - {fileID: 21300000, guid: 218d7908138e7d44cb943fbfa5240420, type: 3}
-  - {fileID: 21300000, guid: 218d7908138e7d44cb943fbfa5240420, type: 3}
-  - {fileID: 21300000, guid: 218d7908138e7d44cb943fbfa5240420, type: 3}
-  - {fileID: 21300000, guid: 218d7908138e7d44cb943fbfa5240420, type: 3}
-  - {fileID: 21300000, guid: 218d7908138e7d44cb943fbfa5240420, type: 3}
-  - {fileID: 21300000, guid: 218d7908138e7d44cb943fbfa5240420, type: 3}
-  - {fileID: 21300000, guid: 218d7908138e7d44cb943fbfa5240420, type: 3}
-  - {fileID: 21300000, guid: 218d7908138e7d44cb943fbfa5240420, type: 3}
-  - {fileID: 21300000, guid: 218d7908138e7d44cb943fbfa5240420, type: 3}
-  - {fileID: 21300000, guid: 218d7908138e7d44cb943fbfa5240420, type: 3}
-  - {fileID: 21300000, guid: 218d7908138e7d44cb943fbfa5240420, type: 3}
+  - {fileID: 21300000, guid: c9cf1d6515857c84c8246752dbc27e13, type: 3}
+  - {fileID: 21300000, guid: c9cf1d6515857c84c8246752dbc27e13, type: 3}
+  - {fileID: 21300000, guid: c9cf1d6515857c84c8246752dbc27e13, type: 3}
+  - {fileID: 21300000, guid: c9cf1d6515857c84c8246752dbc27e13, type: 3}
+  - {fileID: 21300000, guid: c9cf1d6515857c84c8246752dbc27e13, type: 3}
+  - {fileID: 21300000, guid: c9cf1d6515857c84c8246752dbc27e13, type: 3}
+  - {fileID: 21300000, guid: c9cf1d6515857c84c8246752dbc27e13, type: 3}
+  - {fileID: 21300000, guid: c9cf1d6515857c84c8246752dbc27e13, type: 3}
+  - {fileID: 21300000, guid: c9cf1d6515857c84c8246752dbc27e13, type: 3}
+  - {fileID: 21300000, guid: c9cf1d6515857c84c8246752dbc27e13, type: 3}
+  - {fileID: 21300000, guid: c9cf1d6515857c84c8246752dbc27e13, type: 3}
+  - {fileID: 21300000, guid: c9cf1d6515857c84c8246752dbc27e13, type: 3}
+  - {fileID: 21300000, guid: c9cf1d6515857c84c8246752dbc27e13, type: 3}
+  - {fileID: 21300000, guid: c9cf1d6515857c84c8246752dbc27e13, type: 3}
+  - {fileID: 21300000, guid: c9cf1d6515857c84c8246752dbc27e13, type: 3}
+  - {fileID: 21300000, guid: c9cf1d6515857c84c8246752dbc27e13, type: 3}
+  - {fileID: 21300000, guid: c9cf1d6515857c84c8246752dbc27e13, type: 3}
+  - {fileID: 21300000, guid: c9cf1d6515857c84c8246752dbc27e13, type: 3}
+  - {fileID: 21300000, guid: c9cf1d6515857c84c8246752dbc27e13, type: 3}
   lines:
   - 'Hi, my name is Perry! I''m a local grocer.
 
@@ -40,12 +44,16 @@ MonoBehaviour:
 '
   - 'Each turn, you''ll get new cards to replace the ones you played. You can have
     a maximum of five cards in your hand. '
+  - 'Each turn, you''ll get new cards to replace the ones you played. You can have
+    a maximum of five cards in your hand. '
   - 'There are 3 types of cards: building cards, livestock cards, and crop cards. '
   - Buildings can only be placed on hill or plain tiles.
   - Livestock can only be placed in animal pens.
   - Crops can only be placed on free acres.
   - 'Speaking of tiles, as a new farmer you should get acquainted with the different
     types of land on your farm. Here is a handy guide for reference! '
+  - Watch out for seasons too! They'll affect your crop growth in unexpected ways.
+    Pay attention to the extra card details!
   - Watch out for seasons too! They'll affect your crop growth in unexpected ways.
     Pay attention to the extra card details!
   - 'When your crops are done growing or your animals have created a product, all
@@ -57,31 +65,32 @@ MonoBehaviour:
   - 'Most grocers only want to buy one resource each season but, since we''re friends,
     I''ll buy two. '
   - I can only buy the second one at half price though, sorry. I'm not made of money!
-    Haha
+    Haha.
   - 'The other grocers all have their own specialty. For instance, Emile always buys
     crops at a premium.
 
     Get to know each of our quirks!'
-  - 'Now that the business part is done, you''re all set up and ready to go! You
-    can see the requirements of the bet here whenever you want. '
+  - Now that the business part is done, you're all set up and ready to go! You can
+    see the requirements of the bet here whenever you want.
   - ' I wish you the best of luck! Win for all of us, okay? I know you''ll make your
     mother proud. You''ve got this!'
   screenshots:
-  - {fileID: 21300000, guid: 9a08bc6abcdd74746a09c553480a3290, type: 3}
-  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
-  - {fileID: 21300000, guid: 6091406fa63b19f42abc3533fc92749b, type: 3}
-  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
-  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
-  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
-  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
-  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
-  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
-  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
-  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
-  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
-  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
-  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
-  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
-  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
-  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
-  - {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
+  - {fileID: 21300000, guid: 33691cb7d751ff54ebfad938a4adc596, type: 3}
+  - {fileID: 21300000, guid: 0f78f15ec1e27364199568bb583646c3, type: 3}
+  - {fileID: 21300000, guid: 79beed7cef08ff5408753752e5825a20, type: 3}
+  - {fileID: 21300000, guid: 416d0d895d3c78647851bc6a5234e9a2, type: 3}
+  - {fileID: 21300000, guid: 7898b14881520f44c9028caf90c26bc3, type: 3}
+  - {fileID: 21300000, guid: 3c4a62c587944674bacdc1a970ee781d, type: 3}
+  - {fileID: 21300000, guid: 3e9e68324eee2fc4fb019e357ba0abf0, type: 3}
+  - {fileID: 21300000, guid: 26c190c0b937e3a4aaf798125242ae0c, type: 3}
+  - {fileID: 21300000, guid: 029915812c154ae42a172b39bb2e34a4, type: 3}
+  - {fileID: 21300000, guid: 3f681bb7bfcb40c42ae6e1b952356715, type: 3}
+  - {fileID: 21300000, guid: a8790daef2ee3b942bab5de31b2fdbc0, type: 3}
+  - {fileID: 21300000, guid: 0bf384f617927714a89483cbfd5f72a2, type: 3}
+  - {fileID: 21300000, guid: 859d01acaf93abc469e8268328c41a1f, type: 3}
+  - {fileID: 21300000, guid: 859d01acaf93abc469e8268328c41a1f, type: 3}
+  - {fileID: 21300000, guid: 2dd97bea353392948a8ebe96e10ba7c5, type: 3}
+  - {fileID: 21300000, guid: 2dd97bea353392948a8ebe96e10ba7c5, type: 3}
+  - {fileID: 21300000, guid: 08b153c610a738143911dadb9b9837df, type: 3}
+  - {fileID: 21300000, guid: 19b88ebcabc7e624db72dc66276aeffe, type: 3}
+  - {fileID: 21300000, guid: 33691cb7d751ff54ebfad938a4adc596, type: 3}

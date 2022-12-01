@@ -19,6 +19,7 @@ public class Tutorial : ComputerPhaseStep
 
    [SerializeField]
    private GameObject tutorialPanel;
+   private bool _shownAtStart = false;
 
    public void OnEnable(){
     tutorialTextBox.text = _TutorialDialogue.lines[0];
@@ -47,12 +48,18 @@ public class Tutorial : ComputerPhaseStep
    }
 
     public override void StartProcessingForComputerPhase(bool isComputerPhaseDuringGameInit){
-        TurnOnTimePanel();
-        OnFinishProcessing.Invoke();
+        if(!_shownAtStart)TurnOnTimePanel();
+        if(_shownAtStart)OnFinishProcessing.Invoke();
     }
     
     public void TurnOnTimePanel(){
         tutorialPanel.SetActive(true);
+    }
+
+    public void StartGame(){
+        if(_shownAtStart) return;
+        _shownAtStart = true;
+        OnFinishProcessing.Invoke();
     }
 
     protected override object[] CheckForMissingReferences()=> new object[]{};
