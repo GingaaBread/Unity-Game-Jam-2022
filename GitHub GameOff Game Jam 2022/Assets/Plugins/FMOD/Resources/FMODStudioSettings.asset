@@ -445,10 +445,10 @@ MonoBehaviour:
       Value: 0
       HasValue: 0
     DSPBufferLength:
-      Value: 2048
+      Value: 4096
       HasValue: 1
     DSPBufferCount:
-      Value: 4
+      Value: 8
       HasValue: 1
     Plugins:
       Value: []
