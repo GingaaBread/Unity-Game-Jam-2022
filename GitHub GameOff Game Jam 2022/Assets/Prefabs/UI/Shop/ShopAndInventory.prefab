@@ -733,7 +733,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourcePrefab: {fileID: 2473750768550559211, guid: c5e466ebe6ecfcc42b847c772fdd3e6f, type: 3}
   resourceHolder: {fileID: 7307347740695949288}
-  moneyDisplayers: []
+  nameRect: {fileID: 5731377213835943253}
+  moneyDisplayers:
+  - {fileID: 7307347740179440044}
+  - {fileID: 0}
 --- !u!1 &8314398421754165526
 GameObject:
   m_ObjectHideFlags: 0
@@ -2044,6 +2047,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1871599586812791175, guid: 20fa169ad2925864995c11c3f89a7162, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7773695005046755067, guid: 20fa169ad2925864995c11c3f89a7162, type: 3}
       propertyPath: m_Name
       value: InventoryPanel
@@ -2055,6 +2062,22 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 438328550629619557, guid: 20fa169ad2925864995c11c3f89a7162, type: 3}
   m_PrefabInstance: {fileID: 5195298198989095571}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &5731377213835943253 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 545103892339056582, guid: 20fa169ad2925864995c11c3f89a7162, type: 3}
+  m_PrefabInstance: {fileID: 5195298198989095571}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7307347740179440044 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3274541487074763583, guid: 20fa169ad2925864995c11c3f89a7162, type: 3}
+  m_PrefabInstance: {fileID: 5195298198989095571}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bae48bf852ec4944a973e7d90f9d35dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &7307347740695949288 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3274541488672320891, guid: 20fa169ad2925864995c11c3f89a7162, type: 3}
