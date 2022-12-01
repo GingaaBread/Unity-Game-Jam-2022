@@ -22,7 +22,7 @@ MonoBehaviour:
   cardSummary: Produces wool every six turns
   cardEffectKeys: []
   cardEffectValues: []
-  cardCost: 32
+  cardCost: 34
   animalType: 4
   tileForegroundChildPrefab: {fileID: 290865623841320278, guid: ea720299c7e559b4d92950886b988dbd, type: 3}
   turnsTillLivestockPayoff: 6
