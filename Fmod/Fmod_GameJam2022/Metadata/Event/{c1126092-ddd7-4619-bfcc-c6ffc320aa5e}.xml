@@ -107,7 +107,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{99c05497-5d09-4732-b8ae-f694e704634a}">
 		<property name="volume">
-			<value>5</value>
+			<value>-2</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -127,7 +127,6 @@
 			<destination>{4da0da05-0e47-46fa-8e9e-9973ed56eb80}</destination>
 			<destination>{536dc5e4-f7d2-4596-bd59-8e0e6b78645d}</destination>
 			<destination>{481fa1cd-a4a1-49ae-bba8-3c66e62169da}</destination>
-			<destination>{8ede4c9d-ad24-4401-8353-54ae8767a76d}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{b3f86247-65e1-462b-a65b-abdbfbbcf5cd}" />
@@ -170,14 +169,6 @@
 		</property>
 		<property name="highCrossover">
 			<value>4800</value>
-		</property>
-	</object>
-	<object class="SFXReverbEffect" id="{8ede4c9d-ad24-4401-8353-54ae8767a76d}">
-		<property name="decayTime">
-			<value>270</value>
-		</property>
-		<property name="wetLevel">
-			<value>-14</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{52cfbca0-3c6b-4395-8ace-4d1ffd2267de}">
