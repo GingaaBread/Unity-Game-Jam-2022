@@ -48,9 +48,6 @@ namespace UIManagement
         // The background panel image of the notification panel
         [SerializeField] private Image notificationPanelImage;
 
-        // The icon image of the notification
-        [SerializeField] private Image notificationPanelIconImage;
-
         // The animator of the notification panel used for triggering the animations
         [SerializeField] private Animator notificationPanelAnimator;
 
@@ -65,12 +62,6 @@ namespace UIManagement
 
         // The text component of the confirmation panel describing what the confirmation reason is
         [SerializeField] private TMP_Text confirmationTitleText;
-
-
-
-        [Header("UI Notification Icons")]
-        [SerializeField] private Sprite moneyNotificationIcon; 
-        [SerializeField] private Sprite buildingNotificationIcon;
 
 
 
@@ -166,13 +157,10 @@ namespace UIManagement
         {
             Assert.IsNotNull(notificationPanel, $"{GetType().Name} missing required editor input notificationPanel");
             Assert.IsNotNull(notificationPanelImage, $"{GetType().Name} missing required editor input notificationPanelImage");
-            Assert.IsNotNull(notificationPanelIconImage, $"{GetType().Name} missing required editor input notificationPanelIconImage");
             Assert.IsNotNull(notificationPanelAnimator, $"{GetType().Name} missing required editor input notificationPanelAnimator");
             Assert.IsNotNull(notificationPanelText, $"{GetType().Name} missing required editor input notificationPanelText");
             Assert.IsNotNull(confirmationPanel, $"{GetType().Name} missing required editor input confirmationPanel");
             Assert.IsNotNull(confirmationTitleText, $"{GetType().Name} missing required editor input confirmationTitleText");
-            Assert.IsNotNull(moneyNotificationIcon, $"{GetType().Name} missing required editor input moneyNotificationIcon");
-            Assert.IsNotNull(buildingNotificationIcon, $"{GetType().Name} missing required editor input buildingNotificationIcon");
         }
 
         public void EnqueueGenericMessage(bool shouldBeEnqueuedToInstantQueue, string message, EventReference fmodEventReference) {
@@ -423,17 +411,10 @@ namespace UIManagement
         /// Activates the panel GameObject, sets its panel colour and plays the animation
         /// </summary>
         /// <param name="panelColour">The background colour of the notification panel</param>
-        private void DisplayNotification(Color panelColour, Sprite notificationIcon)
+        private void DisplayNotification(Color panelColour)
         {
             notificationPanel.SetActive(true);
             notificationPanelImage.color = panelColour;
-            if (notificationIcon != null) {
-                notificationPanelIconImage.sprite = notificationIcon;
-                notificationPanelIconImage.enabled = true;
-            } else {
-                notificationPanelIconImage.sprite = null;
-                notificationPanelIconImage.enabled = false;
-            }
 
             notificationPanelAnimator.Play("UINotificationPanelDisplay");
         }
@@ -476,13 +457,13 @@ namespace UIManagement
             {
                 RuntimeManager.PlayOneShot(moneySoundEvent);
                 notificationPanelText.text = $"Received {moneyPanel.ReceivedMoneyAmount} coins!";
-                DisplayNotification(Color.yellow, moneyNotificationIcon);
+                DisplayNotification(Color.white);
             }
             else if (currentPanel is BuildingReceptionUIPanel buildingPanel)
             {
                 RuntimeManager.PlayOneShot(buildingSoundEvent);
                 notificationPanelText.text = $"Received {buildingPanel.ReceivedBuildingType}!";
-                DisplayNotification(Color.red, buildingNotificationIcon);
+                DisplayNotification(Color.white);
             }
             else if (currentPanel is CardReceptionUIPanel cardPanel)
             {
@@ -492,7 +473,7 @@ namespace UIManagement
             else if (currentPanel is GenericMessageUIPanel genericMessageUIPanel)
             {
                 notificationPanelText.text = genericMessageUIPanel.message;
-                DisplayNotification(Color.yellow, null);
+                DisplayNotification(Color.white);
 
                 if(!genericMessageUIPanel.fmodEventReference.IsNull)
                     RuntimeManager.PlayOneShot(genericMessageUIPanel.fmodEventReference);
