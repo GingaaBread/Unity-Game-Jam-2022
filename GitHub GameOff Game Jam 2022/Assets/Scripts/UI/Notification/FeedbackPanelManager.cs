@@ -316,6 +316,16 @@ namespace UIManagement
             {
                 TimeManager.Instance.FinishPreTurnPhase();
             }
+
+            if (!ofTheNewTurnQueue && TimeManager.Instance.CurrentPhase == TimeManager.Phase.PreTurn)
+            {
+                if (doDebugPrints)
+                {
+                    print("[DEBUG]: Instant queue finished during pre turn phase. Starting newTurn queue");
+                }
+
+                InitiateQueue();
+            }
         }
 
         /// <summary>
@@ -446,7 +456,7 @@ namespace UIManagement
             }
 
             notificationPanelText.text = "";
-
+            
             if (currentPanel is MoneyReceptionUIPanel moneyPanel)
             {
                 RuntimeManager.PlayOneShot(moneySoundEvent);
