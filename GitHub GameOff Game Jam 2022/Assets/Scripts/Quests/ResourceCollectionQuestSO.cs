@@ -1,39 +1,17 @@
 using PlayerData;
 using UnityEngine;
-using System.Collections.Generic;
 using UnityEngine.Assertions;
-using System;
 
-[CreateAssetMenu(fileName = "New Resource Collection SO", menuName = "Quests/ResourceCollectionSO")]
+[CreateAssetMenu(fileName = "New Quest", menuName = "Quests/ResourceCollectionQuestGoal")]
 public class ResourceCollectionQuestSO : AbstractQuestSO {
 
     [SerializeField] public ResourceSO[] targetResources;
     [SerializeField] public int[] targetQuantity;
-    public ResourceQuestStep[] resourceQuestSteps;
-
-    [Serializable]
-    public class ResourceQuestStep
-    {
-        public ResourceSO[] targetResources;
-        public int[] quantities;
-        public int moneyReward;
-        // todo: end reward
-    }
 
     private int[] actualQuantity; // not serialized because we don't want to save these outside runtime
 
     public void OnEnable() {
         Assert.IsTrue(targetResources.Length == targetQuantity.Length, $"{this.name} must have same number of targetQuantity as targetResources");
-    }
-
-    public override string GetQuestAsSentence() {
-        string s = "Collect";
-        for(int i = 0; i < targetResources.Length; i++) {
-            if (i > 0)
-                s+= " and";
-            s += $" {targetQuantity[i]} {targetResources[i].name.ToLower()}";
-        }
-        return s;
     }
 
     public override string GetStatusAsSentence() {
@@ -63,6 +41,13 @@ public class ResourceCollectionQuestSO : AbstractQuestSO {
         for (int i = 0; i < targetResources.Length; i++) {
             if(targetResources[i] == resource) {
                 actualQuantity[i] += countCollected;
+
+                if (actualQuantity[i] >= targetQuantity[i])
+                {
+                    actualQuantity[i] = targetQuantity[i];
+                    OnCompletion.Invoke();
+                }
+
                 OnUpdate.Invoke();
                 return;
             }

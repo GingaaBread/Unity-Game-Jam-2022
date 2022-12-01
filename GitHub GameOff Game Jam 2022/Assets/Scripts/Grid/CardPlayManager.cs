@@ -1,4 +1,7 @@
+using FMODUnity;
+using PlayerData;
 using System;
+using UIManagement;
 using UnityEngine;
 
 /// <author> Ro <author>
@@ -27,6 +30,7 @@ public class CardPlayManager : MonoBehaviour
     public Color hoverTint;
 
     private UICardPanel currentUIPanel;
+    private EventReference NotEnoughMoneyFmodEventReference;
 
     private void Awake()
     {
@@ -72,15 +76,27 @@ public class CardPlayManager : MonoBehaviour
         QuestManager.Instance.NotifyOfTilePlaced(currentUIPanel.CardToDisplay);
     }
 
+    private bool CanPlayerAffordToPlay(ActionCardSO card) {
+        return PlayerDataManager.Instance.HasMoreOrEqualMoneyThan(card.cardCost);
+    }
+
+    private void ChargePlayerForPlay(ActionCardSO cardPlayed) {
+        PlayerDataManager.Instance.DecreaseMoneyAmount(cardPlayed.cardCost);
+    }
+
     public void AddPlayToTile(Tile curr)
     {
         if (currBuildingBeingPlayed != null)
         {
-            bool success = curr.ApplyBuildTile(currBuildingBeingPlayed);
-
-            if (success)
-            {
-                RemoveCardAndUpdateQuests();
+            if (CanPlayerAffordToPlay(currBuildingBeingPlayed)) {
+                bool success = curr.ApplyBuildTile(currBuildingBeingPlayed);
+                if (success) {
+                    ChargePlayerForPlay(currBuildingBeingPlayed);
+                    RemoveCardAndUpdateQuests();
+                }
+            } else {
+                FeedbackPanelManager.Instance.EnqueueGenericMessage(true, "not enough money", NotEnoughMoneyFmodEventReference);
+                FeedbackPanelManager.Instance.InitiateInstantDisplayQueue();
             }
 
             curr.ResetTileColour();
@@ -88,11 +104,15 @@ public class CardPlayManager : MonoBehaviour
         }
         else if (currSeedBeingPlayed != null)
         {
-            bool success = curr.ApplyCropTile(currSeedBeingPlayed);
-
-            if (success)
-            {
-                RemoveCardAndUpdateQuests();
+            if (CanPlayerAffordToPlay(currSeedBeingPlayed)) {
+                bool success = curr.ApplyCropTile(currSeedBeingPlayed);
+                if (success) {
+                    ChargePlayerForPlay(currSeedBeingPlayed);
+                    RemoveCardAndUpdateQuests();
+                }
+            } else {
+                FeedbackPanelManager.Instance.EnqueueGenericMessage(true, "not enough money", NotEnoughMoneyFmodEventReference);
+                FeedbackPanelManager.Instance.InitiateInstantDisplayQueue();
             }
 
             curr.ResetTileColour();
@@ -100,11 +120,15 @@ public class CardPlayManager : MonoBehaviour
         }
         else if (currAnimalBeingPlayed != null)
         {
-            bool success = curr.ApplyLivestockTile(currAnimalBeingPlayed);
-
-            if (success)
-            {
-                RemoveCardAndUpdateQuests();
+            if (CanPlayerAffordToPlay(currAnimalBeingPlayed)) {
+                bool success = curr.ApplyLivestockTile(currAnimalBeingPlayed);
+                if (success) {
+                    ChargePlayerForPlay(currAnimalBeingPlayed);
+                    RemoveCardAndUpdateQuests();
+                }
+            } else {
+                FeedbackPanelManager.Instance.EnqueueGenericMessage(true, "not enough money", NotEnoughMoneyFmodEventReference);
+                FeedbackPanelManager.Instance.InitiateInstantDisplayQueue();
             }
 
             curr.ResetTileColour();

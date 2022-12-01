@@ -15,24 +15,19 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler, IPointerDown
     [Header("Main UI Components")]
     [SerializeField] private TMP_Text titleText;
     [SerializeField] private Image iconImage;
-    [SerializeField] private Image discardIconImage;
-    [SerializeField] private TMP_Text discardText;
     [SerializeField] private TMP_Text summaryText;
     [SerializeField] private Button discardButton;
-    [SerializeField] private TMP_Text[] effectKeyTexts;
-    [SerializeField] private TMP_Text[] effectValueTexts;
     [SerializeField] private TMP_Text costText;
-
-    [Header("Recolourable Panels")]
-    [SerializeField] private Image headerPanelImage;
-    [SerializeField] private Image iconPanelImage;
-    [SerializeField] private Image summaryPanelImage;
-    [SerializeField] private Image effectPanelImage;
-    [SerializeField] private Image effectSeparatorPanelImage;
-    [SerializeField] private Image actionButtonPanelImage;
 
     [Header("Audio")]
     [SerializeField] private StudioEventEmitter audioEmitter;
+
+    [Header("NewUI references")]
+    [SerializeField] private Image CardBackground;
+    [SerializeField] private Image ImagePreviewBackground;
+    [SerializeField] private Image ImagePreviewForeground;
+    [SerializeField] private Image SummaryBackground;
+    [SerializeField] private Image CostBackground;
 
     private Color selectionBorderColour;
 
@@ -46,42 +41,18 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler, IPointerDown
         if (CardToDisplay == null)
             throw new MissingReferenceException("You need to define the CardToDisplay before rendering a card");
 
-        switch (CardToDisplay)
-        {
-            case BuildingCard b:
-                ApplyColourScheme
-                (
-                    CardManager.Instance.buildingPrimary,
-                    CardManager.Instance.buildingSecondary
-                );
-                break;
-            case SeedCard s:
-                ApplyColourScheme
-                (
-                    CardManager.Instance.seedPrimary,
-                    CardManager.Instance.seedSecondary
-                );
-                break;
-            case LivestockCard l:
-                ApplyColourScheme
-                (
-                    CardManager.Instance.livestockPrimary,
-                    CardManager.Instance.livestockSecondary
-                );
-                break;
-            default: throw new NotImplementedException("Card type is not yet implemented: " + CardToDisplay.GetType());
-        }
+
+        CardBackground.sprite = CardToDisplay.Background;
+        ImagePreviewBackground.sprite = CardToDisplay.PreviewBackground;
+        ImagePreviewForeground.sprite = CardToDisplay.cardSprite;
+        SummaryBackground.sprite = CardToDisplay.summaryBackground;
+        CostBackground.sprite = CardToDisplay.costBackground;
 
         // Set the texts
         titleText.text = CardToDisplay.cardTitle;
         summaryText.text = CardToDisplay.cardSummary;
         costText.text = CardToDisplay.cardCost.ToString();
         AssertLegalEffectSetup();
-        for (int i = 0; i < CardToDisplay.cardEffectKeys.Length; i++)
-        {
-            effectKeyTexts[i].text = CardToDisplay.cardEffectKeys[i];
-            effectValueTexts[i].text = CardToDisplay.cardEffectValues[i];
-        }
 
         if (CardManager.Instance.cardDiscardedThisTurn)
         {
@@ -95,18 +66,7 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler, IPointerDown
 
     private void ApplyColourScheme(Color prm, Color drk)
     {
-        // Apply the primary colours
-        headerPanelImage.color = prm;
-        effectSeparatorPanelImage.color = prm;
-        costText.color = prm;
-        discardIconImage.color = prm;
-        discardText.color = prm;
-        actionButtonPanelImage.color = prm;
-
         // Apply the darker colours
-        iconPanelImage.color = drk;
-        summaryPanelImage.color = drk;
-        effectPanelImage.color = drk;
         selectionBorderColour = drk;
     }
 
@@ -131,9 +91,7 @@ public class UICardPanel : ComputerPhaseStep, IPointerEnterHandler, IPointerDown
 
     protected override object[] CheckForMissingReferences() => new object[]
     {
-        titleText, iconImage, summaryText, effectKeyTexts, effectValueTexts, costText, discardIconImage,
-        headerPanelImage, iconPanelImage, summaryPanelImage, effectPanelImage, effectSeparatorPanelImage,
-        actionButtonPanelImage, discardText
+        titleText, iconImage, summaryText, costText
     };
 
     public override void StartProcessingForComputerPhase(bool isComputerPhaseDuringGameInit)

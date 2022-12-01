@@ -45,6 +45,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doDebugPrints: 0
+  questCompletedSound:
+    Guid:
+      Data1: 235062375
+      Data2: 1205501298
+      Data3: -1279468143
+      Data4: -1029334372
+    Path: event:/SFX/Player/Play_QuestComplete
   notificationPanel: {fileID: 0}
   notificationPanelImage: {fileID: 0}
   notificationPanelIconImage: {fileID: 0}

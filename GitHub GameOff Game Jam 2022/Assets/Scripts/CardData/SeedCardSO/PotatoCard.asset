@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c341cea1d7edb0546a3a3d50232322e8, type: 3}
   m_Name: PotatoCard
   m_EditorClassIdentifier: 
-  cardSprite: {fileID: 21300000, guid: 38d9fbea1ec51f34082db39ee0b16192, type: 3}
+  Background: {fileID: 21300000, guid: e94747e6965caad419cd516b251b4bff, type: 3}
+  PreviewBackground: {fileID: 21300000, guid: 81e181d24259e4f439559c90ee95d14e, type: 3}
+  cardSprite: {fileID: 21300000, guid: 070e92d3fa28126488e1c4e969fa82ed, type: 3}
+  summaryBackground: {fileID: 21300000, guid: 10833c76a5be2814789c9a3324700129, type: 3}
+  costBackground: {fileID: 21300000, guid: d48cbc36a7069a74bae5c3c21979e84e, type: 3}
   cardTitle: Potato
   cardSubtitle: Solanum tuberosum
   cardSummary: Once harvested, gives 1 potato
@@ -21,7 +25,7 @@ MonoBehaviour:
   cardCost: 8
   buildingType: 5
   tileForegroundChildPrefab: {fileID: 290865623841320278, guid: 505ab517c18bce940be8f3ba4d933ecb, type: 3}
-  cropTotalTurnsTillPayoff: 5
+  cropTotalTurnsTillPayoff: 7
   payoffResource: {fileID: 11400000, guid: fdcd416a38e9107408c6bcfd8fe588ac, type: 2}
   payoffAmount: 1
   bonus: {fileID: 11400000, guid: 60bcd649471c58b41a180fc9da1e27bd, type: 2}

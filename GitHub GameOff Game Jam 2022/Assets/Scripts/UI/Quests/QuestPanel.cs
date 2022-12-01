@@ -1,13 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.Assertions;
-using System;
 
 public class QuestPanel : MonoBehaviour {
 
     [SerializeField] private Transform containerForQuests;
+    [SerializeField] private Animator panelAnimator;
 
     private List<GameObject> questsDisplayed = new List<GameObject>();
 
@@ -22,23 +20,38 @@ public class QuestPanel : MonoBehaviour {
         ClearQuests();
     }
 
+    public void DisplayCompletionAnimation() => panelAnimator.Play("QuestCompleted");
+
     public void OpenDetailMenu() => QuestDetailPanel.Instance.Open();
 
     public void ClearQuests() {
         questsDisplayed.Clear();
         foreach (Transform child in containerForQuests) {
-            GameObject.Destroy(child.gameObject);
+            Destroy(child.gameObject);
         }
     }
 
-    internal void UpdateQuests(List<AbstractQuestSO> allQuestsToShow) {
+    public void SetupPanel(List<BaseQuest> allQuestsToShow) {
+
+        UpdateSelf(allQuestsToShow);
+    }
+
+    private void UpdateSelf(List<BaseQuest> allQuestsToShow)
+    {
         ClearQuests();
-        foreach(AbstractQuestSO quest in allQuestsToShow) {
-            if (quest.prefabForDisplayingMissionUI != null) {
-                GameObject questUIObj = GameObject.Instantiate(quest.prefabForDisplayingMissionUI, containerForQuests, false);
+
+        var questUIPrefab = QuestManager.Instance.questUIPrefab;
+
+        foreach (BaseQuest quest in allQuestsToShow)
+        {
+            if (questUIPrefab != null)
+            {
+                GameObject questUIObj = Instantiate(questUIPrefab, containerForQuests, false);
                 questUIObj.GetComponent<QuestPanelItem>().Initialize(quest);
                 questsDisplayed.Add(questUIObj);
-            } else {
+            }
+            else
+            {
                 Debug.Log("QuestPanel given a quest without a UI prefab to instantiate for it");
             }
         }
