@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d452937f82412438172286eaa28b2d, type: 3}
+  m_Name: C3
+  m_EditorClassIdentifier: 
+  questName: squirrel away
+  questGoals:
+  - {fileID: 11400000, guid: 676e4329da3e89f46b42b8f88490801f, type: 2}
+  - {fileID: 11400000, guid: 128c8c1584b5b0840b03c4e4e49de236, type: 2}
+  - {fileID: 11400000, guid: bfcd3566807e7ec409849e8579776b2f, type: 2}
+  - {fileID: 11400000, guid: 0ddf5bd9f5369434e86b31a9384d8fb7, type: 2}
+  finalGoal: {fileID: 11400000, guid: 5943a74bb3c636a4882ece83a4a6619b, type: 2}
+  finalReward: {fileID: 11400000, guid: 578633f47a2ae874896630d5ac33c854, type: 2}

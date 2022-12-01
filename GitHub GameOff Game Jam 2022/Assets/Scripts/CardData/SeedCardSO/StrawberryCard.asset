@@ -22,6 +22,15 @@ MonoBehaviour:
   cardSummary: Once harvested, gives 1 strawberry
   cardEffectKeys: []
   cardEffectValues: []
+  bonusEffectTextDescription:
+  - 'If planted next to a forest:'
+  - 'If planted next to bees:'
+  bonusEffectValues:
+  - -2 turns to mature
+  - -1 turns to mature
+  bonusEffectSprites:
+  - {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  - {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
   cardCost: 10
   buildingType: 6
   tileForegroundChildPrefab: {fileID: 290865623841320278, guid: b9ea3c07989529d4b916c7769bf70925, type: 3}

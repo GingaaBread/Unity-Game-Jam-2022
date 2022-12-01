@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d452937f82412438172286eaa28b2d, type: 3}
+  m_Name: A3
+  m_EditorClassIdentifier: 
+  questName: acknowledge the corn
+  questGoals:
+  - {fileID: 11400000, guid: bfdada32d2f12e04ea261e69c2308638, type: 2}
+  - {fileID: 11400000, guid: ccb07beafd52ac14e9f2f75c72fc37df, type: 2}
+  - {fileID: 11400000, guid: ba47e9a1020ef27468ecb18ccd2f6dfc, type: 2}
+  - {fileID: 11400000, guid: 835be88ac3ea57c43811ecb0ca366e85, type: 2}
+  finalGoal: {fileID: 11400000, guid: d7a79a53bc15f9b41b2cbbe59622e9e4, type: 2}
+  finalReward: {fileID: 11400000, guid: b92363ee0001e264e8aef76f1eb0d534, type: 2}

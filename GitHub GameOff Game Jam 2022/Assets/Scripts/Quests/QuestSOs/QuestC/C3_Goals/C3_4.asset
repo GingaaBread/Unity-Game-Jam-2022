@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d31a4184ed2441489b07a36c34fc160, type: 3}
+  m_Name: C3_4
+  m_EditorClassIdentifier: 
+  textPrompt: Earn <gold>50 by selling strawberries, nuts, pumpkins, or wasabi
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCompletion:
+    m_PersistentCalls:
+      m_Calls: []
+  targetSaleItems:
+  - {fileID: 11400000, guid: b1521a81f69160a468a1cc5ec9a7e4f1, type: 2}
+  - {fileID: 11400000, guid: af3bf3ec6b5dc25439f3eba4e29af987, type: 2}
+  - {fileID: 11400000, guid: 47792c8d53da84f4d9ddcc19372aebff, type: 2}
+  - {fileID: 11400000, guid: 28add7d5f259fca4daaddb3c50d31118, type: 2}
+  targetTotalMoney: 50
+  fromAnything: 0

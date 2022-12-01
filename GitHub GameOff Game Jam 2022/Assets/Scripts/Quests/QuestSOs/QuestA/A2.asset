@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d452937f82412438172286eaa28b2d, type: 3}
+  m_Name: A2
+  m_EditorClassIdentifier: 
+  questName: stop and smell the roses
+  questGoals:
+  - {fileID: 11400000, guid: a3b3e1cd37412a743ba8ce8632fa2c45, type: 2}
+  - {fileID: 11400000, guid: 2fd05e58ae0ed9b428a2e05b15934f4b, type: 2}
+  - {fileID: 11400000, guid: 3add5f2b1ff3b5045a008073d439352a, type: 2}
+  - {fileID: 11400000, guid: add031e3efa333e4f92361f57422b82f, type: 2}
+  finalGoal: {fileID: 11400000, guid: 5ca8937f3a3fd54408008aa52b984bcc, type: 2}
+  finalReward: {fileID: 11400000, guid: b92363ee0001e264e8aef76f1eb0d534, type: 2}

@@ -78,7 +78,6 @@ public class QuestManager : ComputerPhaseStep
         foreach (BaseQuest quest in _activeQuests)
         {
             quest.ResetActualsCounters();
-            print(quest);
         }
 
         QuestPanel.Instance.SetupPanel(_activeQuests);

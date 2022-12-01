@@ -95,7 +95,7 @@ public class CardPlayManager : MonoBehaviour
                     RemoveCardAndUpdateQuests();
                 }
             } else {
-                FeedbackPanelManager.Instance.EnqueueGenericMessage(true, "not enough money", NotEnoughMoneyFmodEventReference);
+                FeedbackPanelManager.Instance.EnqueueGenericMessage(true, "Not enough money", NotEnoughMoneyFmodEventReference);
                 FeedbackPanelManager.Instance.InitiateInstantDisplayQueue();
             }
 
@@ -111,7 +111,7 @@ public class CardPlayManager : MonoBehaviour
                     RemoveCardAndUpdateQuests();
                 }
             } else {
-                FeedbackPanelManager.Instance.EnqueueGenericMessage(true, "not enough money", NotEnoughMoneyFmodEventReference);
+                FeedbackPanelManager.Instance.EnqueueGenericMessage(true, "Not enough money", NotEnoughMoneyFmodEventReference);
                 FeedbackPanelManager.Instance.InitiateInstantDisplayQueue();
             }
 
@@ -127,7 +127,7 @@ public class CardPlayManager : MonoBehaviour
                     RemoveCardAndUpdateQuests();
                 }
             } else {
-                FeedbackPanelManager.Instance.EnqueueGenericMessage(true, "not enough money", NotEnoughMoneyFmodEventReference);
+                FeedbackPanelManager.Instance.EnqueueGenericMessage(true, "Not enough money", NotEnoughMoneyFmodEventReference);
                 FeedbackPanelManager.Instance.InitiateInstantDisplayQueue();
             }
 

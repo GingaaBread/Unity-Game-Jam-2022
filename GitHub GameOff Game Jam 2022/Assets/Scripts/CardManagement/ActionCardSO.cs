@@ -13,6 +13,11 @@ public abstract class ActionCardSO : ScriptableObject
     public string cardSummary;
     public string[] cardEffectKeys;
     public string[] cardEffectValues;
+    [TextArea(3,3)]
+    public string[] bonusEffectTextDescription; // these could be filled by the Bonus script but time :/
+    [TextArea(3,3)]
+    public string[] bonusEffectValues; // these could be filled by the Bonus script but time :/
+    public Sprite[] bonusEffectSprites; // these could be filled by the Bonus script but time :/
     public int cardCost = 10;
 
 

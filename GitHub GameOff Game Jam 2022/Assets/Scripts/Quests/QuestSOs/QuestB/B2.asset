@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d452937f82412438172286eaa28b2d, type: 3}
+  m_Name: B2
+  m_EditorClassIdentifier: 
+  questName: go the whole hog
+  questGoals:
+  - {fileID: 11400000, guid: 19fe9f088f2d3fe439758338d89b4ffb, type: 2}
+  - {fileID: 11400000, guid: ea673bfef2cc791438eca875282e3f79, type: 2}
+  - {fileID: 11400000, guid: 8d6c46edb8144394d8b697381ddef0b7, type: 2}
+  - {fileID: 11400000, guid: 5350ea2c23c3ed243ba5c4c48de5419f, type: 2}
+  finalGoal: {fileID: 11400000, guid: 118f99eb17b7fef44b64b327ed90498c, type: 2}
+  finalReward: {fileID: 11400000, guid: 0faafbc279cbbdc43924ac0f72b85398, type: 2}
