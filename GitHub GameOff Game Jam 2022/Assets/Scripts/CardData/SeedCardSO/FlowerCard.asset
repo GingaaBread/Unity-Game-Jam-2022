@@ -22,6 +22,18 @@ MonoBehaviour:
   cardSummary: Once harvested, gives 1 flower
   cardEffectKeys: []
   cardEffectValues: []
+  bonusEffectTextDescription:
+  - 'If planted in spring:'
+  - 'If planted on hills:'
+  - 'If planted next to bees:'
+  bonusEffectValues:
+  - +1 flower
+  - -1 turns to mature
+  - -1 turns to mature
+  bonusEffectSprites:
+  - {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  - {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  - {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
   cardCost: 8
   buildingType: 2
   tileForegroundChildPrefab: {fileID: 290865623841320278, guid: e0cbf8588aaa0004a8af8e8e4839ef27, type: 3}

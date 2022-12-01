@@ -19,6 +19,10 @@ public class UIInspectorPanel : MonoBehaviour
     [SerializeField] private GameObject maturingContainer;
     [SerializeField] private GameObject resourcesContainer;
     [SerializeField] private GameObject bonusContainer;
+    [SerializeField] private GameObject bonusEffectPanel;
+    [SerializeField] private TextMeshProUGUI[] bonusEffectText;
+    [SerializeField] private TextMeshProUGUI[] bonusNumberText;
+    [SerializeField] private Image[] bonusImage;
     [SerializeField] private GameObject livestockLocationContainer;
     [SerializeField] private RectTransform detailPanel;
 
@@ -47,7 +51,7 @@ public class UIInspectorPanel : MonoBehaviour
 
         if (cardToInspect is SeedCard card)
         {
-            detailPanel.sizeDelta = new Vector3(detailPanel.sizeDelta.x, 620f);
+            detailPanel.sizeDelta = new Vector3(detailPanel.sizeDelta.x, 695f);
 
             backgroundPanelImage.sprite = UIMainPanel.Instance.seedBackgroundSprite;
             cardDetailPanelImage.sprite = UIMainPanel.Instance.seedDetailSprite;
@@ -64,7 +68,23 @@ public class UIInspectorPanel : MonoBehaviour
             resourceResellText.text = $"- 1 {card.cardTitle.ToLower()} can be sold for {card.payoffResource.basePrice} <sprite=1>";
 
             bonusContainer.SetActive(true);
+            string[] bonusTextToDisplay = card.bonusEffectTextDescription;
+            string[] bonusValuesToDisplay = card.bonusEffectValues;
+            Sprite[] bonusSpritesToDisplay = card.bonusEffectSprites;
 
+            for(int i = 0 ; i < bonusEffectText.Length ; i++){
+                if(i>= bonusTextToDisplay.Length){
+                    bonusEffectText[i].text = "";
+                    bonusNumberText[i].text = "";
+                    bonusImage[i].enabled = false;
+                } else {
+                    bonusEffectText[i].text = bonusTextToDisplay[i];
+                    bonusNumberText[i].text = bonusValuesToDisplay[i];
+                   bonusImage[i].sprite = bonusSpritesToDisplay[i];
+                    bonusImage[i].enabled = true;
+                }
+            }
+            
             foreach (var textPanel in textPanelImages)
             {
                 textPanel.sprite = UIMainPanel.Instance.seedTextSprite;

@@ -22,6 +22,15 @@ MonoBehaviour:
   cardSummary: Once harvested, gives 1 nut
   cardEffectKeys: []
   cardEffectValues: []
+  bonusEffectTextDescription:
+  - 'If planted next to a mountain:'
+  - 'If planted next to livestock:'
+  bonusEffectValues:
+  - +1 Nuts
+  - -1 turns to mature
+  bonusEffectSprites:
+  - {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  - {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
   cardCost: 10
   buildingType: 7
   tileForegroundChildPrefab: {fileID: 290865623841320278, guid: 89787e114059bbe4c86c83ab7d9b5ed1, type: 3}
