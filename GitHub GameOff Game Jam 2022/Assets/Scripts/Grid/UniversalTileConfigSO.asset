@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273cb56949e4b8d4a8492927d75f06e9, type: 3}
+  m_Name: UniversalTileConfigSO
+  m_EditorClassIdentifier: 
+  livestockHarvestFmodEventReference:
+    Guid:
+      Data1: -580913876
+      Data2: 1289579724
+      Data3: 507891334
+      Data4: -1275568412
+    Path: event:/SFX/Crops/Play_CropHarvest
+  cropHarvestFmodEventReference:
+    Guid:
+      Data1: -580913876
+      Data2: 1289579724
+      Data3: 507891334
+      Data4: -1275568412
+    Path: event:/SFX/Crops/Play_CropHarvest

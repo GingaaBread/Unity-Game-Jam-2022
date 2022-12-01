@@ -48,9 +48,10 @@ public class ShopSellerDetailsPanel : MonoBehaviour
         resourcePanelAObj.SetResource(Buyers[_shopIndex].resourceA);
         resourcePanelBObj.SetResource(Buyers[_shopIndex].resourceB);
 
-        resourcePanelAObj.SetPrice(Buyers[_shopIndex].resourceA.basePrice);
+        resourcePanelAObj.SetPrice(GetModifiedPrice(Buyers[_shopIndex].resourceA.basePrice, _shopIndex, true));
+
         if (Buyers[_shopIndex].resourceB != null)
-            resourcePanelBObj.SetPrice(Mathf.CeilToInt(Buyers[_shopIndex].resourceB.basePrice/2));
+            resourcePanelBObj.SetPrice(GetModifiedPrice(Buyers[_shopIndex].resourceB.basePrice, _shopIndex, false));
 
         if (Buyers[_shopIndex].resourceB != null) {
             resourcePanelBObj.gameObject.SetActive(true);
@@ -74,14 +75,28 @@ public class ShopSellerDetailsPanel : MonoBehaviour
         resourcePanelBObj.SetSelected(true);
     }
 
+    private static int GetModifiedPrice(int basePrice, int _shopIndex, bool isResourceA) {
+
+        if (_shopIndex == 3 && !isResourceA)  // if second resource sold by shop d, offer half price
+            return Mathf.CeilToInt(basePrice / 2);
+        
+        if (_shopIndex == 0) // if sold by shop A, offer extra 2 bucks on any resource
+            return basePrice + 2;
+        
+        return basePrice;
+    }
+
     public void OnPressSell() {
         Assert.IsTrue(resourcePanelAObj.IsSelected || resourcePanelBObj.IsSelected, "never expected to have no resource selected in shop details screen");
 
         // figure out what resource selected
         ResourceSO resourceBeingSold = resourcePanelAObj.IsSelected ? resourcePanelAObj.Resource : resourcePanelBObj.Resource;
 
+        // figure out what the price should be
+        int price = GetModifiedPrice(resourceBeingSold.basePrice, _shopIndex, resourcePanelAObj.IsSelected);
+
         // propagate the sell command up to the shop panel, passing the resource sold
-        bool wasSaleSuccessful = shopPanelObj.AttemptToSell(resourceBeingSold, 1);
+        bool wasSaleSuccessful = shopPanelObj.AttemptToSell(resourceBeingSold, 1, price);
 
         if (wasSaleSuccessful) {
             // update character image, speech

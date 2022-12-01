@@ -1,27 +1,20 @@
 using PlayerData;
+using System;
 using UnityEngine;
-using System.Collections.Generic;
 using UnityEngine.Assertions;
 
-[CreateAssetMenu(fileName = "New Tile Placement SO", menuName = "Quests/TilePlacementSO")]
+[CreateAssetMenu(fileName = "New Quest", menuName = "Quests/TilePlacementQuestGoal")]
 public class TilePlacementQuestSO : AbstractQuestSO {
 
-    [SerializeField] public ActionCardSO[] targetCards;
-    [SerializeField] public int[] targetQuantity;
+    public ActionCardSO[] targetCards;
+    public int[] targetQuantity;
+    public OperatorType operatorType;
+
     private int[] actualQuantity; // not serialized because we don't want to save these outside runtime
 
     public void OnEnable() {
+        Assert.IsNotNull(targetCards);
         Assert.IsTrue(targetCards.Length == targetQuantity.Length, $"{this?.name} must have same number of targetQuantity as targetCards");
-    }
-
-    public override string GetQuestAsSentence() {
-        string s = "Place";
-        for(int i = 0; i < targetCards.Length; i++) {
-            if (i > 0)
-                s+= " and";
-            s += $" {targetQuantity[i]} {targetCards[i].name.ToLower()}";
-        }
-        return s;
     }
 
     public override string GetStatusAsSentence() {
@@ -56,12 +49,43 @@ public class TilePlacementQuestSO : AbstractQuestSO {
         Assert.IsNotNull(actualQuantity);
         Assert.IsTrue(targetCards.Length == actualQuantity.Length, $"{this?.name} must have same number of actualQuantity as targetCards");
         for (int i = 0; i < targetCards.Length; i++) {
-            if (targetCards[i] == card) {
+            if (targetCards[i] == card && targetQuantity[i] > actualQuantity[i]) {
                 actualQuantity[i] += 1;
+
+                if (QuestIsCompleted())
+                {
+                    OnCompletion.Invoke();
+                }
+
                 OnUpdate.Invoke();
                 return;
             }
         }
+    }
+
+    private bool QuestIsCompleted()
+    {
+        if (operatorType == OperatorType.COMPLETE_ALL)
+        {
+            for (int i = 0; i < targetQuantity.Length; i++)
+            {
+                if (targetQuantity[i] > actualQuantity[i])
+                    return false;
+            }
+
+            return true;
+        }
+        else if (operatorType == OperatorType.COMPLETED_ANY_ONE)
+        {
+            for (int i = 0; i < actualQuantity.Length; i++)
+            {
+                if (actualQuantity[i] >= targetQuantity[i])
+                    return true;
+            }
+
+            return false;
+        }
+        else throw new NotImplementedException("Operator type has not been implemented yet");
     }
 
 }

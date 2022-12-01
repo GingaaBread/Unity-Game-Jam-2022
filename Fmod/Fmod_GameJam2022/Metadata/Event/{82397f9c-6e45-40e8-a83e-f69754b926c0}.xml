@@ -114,7 +114,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{078c8c8f-9b1e-4adf-910a-ed98c08e94e7}">
 		<property name="volume">
-			<value>-7.5</value>
+			<value>-3</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -132,6 +132,7 @@
 	<object class="MixerBusEffectChain" id="{14b6b15d-7a5c-4c13-acb9-9e6f4f767835}">
 		<relationship name="effects">
 			<destination>{67b3de59-58c3-42a1-ba4a-6df6735f10ea}</destination>
+			<destination>{246eadb3-1a0f-4748-9133-c14bf9a53058}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{d9bbe77b-cfa9-436b-9b85-f59fe9f58088}">
@@ -194,6 +195,11 @@
 	</object>
 	<object class="MixerBusPanner" id="{9fc4db13-246f-4870-a4e5-224d2dc74686}" />
 	<object class="MixerBusFader" id="{67b3de59-58c3-42a1-ba4a-6df6735f10ea}" />
+	<object class="DelayEffect" id="{246eadb3-1a0f-4748-9133-c14bf9a53058}">
+		<property name="level">
+			<value>-20</value>
+		</property>
+	</object>
 	<object class="RandomizerModulator" id="{8660191f-b014-4160-b4b8-5b100c2055eb}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>stereoPan</value>
@@ -204,7 +210,7 @@
 	</object>
 	<object class="AutomationPoint" id="{7739bff4-ca0d-42e3-936c-50f81ae53526}">
 		<property name="position">
-			<value>1.5321637426900585</value>
+			<value>1.0501949317738792</value>
 		</property>
 		<property name="value">
 			<value>1</value>

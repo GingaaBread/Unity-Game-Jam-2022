@@ -100,6 +100,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &3118934
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -233,6 +237,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &17615737
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -366,6 +374,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &20827603
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -499,6 +511,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &24888594
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -632,6 +648,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 9881f61f3a94ef54ea90e910a0a21ecd, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &32684996
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -765,6 +785,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &42882056
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -898,6 +922,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &44427144
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1031,6 +1059,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 9881f61f3a94ef54ea90e910a0a21ecd, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &48290491
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1164,6 +1196,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &49068627
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1297,6 +1333,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &52838553
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1430,6 +1470,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &53591953
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1563,6 +1607,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &74534866
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1696,6 +1744,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &77577291
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1829,6 +1881,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &88903189
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1962,6 +2018,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &89004772
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2095,6 +2155,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &127556551
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2228,6 +2292,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &138002536
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2361,6 +2429,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &144150214
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2494,6 +2566,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &145264717
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2627,6 +2703,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 9881f61f3a94ef54ea90e910a0a21ecd, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &151145957
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2760,6 +2840,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 9881f61f3a94ef54ea90e910a0a21ecd, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &194626324
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2893,6 +2977,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &215287621
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3026,6 +3114,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &222406158
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3159,6 +3251,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &234348837
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3292,6 +3388,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &246448346
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3425,6 +3525,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &259080041
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3558,6 +3662,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &266510641
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3691,6 +3799,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 9881f61f3a94ef54ea90e910a0a21ecd, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &281986946
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3824,6 +3936,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &284074219
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3957,6 +4073,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &317943214
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4090,6 +4210,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &321828542
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4223,6 +4347,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &323352511
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4356,6 +4484,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: b4a935a79f2a7204683f8b6a4b7e1cc0, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &325553147
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4489,6 +4621,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &370642743
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4622,6 +4758,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &382606390
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4755,6 +4895,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &384182821
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4888,6 +5032,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &384994599
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5021,6 +5169,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &396546101
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5154,6 +5306,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &415648363
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5287,6 +5443,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 9881f61f3a94ef54ea90e910a0a21ecd, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &419088339
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5420,6 +5580,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: b4a935a79f2a7204683f8b6a4b7e1cc0, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &431099592
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5553,6 +5717,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: b4a935a79f2a7204683f8b6a4b7e1cc0, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &462703176
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5686,6 +5854,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &468742934
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5819,6 +5991,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &478247511
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5952,6 +6128,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &478402232
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6085,6 +6265,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 9881f61f3a94ef54ea90e910a0a21ecd, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &496581965
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6218,6 +6402,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &512332917
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6351,6 +6539,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &518040193
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6484,6 +6676,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &518074457
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6617,6 +6813,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &525974808
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6750,6 +6950,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &528656146
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6883,6 +7087,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &530695045
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7016,6 +7224,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &541778139
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7149,6 +7361,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &548314536
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7282,6 +7498,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 9881f61f3a94ef54ea90e910a0a21ecd, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &550348517
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7415,6 +7635,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 9881f61f3a94ef54ea90e910a0a21ecd, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &558825513
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7548,6 +7772,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 9881f61f3a94ef54ea90e910a0a21ecd, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &579174834
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7681,6 +7909,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &602729827
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7814,6 +8046,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 9881f61f3a94ef54ea90e910a0a21ecd, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &626625782
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7947,6 +8183,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &635254714
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8080,6 +8320,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &639217808
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8213,6 +8457,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &644876139
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8346,6 +8594,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &646280108
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8479,6 +8731,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &651370531
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8612,6 +8868,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &655803862
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8745,6 +9005,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &659716318
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8878,6 +9142,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &666008437
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9011,6 +9279,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &677489562
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9144,6 +9416,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &682399253
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9277,6 +9553,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 9881f61f3a94ef54ea90e910a0a21ecd, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &685282975
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9410,6 +9690,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: b4a935a79f2a7204683f8b6a4b7e1cc0, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &688740020
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9543,6 +9827,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &689308475
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9676,6 +9964,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &698436263
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9809,6 +10101,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &700872880
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9942,6 +10238,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &702772045
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -10075,6 +10375,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &769889450
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -10208,6 +10512,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 9881f61f3a94ef54ea90e910a0a21ecd, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &799430989
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -10341,6 +10649,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &816715675
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -10474,6 +10786,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &828080147
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -10607,6 +10923,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &832502810
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -10740,6 +11060,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &839842855
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -10873,6 +11197,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &850848435
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -11006,6 +11334,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: b4a935a79f2a7204683f8b6a4b7e1cc0, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &863325756
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -11139,6 +11471,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: b4a935a79f2a7204683f8b6a4b7e1cc0, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &871673028
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -11272,6 +11608,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 9881f61f3a94ef54ea90e910a0a21ecd, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &903596413
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -11405,6 +11745,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &922920989
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -11538,6 +11882,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: b4a935a79f2a7204683f8b6a4b7e1cc0, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &924806135
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -11671,6 +12019,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &926343001
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -11804,6 +12156,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &945851032
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -11937,6 +12293,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &946478032
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -12070,6 +12430,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &961581837
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -12203,6 +12567,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &969718663
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -12336,6 +12704,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &983234226
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -12469,6 +12841,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1008106580
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -12602,6 +12978,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1017232890
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -12735,6 +13115,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1020219297
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -12868,6 +13252,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1029052315
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -13001,6 +13389,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1036903515
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -13134,6 +13526,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1080783848
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -13267,6 +13663,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: b4a935a79f2a7204683f8b6a4b7e1cc0, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1094032673
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -13400,6 +13800,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1111957980
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -13533,6 +13937,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1121122261
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -13666,6 +14074,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1124224996
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -13799,6 +14211,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1130774073
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -13932,6 +14348,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1140264275
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -14065,6 +14485,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1140871427
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -14198,6 +14622,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1142776606
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -14331,6 +14759,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1145544141
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -14464,6 +14896,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 9881f61f3a94ef54ea90e910a0a21ecd, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1154598895
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -14597,6 +15033,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: b4a935a79f2a7204683f8b6a4b7e1cc0, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1156705198
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -14730,6 +15170,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1159492681
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -14863,6 +15307,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1161916126
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -14996,6 +15444,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1169717001
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -15129,6 +15581,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1188058584
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -15262,6 +15718,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1198314529
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -15395,6 +15855,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1217819743
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -15528,6 +15992,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1229598478
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -15661,6 +16129,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1260658898
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -15794,6 +16266,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1270916717
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -15927,6 +16403,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1273394821
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -16060,6 +16540,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1275306415
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -16193,6 +16677,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1288299394
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -16326,6 +16814,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1294286301
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -16459,6 +16951,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1296690339
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -16592,6 +17088,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: b4a935a79f2a7204683f8b6a4b7e1cc0, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1309030504
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -16725,6 +17225,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1322063276
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -16858,6 +17362,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1342606743
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -16991,6 +17499,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1342671829
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -17124,6 +17636,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 9881f61f3a94ef54ea90e910a0a21ecd, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1347128851
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -17257,6 +17773,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1353207695
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -17390,6 +17910,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1376646112
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -17523,6 +18047,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1404941832
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -17656,6 +18184,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1405762871
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -17789,6 +18321,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1408579495
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -17922,6 +18458,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1411276784
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -18055,6 +18595,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 9881f61f3a94ef54ea90e910a0a21ecd, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1435161622
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -18188,6 +18732,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1455410882
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -18321,6 +18869,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: b4a935a79f2a7204683f8b6a4b7e1cc0, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1463644092
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -18454,6 +19006,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 9881f61f3a94ef54ea90e910a0a21ecd, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1471731712
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -18587,6 +19143,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: b4a935a79f2a7204683f8b6a4b7e1cc0, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1491535652
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -18720,6 +19280,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1497911947
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -18853,6 +19417,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 9881f61f3a94ef54ea90e910a0a21ecd, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1499587616
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -18986,6 +19554,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1523159737
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -19119,6 +19691,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1552627215
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -19252,6 +19828,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 9881f61f3a94ef54ea90e910a0a21ecd, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1557539735
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -19385,6 +19965,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1593239496
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -19518,6 +20102,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1611785068
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -19651,6 +20239,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1614170894
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -19784,6 +20376,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1621602310
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -19917,6 +20513,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1639055973
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -20050,6 +20650,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1649146880
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -20183,6 +20787,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1650466425
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -20316,6 +20924,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1657174200
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -20449,6 +21061,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1731448474
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -20582,6 +21198,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1735374845
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -20715,6 +21335,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 9881f61f3a94ef54ea90e910a0a21ecd, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1764480358
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -20848,6 +21472,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1776361290
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -20981,6 +21609,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1819943568
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -21114,6 +21746,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1830542391
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -21247,6 +21883,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1831942788
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -21380,6 +22020,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1838797898
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -21513,6 +22157,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 9881f61f3a94ef54ea90e910a0a21ecd, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1842778569
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -21646,6 +22294,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1849111553
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -21779,6 +22431,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1870472057
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -21912,6 +22568,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1879145256
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -22045,6 +22705,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1905725533
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -22178,6 +22842,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1906673496
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -22311,6 +22979,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1910731479
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -22444,6 +23116,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 9881f61f3a94ef54ea90e910a0a21ecd, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1923823669
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -22577,6 +23253,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1932526657
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -22710,6 +23390,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1942098767
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -22843,6 +23527,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1943485569
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -22976,6 +23664,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1944696302
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -23109,6 +23801,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1945639571
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -23242,6 +23938,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1957260092
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -23375,6 +24075,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 9881f61f3a94ef54ea90e910a0a21ecd, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1957526000
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -23508,6 +24212,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1965214265
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -23641,6 +24349,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1965438908
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -23774,6 +24486,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1977358105
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -23907,6 +24623,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: b4a935a79f2a7204683f8b6a4b7e1cc0, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1980916091
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -24040,6 +24760,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1989852645
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -24173,6 +24897,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &1989884231
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -24306,6 +25034,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &2001323970
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -24439,6 +25171,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &2009413422
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -24572,6 +25308,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &2023599657
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -24705,6 +25445,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &2024997529
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -24838,6 +25582,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &2035171563
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -24971,6 +25719,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &2036880385
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -25104,6 +25856,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &2042926908
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -25237,6 +25993,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &2048478332
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -25370,6 +26130,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: abeec994c871d914fb5d89d89d19c6c4, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &2050821190
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -25503,6 +26267,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &2051864455
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -25636,6 +26404,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: b4a935a79f2a7204683f8b6a4b7e1cc0, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &2078605279
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -25769,6 +26541,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 3122215f3c0b96d4a8ada145a74659a9, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &2090528552
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -25902,6 +26678,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 9881f61f3a94ef54ea90e910a0a21ecd, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &2091879499
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -26035,6 +26815,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &2099210577
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -26168,6 +26952,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &2127542704
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -26301,6 +27089,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: 7459a4373603bf045967aab5a5bcae80, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &2145047578
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -26434,6 +27226,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currType: {fileID: 11400000, guid: b4a935a79f2a7204683f8b6a4b7e1cc0, type: 2}
   tileForeground: {fileID: 3867647017217099524, guid: f10d21cf8a2db2342a41d90b86322a43, type: 3}
+  bonusAppearance: {fileID: 5296357632792013967, guid: 94673b805d77cc9498ae6e8b69746915, type: 3}
+  positive: {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
+  negative: {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
+  tileConfigSO: {fileID: 11400000, guid: 0d4f79c17a971a048adad2fd19b4b5e8, type: 2}
 --- !u!60 &2147067329
 PolygonCollider2D:
   m_ObjectHideFlags: 0

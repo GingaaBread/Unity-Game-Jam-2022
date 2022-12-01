@@ -98,10 +98,19 @@
 	</object>
 	<object class="MultiSound" id="{3b79f433-264a-4c6c-a8f3-26c8e7da3258}">
 		<property name="length">
-			<value>2</value>
+			<value>1.2400584795321627</value>
+		</property>
+		<property name="startOffset">
+			<value>40.5</value>
+		</property>
+		<property name="pitch">
+			<value>0.300000012</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{b931f463-3bc4-4c73-8ded-45f93f123fae}</destination>
+		</relationship>
+		<relationship name="fadeInCurve">
+			<destination>{3b93c639-4d36-4764-8056-c60d897dbe70}</destination>
 		</relationship>
 		<relationship name="sounds">
 			<destination>{101c2504-ab21-4ed4-9f6d-ffc79fca9e01}</destination>
@@ -112,7 +121,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{e4ac8165-9628-4542-be49-1da2b859b6ff}">
 		<property name="volume">
-			<value>-17.5</value>
+			<value>-10.5</value>
 		</property>
 		<property name="name">
 			<value>PanelSlideIn</value>
@@ -130,6 +139,7 @@
 	<object class="MixerBusEffectChain" id="{a6839144-aadf-4dd4-aa9a-b23e4632e404}">
 		<relationship name="effects">
 			<destination>{d6ac8687-723f-4f25-a2c5-c543165bf59c}</destination>
+			<destination>{3ce1cbe0-b449-4d6d-aec2-8934ee9efe81}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{bde9f3fb-7832-4fe6-b129-1a3eb4c8a141}" />
@@ -141,6 +151,14 @@
 		<property name="amount">
 			<value>5</value>
 		</property>
+	</object>
+	<object class="FadeCurve" id="{3b93c639-4d36-4764-8056-c60d897dbe70}">
+		<relationship name="startPoint">
+			<destination>{8b620094-0fc8-49de-b230-618d02d330f1}</destination>
+		</relationship>
+		<relationship name="endPoint">
+			<destination>{bb53df75-3404-49e1-b04e-0596b97eac59}</destination>
+		</relationship>
 	</object>
 	<object class="SingleSound" id="{101c2504-ab21-4ed4-9f6d-ffc79fca9e01}">
 		<relationship name="audioFile">
@@ -173,6 +191,30 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{d6ac8687-723f-4f25-a2c5-c543165bf59c}" />
+	<object class="ThreeEQEffect" id="{3ce1cbe0-b449-4d6d-aec2-8934ee9efe81}">
+		<property name="lowGain">
+			<value>-3</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{8b620094-0fc8-49de-b230-618d02d330f1}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+		<property name="curveShape">
+			<value>0.0087290192</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{bb53df75-3404-49e1-b04e-0596b97eac59}">
+		<property name="position">
+			<value>0.53801169590643272</value>
+		</property>
+		<property name="value">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{9b7ecf8b-67cd-4aba-8ff0-6416e5c20855}" />
 	<object class="Automator" id="{d144024f-e021-41f5-b7be-9fe91989b320}">
 		<property name="nameOfPropertyBeingAutomated">

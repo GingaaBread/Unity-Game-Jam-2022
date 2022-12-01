@@ -1,3 +1,4 @@
+using FMODUnity;
 using PlayerData;
 using System;
 using System.Collections.Generic;
@@ -15,16 +16,19 @@ public class QuestManager : ComputerPhaseStep
 
     public static QuestManager Instance { get; private set; }
 
+    [Header("Prefabs")]
+    public GameObject questUIPrefab;
+
     [Header("Debugging")]
     [SerializeField] private bool DebugMode_AutoInitOnStart;
-    [SerializeField] private AbstractQuestSO[] DebugMode_QuestsToUse;
+    [SerializeField] private BaseQuest[] DebugMode_QuestsToUse;
 
     [Header("Pool Of ResourceCollection Quests To Choose From")]
-    [SerializeField] private ResourceCollectionQuestSO[] ResourceCollectionQuests;
+    [SerializeField] private BaseQuest[] ResourceCollectionQuests;
+    [SerializeField] private BaseQuest[] TilePlacementQuests;
+    [SerializeField] private BaseQuest[] MoneyForActionQuests;
 
-    [SerializeField] private TilePlacementQuestSO[] TilePlacementQuests;
-    [SerializeField] private MoneyFromSalesQuestSO[] MoneyForActionQuests;
-    private List<AbstractQuestSO> _activeQuests;
+    private List<BaseQuest> _activeQuests;
 
     [Header("Quest Selection Logic")]
     [SerializeField] [Range(0, 3)] private int ResourceCollectionQuestsToSelect;
@@ -36,6 +40,7 @@ public class QuestManager : ComputerPhaseStep
 
     [Header("Loss condition logic")]
     [SerializeField] [Range(1, 20)] private int LoseWhenWeReachYearN;
+    [SerializeField] private EventReference OneYearLeftFMODEventReference;
 
     private new void Awake() {
         Assert.IsNull(Instance);
@@ -56,10 +61,11 @@ public class QuestManager : ComputerPhaseStep
         if (DebugMode_AutoInitOnStart) {
             OnInitializeGame();
         }
+
     }
 
     private void OnInitializeGame() {
-        _activeQuests = new List<AbstractQuestSO>();
+        _activeQuests = new List<BaseQuest>();
 
         if (!DebugMode_AutoInitOnStart) {
             _activeQuests.AddRange(RandomlyChooseQuests(ResourceCollectionQuests, ResourceCollectionQuestsToSelect));
@@ -69,19 +75,23 @@ public class QuestManager : ComputerPhaseStep
             _activeQuests.AddRange(DebugMode_QuestsToUse);
         }
 
-        foreach (AbstractQuestSO quest in _activeQuests)
+        foreach (BaseQuest quest in _activeQuests)
+        {
             quest.ResetActualsCounters();
-        QuestPanel.Instance.UpdateQuests(_activeQuests);
+            print(quest);
+        }
+
+        QuestPanel.Instance.SetupPanel(_activeQuests);
     }
 
-    private static List<AbstractQuestSO> RandomlyChooseQuests(AbstractQuestSO[] questsPool, int count) {
+    private static List<BaseQuest> RandomlyChooseQuests(BaseQuest[] questsPool, int count) {
         Assert.IsTrue(questsPool.Length >= count);
 
-        List<AbstractQuestSO> tempList = new List<AbstractQuestSO>(questsPool);
-        List<AbstractQuestSO> chosenQuests = new List<AbstractQuestSO>();
+        List<BaseQuest> tempList = new List<BaseQuest>(questsPool);
+        List<BaseQuest> chosenQuests = new List<BaseQuest>();
 
         for (int i = 0; i < count; i++) {
-            AbstractQuestSO quest = tempList[UnityEngine.Random.Range(0, tempList.Count)];
+            BaseQuest quest = tempList[UnityEngine.Random.Range(0, tempList.Count)];
             chosenQuests.Add(quest);
             tempList.Remove(quest);
         }
@@ -89,8 +99,10 @@ public class QuestManager : ComputerPhaseStep
         return chosenQuests;
     }
 
+    public List<BaseQuest> GetActiveQuests() => _activeQuests;
+
     public void NotifyOfResourceCollected(ResourceSO resource, int countCollected) {
-        foreach (AbstractQuestSO quest in _activeQuests) {
+        foreach (BaseQuest quest in _activeQuests) {
             quest.NotifyOfResourceCollected(resource, countCollected);
         }
         if (IsGameWon())
@@ -98,7 +110,7 @@ public class QuestManager : ComputerPhaseStep
     }
 
     public void NotifyOfTilePlaced(ActionCardSO card) {
-        foreach (AbstractQuestSO quest in _activeQuests) {
+        foreach (BaseQuest quest in _activeQuests) {
             quest.NotifyOfTilePlaced(card);
         }
         if (IsGameWon())
@@ -106,7 +118,7 @@ public class QuestManager : ComputerPhaseStep
     }
 
     public void NotifyOfResourceSale(ResourceSO resource, int MoneyEarnedFromSale) {
-        foreach (AbstractQuestSO quest in _activeQuests) {
+        foreach (BaseQuest quest in _activeQuests) {
             quest.NotifyOfResourceSale(resource, MoneyEarnedFromSale);
         }
         if (IsGameWon())
@@ -116,7 +128,7 @@ public class QuestManager : ComputerPhaseStep
     private bool IsGameWon() {
         int questsWon = 0;
 
-        foreach (AbstractQuestSO quest in _activeQuests) {
+        foreach (BaseQuest quest in _activeQuests) {
             if (quest.GetPercentageCompleted() == 100)
                 questsWon += 1;
         }
@@ -138,7 +150,7 @@ public class QuestManager : ComputerPhaseStep
         string[] questStrings = new string[_activeQuests.Count];
 
         for(int i=0; i<_activeQuests.Count; i++) {
-            questStrings[i] = _activeQuests[i].GetQuestAsSentence();
+            questStrings[i] = _activeQuests[i].GetWillPrompt();
         }
 
         return questStrings;
@@ -162,7 +174,7 @@ public class QuestManager : ComputerPhaseStep
             } else {
 
                 if (IsStartOfFinalYear()) {
-                    FeedbackPanelManager.Instance.EnqueueGenericMessage(false, $"Only 1 year left!");
+                    FeedbackPanelManager.Instance.EnqueueGenericMessage(false, $"Only 1 year left!", OneYearLeftFMODEventReference);
                 }
                 OnFinishProcessing.Invoke();
             }

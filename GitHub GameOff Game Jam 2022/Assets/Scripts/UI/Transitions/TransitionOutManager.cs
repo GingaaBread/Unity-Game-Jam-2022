@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using TimeManagement;
-using UnityEngine;
 
 public class TransitionOutManager : ComputerPhaseStep
 {

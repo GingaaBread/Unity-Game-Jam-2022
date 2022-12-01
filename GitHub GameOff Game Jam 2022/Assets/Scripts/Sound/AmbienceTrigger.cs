@@ -12,6 +12,7 @@ public class AmbienceTrigger : ComputerPhaseStep
     public static AmbienceTrigger Instance;
 
     private EventInstance musicEventInstance;
+    private bool hasBeenExecuted;
 
     private void Start()
     {
@@ -22,12 +23,23 @@ public class AmbienceTrigger : ComputerPhaseStep
         musicEventInstance.start();
     }
 
+    public void TriggerGameOverSound(bool gameWon)
+    {
+        if (gameWon) musicEventInstance.setParameterByName("WinLose", 1);
+        else musicEventInstance.setParameterByName("WinLose", 2);
+    }
+
     public void PlayFarmAmbience()
     {
-        RuntimeManager.PlayOneShot(farmAmbience);
+        if (!hasBeenExecuted)
+        {
+            RuntimeManager.PlayOneShot(farmAmbience);
 
-        // After the will music jump to spring
-        musicEventInstance.setParameterByName("Season", 1);
+            // After the will music jump to spring
+            musicEventInstance.setParameterByName("Season", 1);
+            
+            hasBeenExecuted = true;
+        }
     }
 
     public override void StartProcessingForComputerPhase(bool isComputerPhaseDuringGameInit)
@@ -35,7 +47,7 @@ public class AmbienceTrigger : ComputerPhaseStep
         if (!isComputerPhaseDuringGameInit && TimeManager.Instance.CurrentTime.IsFirstRoundOfSeason())
         {
             // The seasons should be 1 for spring, 2 for summer, 3 for autumn, 4 for winter (and 0 for the will)
-            musicEventInstance.setParameterByName("Season", (int) TimeManager.Instance.CurrentTime.SeasonInYear - 1);
+            musicEventInstance.setParameterByName("Season", (int) TimeManager.Instance.CurrentTime.SeasonInYear + 1);
         }
 
         OnFinishProcessing.Invoke();

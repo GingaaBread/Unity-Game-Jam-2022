@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 719be7926bf7ff744be33c3980d6e266, type: 3}
   m_Name: FishCard
   m_EditorClassIdentifier: 
-  cardSprite: {fileID: 21300000, guid: 9df3bd8a368897442a2a7de469157961, type: 3}
+  Background: {fileID: 21300000, guid: 6fe703af02ed50146be7cbc31de43ed6, type: 3}
+  PreviewBackground: {fileID: 21300000, guid: 3738819f05251e14085d3a3faed08ad5, type: 3}
+  cardSprite: {fileID: 21300000, guid: d0e82e2b8607015419b0cf712e90cbe2, type: 3}
+  summaryBackground: {fileID: 21300000, guid: 9e4009b7aba20c141b05e32d97814014, type: 3}
+  costBackground: {fileID: 21300000, guid: 2bd4f5d4c330d094dad1853d6a3ca422, type: 3}
   cardTitle: Fish
+  cardSubtitle: 
   cardSummary: Can be caught every 8 turns
   cardEffectKeys: []
   cardEffectValues: []

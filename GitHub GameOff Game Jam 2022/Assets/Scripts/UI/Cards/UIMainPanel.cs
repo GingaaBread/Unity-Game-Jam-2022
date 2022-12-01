@@ -22,6 +22,30 @@ public class UIMainPanel : MonoBehaviour
         private set { _instance = value; }
     }
 
+    [Header("Card Sprites")]
+    public Sprite buildingBackgroundSprite;
+    public Sprite livestockBackgroundSprite;
+    public Sprite seedBackgroundSprite;
+
+    [Space(5f)]
+
+    public Sprite buildingTextSprite;
+    public Sprite livestockTextSprite;
+    public Sprite seedTextSprite;
+
+    [Space(5f)]
+
+    public Sprite buildingDetailSprite;
+    public Sprite livestockDetailSprite;
+    public Sprite seedDetailSprite;
+
+    [Space(5f)]
+
+    public Color buildingCardColour;
+    public Color livestockCardColour;
+    public Color seedCardColour;
+
+    [Header("Other Components")]
     [SerializeField] private GameObject cardContainer;
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject detailCardContainer;
@@ -32,6 +56,7 @@ public class UIMainPanel : MonoBehaviour
     [SerializeField] private RectTransform detailedCardPanelRectTransform;
     [SerializeField] private RectTransform detailedCardPaddingLeftRectTransform;
     [SerializeField] private RectTransform detailedCardPaddingRightRectTransform;
+    [SerializeField] private UIInspectorPanel inspectorPanel;
 
     private void Awake()
     {
@@ -73,10 +98,11 @@ public class UIMainPanel : MonoBehaviour
         Destroy(cardContainer.transform.GetChild(cardIndex).gameObject);
     }
 
-    public void DisplayDetailCardPanel()
+    public void DisplayDetailCardPanel(ActionCardSO cardToInspect, int index)
     {
         CardPlayManager.Instance.ResetCurrentPlay();
         detailCardContainer.SetActive(true);
+        inspectorPanel.Render(cardToInspect, index);
     }
 
     public bool InDetailCardPanel() => detailCardContainer.activeInHierarchy;

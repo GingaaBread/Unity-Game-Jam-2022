@@ -1,3 +1,4 @@
+using FMODUnity;
 using PlayerData;
 using System;
 using System.Collections;
@@ -31,6 +32,8 @@ public class ShopPanel : ComputerPhaseStep
 
     [SerializeField] private Shop_BuyerSO[] buyers;
 
+    [Header("FMOD Event References")]
+    [SerializeField] private EventReference saleFailedFMODEvent;
 
     private new void Awake() {
         Assert.IsNotNull(sellerAPanelObj);
@@ -82,26 +85,23 @@ public class ShopPanel : ComputerPhaseStep
     /// <param name="resourceBeingSold">resource to be sold</param>
     /// <param name="amountBeingSold"> number of resources to be sold</param>
     /// <returns>true if sale succeeded. false otherwise (if not enough inventory)</returns>
-    internal bool AttemptToSell(ResourceSO resourceBeingSold, int amountBeingSold) {
+    internal bool AttemptToSell(ResourceSO resourceBeingSold, int amountBeingSold, int price) {
 
         if (DebugMode) { Debug.Log($"attempted to sell {amountBeingSold} {resourceBeingSold}"); }
 
         // don't sell if player doesn't have enough in inventory
         if (PlayerDataManager.Instance.GetInventoryItemAmount(resourceBeingSold) < amountBeingSold) {
+            if (!saleFailedFMODEvent.IsNull) {
+                RuntimeManager.PlayOneShot(saleFailedFMODEvent);
+            }
             return false; 
-        }
-
-        int price = resourceBeingSold.basePrice;
-
-        // buyer D's resource B will be purchased for 50% of its usual asking price
-        if (resourceBeingSold == buyers[3].resourceB) {
-            price = Mathf.CeilToInt(price/2); 
         }
 
         PlayerDataManager.Instance.DecreaseInventoryItemAmount(resourceBeingSold, amountBeingSold);
         PlayerDataManager.Instance.IncreaseMoneyAmount(price);
         QuestManager.Instance.NotifyOfResourceSale(resourceBeingSold, price);
         FeedbackPanelManager.Instance.EnqueueMoneyReception(price, true);
+        FeedbackPanelManager.Instance.InitiateInstantDisplayQueue();
 
         return true;
     }

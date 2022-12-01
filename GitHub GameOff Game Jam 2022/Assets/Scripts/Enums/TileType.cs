@@ -9,7 +9,8 @@ namespace BuildingManagement
        MOUNTAIN,
        FOREST,
        PLAINS,
-       HILLS
+       HILLS,
+       NONE
 
     }
 }

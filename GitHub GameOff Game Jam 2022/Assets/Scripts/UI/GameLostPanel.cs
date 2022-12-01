@@ -6,7 +6,7 @@ public class GameLostPanel : MonoBehaviour {
     [SerializeField] private GameObject ObjToShow;
 
     public static GameLostPanel Instance { get; private set; }
-
+    
     private void Awake() {
         Assert.IsNull(Instance);
         Instance = this;
@@ -17,8 +17,7 @@ public class GameLostPanel : MonoBehaviour {
 
     public void Show() {
         ObjToShow.SetActive(true);
+        AmbienceTrigger.Instance.TriggerGameOverSound(false);
     }
-
-
 
 }

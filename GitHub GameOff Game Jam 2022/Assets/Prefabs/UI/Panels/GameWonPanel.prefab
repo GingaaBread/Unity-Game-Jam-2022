@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 4880671559096941889}
   - component: {fileID: 4880671559096941888}
   - component: {fileID: 4880671559096941891}
-  - component: {fileID: 9072155064716667406}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -228,36 +227,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &9072155064716667406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4880671559096941890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -1942550171
-      Data2: 1278099972
-      Data3: 1791333311
-      Data4: 1805710432
-    Path: event:/SFX/Player/Play_Celebration
-  Event: 
-  PlayEvent: 11
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &4880671559381580919
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,7 +293,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ..Grandpa would be proud.
+  m_text: ..Mom would be proud.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
