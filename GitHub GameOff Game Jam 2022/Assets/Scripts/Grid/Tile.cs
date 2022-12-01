@@ -446,13 +446,15 @@ public class Tile : MonoBehaviour
         switch (bonus){
             case BonusType.TurnBonus:
                 turnsTillCropHarvest += bonusAmount;
-                Debug.Assert(turnsTillCropHarvest > 0, $"{currSeed.bonus.name} is making the number of turns negative or equal to zero.");
+                Debug.Assert(turnsTillCropHarvest > 0, 
+                    $"{currSeed.bonus.name} is making the number of turns negative or equal to zero.");
                 sign = bonusAmount < 0 ? 1: -1;
                 bonusSign += sign;
                 break;
             case BonusType.CropBonus:
                 cropHarvestAmount += bonusAmount;
-                Debug.Assert(cropHarvestAmount > 0, $"{currSeed.bonus.name} is making the harvest amount negative or equal to zero.");
+                Debug.Assert(cropHarvestAmount > 0, 
+                    $"{currSeed.bonus.name} is making the harvest amount negative or equal to zero.");
                 sign = bonusAmount > 0 ? 1:-1;
                 bonusSign += sign;
                 break;
