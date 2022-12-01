@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d452937f82412438172286eaa28b2d, type: 3}
+  m_Name: A6
+  m_EditorClassIdentifier: 
+  questName: make hay while the sun shines
+  questGoals:
+  - {fileID: 11400000, guid: dfba7d7b9dcb0e94ebb6fade56629a69, type: 2}
+  - {fileID: 11400000, guid: 7578ec824baa92a42870c0eadd64c06e, type: 2}
+  - {fileID: 11400000, guid: 829e28a56de0ae542892cfa4fc28d566, type: 2}
+  - {fileID: 11400000, guid: 0bac41974f9e41143a67895fe8c983b7, type: 2}
+  finalGoal: {fileID: 11400000, guid: cfac02441e1a18f4e8c28eea8af715b7, type: 2}
+  finalReward: {fileID: 11400000, guid: b92363ee0001e264e8aef76f1eb0d534, type: 2}

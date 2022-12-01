@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21a9c22b17e13f4ab0e97807bf39534, type: 3}
   m_Name: A3_2
   m_EditorClassIdentifier: 
-  textPrompt: Harvest 1 corn
+  textPrompt: Harvest 2 corn
   OnUpdate:
     m_PersistentCalls:
       m_Calls: []

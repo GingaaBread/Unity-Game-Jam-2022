@@ -7,6 +7,7 @@ public class MoneyFromSalesQuestSO : AbstractQuestSO {
 
     [SerializeField] public ResourceSO[] targetSaleItems;
     [SerializeField] [Range(1, 9999)] public int targetTotalMoney;
+    [SerializeField] public bool fromAnything;
     private int actualTotalMoney; // not serialized because we don't want to save these outside runtime
     
     public override string GetStatusAsSentence() {
@@ -34,17 +35,34 @@ public class MoneyFromSalesQuestSO : AbstractQuestSO {
     }
 
     public override void NotifyOfResourceSale(ResourceSO resource, int MoneyEarnedFromSale) {
-        for (int i = 0; i < targetSaleItems.Length; i++) {
-            if (targetSaleItems[i] == resource) {
-                actualTotalMoney += MoneyEarnedFromSale;
+        if (fromAnything)
+        {
+            actualTotalMoney += MoneyEarnedFromSale;
 
-                if (targetTotalMoney <= actualTotalMoney)
+            if (targetTotalMoney <= actualTotalMoney)
+            {
+                OnCompletion.Invoke();
+            }
+
+            OnUpdate.Invoke();
+            return;
+        }
+        else
+        {
+            for (int i = 0; i < targetSaleItems.Length; i++)
+            {
+                if (targetSaleItems[i] == resource)
                 {
-                    OnCompletion.Invoke();
-                }
+                    actualTotalMoney += MoneyEarnedFromSale;
 
-                OnUpdate.Invoke();
-                return;
+                    if (targetTotalMoney <= actualTotalMoney)
+                    {
+                        OnCompletion.Invoke();
+                    }
+
+                    OnUpdate.Invoke();
+                    return;
+                }
             }
         }
     }

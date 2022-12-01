@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d452937f82412438172286eaa28b2d, type: 3}
+  m_Name: B6
+  m_EditorClassIdentifier: 
+  questName: meek as a lamb
+  questGoals:
+  - {fileID: 11400000, guid: cd1ac8fc448e220408215a2324a88909, type: 2}
+  - {fileID: 11400000, guid: 86b8647f92bb9e9469f1a0189084bac6, type: 2}
+  - {fileID: 11400000, guid: e545cb44e595d144595ba757ddf1ae7f, type: 2}
+  - {fileID: 11400000, guid: 8bde8d8e4c5242b4495e409805c3e014, type: 2}
+  finalGoal: {fileID: 11400000, guid: 897900de1b8860a4eb1dcbab6a432531, type: 2}
+  finalReward: {fileID: 11400000, guid: 0faafbc279cbbdc43924ac0f72b85398, type: 2}
