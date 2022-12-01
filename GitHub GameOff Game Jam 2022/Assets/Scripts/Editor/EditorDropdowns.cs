@@ -69,8 +69,33 @@ public class EditorDropdowns : EditorWindow
         if (!EditorApplication.isPlaying) { return; }
         string assetPath = "Assets/Scripts/PlayerData/ResourceSOs/Wheat.asset";
         ResourceSO wheatResource = (ResourceSO)AssetDatabase.LoadAssetAtPath(assetPath, typeof(ResourceSO));
-        if (wheatResource == null) Debug.LogError("TellQuestManagerWeGot5Wheat failed to fine asset "+assetPath);
+        if (wheatResource == null) Debug.LogError("TellQuestManagerWeGot5Wheat failed to find asset "+assetPath);
         QuestManager.Instance.NotifyOfResourceCollected(wheatResource, 5);
+    }
+    [MenuItem("Gamejam/Quest/Earn1FromMilk")]
+    static void Earn1()
+    {
+        if (!EditorApplication.isPlaying) { return; }
+        string assetPath = "Assets/Scripts/PlayerData/ResourceSOs/Milk.asset";
+        ResourceSO milk = (ResourceSO)AssetDatabase.LoadAssetAtPath(assetPath, typeof(ResourceSO));
+        QuestManager.Instance.NotifyOfResourceSale(milk, 1);
+    }
+    [MenuItem("Gamejam/Quest/Earn10FromMilk")]
+    static void Earn10()
+    {
+        if (!EditorApplication.isPlaying) { return; }
+        string assetPath = "Assets/Scripts/PlayerData/ResourceSOs/Milk.asset";
+        ResourceSO milk = (ResourceSO)AssetDatabase.LoadAssetAtPath(assetPath, typeof(ResourceSO));
+        QuestManager.Instance.NotifyOfResourceSale(milk, 10);
+    }
+    [MenuItem("Gamejam/Quest/TellQuestManagerWeGot5Oats")]
+    static void TellQuestManagerWeGot5Oats()
+    {
+        if (!EditorApplication.isPlaying) { return; }
+        string assetPath = "Assets/Scripts/PlayerData/ResourceSOs/Oats.asset";
+        ResourceSO oatResource = (ResourceSO)AssetDatabase.LoadAssetAtPath(assetPath, typeof(ResourceSO));
+        if (oatResource == null) Debug.LogError("TellQuestManagerWeGot5Wheat failed to find asset " + assetPath);
+        QuestManager.Instance.NotifyOfResourceCollected(oatResource, 5);
     }
     [MenuItem("Gamejam/Quest/TellQuestManagerWeSoldWheat")] static void TellQuestManagerWeSoldWheat() {
         if (!EditorApplication.isPlaying) { return; }
@@ -84,6 +109,22 @@ public class EditorDropdowns : EditorWindow
         string assetPath = "Assets/Scripts/CardData/LivestockCardSO/CowCard.asset";
         ActionCardSO card = (ActionCardSO)AssetDatabase.LoadAssetAtPath(assetPath, typeof(ActionCardSO));
         if (card == null) Debug.LogError("TellQuestManagerWeBuiltCow failed to fine asset "+assetPath);
+        QuestManager.Instance.NotifyOfTilePlaced(card);
+    }
+    [MenuItem("Gamejam/Quest/TellQuestManagerWeBuiltAcre")] static void TellQuestManagerWeBuiltAcre() {
+        if (!EditorApplication.isPlaying) { return; }
+        string assetPath = "Assets/Scripts/CardData/BuildingCardSO/AcreCard.asset";
+        ActionCardSO card = (ActionCardSO)AssetDatabase.LoadAssetAtPath(assetPath, typeof(ActionCardSO));
+        if (card == null) Debug.LogError("TellQuestManagerWeBuiltAcre failed to fine asset "+assetPath);
+        QuestManager.Instance.NotifyOfTilePlaced(card);
+    }
+    [MenuItem("Gamejam/Quest/TellQuestManagerWeBuiltPen")]
+    static void TellQuestManagerWeBuiltPen()
+    {
+        if (!EditorApplication.isPlaying) { return; }
+        string assetPath = "Assets/Scripts/CardData/BuildingCardSO/PenCard.asset";
+        ActionCardSO card = (ActionCardSO)AssetDatabase.LoadAssetAtPath(assetPath, typeof(ActionCardSO));
+        if (card == null) Debug.LogError("TellQuestManagerWeBuiltPen failed to fine asset " + assetPath);
         QuestManager.Instance.NotifyOfTilePlaced(card);
     }
 

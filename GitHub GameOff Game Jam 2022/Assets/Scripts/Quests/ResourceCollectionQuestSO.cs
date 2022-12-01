@@ -38,22 +38,43 @@ public class ResourceCollectionQuestSO : AbstractQuestSO {
     public override void NotifyOfResourceCollected(ResourceSO resource, int countCollected) {
         Assert.IsNotNull(actualQuantity);
         Assert.IsTrue(targetResources.Length == actualQuantity.Length, $"{this.name} must have same number of actualQuantity as targetResources");
+
         for (int i = 0; i < targetResources.Length; i++) {
             if(targetResources[i] == resource) {
+                Debug.Log("IS the resource");
                 actualQuantity[i] += countCollected;
 
                 if (actualQuantity[i] >= targetQuantity[i])
                 {
                     actualQuantity[i] = targetQuantity[i];
-                    OnCompletion.Invoke();
+                    Debug.Log("At max resource");
                 }
 
+                CheckIfIsDone();
                 OnUpdate.Invoke();
                 return;
             }
         }
     }
 
+
+    private void CheckIfIsDone()
+    {
+        bool isDone = true;
+        for (int i = 0; i < targetResources.Length; i++)
+        {
+            if (actualQuantity[i] < targetQuantity[i])
+            {
+                isDone = false;
+            }
+        }
+
+        if (isDone)
+        {
+            Debug.Log("Resource is done");
+            OnCompletion.Invoke();
+        }
+    }
     public override void NotifyOfTilePlaced(ActionCardSO card) {
         // this class isn't interested in these notifications
     }

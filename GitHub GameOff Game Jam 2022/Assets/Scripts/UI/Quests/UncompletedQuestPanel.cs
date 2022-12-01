@@ -12,7 +12,7 @@ public class UncompletedQuestPanel : MonoBehaviour
     public void Display(BaseQuest quest)
     {
         questTitleText.text = quest.questName;
-        questProgressText.text = $"Step {quest.GetCurrentStep()} of 4";
+        questProgressText.text = $"Step {quest.GetCurrentStep()} of 5";
         questCompletionRewardText.text = "Reward: <i>" + quest.finalReward + "</i>";
 
         var goals = quest.GetGoals();
