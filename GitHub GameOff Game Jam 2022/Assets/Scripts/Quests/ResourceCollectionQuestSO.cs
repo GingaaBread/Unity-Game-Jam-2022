@@ -41,13 +41,11 @@ public class ResourceCollectionQuestSO : AbstractQuestSO {
 
         for (int i = 0; i < targetResources.Length; i++) {
             if(targetResources[i] == resource) {
-                Debug.Log("IS the resource");
                 actualQuantity[i] += countCollected;
 
                 if (actualQuantity[i] >= targetQuantity[i])
                 {
                     actualQuantity[i] = targetQuantity[i];
-                    Debug.Log("At max resource");
                 }
 
                 CheckIfIsDone();
@@ -71,7 +69,6 @@ public class ResourceCollectionQuestSO : AbstractQuestSO {
 
         if (isDone)
         {
-            Debug.Log("Resource is done");
             OnCompletion.Invoke();
         }
     }

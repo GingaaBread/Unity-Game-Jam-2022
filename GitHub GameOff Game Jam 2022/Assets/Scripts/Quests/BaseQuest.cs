@@ -1,4 +1,5 @@
 using System;
+using FMODUnity;
 using PlayerData;
 using UIManagement;
 using UnityEngine;
@@ -71,17 +72,33 @@ public class BaseQuest : ScriptableObject
 
         finalGoal.OnCompletion.RemoveAllListeners();
 
+        int rewardIndex = 0, moneyToGiveOut = 0;
         foreach (var questGoal in questGoals)
         {
-            questGoal.OnCompletion.AddListener(() => OnCompletion("Goal" + questGoal.textPrompt));
+            rewardIndex++;
+
+            questGoal.OnCompletion.AddListener(() => {
+                OnCompletion("Goal" + questGoal.textPrompt);
+
+                if (rewardIndex == 1) moneyToGiveOut = 5;
+                else if (rewardIndex == 2) moneyToGiveOut = 10;
+                else if (rewardIndex == 3) moneyToGiveOut = 20;
+                else if (rewardIndex == 4) moneyToGiveOut = 30;
+
+                PlayerDataManager.Instance.IncreaseMoneyAmount(moneyToGiveOut);
+                FeedbackPanelManager.Instance.EnqueueGenericMessage(true, $"Quest goal reward: <sprite=1> {moneyToGiveOut}");
+                FeedbackPanelManager.Instance.InitiateInstantDisplayQueue();
+            });
         }
 
-        finalGoal.OnCompletion.AddListener(() => OnCompletion("Final"));
+        finalGoal.OnCompletion.AddListener(() => {
+            OnCompletion("Final");
+            finalReward.GiveOut();
+        });
     }
 
     private void OnCompletion(string origin)
     {
-        Debug.Log("Quest completed! Doing incrementing now! Origin: " + origin);
         FeedbackPanelManager.Instance.EnqueueGenericMessage(true, $"Quest step completed!", FeedbackPanelManager.Instance.questCompletedSound);
         FeedbackPanelManager.Instance.InitiateInstantDisplayQueue();
         currentlyActiveGoal++;
