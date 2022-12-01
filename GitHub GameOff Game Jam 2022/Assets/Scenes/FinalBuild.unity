@@ -181,6 +181,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2584586651674781162, guid: 8840fdb249686ca43a6aa148a5abcb87, type: 3}
   m_PrefabInstance: {fileID: 1683864793}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &328246384 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4007721045704058022, guid: ab6190ad527aabf4b9a06d7d24c488c8, type: 3}
+  m_PrefabInstance: {fileID: 7524879455174046379}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &328246391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328246384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -895902793
+      Data2: 1288654128
+      Data3: 967345301
+      Data4: 1933890419
+    Path: event:/SFX/Panel Slides/Play_DiscardPanel_SlideOut
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!114 &368431575 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7340925014545253600, guid: 0e92450cc01c60448b84b3dfbbb180c0, type: 3}
@@ -713,6 +748,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0653d2d198bba26499251797d03a20d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1315129212 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3559010960904200404, guid: 0850e3e6be8347145a55569099891903, type: 3}
+  m_PrefabInstance: {fileID: 1722156628}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1315129218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315129212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1086909192
+      Data2: 1137592540
+      Data3: 1564746424
+      Data4: -1387493029
+    Path: event:/SFX/Panel Slides/Play_QuestPanelSlide
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1352091952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -889,6 +959,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4880671558939079440, guid: d478366d445708d4ab441fdf24837edd, type: 3}
   m_PrefabInstance: {fileID: 1663941802}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1491955977 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9101319423322930409, guid: ab6190ad527aabf4b9a06d7d24c488c8, type: 3}
+  m_PrefabInstance: {fileID: 7524879455174046379}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7d9a09d7461d6f44a92769edd53c6ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1519117729 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3019944150545040935, guid: 0ac3005b6dc321e45811d0d991cc0192, type: 3}
@@ -2354,6 +2435,58 @@ PrefabInstance:
     - target: {fileID: 1780467334202328895, guid: 0850e3e6be8347145a55569099891903, type: 3}
       propertyPath: m_Name
       value: QuestPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986136746979371701, guid: 0850e3e6be8347145a55569099891903, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986136746979371701, guid: 0850e3e6be8347145a55569099891903, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986136746979371701, guid: 0850e3e6be8347145a55569099891903, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986136746979371701, guid: 0850e3e6be8347145a55569099891903, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1315129218}
+    - target: {fileID: 1986136746979371701, guid: 0850e3e6be8347145a55569099891903, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1315129218}
+    - target: {fileID: 1986136746979371701, guid: 0850e3e6be8347145a55569099891903, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986136746979371701, guid: 0850e3e6be8347145a55569099891903, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986136746979371701, guid: 0850e3e6be8347145a55569099891903, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986136746979371701, guid: 0850e3e6be8347145a55569099891903, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986136746979371701, guid: 0850e3e6be8347145a55569099891903, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: FMODUnity.StudioEventEmitter, FMODUnity
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986136746979371701, guid: 0850e3e6be8347145a55569099891903, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: FMODUnity.StudioEventEmitter, FMODUnity
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986136746979371701, guid: 0850e3e6be8347145a55569099891903, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986136746979371701, guid: 0850e3e6be8347145a55569099891903, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2174448238981169118, guid: 0850e3e6be8347145a55569099891903, type: 3}
       propertyPath: m_AnchorMax.y
@@ -4456,6 +4589,58 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuestDetailCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3839332805337207060, guid: ab6190ad527aabf4b9a06d7d24c488c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3839332805337207060, guid: ab6190ad527aabf4b9a06d7d24c488c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3839332805337207060, guid: ab6190ad527aabf4b9a06d7d24c488c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1491955977}
+    - target: {fileID: 3839332805337207060, guid: ab6190ad527aabf4b9a06d7d24c488c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 328246391}
+    - target: {fileID: 3839332805337207060, guid: ab6190ad527aabf4b9a06d7d24c488c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 328246391}
+    - target: {fileID: 3839332805337207060, guid: ab6190ad527aabf4b9a06d7d24c488c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3839332805337207060, guid: ab6190ad527aabf4b9a06d7d24c488c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Close
+      objectReference: {fileID: 0}
+    - target: {fileID: 3839332805337207060, guid: ab6190ad527aabf4b9a06d7d24c488c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 3839332805337207060, guid: ab6190ad527aabf4b9a06d7d24c488c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 3839332805337207060, guid: ab6190ad527aabf4b9a06d7d24c488c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: QuestDetailPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3839332805337207060, guid: ab6190ad527aabf4b9a06d7d24c488c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: FMODUnity.StudioEventEmitter, FMODUnity
+      objectReference: {fileID: 0}
+    - target: {fileID: 3839332805337207060, guid: ab6190ad527aabf4b9a06d7d24c488c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: FMODUnity.StudioEventEmitter, FMODUnity
+      objectReference: {fileID: 0}
+    - target: {fileID: 3839332805337207060, guid: ab6190ad527aabf4b9a06d7d24c488c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4136723274501431440, guid: ab6190ad527aabf4b9a06d7d24c488c8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4788,7 +4973,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4539802152369826986, guid: ab6190ad527aabf4b9a06d7d24c488c8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab6190ad527aabf4b9a06d7d24c488c8, type: 3}
 --- !u!1001 &7960884296938063713
 PrefabInstance:
