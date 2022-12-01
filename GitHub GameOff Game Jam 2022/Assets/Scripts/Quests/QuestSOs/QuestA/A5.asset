@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d452937f82412438172286eaa28b2d, type: 3}
+  m_Name: A5
+  m_EditorClassIdentifier: 
+  questName: green thumb
+  questGoals:
+  - {fileID: 11400000, guid: f1e23764827cb9e44a63748cdfad4d8e, type: 2}
+  - {fileID: 11400000, guid: f1e41f2add9b6e64e881b429f4ca88d6, type: 2}
+  - {fileID: 11400000, guid: 9a224bab2a9427b42a9d88cfa1f32420, type: 2}
+  - {fileID: 11400000, guid: 48c2b6a1ffc23a448a8a9813f70e95cc, type: 2}
+  finalGoal: {fileID: 11400000, guid: 645fef45199a5564dbdb6b935f62f02c, type: 2}
+  finalReward: {fileID: 11400000, guid: b92363ee0001e264e8aef76f1eb0d534, type: 2}

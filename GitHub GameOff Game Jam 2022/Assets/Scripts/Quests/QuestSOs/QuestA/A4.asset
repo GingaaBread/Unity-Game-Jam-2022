@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d452937f82412438172286eaa28b2d, type: 3}
+  m_Name: A4
+  m_EditorClassIdentifier: 
+  questName: cream of the crop
+  questGoals:
+  - {fileID: 11400000, guid: 634586966a3327c4591e9f91d4ace093, type: 2}
+  - {fileID: 11400000, guid: 429b6c8f80ea2ad44a847c11951b8c84, type: 2}
+  - {fileID: 11400000, guid: cb6893efe0cdf0b4d829bc7ba2de58ff, type: 2}
+  - {fileID: 11400000, guid: 1f4bfbe8784b43848aa3cb659bd3e5bd, type: 2}
+  finalGoal: {fileID: 11400000, guid: 2ba8b410135b074439d8d606604fb732, type: 2}
+  finalReward: {fileID: 11400000, guid: b92363ee0001e264e8aef76f1eb0d534, type: 2}

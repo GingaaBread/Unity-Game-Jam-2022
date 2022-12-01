@@ -39,7 +39,7 @@ namespace UIManagement
 
         [Header("Sounds")]
         public EventReference questCompletedSound;
-
+        public EventReference itemReceiveEvent;
 
         [Header("UI Notification Panel")]
         // The base GameObject of the notification panel
@@ -117,6 +117,7 @@ namespace UIManagement
             public string message;
             public EventReference fmodEventReference;
             public GenericMessageUIPanel(string message, EventReference fmodEventReference) { this.message = message; this.fmodEventReference = fmodEventReference; }
+            public GenericMessageUIPanel(string message) { this.message = message; }
         }
 
 
@@ -180,6 +181,20 @@ namespace UIManagement
             if (shouldBeEnqueuedToInstantQueue) {
                 uiPanelInstantDisplayQueue.Enqueue(panel);
             } else {
+                uiPanelTurnStartQueue.Enqueue(panel);
+            }
+        }
+
+        public void EnqueueGenericMessage(bool shouldBeEnqueuedToInstantQueue, string message)
+        {
+            var panel = new GenericMessageUIPanel(message);
+
+            if (shouldBeEnqueuedToInstantQueue)
+            {
+                uiPanelInstantDisplayQueue.Enqueue(panel);
+            }
+            else
+            {
                 uiPanelTurnStartQueue.Enqueue(panel);
             }
         }

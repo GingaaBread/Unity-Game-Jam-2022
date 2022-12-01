@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d452937f82412438172286eaa28b2d, type: 3}
+  m_Name: B3
+  m_EditorClassIdentifier: 
+  questName: busy bee
+  questGoals:
+  - {fileID: 11400000, guid: 83add309922c754498b7a7020b377e92, type: 2}
+  - {fileID: 11400000, guid: ab56447cdbe85a34facc14874f3330d0, type: 2}
+  - {fileID: 11400000, guid: 10edb6cdaefb5f54a9df6dc47b41d488, type: 2}
+  - {fileID: 11400000, guid: 53de8e7a9cd06aa4ab8a22df1422fa64, type: 2}
+  finalGoal: {fileID: 11400000, guid: a234ae136dab95249a4fb206fc4cf1cb, type: 2}
+  finalReward: {fileID: 11400000, guid: 37135bfad3001484598a0263d84d8afc, type: 2}
