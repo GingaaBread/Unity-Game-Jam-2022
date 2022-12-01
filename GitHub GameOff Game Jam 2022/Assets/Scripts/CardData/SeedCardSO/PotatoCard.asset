@@ -22,6 +22,12 @@ MonoBehaviour:
   cardSummary: Once harvested, gives 1 potato
   cardEffectKeys: []
   cardEffectValues: []
+  bonusEffectTextDescription:
+  - 'If planted on hills:'
+  bonusEffectValues:
+  - -1 turns to mature
+  bonusEffectSprites:
+  - {fileID: 21300000, guid: 2a70e154f534a2d459cd76852b866de2, type: 3}
   cardCost: 8
   buildingType: 5
   tileForegroundChildPrefab: {fileID: 290865623841320278, guid: 505ab517c18bce940be8f3ba4d933ecb, type: 3}

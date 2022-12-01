@@ -22,6 +22,12 @@ MonoBehaviour:
   cardSummary: Once harvested, gives 1 corn
   cardEffectKeys: []
   cardEffectValues: []
+  bonusEffectTextDescription:
+  - 'If planted on hills:'
+  bonusEffectValues:
+  - +1 turns to mature
+  bonusEffectSprites:
+  - {fileID: 21300000, guid: 11d5733a3dde9474da51f2fc0fd751ee, type: 3}
   cardCost: 6
   buildingType: 4
   tileForegroundChildPrefab: {fileID: 290865623841320278, guid: 40ebe89bc3d5b274f8ec9afcc5ca8b4d, type: 3}
