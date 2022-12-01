@@ -193,6 +193,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2584586651674781162, guid: 8840fdb249686ca43a6aa148a5abcb87, type: 3}
   m_PrefabInstance: {fileID: 1683864793}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &295199026 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 169512813571033026, guid: 8840fdb249686ca43a6aa148a5abcb87, type: 3}
+  m_PrefabInstance: {fileID: 1683864793}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bae48bf852ec4944a973e7d90f9d35dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &328246384 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4007721045704058022, guid: ab6190ad527aabf4b9a06d7d24c488c8, type: 3}
@@ -2447,6 +2458,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: MoneyPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 2584586652077699747, guid: 8840fdb249686ca43a6aa148a5abcb87, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584586652077699747, guid: 8840fdb249686ca43a6aa148a5abcb87, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584586652077699747, guid: 8840fdb249686ca43a6aa148a5abcb87, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584586652077699747, guid: 8840fdb249686ca43a6aa148a5abcb87, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8840fdb249686ca43a6aa148a5abcb87, type: 3}
 --- !u!1001 &1722156628
@@ -3316,7 +3343,7 @@ PrefabInstance:
     - target: {fileID: 7526759709662697470, guid: 0e92450cc01c60448b84b3dfbbb180c0, type: 3}
       propertyPath: moneyDisplayers.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 295199026}
     - target: {fileID: 7947320490105310351, guid: 0e92450cc01c60448b84b3dfbbb180c0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
