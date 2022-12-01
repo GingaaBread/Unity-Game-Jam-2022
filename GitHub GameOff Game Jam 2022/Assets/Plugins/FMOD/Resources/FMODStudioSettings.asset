@@ -23,7 +23,7 @@ MonoBehaviour:
       Value: 0
       HasValue: 0
     Overlay:
-      Value: 0
+      Value: 1
       HasValue: 1
     Logging:
       Value: 0
@@ -225,7 +225,7 @@ MonoBehaviour:
   BankLoadType: 0
   AutomaticSampleLoading: 0
   EncryptionKey: 
-  ImportType: 1
+  ImportType: 0
   TargetAssetPath: FMODBanks
   TargetBankFolder: 
   EventLinkage: 0
@@ -425,7 +425,7 @@ MonoBehaviour:
       HasValue: 1
     Overlay:
       Value: 0
-      HasValue: 0
+      HasValue: 1
     Logging:
       Value: 0
       HasValue: 0
@@ -445,10 +445,10 @@ MonoBehaviour:
       Value: 0
       HasValue: 0
     DSPBufferLength:
-      Value: 1024
+      Value: 2048
       HasValue: 1
     DSPBufferCount:
-      Value: 8
+      Value: 4
       HasValue: 1
     Plugins:
       Value: []
