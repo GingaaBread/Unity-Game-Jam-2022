@@ -19,4 +19,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 08ac52f80f1399b4082256a48b372c04, type: 2}
   - {fileID: 11400000, guid: 73be7c7ceb9369143ae313e0478f6b57, type: 2}
   finalGoal: {fileID: 11400000, guid: 07cccaefdcce3ce438adf27042e0f42f, type: 2}
-  finalReward: 
+  finalReward: {fileID: 11400000, guid: b92363ee0001e264e8aef76f1eb0d534, type: 2}

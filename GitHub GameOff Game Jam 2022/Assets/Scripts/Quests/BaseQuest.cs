@@ -1,3 +1,5 @@
+using System;
+using FMODUnity;
 using PlayerData;
 using UIManagement;
 using UnityEngine;
@@ -9,24 +11,10 @@ public class BaseQuest : ScriptableObject
     public string questName;
     public AbstractQuestSO[] questGoals;
     public AbstractQuestSO finalGoal;
-    public string finalReward;
+    public QuestReward finalReward;
 
     protected int currentlyActiveGoal; // keeps track of the current goal (!) NEEDS TO BE EXPLICITLY SET TO 0
     
-    private void OnEnable()
-    {
-        foreach (var questGoal in questGoals)
-        {
-            questGoal.OnCompletion.AddListener(() =>
-            {
-                FeedbackPanelManager.Instance.EnqueueGenericMessage(true, $"Quest step completed!", FeedbackPanelManager.Instance.questCompletedSound);
-                FeedbackPanelManager.Instance.InitiateInstantDisplayQueue();
-                currentlyActiveGoal++;
-                QuestPanel.Instance.DisplayCompletionAnimation();
-            });
-        }
-    }
-
     public AbstractQuestSO[] GetGoals() => questGoals;
 
     public bool IsDone() => currentlyActiveGoal > questGoals.Length;
@@ -35,7 +23,17 @@ public class BaseQuest : ScriptableObject
 
     public override string ToString() => $"{questName}, at: {GetQuestStepProgress()} with index set to {currentlyActiveGoal}";
 
-    public string GetQuestStepProgress() => $"({currentlyActiveGoal + 1}/{questGoals.Length})";
+    public void AddUpdateListeners(UnityAction call)
+    {
+        foreach (var questGoal in questGoals)
+        {
+            questGoal.OnUpdate.AddListener(call);
+        }
+
+        finalGoal.OnUpdate.AddListener(call);
+    }
+
+    public string GetQuestStepProgress() => $"({currentlyActiveGoal + 1}/{questGoals.Length + 1})";
 
     public UnityEvent CurrentUpdateSubscription()
     {
@@ -51,7 +49,7 @@ public class BaseQuest : ScriptableObject
 
     public void UnsubscribeFromUpdate(UnityAction call)
     {
-        if (currentlyActiveGoal > 0 && currentlyActiveGoal < 4)
+        if (currentlyActiveGoal > 0 && currentlyActiveGoal < 5)
             questGoals[currentlyActiveGoal - 1].OnUpdate.RemoveListener(call);
     }
 
@@ -66,24 +64,72 @@ public class BaseQuest : ScriptableObject
             questGoal.ResetActualsCounters();
 
         finalGoal.ResetActualsCounters();
+
+        foreach (var questGoal in questGoals)
+        {
+            questGoal.OnCompletion.RemoveAllListeners();
+        }
+
+        finalGoal.OnCompletion.RemoveAllListeners();
+
+        int rewardIndex = 0, moneyToGiveOut = 0;
+        foreach (var questGoal in questGoals)
+        {
+            rewardIndex++;
+
+            questGoal.OnCompletion.AddListener(() => {
+                OnCompletion("Goal" + questGoal.textPrompt);
+
+                if (rewardIndex == 1) moneyToGiveOut = 5;
+                else if (rewardIndex == 2) moneyToGiveOut = 10;
+                else if (rewardIndex == 3) moneyToGiveOut = 20;
+                else if (rewardIndex == 4) moneyToGiveOut = 30;
+
+                PlayerDataManager.Instance.IncreaseMoneyAmount(moneyToGiveOut);
+                FeedbackPanelManager.Instance.EnqueueGenericMessage(true, $"Quest goal reward: <sprite=1> {moneyToGiveOut}");
+                FeedbackPanelManager.Instance.InitiateInstantDisplayQueue();
+            });
+        }
+
+        finalGoal.OnCompletion.AddListener(() => {
+            OnCompletion("Final");
+            finalReward.GiveOut();
+        });
+    }
+
+    private void OnCompletion(string origin)
+    {
+        FeedbackPanelManager.Instance.EnqueueGenericMessage(true, $"Quest step completed!", FeedbackPanelManager.Instance.questCompletedSound);
+        FeedbackPanelManager.Instance.InitiateInstantDisplayQueue();
+        currentlyActiveGoal++;
+        QuestPanel.Instance.DisplayCompletionAnimation();
     }
 
     public void NotifyOfResourceCollected(ResourceSO resource, int countCollected)
     {
-        if (currentlyActiveGoal >= questGoals.Length) finalGoal.NotifyOfResourceCollected(resource, countCollected);
-        else questGoals[currentlyActiveGoal].NotifyOfResourceCollected(resource, countCollected);
+        if (!IsDone())
+        {
+            if (currentlyActiveGoal >= questGoals.Length) finalGoal.NotifyOfResourceCollected(resource, countCollected);
+            else questGoals[currentlyActiveGoal].NotifyOfResourceCollected(resource, countCollected);
+        }
     }
 
     public void NotifyOfTilePlaced(ActionCardSO card)
     {
-        if (currentlyActiveGoal >= questGoals.Length) finalGoal.NotifyOfTilePlaced(card);
-        else questGoals[currentlyActiveGoal].NotifyOfTilePlaced(card);
+        if (!IsDone())
+        {
+            if (currentlyActiveGoal >= questGoals.Length) finalGoal.NotifyOfTilePlaced(card);
+            else questGoals[currentlyActiveGoal].NotifyOfTilePlaced(card);
+        }
     }
 
     public void NotifyOfResourceSale(ResourceSO resource, int moneyEarnedFromSale)
     {
-        if (currentlyActiveGoal >= questGoals.Length) finalGoal.NotifyOfResourceSale(resource, moneyEarnedFromSale);
-        else questGoals[currentlyActiveGoal].NotifyOfResourceSale(resource, moneyEarnedFromSale);
+        if (!IsDone())
+        {
+            if (currentlyActiveGoal >= questGoals.Length) finalGoal.NotifyOfResourceSale(resource, moneyEarnedFromSale);
+            else questGoals[currentlyActiveGoal].NotifyOfResourceSale(resource, moneyEarnedFromSale);
+        }
     }
 
     public string GetStatusAsSentence()

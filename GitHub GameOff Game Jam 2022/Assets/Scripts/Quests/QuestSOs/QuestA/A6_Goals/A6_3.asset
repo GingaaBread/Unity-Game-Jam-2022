@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6380c71497835a5499a33e90f64f89ae, type: 3}
+  m_Name: A6_3
+  m_EditorClassIdentifier: 
+  textPrompt: plant 2 wheat, 2 oats and 2 rice
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCompletion:
+    m_PersistentCalls:
+      m_Calls: []
+  targetCards:
+  - {fileID: 11400000, guid: e9d00cd6f4785b047b6bab98f73c7d27, type: 2}
+  - {fileID: 11400000, guid: 33cacab443ecf7448a04f886b7f6f2ca, type: 2}
+  - {fileID: 11400000, guid: b93f951340cf52849812d7816d6de1f4, type: 2}
+  targetQuantity: 020000000200000002000000
+  operatorType: 0

@@ -15,8 +15,8 @@ MonoBehaviour:
   questName: bring home the bacon
   questGoals:
   - {fileID: 11400000, guid: 49dc34ee7880e9f498ec28596931de68, type: 2}
-  - {fileID: 11400000, guid: 06ab5fcbefa7bc74c905c1ba5b3b4fc1, type: 2}
-  - {fileID: 11400000, guid: 0fd10e51bb6ecf047bea657df5db2918, type: 2}
-  - {fileID: 11400000, guid: 763811bb17ef76642b59183e0f9d9008, type: 2}
-  finalGoal: {fileID: 11400000, guid: ec465975b6aa9b84586ea6e60435ea35, type: 2}
-  finalReward: 
+  - {fileID: 11400000, guid: 16341fd2ff88b4541bbaf8428bc01320, type: 2}
+  - {fileID: 11400000, guid: a101e50dd7530264faed626b8910930c, type: 2}
+  - {fileID: 11400000, guid: a49185b55f2b0044d974f87bdbcbfd70, type: 2}
+  finalGoal: {fileID: 11400000, guid: 703478c9fc143d044a1c63d3138edef8, type: 2}
+  finalReward: {fileID: 11400000, guid: 578633f47a2ae874896630d5ac33c854, type: 2}

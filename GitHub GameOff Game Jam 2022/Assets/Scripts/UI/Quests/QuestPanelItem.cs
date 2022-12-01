@@ -23,19 +23,20 @@ public class QuestPanelItem : MonoBehaviour {
 
     public void Initialize(BaseQuest quest) {
         this.quest = quest;
-        quest.CurrentUpdateSubscription().AddListener(UpdateUI);
-        quest.CurrentUpdateSubscription().AddListener(() =>
+        quest.AddUpdateListeners(UpdateUI);
+        /*
+        quest.CurrentCompletionSubscription().AddListener(() =>
         {
-            quest.UnsubscribeFromUpdate(UpdateUI);
-            quest.CurrentUpdateSubscription().AddListener(UpdateUI);
-        });
+            //quest.UnsubscribeFromUpdate(UpdateUI);
+            //quest.CurrentUpdateSubscription().AddListener(UpdateUI);
+        });*/
         UpdateUI();
     }
 
     public void UpdateUI() {
         if (quest.IsDone())
         {
-            questTitle.text = quest.questName + " " + quest.GetQuestStepProgress();
+            questTitle.text = quest.questName;
             questText.text = "Quest completed!";
 
             percentageCompletedSlider.minValue = 0;
@@ -46,7 +47,7 @@ public class QuestPanelItem : MonoBehaviour {
         else
         {
             questTitle.text = quest.questName + " " + quest.GetQuestStepProgress();
-            questText.text = quest.GetCurrentPrompt() + " (currently " + quest.GetStatusAsSentence() + ")";
+            questText.text = quest.GetCurrentPrompt().Replace("<gold>", "<sprite=1>") + " (currently " + quest.GetStatusAsSentence() + ")";
             // progress bar
             int floorOfPercentageCompleted = Mathf.FloorToInt(quest.GetPercentageCompleted());
             percentageCompletedSlider.minValue = 0;
