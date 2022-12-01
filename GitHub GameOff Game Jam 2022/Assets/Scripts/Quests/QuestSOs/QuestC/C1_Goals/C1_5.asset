@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d31a4184ed2441489b07a36c34fc160, type: 3}
   m_Name: C1_5
   m_EditorClassIdentifier: 
-  textPrompt: earn 50 coins by selling resources produced by a cow, pig or sheep
+  textPrompt: earn 20 coins by selling resources produced by a cow, pig or sheep
   OnUpdate:
     m_PersistentCalls:
       m_Calls: []

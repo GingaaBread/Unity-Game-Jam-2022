@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d31a4184ed2441489b07a36c34fc160, type: 3}
   m_Name: C3_3
   m_EditorClassIdentifier: 
-  textPrompt: Earn <gold>100
+  textPrompt: Earn <gold>40
   OnUpdate:
     m_PersistentCalls:
       m_Calls: []

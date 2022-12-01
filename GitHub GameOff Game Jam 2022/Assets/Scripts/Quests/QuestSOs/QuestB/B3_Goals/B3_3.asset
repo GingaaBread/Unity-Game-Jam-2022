@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6380c71497835a5499a33e90f64f89ae, type: 3}
   m_Name: B3_3
   m_EditorClassIdentifier: 
-  textPrompt: Build 2 animal pens
+  textPrompt: Build 1 animal pens
   OnUpdate:
     m_PersistentCalls:
       m_Calls: []

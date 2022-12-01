@@ -66,14 +66,22 @@ public class BaseQuest : ScriptableObject
 
         foreach (var questGoal in questGoals)
         {
-            questGoal.OnCompletion.AddListener(OnCompletion);
+            questGoal.OnCompletion.RemoveAllListeners();
         }
 
-        finalGoal.OnCompletion.AddListener(OnCompletion);
+        finalGoal.OnCompletion.RemoveAllListeners();
+
+        foreach (var questGoal in questGoals)
+        {
+            questGoal.OnCompletion.AddListener(() => OnCompletion("Goal" + questGoal.textPrompt));
+        }
+
+        finalGoal.OnCompletion.AddListener(() => OnCompletion("Final"));
     }
 
-    private void OnCompletion()
+    private void OnCompletion(string origin)
     {
+        Debug.Log("Quest completed! Doing incrementing now! Origin: " + origin);
         FeedbackPanelManager.Instance.EnqueueGenericMessage(true, $"Quest step completed!", FeedbackPanelManager.Instance.questCompletedSound);
         FeedbackPanelManager.Instance.InitiateInstantDisplayQueue();
         currentlyActiveGoal++;
@@ -82,6 +90,7 @@ public class BaseQuest : ScriptableObject
 
     public void NotifyOfResourceCollected(ResourceSO resource, int countCollected)
     {
+        Debug.Log("Notifying of sale... resource collection?: " + IsDone());
         if (!IsDone())
         {
             if (currentlyActiveGoal >= questGoals.Length) finalGoal.NotifyOfResourceCollected(resource, countCollected);
@@ -100,7 +109,7 @@ public class BaseQuest : ScriptableObject
 
     public void NotifyOfResourceSale(ResourceSO resource, int moneyEarnedFromSale)
     {
-        Debug.Log("Notifying... " + IsDone());
+        Debug.Log("Notifying of sale... Done?: " + IsDone());
         if (!IsDone())
         {
             if (currentlyActiveGoal >= questGoals.Length) finalGoal.NotifyOfResourceSale(resource, moneyEarnedFromSale);

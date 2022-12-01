@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6380c71497835a5499a33e90f64f89ae, type: 3}
   m_Name: B1_5
   m_EditorClassIdentifier: 
-  textPrompt: Build 10 farm acres and 5 animal pens
+  textPrompt: Build 3 farm acres and 2 animal pens
   OnUpdate:
     m_PersistentCalls:
       m_Calls: []

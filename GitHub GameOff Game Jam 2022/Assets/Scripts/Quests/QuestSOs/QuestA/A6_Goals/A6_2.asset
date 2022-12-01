@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6380c71497835a5499a33e90f64f89ae, type: 3}
   m_Name: A6_2
   m_EditorClassIdentifier: 
-  textPrompt: plant 2 wheat, 2 oats and 2 rice
+  textPrompt: plant 1 wheat, 1 oat and 1 rice
   OnUpdate:
     m_PersistentCalls:
       m_Calls: []

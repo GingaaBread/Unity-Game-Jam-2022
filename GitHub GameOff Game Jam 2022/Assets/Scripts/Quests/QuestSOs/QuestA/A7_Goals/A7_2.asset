@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6380c71497835a5499a33e90f64f89ae, type: 3}
   m_Name: A7_2
   m_EditorClassIdentifier: 
-  textPrompt: Plant 2 potato and 2 flowers
+  textPrompt: Plant 1 potato and 1 flower
   OnUpdate:
     m_PersistentCalls:
       m_Calls: []
