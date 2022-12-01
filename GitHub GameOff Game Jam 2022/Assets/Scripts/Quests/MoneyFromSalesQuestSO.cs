@@ -48,11 +48,9 @@ public class MoneyFromSalesQuestSO : AbstractQuestSO {
             return;
         }
         else
-        {
-            for (int i = 0; i < targetSaleItems.Length; i++)
-            {
-                if (targetSaleItems[i] == resource)
-                {
+        { 
+            for (int i = 0; i < targetSaleItems.Length; i++) {
+                if (targetSaleItems[i] == resource) {
                     actualTotalMoney += MoneyEarnedFromSale;
 
                     if (targetTotalMoney <= actualTotalMoney)

@@ -48,6 +48,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   questUIPrefab: {fileID: 170029945827187893, guid: 4498957a7ab392947820fc47e0385726, type: 3}
+  acceptableSellResources:
+  - {fileID: 11400000, guid: 69d1550e7c09c3845a363c2ad4540d45, type: 2}
   DebugMode_AutoInitOnStart: 0
   DebugMode_QuestsToUse:
   - {fileID: 11400000, guid: fa0e4a3251bfab5429948b94fa93aea2, type: 2}

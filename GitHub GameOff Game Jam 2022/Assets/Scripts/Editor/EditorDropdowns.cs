@@ -97,12 +97,13 @@ public class EditorDropdowns : EditorWindow
         if (oatResource == null) Debug.LogError("TellQuestManagerWeGot5Wheat failed to find asset " + assetPath);
         QuestManager.Instance.NotifyOfResourceCollected(oatResource, 5);
     }
-    [MenuItem("Gamejam/Quest/TellQuestManagerWeSoldWheat")] static void TellQuestManagerWeSoldWheat() {
+    [MenuItem("Gamejam/Quest/TellQuestManagerWeSold5Wheat")]
+    static void TellQuestManagerWeSold5Wheat() {
         if (!EditorApplication.isPlaying) { return; }
         string assetPath = "Assets/Scripts/PlayerData/ResourceSOs/Wheat.asset";
         ResourceSO wheatResource = (ResourceSO)AssetDatabase.LoadAssetAtPath(assetPath, typeof(ResourceSO));
-        if (wheatResource == null) Debug.LogError("TellQuestManagerWeSoldWheat failed to fine asset "+assetPath);
-        QuestManager.Instance.NotifyOfResourceSale(wheatResource, 750);
+        if (wheatResource == null) Debug.LogError("TellQuestManagerWeSold5Wheat failed to fine asset "+assetPath);
+        QuestManager.Instance.NotifyOfResourceCollected(wheatResource, 5);
     }
     [MenuItem("Gamejam/Quest/TellQuestManagerWeBuiltCow")] static void TellQuestManagerWeBuiltCow() {
         if (!EditorApplication.isPlaying) { return; }

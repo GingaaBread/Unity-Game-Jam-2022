@@ -90,7 +90,6 @@ public class BaseQuest : ScriptableObject
 
     public void NotifyOfResourceCollected(ResourceSO resource, int countCollected)
     {
-        Debug.Log("Notifying of sale... resource collection?: " + IsDone());
         if (!IsDone())
         {
             if (currentlyActiveGoal >= questGoals.Length) finalGoal.NotifyOfResourceCollected(resource, countCollected);
@@ -109,7 +108,6 @@ public class BaseQuest : ScriptableObject
 
     public void NotifyOfResourceSale(ResourceSO resource, int moneyEarnedFromSale)
     {
-        Debug.Log("Notifying of sale... Done?: " + IsDone());
         if (!IsDone())
         {
             if (currentlyActiveGoal >= questGoals.Length) finalGoal.NotifyOfResourceSale(resource, moneyEarnedFromSale);

@@ -19,6 +19,7 @@ MonoBehaviour:
   OnCompletion:
     m_PersistentCalls:
       m_Calls: []
-  targetSaleItems: []
+  targetSaleItems:
+  - {fileID: 0}
   targetTotalMoney: 5
   fromAnything: 1
